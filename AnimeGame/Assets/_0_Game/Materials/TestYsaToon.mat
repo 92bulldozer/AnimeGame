@@ -28,7 +28,7 @@ Material:
   m_ValidKeywords:
   - _ADDITIONAL_LIGHTS
   - _ADDITIONAL_LIGHT_SHADOWS
-  - _GRADIENT_DIRECTION_X
+  - _GRADIENT_DIRECTION_Y
   - _MAIN_LIGHT_SHADOWS
   - _MAIN_LIGHT_SHADOWS_CASCADE
   - _SHADOWS_SOFT
@@ -136,11 +136,11 @@ Material:
     - _DynamicRemap: 0.5
     - _Emission: 0
     - _EnvironmentReflections: 1
-    - _GRADIENT_DIRECTION: 0
+    - _GRADIENT_DIRECTION: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Gradient_Enabled: 0
+    - _Gradient_Enabled: 1
     - _Gradient_Multiplier: 1
     - _Gradient_Offset: 0
     - _Inverse_Colors: 0
@@ -167,7 +167,7 @@ Material:
     - _Rim_Enabled: 1
     - _SHADOWS_SOFT: 1
     - _Shadow_Smoothness: 1
-    - _Shrink_Size: -0.1
+    - _Shrink_Size: -10
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -194,13 +194,13 @@ Material:
     - _Z_Pos_Multiplier: 10
     - _is_Face: 0
     m_Colors:
-    - _Ambient: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 0}
+    - _Ambient: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseMapTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GColor_1: {r: 0, g: 0, b: 0, a: 0}
-    - _GColor_2: {r: 0, g: 0, b: 0, a: 0}
+    - _GColor_1: {r: 1, g: 0.6745283, b: 0.6745283, a: 0}
+    - _GColor_2: {r: 1, g: 1, b: 1, a: 0}
     - _RimColor: {r: 1, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularTint: {r: 1, g: 1, b: 1, a: 1}
