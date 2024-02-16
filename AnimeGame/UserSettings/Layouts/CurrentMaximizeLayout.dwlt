@@ -95,7 +95,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -537,14 +537,14 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 0
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 392.15143, y: 185.31691, z: 717.7084}
+    m_Target: {x: 265.4798, y: 298.35205, z: 2.9177635}
     speed: 2
-    m_Value: {x: 392.15143, y: 185.31691, z: 717.7084}
+    m_Value: {x: 265.4798, y: 298.35205, z: 2.9177635}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -590,17 +590,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.11683065, y: 0.51111525, z: -0.0703647, w: -0.8486282}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: -0.116724424, y: 0.51238525, z: -0.07053954, w: -0.84785664}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 17.789183
+    m_Target: 327.23383
     speed: 2
-    m_Value: 17.789183
+    m_Value: 327.23383
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1.6401803
     m_SpeedNormalized: 0.8200002
@@ -644,7 +644,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 839
+    width: 829
     height: 918
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -706,7 +706,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 848
+    width: 829
     height: 918
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -820,6 +820,7 @@ MonoBehaviour:
     - {fileID: -3594006110801143718, guid: fa5f826c941e05f47a3e157805ca9b43, type: 2}
     - {fileID: 1107833028094354064, guid: 48ca2d98bc3c8594fadca025a7eb239b, type: 2}
     - {fileID: -2412878060426535946, guid: 038c9c812ea0477469c66a163cbe7fd2, type: 2}
+    - {fileID: -2412878060426535946, guid: 9049f4df83985c44ab14ccca39fd8a57, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -853,14 +854,30 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 1
+    - e00: 0.7369231
       e01: 0
       e02: 0
-      e03: 0
+      e03: -21.84616
       e10: 0
-      e11: 1
+      e11: 0.7369231
       e12: 0
-      e13: 0
+      e13: 336.33075
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.64312243
+      e01: 0
+      e02: 0
+      e03: 12.226288
+      e10: 0
+      e11: 0.64312243
+      e12: 0
+      e13: 347.60284
       e20: 0
       e21: 0
       e22: 1
@@ -956,7 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba3d6a34f3cbec4e996008e11e4f5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 352, y: 584}
+  m_MinSize: {x: 448, y: 584}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: DoozyUI
@@ -3087,8 +3104,8 @@ MonoBehaviour:
     y: 0
     width: 1090
     height: 649
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -3104,7 +3121,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimationWindow
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -3113,14 +3130,14 @@ MonoBehaviour:
     y: 649
     width: 1090
     height: 290
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -3193,4 +3210,4 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -143584
+  m_LastSelectedObjectID: 455144
