@@ -1361,7 +1361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84781866}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.051673647, y: -0.84949106, z: 0.08471114, w: 0.518188}
+  m_LocalRotation: {x: 0.051673654, y: -0.84949106, z: 0.08471115, w: 0.5181881}
   m_LocalPosition: {x: 4.4298625, y: 2.74, z: 5.8941994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1942,6 +1942,183 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96202963}
   m_Mesh: {fileID: 4300000, guid: 4cc2883f4d5b39f41bfb116f3ff58880, type: 3}
+--- !u!1 &99589744
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 99589746}
+  - component: {fileID: 99589745}
+  m_Layer: 0
+  m_Name: '!ftraceLightmaps'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &99589745
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99589744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fa80e7116296f4eb4f49ec1544ee22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderSettingsBounces: 5
+  renderSettingsGISamples: 64
+  renderSettingsGIBackFaceWeight: 0
+  renderSettingsTileSize: 512
+  renderSettingsPriority: 2
+  renderSettingsTexelsPerUnit: 40
+  renderSettingsForceRefresh: 1
+  renderSettingsForceRebuildGeometry: 1
+  renderSettingsPerformRendering: 1
+  renderSettingsUserRenderMode: 2
+  renderSettingsDistanceShadowmask: 1
+  renderSettingsSettingsMode: 1
+  renderSettingsFixSeams: 1
+  renderSettingsDenoise: 1
+  renderSettingsDenoise2x: 0
+  renderSettingsEncode: 1
+  renderSettingsEncodeMode: 0
+  renderSettingsOverwriteWarning: 0
+  renderSettingsAutoAtlas: 1
+  renderSettingsUnwrapUVs: 1
+  renderSettingsForceDisableUnwrapUVs: 0
+  renderSettingsMaxAutoResolution: 4096
+  renderSettingsMinAutoResolution: 16
+  renderSettingsUnloadScenes: 1
+  renderSettingsAdjustSamples: 1
+  renderSettingsGILODMode: 2
+  renderSettingsGILODModeEnabled: 0
+  renderSettingsCheckOverlaps: 0
+  renderSettingsSkipOutOfBoundsUVs: 1
+  renderSettingsHackEmissiveBoost: 1
+  renderSettingsHackIndirectBoost: 1
+  renderSettingsTempPath: C:/Users/EJ/Documents/GitHub/AnimeGame/AnimeGame/AnimeGame/Assets/Bakery/BakingData
+  renderSettingsOutPath: BakeryLightmaps
+  renderSettingsUseScenePath: 0
+  renderSettingsHackAOIntensity: 0
+  renderSettingsHackAOSamples: 16
+  renderSettingsHackAORadius: 1
+  renderSettingsShowAOSettings: 1
+  renderSettingsShowTasks: 1
+  renderSettingsShowTasks2: 1
+  renderSettingsShowPaths: 1
+  renderSettingsShowNet: 1
+  renderSettingsOcclusionProbes: 0
+  renderSettingsTexelsPerMap: 0
+  renderSettingsTexelsColor: 1
+  renderSettingsTexelsMask: 1
+  renderSettingsTexelsDir: 1
+  renderSettingsShowDirWarning: 1
+  renderSettingsRenderDirMode: 2
+  renderSettingsShowCheckerSettings: 0
+  renderSettingsSamplesWarning: 1
+  renderSettingsSuppressPopups: 0
+  renderSettingsPrefabWarning: 1
+  renderSettingsSplitByScene: 0
+  renderSettingsSplitByTag: 0
+  renderSettingsUVPaddingMax: 0
+  renderSettingsPostPacking: 1
+  renderSettingsHoleFilling: 0
+  renderSettingsBeepOnFinish: 0
+  renderSettingsExportTerrainAsHeightmap: 0
+  renderSettingsRTXMode: 1
+  renderSettingsLightProbeMode: 1
+  renderSettingsClientMode: 0
+  renderSettingsServerAddress: 127.0.0.1
+  renderSettingsUnwrapper: 0
+  renderSettingsDenoiserType: 101
+  renderSettingsExportTerrainTrees: 0
+  renderSettingsShowPerf: 1
+  renderSettingsSampleDiv: 1
+  renderSettingsAtlasPacker: 0
+  renderSettingsBatchPoints: 1
+  renderSettingsCompressVolumes: 0
+  renderSettingsBatchAreaLightSampleLimit: 0
+  renderSettingsSector: {fileID: 0}
+  renderSettingsRTPVExport: 1
+  renderSettingsRTPVSceneView: 0
+  renderSettingsRTPVHDR: 0
+  renderSettingsRTPVWidth: 640
+  renderSettingsRTPVHeight: 360
+  lastBakeTime: 0
+  enlightenWarningShown: 0
+  enlightenWarningShown2: 0
+  uniqueLights: []
+  lights: []
+  implicitGroups: []
+  implicitGroupedObjects: []
+  bounds: []
+  hasEmissive: 
+  uvBuffOffsets: 
+  uvBuffLengths: 
+  uvSrcBuff: []
+  uvDestBuff: []
+  lmrIndicesOffsets: 
+  lmrIndicesLengths: 
+  lmrIndicesBuff: 
+  lmGroupLODResFlags: 
+  lmGroupMinLOD: 
+  lmGroupLODMatrix: 
+  serverGetFileList: []
+  lightmapHasColor: 
+  lightmapHasMask: 
+  lightmapHasDir: 
+  lightmapHasRNM: 
+  modifiedAssetPathList: []
+  modifiedAssets: []
+  maps: []
+  masks: []
+  dirMaps: []
+  rnmMaps0: []
+  rnmMaps1: []
+  rnmMaps2: []
+  mapsMode: 
+  bakedRenderers: []
+  bakedIDs: 
+  bakedScaleOffset: []
+  bakedVertexOffset: 
+  bakedVertexColorMesh: []
+  nonBakedRenderers: []
+  bakedLights: []
+  bakedLightChannels: 
+  bakedRenderersTerrain: []
+  bakedIDsTerrain: 
+  bakedScaleOffsetTerrain: []
+  assetList: []
+  uvOverlapAssetList: 
+  idremap: 
+  usesRealtimeGI: 0
+  emptyDirectionTex: {fileID: 0}
+  anyVolumes: 0
+  compressedVolumes: 0
+  sectors: []
+  prevBakedProbes: []
+  prevBakedProbePos: []
+--- !u!4 &99589746
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99589744}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &106550940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27692,6 +27869,7 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 1
   TextLabel: {fileID: 0}
+  TextMeshProLabel: {fileID: 0}
 --- !u!114 &665690219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31438,7 +31616,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962067853}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000007042143, y: 0.51726913, z: 0.000000004449399, w: 0.85582286}
+  m_LocalRotation: {x: -0.000000008325207, y: 0.8787418, z: 2.8257507e-10, w: 0.47729748}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -41700,6 +41878,7 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 1
   TextLabel: {fileID: 0}
+  TextMeshProLabel: {fileID: 0}
 --- !u!222 &1213039134
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42613,7 +42792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a63f037b9d8b54987e07c69557b6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weatherSphere: {fileID: 1121143602}
+  weatherSphere: {fileID: 0}
   system: {fileID: 1121143602}
   cumulus: 0.2
   cirrus: 0
@@ -42665,7 +42844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc05fce84dfbb84699cd646f2c74e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weatherSphere: {fileID: 1121143602}
+  weatherSphere: {fileID: 0}
   system: {fileID: 1121143602}
   atmosphereProfile: {fileID: 11400000, guid: ee7cf87a57afeb147b3a5f40ce4052e0, type: 2}
   transitioningAtmosphere: 0
@@ -42682,7 +42861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff66a3b6d1c71942be925d6ef19482d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weatherSphere: {fileID: 1121143602}
+  weatherSphere: {fileID: 0}
   system: {fileID: 1121143602}
   satellites:
   - {fileID: 11400000, guid: 6c5237c919631d043a73040c63874662, type: 2}
@@ -42700,7 +42879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9658bfcb43a1f5d439faba1cccfec118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weatherSphere: {fileID: 1121143602}
+  weatherSphere: {fileID: 0}
   system: {fileID: 1121143602}
   ambienceProfiles:
   - {fileID: 11400000, guid: 41b8b54c926a0cb41927053de608d3c7, type: 2}
@@ -42747,7 +42926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c876b65dcaef0845aa187019a7f70bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weatherSphere: {fileID: 1121143602}
+  weatherSphere: {fileID: 0}
   system: {fileID: 1121143602}
   defaultWindProfile: {fileID: 11400000, guid: 94bed43d2a7d48f428f62cb4dcb20a81, type: 2}
   windZone: {fileID: 962067854}
@@ -42770,7 +42949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523b51446a0cf424b8ab74839a6360a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weatherSphere: {fileID: 1121143602}
+  weatherSphere: {fileID: 0}
   system: {fileID: 0}
   sunMovementCurve:
     serializedVersion: 2
@@ -42979,7 +43158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5b9d489c177c74c89b78ab58439d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weatherSphere: {fileID: 1121143602}
+  weatherSphere: {fileID: 0}
   system: {fileID: 1121143602}
   climateProfile: {fileID: 11400000, guid: e1a4bf0206b48d4428e0e961e057af39, type: 2}
   controlMethod: 1
@@ -43007,7 +43186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04d78c316cde1b4d9ab219d80d25d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weatherSphere: {fileID: 1121143602}
+  weatherSphere: {fileID: 0}
   system: {fileID: 1121143602}
   transit: {fileID: 1254389401}
   perennialProfile: {fileID: 11400000, guid: 8ce0d8458b4495b4593c1e03027a0ce5, type: 2}
@@ -49098,7 +49277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737381640}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.051673647, y: -0.84949106, z: 0.08471114, w: 0.518188}
+  m_LocalRotation: {x: 0.051673654, y: -0.84949106, z: 0.08471115, w: 0.5181881}
   m_LocalPosition: {x: 4.4298625, y: 2.74, z: 5.8941994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -55556,6 +55735,7 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 1
   TextLabel: {fileID: 0}
+  TextMeshProLabel: {fileID: 0}
 --- !u!222 &2048098052
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59113,6 +59293,7 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 1
   TextLabel: {fileID: 0}
+  TextMeshProLabel: {fileID: 0}
 --- !u!222 &2139092334
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60103,3 +60284,4 @@ SceneRoots:
   - {fileID: 1544520633}
   - {fileID: 604299024}
   - {fileID: 840321426}
+  - {fileID: 99589746}

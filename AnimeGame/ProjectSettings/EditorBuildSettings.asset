@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_0_Game/Scenes/MainMenu.unity
     guid: d298eae2926a9ed48a058f2855be15d9
-  - enabled: 1
+  - enabled: 0
     path: Assets/_0_Game/Scenes/Main.unity
     guid: 3e7f17443e7901540930a324d50cdc64
+  - enabled: 0
+    path: Assets/_0_Game/Scenes/Apartment.unity
+    guid: 7b8e988f734c2a94f8e5f01235c02dcb
+  - enabled: 1
+    path: Assets/_0_Game/Scenes/MagicaClothTest.unity
+    guid: 7c55c054de579ba4cb4b057150bcda01
   m_configObjects: {}
