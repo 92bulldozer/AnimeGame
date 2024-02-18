@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Scripts
+  - Road
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - OutlineVC
   - Env
   - OnlyShadow
-  - 
+  - FX
   - 
   - 
   - 
@@ -41,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 857049565
+    locked: 0
+  - name: FX
+    uniqueID: 2542880487
     locked: 0
