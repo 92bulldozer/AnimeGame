@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class InteractableObject : MonoBehaviour ,IPointerEnterHandler ,IPointerClickHandler ,IPointerExitHandler
+public class InteractableObject : MonoBehaviour ,IInteract
 {
     public string enterSfx;
         public string clickSfx;
@@ -30,7 +30,7 @@ public class InteractableObject : MonoBehaviour ,IPointerEnterHandler ,IPointerC
 
         public void OnPointerEnter()
         {
-            if (!affectOutlinable || !Player.Instance.canInteract)
+            if (!affectOutlinable || !PlayerPresenter.Instance.canInteract)
                 return;
 
             
@@ -49,7 +49,7 @@ public class InteractableObject : MonoBehaviour ,IPointerEnterHandler ,IPointerC
 
         public void OnPointerClick()
         {
-            if ( !Player.Instance.canInteract)
+            if ( !PlayerPresenter.Instance.canInteract)
                 return;
             
             //AudioSource.PlayClipAtPoint(interactionSound, transform.position, 1.0f);
@@ -59,7 +59,7 @@ public class InteractableObject : MonoBehaviour ,IPointerEnterHandler ,IPointerC
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (!affectOutlinable  || !Player.Instance.canInteract)
+            if (!affectOutlinable  || !PlayerPresenter.Instance.canInteract)
                 return;
             
             MasterAudio.PlaySound3DAtTransform(enterSfx, transform);
@@ -68,10 +68,10 @@ public class InteractableObject : MonoBehaviour ,IPointerEnterHandler ,IPointerC
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if ( !Player.Instance.canInteract)
+            if ( !PlayerPresenter.Instance.canInteract)
                 return;
             
-            Player.Instance.canInteract = false;
+            PlayerPresenter.Instance.canInteract = false;
 
             //AudioSource.PlayClipAtPoint(interactionSound, transform.position, 1.0f);
             MasterAudio.PlaySound3DAtTransform(clickSfx, transform);
@@ -80,7 +80,7 @@ public class InteractableObject : MonoBehaviour ,IPointerEnterHandler ,IPointerC
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (!affectOutlinable  || !Player.Instance.canInteract)
+            if (!affectOutlinable  || !PlayerPresenter.Instance.canInteract)
                 return;
 
             outlinable.enabled = false;
@@ -89,6 +89,35 @@ public class InteractableObject : MonoBehaviour ,IPointerEnterHandler ,IPointerC
 
         public void ResetInteract()
         {
+            outlinable.enabled = false;
+        }
+
+        public void Interact()
+        {
+            if ( !PlayerPresenter.Instance.canInteract)
+                return;
+            
+            PlayerPresenter.Instance.canInteract = false;
+
+            //AudioSource.PlayClipAtPoint(interactionSound, transform.position, 1.0f);
+            MasterAudio.PlaySound3DAtTransform(clickSfx, transform);
+            onClickEvent?.Invoke();
+        }
+
+        public void ShowInteractPanel()
+        {
+            if (!affectOutlinable  || !PlayerPresenter.Instance.canInteract)
+                return;
+            
+            MasterAudio.PlaySound3DAtTransform(enterSfx, transform);
+            outlinable.enabled = true;
+        }
+
+        public void HideInteractPanel()
+        {
+            if (!affectOutlinable  || !PlayerPresenter.Instance.canInteract)
+                return;
+
             outlinable.enabled = false;
         }
 }

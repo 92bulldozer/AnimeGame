@@ -148,7 +148,8 @@ MonoBehaviour:
   - {fileID: -4736643341572806840}
   - {fileID: -8974057470433295881}
   - {fileID: -2952375395700571954}
-  m_RendererFeatureMap: adc0de57c6d2eee5b721246132f66cc47c4806636e33f5084867d505fa0f44bef701e2f846be7583ce00aa4f380e07d7
+  - {fileID: 920380821346667674}
+  m_RendererFeatureMap: adc0de57c6d2eee5b721246132f66cc47c4806636e33f5084867d505fa0f44bef701e2f846be7583ce00aa4f380e07d79a4c730a7bd9c50c
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -233,3 +234,20 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &920380821346667674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15c3bed367adf64da6316ae42ef95dc, type: 3}
+  m_Name: BetterFogFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    Event: 300
+    _UseCustomDepthTexture: 0
+    _UseFogOffsetTexture: 0

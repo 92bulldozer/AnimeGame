@@ -142,7 +142,12 @@ namespace EJ
         }
 
 
-        
+        public static float Remap(this float value, float inputMin, float inputMax, float outputMin, float outputMax)
+        {
+            if (value < inputMin)
+                value = inputMin;
+            return outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
+        }
         
         public static void Log(this object value)
         {

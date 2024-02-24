@@ -8,24 +8,54 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: N00_000_00_Face_00_SKIN
-  m_Shader: {fileID: -6465566751694194690, guid: b3a5ca620cf906445a708f4f5731a19d,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: 6459b2db96a08ca41b0f9b39dc7ad59e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - N_F_CO_ON
+  - N_F_EAL_ON
+  - N_F_NM_ON
+  - N_F_O_ON
+  - N_F_RDC_ON
+  - N_F_RELGI_ON
+  - N_F_SS_ON
+  - N_F_TRANSAFFSHA_ON
+  - N_F_TRANS_ON
   - _ADDITIONAL_LIGHTS
   - _ADDITIONAL_LIGHT_SHADOWS
-  - _GRADIENT_DIRECTION_X
   - _MAIN_LIGHT_SHADOWS
   - _MAIN_LIGHT_SHADOWS_CASCADE
   - _SHADOWS_SOFT
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_InvalidKeywords:
+  - N_F_TRANSAFFSHA
+  - _CUSTOMLIGHTDIRECTIONFOLLOWOBJECTROTATION_OFF
+  - _GIFLATSHADE_OFF
+  - _GLOSSTEXTUREFOLLOWOBJECTROTATION_OFF
+  - _GRADIENT_DIRECTION_X
+  - _LIGHTAFFECTOUTLINECOLOR_OFF
+  - _LIGHTAFFECTRIMLIGHTCOLOR_OFF
+  - _LIGHTAFFECTSHADOW_OFF
+  - _LIGHTFALLOFFAFFECTSHADOWT_OFF
+  - _MCIALO_OFF
+  - _MIXMAINTEXTOOUTLINE_OFF
+  - _MVCOL_OFF
+  - _OUTLINEWIDTHAFFECTEDBYVIEWDISTANCE_OFF
+  - _PSGLOTEX_OFF
+  - _SELFSHADOWSHADOWTATVIEWDIRECTION_OFF
+  - _SHOWNORMAL_OFF
+  - _SPECMODE_OFF
+  - _STIL_OFF
+  - _TEXTUREPATTERNSTYLE_OFF
+  - _USESECONDARYCUTOUT_OFF
+  - _VERTEXCOLORBLUEAFFECTOUTLINEWITDH_OFF
+  - _VERTEXCOLORGREENCONTROLSELFSHADOWTHRESHOLD_OFF
+  - _VERTEXCOLORREDCONTROLSMOOTHOBJECTNORMAL_OFF
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Opaque
+    RenderType: TransparentCutout
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -212,7 +242,7 @@ Material:
     - _HighlightColorPower: 0.7
     - _IndirectLightIntensity: 0.1
     - _Inverse_Colors: 0
-    - _LigIgnoYNorDir: 0
+    - _LigIgnoYNorDir: 1
     - _LightAffectOutlineColor: 0
     - _LightAffectRimLightColor: 0
     - _LightAffectShadow: 0
@@ -279,7 +309,7 @@ Material:
     - _OutlineWidthAffectedByViewDistance: 0
     - _OutlineWidthMode: 1
     - _OutlineZPostionInCamera: 0
-    - _OverallShadowColorPower: 0.7
+    - _OverallShadowColorPower: 1
     - _PSGLOTEX: 0
     - _PTexturePower: 1
     - _PointSpotlightIntensity: 0
@@ -316,12 +346,12 @@ Material:
     - _SelfLitHighContrast: 1
     - _SelfLitIntensity: 0
     - _SelfLitPower: 2
-    - _SelfShadowAffectedByLightShadowStrength: 0
+    - _SelfShadowAffectedByLightShadowStrength: 1
     - _SelfShadowHardness: 1
     - _SelfShadowRealTimeShadowColorPower: 1
     - _SelfShadowRealtimeShadowIntensity: 1
     - _SelfShadowShadowTAtViewDirection: 0
-    - _SelfShadowThreshold: 0.93
+    - _SelfShadowThreshold: 1
     - _ShadeShift: -0.8
     - _ShadeToony: 1
     - _ShadingGradeRate: 1
@@ -374,8 +404,8 @@ Material:
     - _Z_Pos_Multiplier: 15
     - _is_Face: 1
     m_Colors:
-    - _Ambient: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Ambient: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+    - _BaseColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
     - _BaseMapTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CustomLightDirection: {r: 0, g: 0, b: 10, a: 0}

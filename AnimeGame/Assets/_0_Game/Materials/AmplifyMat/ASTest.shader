@@ -6,8 +6,9 @@ Shader "Anime/ASTest"
 	{
 		[HideInInspector] _AlphaCutoff("Alpha Cutoff ", Range(0, 1)) = 0.5
 		[HideInInspector] _EmissionColor("Emission Color", Color) = (1,1,1,1)
-		_Melting("Melting", Float) = 0
-		_MainTex("MainTex", 2D) = "white" {}
+		_TextureSample0("Texture Sample 0", 2D) = "white" {}
+		_Clip("Clip", Range( 0 , 1)) = 0.5
+		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 
 
 		//_TransmissionShadow( "Transmission Shadow", Range( 0, 1 ) ) = 0.5
@@ -53,7 +54,7 @@ Shader "Anime/ASTest"
 		
 
 		HLSLINCLUDE
-		#pragma target 4.5
+		#pragma target 5.0
 		#pragma prefer_hlslcc gles
 		// ensure rendering platforms toggle list is visible
 
@@ -186,6 +187,7 @@ Shader "Anime/ASTest"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 140010
 
 
@@ -272,8 +274,7 @@ Shader "Anime/ASTest"
 				#define ENABLE_TERRAIN_PERPIXEL_NORMAL
 			#endif
 
-			#define ASE_NEEDS_VERT_POSITION
-
+			
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
 				#define ASE_SV_DEPTH SV_DepthLessEqual
@@ -316,7 +317,8 @@ Shader "Anime/ASTest"
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float _Melting;
+			float4 _TextureSample0_ST;
+			float _Clip;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -347,7 +349,7 @@ Shader "Anime/ASTest"
 				int _PassValue;
 			#endif
 
-			sampler2D _MainTex;
+			sampler2D _TextureSample0;
 
 
 			
@@ -358,8 +360,6 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				float2 appendResult87 = (float2(0.0 , min( ( _Melting - v.positionOS.xyz.y ) , 0.0 )));
-				
 				o.ase_texcoord8.xy = v.texcoord.xy;
 				
 				//setting value to unused interpolator channels and avoid initialization warnings
@@ -371,7 +371,7 @@ Shader "Anime/ASTest"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = float3( appendResult87 ,  0.0 );
+				float3 vertexValue = defaultVertexValue;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.positionOS.xyz = vertexValue;
@@ -559,29 +559,19 @@ Shader "Anime/ASTest"
 
 				WorldViewDirection = SafeNormalize( WorldViewDirection );
 
-				float2 texCoord99 = IN.ase_texcoord8.xy * float2( 1,1 ) + float2( 0,0 );
-				float cos98 = cos( ( _TimeParameters.x * 3 ) );
-				float sin98 = sin( ( _TimeParameters.x * 3 ) );
-				float2 rotator98 = mul( texCoord99 - float2( 0.5,0.5 ) , float2x2( cos98 , -sin98 , sin98 , cos98 )) + float2( 0.5,0.5 );
-				float2 center45_g2 = float2( 0.5,0.5 );
-				float2 delta6_g2 = ( rotator98 - center45_g2 );
-				float angle10_g2 = ( length( delta6_g2 ) * 20.0 );
-				float x23_g2 = ( ( cos( angle10_g2 ) * delta6_g2.x ) - ( sin( angle10_g2 ) * delta6_g2.y ) );
-				float2 break40_g2 = center45_g2;
-				float2 break41_g2 = float2( 0.5,0.5 );
-				float y35_g2 = ( ( sin( angle10_g2 ) * delta6_g2.x ) + ( cos( angle10_g2 ) * delta6_g2.y ) );
-				float2 appendResult44_g2 = (float2(( x23_g2 + break40_g2.x + break41_g2.x ) , ( break40_g2.y + break41_g2.y + y35_g2 )));
+				float2 uv_TextureSample0 = IN.ase_texcoord8.xy * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
+				float4 tex2DNode171 = tex2D( _TextureSample0, uv_TextureSample0 );
 				
 
-				float3 BaseColor = tex2D( _MainTex, appendResult44_g2 ).rgb;
+				float3 BaseColor = tex2DNode171.rgb;
 				float3 Normal = float3(0, 0, 1);
 				float3 Emission = 0;
 				float3 Specular = 0.5;
 				float Metallic = 0;
 				float Smoothness = 0.5;
 				float Occlusion = 1;
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = tex2DNode171.a;
+				float AlphaClipThreshold = _Clip;
 				float AlphaClipThresholdShadow = 0.5;
 				float3 BakedGI = 0;
 				float3 RefractionColor = 1;
@@ -830,6 +820,7 @@ Shader "Anime/ASTest"
 			#pragma multi_compile_instancing
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#define ASE_FOG 1
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 140010
 
 
@@ -870,8 +861,7 @@ Shader "Anime/ASTest"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
             #endif
 
-			#define ASE_NEEDS_VERT_POSITION
-
+			
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
 				#define ASE_SV_DEPTH SV_DepthLessEqual
@@ -885,7 +875,7 @@ Shader "Anime/ASTest"
 			{
 				float4 positionOS : POSITION;
 				float3 normalOS : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -899,13 +889,14 @@ Shader "Anime/ASTest"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 					float4 shadowCoord : TEXCOORD2;
 				#endif				
-				
+				float4 ase_texcoord3 : TEXCOORD3;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float _Melting;
+			float4 _TextureSample0_ST;
+			float _Clip;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -936,7 +927,8 @@ Shader "Anime/ASTest"
 				int _PassValue;
 			#endif
 
-			
+			sampler2D _TextureSample0;
+
 
 			
 			float3 _LightDirection;
@@ -949,8 +941,10 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
 
-				float2 appendResult87 = (float2(0.0 , min( ( _Melting - v.positionOS.xyz.y ) , 0.0 )));
+				o.ase_texcoord3.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord3.zw = 0;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.positionOS.xyz;
@@ -958,7 +952,7 @@ Shader "Anime/ASTest"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = float3( appendResult87 ,  0.0 );
+				float3 vertexValue = defaultVertexValue;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.positionOS.xyz = vertexValue;
 				#else
@@ -1006,7 +1000,8 @@ Shader "Anime/ASTest"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 normalOS : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1023,7 +1018,7 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.positionOS;
 				o.normalOS = v.normalOS;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -1062,7 +1057,7 @@ Shader "Anime/ASTest"
 				VertexInput o = (VertexInput) 0;
 				o.positionOS = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.normalOS = patch[0].normalOS * bary.x + patch[1].normalOS * bary.y + patch[2].normalOS * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -1105,10 +1100,12 @@ Shader "Anime/ASTest"
 					#endif
 				#endif
 
+				float2 uv_TextureSample0 = IN.ase_texcoord3.xy * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
+				float4 tex2DNode171 = tex2D( _TextureSample0, uv_TextureSample0 );
 				
 
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = tex2DNode171.a;
+				float AlphaClipThreshold = _Clip;
 				float AlphaClipThresholdShadow = 0.5;
 
 				#ifdef ASE_DEPTH_WRITE_ON
@@ -1155,6 +1152,7 @@ Shader "Anime/ASTest"
 			#pragma multi_compile_instancing
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#define ASE_FOG 1
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 140010
 
 
@@ -1193,8 +1191,7 @@ Shader "Anime/ASTest"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
             #endif
 
-			#define ASE_NEEDS_VERT_POSITION
-
+			
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
 				#define ASE_SV_DEPTH SV_DepthLessEqual
@@ -1208,7 +1205,7 @@ Shader "Anime/ASTest"
 			{
 				float4 positionOS : POSITION;
 				float3 normalOS : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1222,13 +1219,14 @@ Shader "Anime/ASTest"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 				float4 shadowCoord : TEXCOORD2;
 				#endif
-				
+				float4 ase_texcoord3 : TEXCOORD3;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float _Melting;
+			float4 _TextureSample0_ST;
+			float _Clip;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -1259,7 +1257,8 @@ Shader "Anime/ASTest"
 				int _PassValue;
 			#endif
 
-			
+			sampler2D _TextureSample0;
+
 
 			
 			VertexOutput VertexFunction( VertexInput v  )
@@ -1269,8 +1268,10 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				float2 appendResult87 = (float2(0.0 , min( ( _Melting - v.positionOS.xyz.y ) , 0.0 )));
+				o.ase_texcoord3.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord3.zw = 0;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.positionOS.xyz;
@@ -1278,7 +1279,7 @@ Shader "Anime/ASTest"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = float3( appendResult87 ,  0.0 );
+				float3 vertexValue = defaultVertexValue;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.positionOS.xyz = vertexValue;
@@ -1308,7 +1309,8 @@ Shader "Anime/ASTest"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 normalOS : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1325,7 +1327,7 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.positionOS;
 				o.normalOS = v.normalOS;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -1364,7 +1366,7 @@ Shader "Anime/ASTest"
 				VertexInput o = (VertexInput) 0;
 				o.positionOS = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.normalOS = patch[0].normalOS * bary.x + patch[1].normalOS * bary.y + patch[2].normalOS * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -1407,10 +1409,12 @@ Shader "Anime/ASTest"
 					#endif
 				#endif
 
+				float2 uv_TextureSample0 = IN.ase_texcoord3.xy * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
+				float4 tex2DNode171 = tex2D( _TextureSample0, uv_TextureSample0 );
 				
 
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = tex2DNode171.a;
+				float AlphaClipThreshold = _Clip;
 
 				#ifdef ASE_DEPTH_WRITE_ON
 					float DepthValue = IN.positionCS.z;
@@ -1446,6 +1450,7 @@ Shader "Anime/ASTest"
 
 			#define _NORMAL_DROPOFF_TS 1
 			#define ASE_FOG 1
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 140010
 
 
@@ -1475,8 +1480,7 @@ Shader "Anime/ASTest"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/MetaInput.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
 
-			#define ASE_NEEDS_VERT_POSITION
-
+			
 
 			struct VertexInput
 			{
@@ -1508,7 +1512,8 @@ Shader "Anime/ASTest"
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float _Melting;
+			float4 _TextureSample0_ST;
+			float _Clip;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -1539,7 +1544,7 @@ Shader "Anime/ASTest"
 				int _PassValue;
 			#endif
 
-			sampler2D _MainTex;
+			sampler2D _TextureSample0;
 
 
 			
@@ -1550,8 +1555,6 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				float2 appendResult87 = (float2(0.0 , min( ( _Melting - v.positionOS.xyz.y ) , 0.0 )));
-				
 				o.ase_texcoord4.xy = v.texcoord0.xy;
 				
 				//setting value to unused interpolator channels and avoid initialization warnings
@@ -1563,7 +1566,7 @@ Shader "Anime/ASTest"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = float3( appendResult87 ,  0.0 );
+				float3 vertexValue = defaultVertexValue;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.positionOS.xyz = vertexValue;
@@ -1706,24 +1709,14 @@ Shader "Anime/ASTest"
 					#endif
 				#endif
 
-				float2 texCoord99 = IN.ase_texcoord4.xy * float2( 1,1 ) + float2( 0,0 );
-				float cos98 = cos( ( _TimeParameters.x * 3 ) );
-				float sin98 = sin( ( _TimeParameters.x * 3 ) );
-				float2 rotator98 = mul( texCoord99 - float2( 0.5,0.5 ) , float2x2( cos98 , -sin98 , sin98 , cos98 )) + float2( 0.5,0.5 );
-				float2 center45_g2 = float2( 0.5,0.5 );
-				float2 delta6_g2 = ( rotator98 - center45_g2 );
-				float angle10_g2 = ( length( delta6_g2 ) * 20.0 );
-				float x23_g2 = ( ( cos( angle10_g2 ) * delta6_g2.x ) - ( sin( angle10_g2 ) * delta6_g2.y ) );
-				float2 break40_g2 = center45_g2;
-				float2 break41_g2 = float2( 0.5,0.5 );
-				float y35_g2 = ( ( sin( angle10_g2 ) * delta6_g2.x ) + ( cos( angle10_g2 ) * delta6_g2.y ) );
-				float2 appendResult44_g2 = (float2(( x23_g2 + break40_g2.x + break41_g2.x ) , ( break40_g2.y + break41_g2.y + y35_g2 )));
+				float2 uv_TextureSample0 = IN.ase_texcoord4.xy * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
+				float4 tex2DNode171 = tex2D( _TextureSample0, uv_TextureSample0 );
 				
 
-				float3 BaseColor = tex2D( _MainTex, appendResult44_g2 ).rgb;
+				float3 BaseColor = tex2DNode171.rgb;
 				float3 Emission = 0;
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = tex2DNode171.a;
+				float AlphaClipThreshold = _Clip;
 
 				#ifdef _ALPHATEST_ON
 					clip(Alpha - AlphaClipThreshold);
@@ -1759,6 +1752,7 @@ Shader "Anime/ASTest"
 
 			#define _NORMAL_DROPOFF_TS 1
 			#define ASE_FOG 1
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 140010
 
 
@@ -1785,8 +1779,7 @@ Shader "Anime/ASTest"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/ShaderGraphFunctions.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
 
-			#define ASE_NEEDS_VERT_POSITION
-
+			
 
 			struct VertexInput
 			{
@@ -1811,7 +1804,8 @@ Shader "Anime/ASTest"
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float _Melting;
+			float4 _TextureSample0_ST;
+			float _Clip;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -1842,7 +1836,7 @@ Shader "Anime/ASTest"
 				int _PassValue;
 			#endif
 
-			sampler2D _MainTex;
+			sampler2D _TextureSample0;
 
 
 			
@@ -1853,8 +1847,6 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID( v, o );
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
 
-				float2 appendResult87 = (float2(0.0 , min( ( _Melting - v.positionOS.xyz.y ) , 0.0 )));
-				
 				o.ase_texcoord2.xy = v.ase_texcoord.xy;
 				
 				//setting value to unused interpolator channels and avoid initialization warnings
@@ -1866,7 +1858,7 @@ Shader "Anime/ASTest"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = float3( appendResult87 ,  0.0 );
+				float3 vertexValue = defaultVertexValue;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.positionOS.xyz = vertexValue;
@@ -1990,23 +1982,13 @@ Shader "Anime/ASTest"
 					#endif
 				#endif
 
-				float2 texCoord99 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
-				float cos98 = cos( ( _TimeParameters.x * 3 ) );
-				float sin98 = sin( ( _TimeParameters.x * 3 ) );
-				float2 rotator98 = mul( texCoord99 - float2( 0.5,0.5 ) , float2x2( cos98 , -sin98 , sin98 , cos98 )) + float2( 0.5,0.5 );
-				float2 center45_g2 = float2( 0.5,0.5 );
-				float2 delta6_g2 = ( rotator98 - center45_g2 );
-				float angle10_g2 = ( length( delta6_g2 ) * 20.0 );
-				float x23_g2 = ( ( cos( angle10_g2 ) * delta6_g2.x ) - ( sin( angle10_g2 ) * delta6_g2.y ) );
-				float2 break40_g2 = center45_g2;
-				float2 break41_g2 = float2( 0.5,0.5 );
-				float y35_g2 = ( ( sin( angle10_g2 ) * delta6_g2.x ) + ( cos( angle10_g2 ) * delta6_g2.y ) );
-				float2 appendResult44_g2 = (float2(( x23_g2 + break40_g2.x + break41_g2.x ) , ( break40_g2.y + break41_g2.y + y35_g2 )));
+				float2 uv_TextureSample0 = IN.ase_texcoord2.xy * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
+				float4 tex2DNode171 = tex2D( _TextureSample0, uv_TextureSample0 );
 				
 
-				float3 BaseColor = tex2D( _MainTex, appendResult44_g2 ).rgb;
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float3 BaseColor = tex2DNode171.rgb;
+				float Alpha = tex2DNode171.a;
+				float AlphaClipThreshold = _Clip;
 
 				half4 color = half4(BaseColor, Alpha );
 
@@ -2037,6 +2019,7 @@ Shader "Anime/ASTest"
 			#pragma multi_compile_instancing
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#define ASE_FOG 1
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 140010
 
 
@@ -2084,8 +2067,7 @@ Shader "Anime/ASTest"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
             #endif
 
-			#define ASE_NEEDS_VERT_POSITION
-
+			
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
 				#define ASE_SV_DEPTH SV_DepthLessEqual
@@ -2100,7 +2082,7 @@ Shader "Anime/ASTest"
 				float4 positionOS : POSITION;
 				float3 normalOS : NORMAL;
 				float4 tangentOS : TANGENT;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -2116,13 +2098,14 @@ Shader "Anime/ASTest"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 					float4 shadowCoord : TEXCOORD4;
 				#endif
-				
+				float4 ase_texcoord5 : TEXCOORD5;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float _Melting;
+			float4 _TextureSample0_ST;
+			float _Clip;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -2153,7 +2136,8 @@ Shader "Anime/ASTest"
 				int _PassValue;
 			#endif
 
-			
+			sampler2D _TextureSample0;
+
 
 			
 			VertexOutput VertexFunction( VertexInput v  )
@@ -2163,15 +2147,17 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				float2 appendResult87 = (float2(0.0 , min( ( _Melting - v.positionOS.xyz.y ) , 0.0 )));
+				o.ase_texcoord5.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord5.zw = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.positionOS.xyz;
 				#else
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = float3( appendResult87 ,  0.0 );
+				float3 vertexValue = defaultVertexValue;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.positionOS.xyz = vertexValue;
@@ -2209,7 +2195,8 @@ Shader "Anime/ASTest"
 				float4 vertex : INTERNALTESSPOS;
 				float3 normalOS : NORMAL;
 				float4 tangentOS : TANGENT;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -2227,7 +2214,7 @@ Shader "Anime/ASTest"
 				o.vertex = v.positionOS;
 				o.normalOS = v.normalOS;
 				o.tangentOS = v.tangentOS;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -2267,7 +2254,7 @@ Shader "Anime/ASTest"
 				o.positionOS = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.normalOS = patch[0].normalOS * bary.x + patch[1].normalOS * bary.y + patch[2].normalOS * bary.z;
 				o.tangentOS = patch[0].tangentOS * bary.x + patch[1].tangentOS * bary.y + patch[2].tangentOS * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -2317,11 +2304,13 @@ Shader "Anime/ASTest"
 					#endif
 				#endif
 
+				float2 uv_TextureSample0 = IN.ase_texcoord5.xy * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
+				float4 tex2DNode171 = tex2D( _TextureSample0, uv_TextureSample0 );
 				
 
 				float3 Normal = float3(0, 0, 1);
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = tex2DNode171.a;
+				float AlphaClipThreshold = _Clip;
 
 				#ifdef ASE_DEPTH_WRITE_ON
 					float DepthValue = IN.positionCS.z;
@@ -2391,6 +2380,7 @@ Shader "Anime/ASTest"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 140010
 
 
@@ -2469,8 +2459,7 @@ Shader "Anime/ASTest"
 				#define ENABLE_TERRAIN_PERPIXEL_NORMAL
 			#endif
 
-			#define ASE_NEEDS_VERT_POSITION
-
+			
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
 				#define ASE_SV_DEPTH SV_DepthLessEqual
@@ -2513,7 +2502,8 @@ Shader "Anime/ASTest"
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float _Melting;
+			float4 _TextureSample0_ST;
+			float _Clip;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -2544,7 +2534,7 @@ Shader "Anime/ASTest"
 				int _PassValue;
 			#endif
 
-			sampler2D _MainTex;
+			sampler2D _TextureSample0;
 
 
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/UnityGBuffer.hlsl"
@@ -2557,8 +2547,6 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				float2 appendResult87 = (float2(0.0 , min( ( _Melting - v.positionOS.xyz.y ) , 0.0 )));
-				
 				o.ase_texcoord8.xy = v.texcoord.xy;
 				
 				//setting value to unused interpolator channels and avoid initialization warnings
@@ -2569,7 +2557,7 @@ Shader "Anime/ASTest"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = float3( appendResult87 ,  0.0 );
+				float3 vertexValue = defaultVertexValue;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.positionOS.xyz = vertexValue;
@@ -2751,29 +2739,19 @@ Shader "Anime/ASTest"
 
 				WorldViewDirection = SafeNormalize( WorldViewDirection );
 
-				float2 texCoord99 = IN.ase_texcoord8.xy * float2( 1,1 ) + float2( 0,0 );
-				float cos98 = cos( ( _TimeParameters.x * 3 ) );
-				float sin98 = sin( ( _TimeParameters.x * 3 ) );
-				float2 rotator98 = mul( texCoord99 - float2( 0.5,0.5 ) , float2x2( cos98 , -sin98 , sin98 , cos98 )) + float2( 0.5,0.5 );
-				float2 center45_g2 = float2( 0.5,0.5 );
-				float2 delta6_g2 = ( rotator98 - center45_g2 );
-				float angle10_g2 = ( length( delta6_g2 ) * 20.0 );
-				float x23_g2 = ( ( cos( angle10_g2 ) * delta6_g2.x ) - ( sin( angle10_g2 ) * delta6_g2.y ) );
-				float2 break40_g2 = center45_g2;
-				float2 break41_g2 = float2( 0.5,0.5 );
-				float y35_g2 = ( ( sin( angle10_g2 ) * delta6_g2.x ) + ( cos( angle10_g2 ) * delta6_g2.y ) );
-				float2 appendResult44_g2 = (float2(( x23_g2 + break40_g2.x + break41_g2.x ) , ( break40_g2.y + break41_g2.y + y35_g2 )));
+				float2 uv_TextureSample0 = IN.ase_texcoord8.xy * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
+				float4 tex2DNode171 = tex2D( _TextureSample0, uv_TextureSample0 );
 				
 
-				float3 BaseColor = tex2D( _MainTex, appendResult44_g2 ).rgb;
+				float3 BaseColor = tex2DNode171.rgb;
 				float3 Normal = float3(0, 0, 1);
 				float3 Emission = 0;
 				float3 Specular = 0.5;
 				float Metallic = 0;
 				float Smoothness = 0.5;
 				float Occlusion = 1;
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = tex2DNode171.a;
+				float AlphaClipThreshold = _Clip;
 				float AlphaClipThresholdShadow = 0.5;
 				float3 BakedGI = 0;
 				float3 RefractionColor = 1;
@@ -2891,6 +2869,7 @@ Shader "Anime/ASTest"
 
 			#define _NORMAL_DROPOFF_TS 1
 			#define ASE_FOG 1
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 140010
 
 
@@ -2930,27 +2909,27 @@ Shader "Anime/ASTest"
 
 			#include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
 
-			#define ASE_NEEDS_VERT_POSITION
-
+			
 
 			struct VertexInput
 			{
 				float4 positionOS : POSITION;
 				float3 normalOS : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
 			struct VertexOutput
 			{
 				float4 positionCS : SV_POSITION;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float _Melting;
+			float4 _TextureSample0_ST;
+			float _Clip;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -2981,7 +2960,8 @@ Shader "Anime/ASTest"
 				int _PassValue;
 			#endif
 
-			
+			sampler2D _TextureSample0;
+
 
 			
 			struct SurfaceDescription
@@ -2999,8 +2979,10 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				float2 appendResult87 = (float2(0.0 , min( ( _Melting - v.positionOS.xyz.y ) , 0.0 )));
+				o.ase_texcoord.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord.zw = 0;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.positionOS.xyz;
@@ -3008,7 +2990,7 @@ Shader "Anime/ASTest"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = float3( appendResult87 ,  0.0 );
+				float3 vertexValue = defaultVertexValue;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.positionOS.xyz = vertexValue;
@@ -3030,7 +3012,8 @@ Shader "Anime/ASTest"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 normalOS : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -3047,7 +3030,7 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.positionOS;
 				o.normalOS = v.normalOS;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -3086,7 +3069,7 @@ Shader "Anime/ASTest"
 				VertexInput o = (VertexInput) 0;
 				o.positionOS = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.normalOS = patch[0].normalOS * bary.x + patch[1].normalOS * bary.y + patch[2].normalOS * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -3108,10 +3091,12 @@ Shader "Anime/ASTest"
 			{
 				SurfaceDescription surfaceDescription = (SurfaceDescription)0;
 
+				float2 uv_TextureSample0 = IN.ase_texcoord.xy * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
+				float4 tex2DNode171 = tex2D( _TextureSample0, uv_TextureSample0 );
 				
 
-				surfaceDescription.Alpha = 1;
-				surfaceDescription.AlphaClipThreshold = 0.5;
+				surfaceDescription.Alpha = tex2DNode171.a;
+				surfaceDescription.AlphaClipThreshold = _Clip;
 
 				#if _ALPHATEST_ON
 					float alphaClipThreshold = 0.01f;
@@ -3150,6 +3135,7 @@ Shader "Anime/ASTest"
 
 			#define _NORMAL_DROPOFF_TS 1
 			#define ASE_FOG 1
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 140010
 
 
@@ -3189,27 +3175,27 @@ Shader "Anime/ASTest"
 
 			#include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
 
-			#define ASE_NEEDS_VERT_POSITION
-
+			
 
 			struct VertexInput
 			{
 				float4 positionOS : POSITION;
 				float3 normalOS : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
 			struct VertexOutput
 			{
 				float4 positionCS : SV_POSITION;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float _Melting;
+			float4 _TextureSample0_ST;
+			float _Clip;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -3240,7 +3226,8 @@ Shader "Anime/ASTest"
 				int _PassValue;
 			#endif
 
-			
+			sampler2D _TextureSample0;
+
 
 			
 			struct SurfaceDescription
@@ -3258,8 +3245,10 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				float2 appendResult87 = (float2(0.0 , min( ( _Melting - v.positionOS.xyz.y ) , 0.0 )));
+				o.ase_texcoord.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord.zw = 0;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.positionOS.xyz;
@@ -3267,7 +3256,7 @@ Shader "Anime/ASTest"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = float3( appendResult87 ,  0.0 );
+				float3 vertexValue = defaultVertexValue;
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.positionOS.xyz = vertexValue;
@@ -3288,7 +3277,8 @@ Shader "Anime/ASTest"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 normalOS : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -3305,7 +3295,7 @@ Shader "Anime/ASTest"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.positionOS;
 				o.normalOS = v.normalOS;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -3344,7 +3334,7 @@ Shader "Anime/ASTest"
 				VertexInput o = (VertexInput) 0;
 				o.positionOS = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.normalOS = patch[0].normalOS * bary.x + patch[1].normalOS * bary.y + patch[2].normalOS * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -3366,10 +3356,12 @@ Shader "Anime/ASTest"
 			{
 				SurfaceDescription surfaceDescription = (SurfaceDescription)0;
 
+				float2 uv_TextureSample0 = IN.ase_texcoord.xy * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
+				float4 tex2DNode171 = tex2D( _TextureSample0, uv_TextureSample0 );
 				
 
-				surfaceDescription.Alpha = 1;
-				surfaceDescription.AlphaClipThreshold = 0.5;
+				surfaceDescription.Alpha = tex2DNode171.a;
+				surfaceDescription.AlphaClipThreshold = _Clip;
 
 				#if _ALPHATEST_ON
 					float alphaClipThreshold = 0.01f;
@@ -3402,18 +3394,8 @@ Shader "Anime/ASTest"
 }
 /*ASEBEGIN
 Version=19302
-Node;AmplifyShaderEditor.PosVertexDataNode;80;-594.9279,487.0431;Inherit;False;0;0;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.RangedFloatNode;81;-583.7495,323.8337;Inherit;False;Property;_Melting;Melting;0;0;Create;True;0;0;0;False;0;False;0;0;0;0;0;1;FLOAT;0
-Node;AmplifyShaderEditor.SimpleSubtractOpNode;85;-370.5959,430.7412;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.SimpleMinOpNode;86;-192.5959,444.7412;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.SamplerNode;92;-573.037,-134.0669;Inherit;True;Property;_MainTex;MainTex;1;0;Create;True;0;0;0;False;0;False;92;8fda172b188d7f342ba64c2c53acc2e4;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.DynamicAppendNode;87;-79.59595,401.7412;Inherit;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.RangedFloatNode;100;-1052.767,146.6496;Inherit;False;Constant;_Float1;Float 1;2;0;Create;True;0;0;0;False;0;False;20;0;0;0;0;1;FLOAT;0
-Node;AmplifyShaderEditor.RotatorNode;98;-1157.767,-137.3504;Inherit;True;3;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT;1;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.TimeNode;97;-1428.767,-16.35043;Inherit;False;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.TextureCoordinatesNode;99;-1441.767,-315.3504;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.Vector2Node;101;-1431.767,-137.3504;Inherit;False;Constant;_Vector1;Vector 1;2;0;Create;True;0;0;0;False;0;False;0.5,0.5;0,0;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
-Node;AmplifyShaderEditor.FunctionNode;96;-864.7668,-143.3504;Inherit;True;Twirl;-1;;2;90936742ac32db8449cd21ab6dd337c8;0;4;1;FLOAT2;0,0;False;2;FLOAT2;0,0;False;3;FLOAT;0;False;4;FLOAT2;0.5,0.5;False;1;FLOAT2;0
+Node;AmplifyShaderEditor.SamplerNode;171;-685.978,106.1118;Inherit;True;Property;_TextureSample0;Texture Sample 0;0;0;Create;True;0;0;0;False;0;False;-1;d63752d68809404caadcb720622cb7f9;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;172;-285.116,281.7158;Inherit;False;Property;_Clip;Clip;1;0;Create;True;0;0;0;False;0;False;0.5;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ExtraPrePass;0;0;ExtraPrePass;5;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;0;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;0;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;2;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ShadowCaster;0;2;ShadowCaster;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;False;False;True;False;False;False;False;0;False;;False;False;False;False;False;False;False;False;False;True;1;False;;True;3;False;;False;True;1;LightMode=ShadowCaster;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;3;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;DepthOnly;0;3;DepthOnly;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;False;False;True;True;False;False;False;0;False;;False;False;False;False;False;False;False;False;False;True;1;False;;False;False;True;1;LightMode=DepthOnly;False;False;0;;0;0;Standard;0;False;0
@@ -3423,18 +3405,9 @@ Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;6;0,0;Float;False;False;-1;
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;7;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;GBuffer;0;7;GBuffer;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;1;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=UniversalGBuffer;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;8;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;SceneSelectionPass;0;8;SceneSelectionPass;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;2;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=SceneSelectionPass;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;9;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ScenePickingPass;0;9;ScenePickingPass;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=Picking;False;False;0;;0;0;Standard;0;False;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;0,0;Float;False;True;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;Anime/ASTest;94348b07e5e8bab40bd6c8a1e3df54cd;True;Forward;0;1;Forward;21;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;1;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=UniversalForwardOnly;False;False;0;;0;0;Standard;39;Workflow;1;0;Surface;0;638441505210144309;  Refraction Model;0;0;  Blend;2;638441428882993347;Two Sided;1;0;Fragment Normal Space,InvertActionOnDeselection;0;0;Forward Only;1;0;Transmission;0;638441383589286197;  Transmission Shadow;0.5,False,;0;Translucency;0;638441383611355793;  Translucency Strength;1,False,;0;  Normal Distortion;0.5,False,;0;  Scattering;2,False,;0;  Direct;0.9,False,;0;  Ambient;0.1,False,;0;  Shadow;0.5,False,;0;Cast Shadows;1;0;  Use Shadow Threshold;0;0;GPU Instancing;1;0;LOD CrossFade;1;0;Built-in Fog;1;0;_FinalColorxAlpha;0;0;Meta Pass;1;0;Override Baked GI;0;0;Extra Pre Pass;0;0;Tessellation;0;0;  Phong;0;0;  Strength;0.5,False,;0;  Type;0;0;  Tess;16,False,;0;  Min;10,False,;0;  Max;25,False,;0;  Edge Length;16,False,;0;  Max Displacement;25,False,;0;Write Depth;0;638441363035462022;  Early Z;0;0;Vertex Position,InvertActionOnDeselection;1;638441515413033298;Debug Display;0;0;Clear Coat;0;638441383695633632;0;10;False;True;True;True;True;True;True;True;True;True;False;;False;0
-WireConnection;85;0;81;0
-WireConnection;85;1;80;2
-WireConnection;86;0;85;0
-WireConnection;92;1;96;0
-WireConnection;87;1;86;0
-WireConnection;98;0;99;0
-WireConnection;98;1;101;0
-WireConnection;98;2;97;4
-WireConnection;96;1;98;0
-WireConnection;96;3;100;0
-WireConnection;1;0;92;0
-WireConnection;1;8;87;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;0,0;Float;False;True;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;Anime/ASTest;94348b07e5e8bab40bd6c8a1e3df54cd;True;Forward;0;1;Forward;21;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;7;True;12;all;0;False;True;1;1;False;;0;False;;1;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=UniversalForwardOnly;False;False;0;;0;0;Standard;39;Workflow;1;0;Surface;0;638442023238069104;  Refraction Model;0;0;  Blend;2;638441428882993347;Two Sided;1;0;Fragment Normal Space,InvertActionOnDeselection;0;0;Forward Only;1;0;Transmission;0;638441383589286197;  Transmission Shadow;0.5,False,;0;Translucency;0;638442022606396371;  Translucency Strength;1,False,;0;  Normal Distortion;0.5,False,;0;  Scattering;2,False,;0;  Direct;0.9,False,;0;  Ambient;0.1,False,;0;  Shadow;0.5,False,;0;Cast Shadows;1;0;  Use Shadow Threshold;0;0;GPU Instancing;1;0;LOD CrossFade;1;0;Built-in Fog;1;0;_FinalColorxAlpha;0;0;Meta Pass;1;0;Override Baked GI;0;0;Extra Pre Pass;0;0;Tessellation;0;0;  Phong;0;0;  Strength;0.5,False,;0;  Type;0;0;  Tess;16,False,;0;  Min;10,False,;0;  Max;25,False,;0;  Edge Length;16,False,;0;  Max Displacement;25,False,;0;Write Depth;0;638441363035462022;  Early Z;0;0;Vertex Position,InvertActionOnDeselection;1;638441515413033298;Debug Display;0;0;Clear Coat;0;638441935381174163;0;10;False;True;True;True;True;True;True;True;True;True;False;;False;0
+WireConnection;1;0;171;0
+WireConnection;1;6;171;4
+WireConnection;1;7;172;0
 ASEEND*/
-//CHKSM=555ADA4694DE89323A9D9463845F6D6024A56631
+//CHKSM=5B171B8AE787CEF82662A77F4686E851DDBDE663

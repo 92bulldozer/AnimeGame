@@ -42,13 +42,7 @@ namespace EJ
             }
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                TargetFrame60();
-            }
-        }
+       
 
 
         public void LoadScene(string sceneName)
