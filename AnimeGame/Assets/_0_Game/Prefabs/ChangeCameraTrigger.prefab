@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1920676639649063183}
   - component: {fileID: 4820482550845747238}
   - component: {fileID: 3407310071423339146}
-  - component: {fileID: 7106477317236456194}
+  - component: {fileID: 6936797592355518503}
   m_Layer: 0
   m_Name: ChangeCameraTrigger
   m_TagString: Untagged
@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6636125553385915597}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7106477317236456194
+--- !u!114 &6936797592355518503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70815d32f43d2dd45bf78e8f88e4c87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prevCamera: {fileID: 0}
   newCamera: {fileID: 0}
-  isReverse: 0

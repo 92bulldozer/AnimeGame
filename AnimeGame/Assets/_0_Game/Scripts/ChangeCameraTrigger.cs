@@ -1,31 +1,37 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AnimeGame;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChangeCameraTrigger : MonoBehaviour
 {
-    public GameObject prevCamera;
     public GameObject newCamera;
-    public bool isReverse;
-    
+    public bool isActive;
+    public List<GameObject> activeObjectList;
+    public UnityEvent triggerCallback;
+  
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (!isReverse)
+            if (newCamera != null)
             {
-                isReverse = true;
-                prevCamera.SetActive(false);
-                newCamera.SetActive(true);
+                PlayerPresenter.Instance.ChangeVirtualCamera(newCamera);
+                triggerCallback?.Invoke();
+
+                foreach (var activeObject in activeObjectList)
+                {
+                    if(isActive)
+                        activeObject.SetActive(true);
+                    else
+                        activeObject.SetActive(false);
+                }
+                
             }
-            else
-            {
-                isReverse = false;
-                prevCamera.SetActive(true);
-                newCamera.SetActive(false);
-            }
-            
+           
         }
     }
 }
