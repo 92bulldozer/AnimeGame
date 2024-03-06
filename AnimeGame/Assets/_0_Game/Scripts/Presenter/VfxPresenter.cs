@@ -11,7 +11,7 @@ public class VfxPresenter : MonoBehaviour
     
     [Header("Field")] [Space(10)] 
     public Light DirLight;
-    public GameObject BloodAttach;
+    public GameObject bloodDecal;
     public GameObject[] BloodFX;
     public Vector3 direction;
     int effectIdx;
@@ -67,25 +67,10 @@ public class VfxPresenter : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit,1000,layerMask))
             {
-                DOVirtual.Color(Color.cyan, Color.red, 1, (color) =>
-                {
-                    mesh.material.color = color;
-
-                });
-                
-
-                DOVirtual.Vector3(mesh.transform.position, mesh.transform.position + new Vector3(0, 1, 0), 1, (updatePosition) =>
-                {
-                    mesh.transform.position = updatePosition;
-                }).SetEase(Ease.Linear);
-                
-                DOVirtual.DelayedCall(1, () =>
-                {
-                    "기모찌이".Log();
-                });
                 
                 
                 
+                MasterAudio.PlaySound3DAtTransform("FemaleScream", transform);
                 MasterAudio.PlaySound3DAtVector3("Flesh", hit.point);
                 //hit.transform.name.Log();
                 // var randRotation = new Vector3(0, Random.value * 360f, 0);
@@ -105,7 +90,7 @@ public class VfxPresenter : MonoBehaviour
                 var nearestBone = GetNearestObject(hit.transform.root, hit.point);
                 if(nearestBone != null)
                 {
-                    var attachBloodInstance = Instantiate(BloodAttach);
+                    var attachBloodInstance = Instantiate(bloodDecal);
                     var bloodT = attachBloodInstance.transform;
                     bloodT.position = hit.point;
                     bloodT.localRotation = Quaternion.identity;
@@ -120,6 +105,39 @@ public class VfxPresenter : MonoBehaviour
 
             }
 
+        }
+    }
+
+    public void PlayBloodVfx(Transform targetTransform)
+    {
+        MasterAudio.PlaySound3DAtVector3("Flesh", targetTransform.position);
+        MasterAudio.PlaySound3DAtVector3("Gore", targetTransform.position);
+        //hit.transform.name.Log();
+        // var randRotation = new Vector3(0, Random.value * 360f, 0);
+        // var dir = CalculateAngle(Vector3.forward, hit.normal);
+        //var effectIdx = Random.Range(0, BloodFX.Length);
+        if (effectIdx == BloodFX.Length) 
+            effectIdx = 0;
+        
+        var instance = Instantiate(BloodFX[effectIdx], targetTransform.position, Quaternion.identity);
+        effectIdx++;
+        var settings = instance.GetComponent<BFX_BloodSettings>();
+        //settings.FreezeDecalDisappearance = InfiniteDecal;
+        settings.LightIntensityMultiplier = DirLight.intensity;
+        
+        
+        var nearestBone = GetNearestObject(targetTransform.root.transform.GetChild(1), targetTransform.position);
+        if(nearestBone != null)
+        {
+            var attachBloodInstance = Instantiate(bloodDecal);
+            var bloodT = attachBloodInstance.transform;
+            bloodT.position = targetTransform.position;
+            bloodT.localRotation = Quaternion.identity;
+            bloodT.localScale = Vector3.one * Random.Range(0.75f, 1.2f);
+            bloodT.LookAt(targetTransform.position, direction);
+            bloodT.Rotate(90, 0, 0);
+            bloodT.transform.parent = nearestBone;
+            //Destroy(attachBloodInstance, 20);
         }
     }
 

@@ -9,6 +9,6 @@ public class SoundEventReceiver : MonoBehaviour
 
     public void PlaySound()
     {
-        MasterAudio.PlaySound(sfx);
+        MasterAudio.PlaySound3DAtTransform(sfx,transform);
     }
 }

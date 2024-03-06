@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using AnimeGame;
 using DG.Tweening;
 using EJ;
+using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +16,9 @@ public class GameManager : MonoBehaviour
     [Header("Field")] [Space(20)] 
     public Transform target;
     public int layerMask;
+    public bool isDiscovered;
+    [Header("MMF")] [Space(20)] 
+    public MMF_Player ca;
     
     
     
@@ -34,63 +40,20 @@ public class GameManager : MonoBehaviour
         layerMask = (-1) - ((1 << LayerMask.NameToLayer("Player")) | (1 << LayerMask.NameToLayer("Interaction")));;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            target.DORewind();
-            target.position = new Vector3(5, 1.5f, 6);
-            foreach (var rigidbody in PlayerPresenter.Instance.ragDollRigidBodyList)
-            {
-                rigidbody.velocity = Vector3.zero;
-                rigidbody.angularVelocity = Vector3.zero;
-            }
-
-            for (int i = 0; i < PlayerPresenter.Instance.ragDollRigidBodyList.Count; i++)
-            {
-                if (i is 3 or 4 or 5)
-                {
-                    PlayerPresenter.Instance.ragDollRigidBodyList[i].mass = 50;
-                    PlayerPresenter.Instance.ragDollRigidBodyList[i].solverIterations = 1;
-                }
-            }
-            
-            
+            "GameManagerZ".Log();
+            DisCovered();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            target.DOMoveX(-15, 3).SetEase(Ease.Linear);
+            "GameManagerX".Log();
+            NotDisCovered();
         }
-        
-        
-        
-        
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit,1000,layerMask))
-            {
-                PlayerPresenter hitPlayer = hit.transform.root.GetComponent<PlayerPresenter>();
-                hit.transform.name.Log();
-
-                if (hitPlayer != null)
-                {
-                    hitPlayer.ActiveRagDoll();
-                    Vector3 forceDirection = (hit.point - ray.origin).normalized;
-                    float force = 500;
-                    hit.transform.GetComponent<Rigidbody>().AddForce(forceDirection*force,ForceMode.Impulse);
-                    
-                    //StartCoroutine(DelayForceCor(ray,hit));
-                }
-
-            }
-
-        }
-        
     }
+
 
     IEnumerator DelayForceCor(Ray ray, RaycastHit hit)
     {
@@ -98,6 +61,18 @@ public class GameManager : MonoBehaviour
         Vector3 forceDirection = (hit.point - ray.origin).normalized;
         float force = 150;
         hit.transform.GetComponent<Rigidbody>().AddForce(forceDirection*force,ForceMode.Impulse);
+    }
+
+    public void NotDisCovered()
+    {
+        ca.Direction = MMFeedbacks.Directions.BottomToTop;
+        ca.PlayFeedbacks();
+    }
+
+    public void DisCovered()
+    {
+        ca.Direction = MMFeedbacks.Directions.TopToBottom;
+        ca.PlayFeedbacks();
     }
     
     

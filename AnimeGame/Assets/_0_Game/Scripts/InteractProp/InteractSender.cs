@@ -21,7 +21,7 @@ public class InteractSender : MonoBehaviour
     {
         if (other.transform.CompareTag("Player") && iInteract != null)
         {
-            "ShowInteractPanel".Log();
+            //"ShowInteractPanel".Log();
 
             if (!iInteract.isInteracted)
                 InteractPresenter.Instance.ShowInteractPanel(transform.parent,panelOffset,interactText);
@@ -36,7 +36,7 @@ public class InteractSender : MonoBehaviour
     {
         if (other.transform.CompareTag("Player")&& iInteract != null)
         {
-            "HideInteractPanel".Log();
+            //"HideInteractPanel".Log();
             InteractPresenter.Instance.HideInteractPanel();
             iInteract.HideInteractPanel();
             

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using AnimeGame;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using DG.Tweening;
@@ -18,6 +19,7 @@ public class EnemyAttack : EnemyAction
         animator.SetTrigger(animationTriggerName.Value);
         enemyPresenter.isPatrolling = false;
         GetComponent<AIPath>().StopAI();
+        PlayerPresenter.Instance.DisableInput();
         DOVirtual.DelayedCall(animationTime, () =>
         {
             isAttackEnd = true;

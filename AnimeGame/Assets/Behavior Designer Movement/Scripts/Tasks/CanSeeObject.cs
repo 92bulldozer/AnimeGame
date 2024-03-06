@@ -95,23 +95,11 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
             {
                 if (m_AgentColliderGameObjects == null)
                 {
-                    if (m_UsePhysics2D)
+                    var colliders = gameObject.GetComponentsInChildren<Collider>();
+                    m_AgentColliderGameObjects = new GameObject[colliders.Length];
+                    for (int i = 0; i < m_AgentColliderGameObjects.Length; ++i)
                     {
-                        var colliders = gameObject.GetComponentsInChildren<Collider2D>();
-                        m_AgentColliderGameObjects = new GameObject[colliders.Length];
-                        for (int i = 0; i < m_AgentColliderGameObjects.Length; ++i)
-                        {
-                            m_AgentColliderGameObjects[i] = colliders[i].gameObject;
-                        }
-                    }
-                    else
-                    {
-                        var colliders = gameObject.GetComponentsInChildren<Collider>();
-                        m_AgentColliderGameObjects = new GameObject[colliders.Length];
-                        for (int i = 0; i < m_AgentColliderGameObjects.Length; ++i)
-                        {
-                            m_AgentColliderGameObjects[i] = colliders[i].gameObject;
-                        }
+                        m_AgentColliderGameObjects[i] = colliders[i].gameObject;
                     }
 
                     m_OriginalColliderLayer = new int[m_AgentColliderGameObjects.Length];
@@ -127,19 +115,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
 
             if ((m_DetectionMode.Value & DetectionMode.Object) != 0 && m_TargetObject.Value != null)
             {
-                if (m_UsePhysics2D)
-                {
-                    m_ReturnedObject.Value = MovementUtility.WithinSight2D(transform, m_Offset.Value,
-                        m_FieldOfViewAngle.Value, m_ViewDistance.Value, m_TargetObject.Value, m_TargetOffset.Value,
-                        m_AngleOffset2D.Value, m_IgnoreLayerMask, m_UseTargetBone.Value, m_TargetBone.Value,
-                        m_DrawDebugRay.Value);
-                }
-                else
-                {
-                    m_ReturnedObject.Value = MovementUtility.WithinSight(transform, m_Offset.Value,
-                        m_FieldOfViewAngle.Value, m_ViewDistance.Value, m_TargetObject.Value, m_TargetOffset.Value,
-                        m_IgnoreLayerMask, m_UseTargetBone.Value, m_TargetBone.Value, m_DrawDebugRay.Value);
-                }
+                m_ReturnedObject.Value = MovementUtility.WithinSight(transform, m_Offset.Value,
+                    m_FieldOfViewAngle.Value, m_ViewDistance.Value, m_TargetObject.Value, m_TargetOffset.Value,
+                    m_IgnoreLayerMask, m_UseTargetBone.Value, m_TargetBone.Value, m_DrawDebugRay.Value);
             }
 
             if (m_ReturnedObject.Value == null && (m_DetectionMode.Value & DetectionMode.ObjectList) != 0)
@@ -191,29 +169,15 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
 
             if (m_ReturnedObject.Value == null && (m_DetectionMode.Value & DetectionMode.LayerMask) != 0)
             {
-                if (m_UsePhysics2D)
+                if (m_OverlapColliders == null)
                 {
-                    if (m_Overlap2DColliders == null)
-                    {
-                        m_Overlap2DColliders = new Collider2D[m_MaxCollisionCount];
-                    }
-
-                    m_ReturnedObject.Value = MovementUtility.WithinSight2D(transform, m_Offset.Value,
-                        m_FieldOfViewAngle.Value, m_ViewDistance.Value, m_Overlap2DColliders, m_TargetLayerMask.Value,
-                        m_TargetOffset.Value, m_AngleOffset2D.Value, m_IgnoreLayerMask, m_DrawDebugRay.Value);
+                    m_OverlapColliders = new Collider[m_MaxCollisionCount];
                 }
-                else
-                {
-                    if (m_OverlapColliders == null)
-                    {
-                        m_OverlapColliders = new Collider[m_MaxCollisionCount];
-                    }
 
-                    m_ReturnedObject.Value = MovementUtility.WithinSight(transform, m_Offset.Value,
-                        m_FieldOfViewAngle.Value, m_ViewDistance.Value, m_OverlapColliders, m_TargetLayerMask.Value,
-                        m_TargetOffset.Value, m_IgnoreLayerMask, m_UseTargetBone.Value, m_TargetBone.Value,
-                        m_DrawDebugRay.Value);
-                }
+                m_ReturnedObject.Value = MovementUtility.WithinSight(transform, m_Offset.Value,
+                    m_FieldOfViewAngle.Value, m_ViewDistance.Value, m_OverlapColliders, m_TargetLayerMask.Value,
+                    m_TargetOffset.Value, m_IgnoreLayerMask, m_UseTargetBone.Value, m_TargetBone.Value,
+                    m_DrawDebugRay.Value);
             }
 
             // Restore the original layers.

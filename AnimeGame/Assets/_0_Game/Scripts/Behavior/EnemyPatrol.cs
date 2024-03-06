@@ -16,6 +16,8 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject
 
         public EnemyPresenter enemyPresenter;
 
+        public float animationSpeed;
+
 
         [Tooltip("The waypoints to move to")] public SharedGameObjectList waypoints;
 
@@ -28,12 +30,16 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject
             base.OnAwake();
             enemyPresenter = gameObject.GetComponent<EnemyPresenter>();
             enemyPresenter.isPatrolling = true;
+          
         }
 
 
         public override void OnStart()
         {
             base.OnStart();
+            
+            Animator animator = transform.GetComponentInChildren<Animator>();
+            animator.SetFloat("AnimationSpeed", animationSpeed);
 
             // initially move towards the closest waypoint
             float distance = Mathf.Infinity;

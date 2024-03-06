@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
+using DarkTonic.MasterAudio;
 using EJ;
 using Pathfinding;
 using UnityEngine;
@@ -22,6 +23,9 @@ public class EnemyPresenter : MonoBehaviour
     public float MaxSpeed { get; set; }
     public float FollowSpeed { get; set; }
     public GameObject targetObject { get; set; }
+    [Header("Sfx")] [Space(10)] 
+    public string monsterHowl;
+    
 
     private void Awake()
     {
@@ -39,6 +43,7 @@ public class EnemyPresenter : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         aiPath = GetComponent<AIPath>();
         isPatrolling = true;
+        LoopHowl();
     }
 
     public void UpdateLocomotion()
@@ -51,5 +56,25 @@ public class EnemyPresenter : MonoBehaviour
         // {
         //     animator.SetFloat("Speed",0,0.1f,Time.deltaTime);
         // }
+    }
+
+    public void LoopHowl()
+    {
+        StartCoroutine(LoopHowlCor());
+    }
+
+    IEnumerator LoopHowlCor()
+    {
+        while (true)
+        {
+            //MasterAudio.PlaySound3DAtTransform(monsterHowl, transform);
+
+            yield return new WaitForSeconds(6);
+        }
+    }
+
+    public void SetLegAnimator()
+    {
+        
     }
 }

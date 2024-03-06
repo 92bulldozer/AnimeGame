@@ -14,22 +14,31 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject
 
         [Tooltip("If target is null then use the target position")]
         public SharedVector3 targetPosition;
+        
+        public float animationSpeed;
 
         public override void OnStart()
         {
             base.OnStart();
 
             SetDestination(Target());
+            Animator animator = transform.GetComponentInChildren<Animator>();
+            animator.SetFloat("AnimationSpeed", animationSpeed);
         }
 
         // Seek the destination. Return success once the agent has reached the destination.
         // Return running if the agent hasn't reached the destination yet
         public override TaskStatus OnUpdate()
         {
+            if (target.Value == null)
+                return  TaskStatus.Failure;
+            
             if (HasArrived())
             {
                 return TaskStatus.Success;
             }
+
+           
 
             SetDestination(Target());
 
