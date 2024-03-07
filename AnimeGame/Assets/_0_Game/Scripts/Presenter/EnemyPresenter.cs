@@ -11,6 +11,7 @@ public class EnemyPresenter : MonoBehaviour
 {
     [Header("Field")] [Space(10)] 
     public bool isPatrolling;
+    public bool useSprintAnimation;
     
     [Header("Component")] [Space(10)]
     public Animator animator;
@@ -22,9 +23,9 @@ public class EnemyPresenter : MonoBehaviour
     
     public float MaxSpeed { get; set; }
     public float FollowSpeed { get; set; }
+    public bool IsSprint { get; set; }
     public GameObject targetObject { get; set; }
-    [Header("Sfx")] [Space(10)] 
-    public string monsterHowl;
+    //[Header("Sfx")] [Space(10)] 
     
 
     private void Awake()
@@ -43,38 +44,24 @@ public class EnemyPresenter : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         aiPath = GetComponent<AIPath>();
         isPatrolling = true;
-        LoopHowl();
     }
 
     public void UpdateLocomotion()
     {
-        animator.SetFloat("Speed",aiPath.velocity.magnitude / aiPath.maxSpeed,0.2f,Time.deltaTime);
-        
-        // if(isPatrolling)
-        //     animator.SetFloat("Speed",aiPath.velocity.magnitude / aiPath.maxSpeed,0.1f,Time.deltaTime);
-        // else
-        // {
-        //     animator.SetFloat("Speed",0,0.1f,Time.deltaTime);
-        // }
-    }
-
-    public void LoopHowl()
-    {
-        StartCoroutine(LoopHowlCor());
-    }
-
-    IEnumerator LoopHowlCor()
-    {
-        while (true)
+        if (useSprintAnimation)
         {
-            //MasterAudio.PlaySound3DAtTransform(monsterHowl, transform);
-
-            yield return new WaitForSeconds(6);
+            if(!IsSprint)
+                animator.SetFloat("Speed",(aiPath.velocity.magnitude / aiPath.maxSpeed)*0.3f,0.2f,Time.deltaTime);
+            else
+                animator.SetFloat("Speed",aiPath.velocity.magnitude / aiPath.maxSpeed,0.2f,Time.deltaTime);
         }
+        else
+        {
+            animator.SetFloat("Speed",aiPath.velocity.magnitude / aiPath.maxSpeed,0.2f,Time.deltaTime);
+        }
+     
     }
 
-    public void SetLegAnimator()
-    {
-        
-    }
+    
+
 }

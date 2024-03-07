@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using AnimeGame;
+using DarkTonic.MasterAudio;
 using DG.Tweening;
 using EJ;
 using MoreMountains.Feedbacks;
@@ -13,12 +14,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Field")] [Space(20)] 
+    [Space(20)] [Header("Field")] [Space(10)]
     public Transform target;
     public int layerMask;
     public bool isDiscovered;
-    [Header("MMF")] [Space(20)] 
+    [Space(20)] [Header("MMF")] [Space(10)]
     public MMF_Player ca;
+    public MMF_Player caReverse;
+    public MMF_Player jumpScareCamera;
     
     
     
@@ -45,12 +48,12 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             "GameManagerZ".Log();
-            DisCovered();
+            Discovered();
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
             "GameManagerX".Log();
-            NotDisCovered();
+            NotDiscovered();
         }
     }
 
@@ -63,16 +66,22 @@ public class GameManager : MonoBehaviour
         hit.transform.GetComponent<Rigidbody>().AddForce(forceDirection*force,ForceMode.Impulse);
     }
 
-    public void NotDisCovered()
+    public void NotDiscovered()
     {
-        ca.Direction = MMFeedbacks.Directions.BottomToTop;
-        ca.PlayFeedbacks();
+        //ca.Direction = MMFeedbacks.Directions.BottomToTop;
+        caReverse.PlayFeedbacks();
+        MasterAudio.FadeOutOldBusVoices("HeatBeat",0.5f,0.5f);
+
     }
 
-    public void DisCovered()
+    public void Discovered()
     {
-        ca.Direction = MMFeedbacks.Directions.TopToBottom;
+        //ca.Direction = MMFeedbacks.Directions.TopToBottom;
         ca.PlayFeedbacks();
+        MasterAudio.PlaySound("HeatBeatLoop");
+        MasterAudio.PlaySound("JumpScare");
+        jumpScareCamera.PlayFeedbacks();
+
     }
     
     
