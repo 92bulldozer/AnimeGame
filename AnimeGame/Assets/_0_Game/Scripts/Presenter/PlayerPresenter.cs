@@ -28,7 +28,8 @@ public enum KnockBackDirection
     FRONT=0,
     BACK,
     LEFT,
-    RIGHT
+    RIGHT,
+    INPLACE
 }
 
 
@@ -39,7 +40,7 @@ namespace AnimeGame
     {
         public static PlayerPresenter Instance;
 
-        [Header("Field")] [Space(10)] 
+        [Space(20)] [Header("Field")] [Space(10)] 
         public bool canInteract = false;
         public bool isFlashOn;
       
@@ -47,7 +48,7 @@ namespace AnimeGame
         public bool isAlive { get; set; }
 
 
-        [Header("Component")] [Space(10)] 
+        [Space(20)] [Header("Component")] [Space(10)] 
         public PuppetMaster puppetMaster;
         public List<MuscleCollisionBroadcaster> ragDollCollisionList;
         public GameObject flashLight;
@@ -62,10 +63,17 @@ namespace AnimeGame
         private Rigidbody _rb;
         public Animator _animator;
 
-        [Header("MMF")] [Space(10)] 
+        [Space(20)] [Header("MMF")] [Space(10)] 
         public MMF_Player MMF_CameraShake;
-        [Header("Sfx")] [Space(10)] 
+        [Space(20)] [Header("Sfx")] [Space(10)] 
         public string footStepSfx;
+
+        [Space(20)] [Header("HangTransform")] [Space(10)] 
+        public Transform LHandTarget;
+        public Transform RHandTarget;
+        public Transform chestTarget;
+        public Transform headTarget;
+        
 
        
 
@@ -93,21 +101,22 @@ namespace AnimeGame
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                
-                GetDamaged(null,KnockBackDirection.LEFT);
+                AttachTo(null);
+                //GetDamaged(null,KnockBackDirection.LEFT);
                 //GetDamaged(null,true);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                GetDamaged(null,KnockBackDirection.RIGHT);
+                DetachTo();
+                //GetDamaged(null,KnockBackDirection.RIGHT);
                 //DeActiveRagDoll();
             }
             
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 //ActiveRagDoll();
-                GetDamaged(null,KnockBackDirection.BACK);
+                //GetDamaged(null,KnockBackDirection.BACK);
             }
             
             if(Input.GetKeyDown(KeyCode.E))
@@ -275,11 +284,28 @@ namespace AnimeGame
 
         #region Hit_Blood
 
+      
+
+        public void AttachTo(Transform attachTransform)
+        {
+            ActiveRagDoll();
+            _rb.rotation *= Quaternion.Euler(0,180,0);
+            headTarget.gameObject.SetActive(true);
+            headTarget.parent = attachTransform;
+            headTarget.DOLocalMove(Vector3.zero, 1);
+
+            //chestTarget.DOLocalMove(Vector3.zero, 1);
+        }
         
+        public void DetachTo()
+        {
+            headTarget.gameObject.SetActive(false);
+        }
 
         public void GetDamaged(Transform enemyTransform,KnockBackDirection direction)
         {
             ActiveRagDoll();
+            
             float force = 30000;
             EBody hitBodyName = EBody.Chest;
 
@@ -299,6 +325,41 @@ namespace AnimeGame
                     break;
                 case KnockBackDirection.RIGHT:
                     ragDollCollisionList[(int)hitBodyName].Hit(5,enemyTransform.right * force,ragDollCollisionList[0].transform.localPosition+enemyTransform.right*0.5f);
+                    VfxPresenter.Instance.PlayBloodVfx( ragDollCollisionList[(int)hitBodyName].transform);
+                    break;
+                case KnockBackDirection.INPLACE:
+                    VfxPresenter.Instance.PlayBloodVfx( ragDollCollisionList[(int)hitBodyName].transform);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
+            }
+            
+            
+            MMF_CameraShake.PlayFeedbacks();
+           
+        }
+        
+        
+        public void GetDamagedOnlyBlood(Transform enemyTransform,KnockBackDirection direction)
+        {
+            
+            EBody hitBodyName = EBody.Chest;
+
+            switch (direction)
+            {
+                case KnockBackDirection.FRONT:
+                    VfxPresenter.Instance.PlayBloodVfx( ragDollCollisionList[(int)hitBodyName].transform);
+                    break;
+                case KnockBackDirection.BACK:
+                    VfxPresenter.Instance.PlayBloodVfx( ragDollCollisionList[(int)hitBodyName].transform);
+                    break;
+                case KnockBackDirection.LEFT:
+                    VfxPresenter.Instance.PlayBloodVfx( ragDollCollisionList[(int)hitBodyName].transform);
+                    break;
+                case KnockBackDirection.RIGHT:
+                    VfxPresenter.Instance.PlayBloodVfx( ragDollCollisionList[(int)hitBodyName].transform);
+                    break;
+                case KnockBackDirection.INPLACE:
                     VfxPresenter.Instance.PlayBloodVfx( ragDollCollisionList[(int)hitBodyName].transform);
                     break;
                 default:
