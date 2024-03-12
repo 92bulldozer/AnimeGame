@@ -17,7 +17,7 @@ public class ChangeCameraTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (newCamera != null)
+            if (newCamera != null && PlayerPresenter.Instance != null)
             {
                 PlayerPresenter.Instance.ChangeVirtualCamera(newCamera);
                 triggerCallback?.Invoke();

@@ -7,9 +7,9 @@ using DG.Tweening;
 using Doozy.Engine;
 using EJ;
 using MoreMountains.Feedbacks;
+using Rewired;
 using RootMotion.Dynamics;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public enum EBody
@@ -47,6 +47,12 @@ namespace AnimeGame
         public bool isRagDoll;
         public bool isAlive { get; set; }
 
+        [Space(20)] [Header("Rewired")] [Space(10)]
+        public Player player;
+
+        public int playerID;
+        public bool isInteractBtnDown;
+
 
         [Space(20)] [Header("Component")] [Space(10)] 
         public PuppetMaster puppetMaster;
@@ -54,7 +60,6 @@ namespace AnimeGame
         public GameObject flashLight;
         public InteractableObject interactableObject;
         public GameObject virtualCamera;
-        public PlayerInput playerInput;
 
 
 
@@ -94,9 +99,19 @@ namespace AnimeGame
 
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.F))
-                FlashLightToggle();
+           
 
+            if (player.GetButtonDown("Interact"))
+            {
+                Interact();
+            }
+            
+            if (player.GetButtonDown("Flash"))
+            {
+                FlashLightToggle();
+            }
+            
+      
 
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -119,8 +134,7 @@ namespace AnimeGame
                 //GetDamaged(null,KnockBackDirection.BACK);
             }
             
-            if(Input.GetKeyDown(KeyCode.E))
-                Interact();
+         
             
             // if (moveDirection != Vector3.zero)
             // {
@@ -159,9 +173,9 @@ namespace AnimeGame
             _rb = GetComponent<Rigidbody>();
             _mainCamera = Camera.main;
             _capsuleCollider = GetComponent<CapsuleCollider>();
-           
+            player = ReInput.players.GetPlayer(playerID);
+            //player.controllers.maps.GetMap(ControllerType.Keyboard, 0, 0).enabled=false;
 
-            playerInput = GetComponent<PlayerInput>();
 
             DOVirtual.DelayedCall(0.5f, () =>
             {
@@ -265,21 +279,21 @@ namespace AnimeGame
 
         public void ChangeVirtualCamera(GameObject _virtualCamera)
         {
+          
             virtualCamera.SetActive(false);
             _virtualCamera.SetActive(true);
             virtualCamera = _virtualCamera;
+            
         }
 
 
 
         public void DisableInput()
         {
-            playerInput.enabled = false;
         }
         
         public void EnableInput()
         {
-            playerInput.enabled = true;
         }
 
         #region Hit_Blood

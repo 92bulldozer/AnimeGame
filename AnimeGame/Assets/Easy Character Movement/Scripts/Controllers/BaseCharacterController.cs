@@ -1,7 +1,7 @@
 ﻿using ECM.Components;
 using ECM.Helpers;
+using Rewired;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 namespace ECM.Controllers
@@ -117,7 +117,13 @@ namespace ECM.Controllers
         #endregion
 
         #region FIELDS
+        [Space(20)][Header("Rewired")][Space(10)]
+        public Player player;
 
+        public int playerID;
+
+        
+        [Space(20)][Header("ECM")][Space(10)]
         private Vector3 _moveDirection;
 
         protected bool _canJump = true;
@@ -834,23 +840,7 @@ namespace ECM.Controllers
         /// <summary>
         /// Handles input.
         /// </summary>
-        ///
-        
-        public void OnMove(InputValue _inputValue)
-        {
-            Vector2 inputValue = _inputValue.Get<Vector2>();
-            
-            //moveDirection = orientation.forward * inputValue.x + orientation.right * inputValue.y;
-            Vector3 forward = Camera.main.transform.forward;
-            forward.y = 0;
-            Vector3 right = Camera.main.transform.right;
-            right.y = 0;
-            moveDirection = forward * inputValue.y + right * inputValue.x;
-            
-            
-        }
-        
-        
+
         protected virtual void HandleInput()
         {
             // Toggle pause / resume.
@@ -871,6 +861,14 @@ namespace ECM.Controllers
             // jump = Input.GetButton("Jump");
             //
             // crouch = Input.GetKey(KeyCode.C);
+            
+            
+            Vector3 forward = Camera.main.transform.forward;
+            forward.y = 0;
+            Vector3 right = Camera.main.transform.right;
+            right.y = 0;
+            //moveDirection = forward * Input.GetAxisRaw("Vertical") + right * Input.GetAxisRaw("Horizontal");
+            moveDirection = forward * player.GetAxis("Move Vertical") + right * player.GetAxis("Move Horizontal");
         }
 
         #endregion
@@ -927,6 +925,7 @@ namespace ECM.Controllers
             animator = GetComponentInChildren<Animator>();
 
             rootMotionController = GetComponentInChildren<RootMotionController>();
+            player = ReInput.players.GetPlayer(playerID);
         }
 
         public virtual void FixedUpdate()

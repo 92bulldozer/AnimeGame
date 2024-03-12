@@ -34,9 +34,13 @@ public class InteractableObject : MonoBehaviour, IInteract
         outlinable.enabled = false;
     }
 
-    public void ResetInteract()
+    public void ResetOutline()
     {
         outlinable.enabled = false;
+    }
+    public void ResetInteract()
+    {
+        canInteract = true;
     }
 
     public virtual void Interact()

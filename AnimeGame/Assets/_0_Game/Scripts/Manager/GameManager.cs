@@ -6,7 +6,9 @@ using DarkTonic.MasterAudio;
 using DG.Tweening;
 using EJ;
 using MoreMountains.Feedbacks;
+using Rewired;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
@@ -16,12 +18,15 @@ public class GameManager : MonoBehaviour
 
     [Space(20)] [Header("Field")] [Space(10)]
     public Transform target;
-    public int layerMask;
     public bool isDiscovered;
+    
     [Space(20)] [Header("MMF")] [Space(10)]
     public MMF_Player ca;
     public MMF_Player caReverse;
     public MMF_Player jumpScareCamera;
+
+    [Space(20)] [Header("Input")] [Space(10)]
+    private Player _player;
     
     
     
@@ -40,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
-        layerMask = (-1) - ((1 << LayerMask.NameToLayer("Player")) | (1 << LayerMask.NameToLayer("Interaction")));;
+        _player = ReInput.players.GetPlayer(0);
     }
 
     private void Update()
@@ -83,6 +88,43 @@ public class GameManager : MonoBehaviour
         jumpScareCamera.PlayFeedbacks();
 
     }
+    
+    public void EnableInput()
+    {
+        foreach (var VARIABLE in _player.controllers.maps.GetAllMaps())
+        {
+            if (VARIABLE.categoryId == 0)
+                VARIABLE.enabled = true;
+        }
+        
+        foreach (var VARIABLE in _player.controllers.maps.GetAllMaps())
+        {
+            if (VARIABLE.categoryId == 1)
+                VARIABLE.enabled = false;
+        }
+        
+        EventSystem.current.SetSelectedGameObject(null);
+      
+    }
+
+    public void DisableInput()
+    {
+
+
+        foreach (var VARIABLE in _player.controllers.maps.GetAllMaps())
+        {
+            if (VARIABLE.categoryId == 0)
+                VARIABLE.enabled = false;
+        }
+      
+        foreach (var VARIABLE in _player.controllers.maps.GetAllMaps())
+        {
+            if (VARIABLE.categoryId == 1)
+                VARIABLE.enabled = true;
+        }
+    }
+    
+    
     
     
     

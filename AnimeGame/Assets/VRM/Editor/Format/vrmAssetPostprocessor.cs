@@ -25,7 +25,7 @@ namespace VRM
 
                 if (unityPath.IsStreamingAsset)
                 {
-                    Debug.LogFormat("Skip StreamingAssets: {0}", path);
+                    //Debug.LogFormat("Skip StreamingAssets: {0}", path);
                     continue;
                 }
 

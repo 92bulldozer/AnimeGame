@@ -2,9 +2,7 @@
 using System;
 using System.Collections;
 using AnimeGame;
-using EJ;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace ECM.Components
 {
@@ -1065,7 +1063,6 @@ namespace ECM.Components
 
                     velocity += gravity * (slideGravityMultiplier * Time.deltaTime);
                 }
-                
             }
             else
             {
@@ -1199,7 +1196,6 @@ namespace ECM.Components
                 
                 velocity += gravity * (slideGravityMultiplier * Time.deltaTime);
             }
-            
         }
 
         /// <summary>
@@ -1379,8 +1375,6 @@ namespace ECM.Components
         /// <param name="desiredVelocity">Target velocity vector.</param>
         /// <param name="maxDesiredSpeed">Target desired speed.</param>
         /// <param name="onlyLateral">Should velocity along the y-axis be ignored?</param>
-        
-       
         
         public void Move(Vector3 desiredVelocity, float maxDesiredSpeed, bool onlyLateral = true)
         {
