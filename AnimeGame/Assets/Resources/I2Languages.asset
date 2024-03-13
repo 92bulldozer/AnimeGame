@@ -16,24 +16,150 @@ MonoBehaviour:
     UserAgreesToHaveItOnTheScene: 0
     UserAgreesToHaveItInsideThePluginsFolder: 0
     GoogleLiveSyncIsUptoDate: 1
-    mTerms: []
+    mTerms:
+    - Term: Basement/Basement_BasementMap_AbandonVillage
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBC84\uB824\uC9C4 \uB9C8\uC744"
+      - AbandonVillage
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Building
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBE4C\uB529"
+      - Building
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Destination
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBAA9\uC801\uC9C0"
+      - Destination
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Hospital
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBCD1\uC6D0"
+      - Hospital
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_School
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD559\uAD50"
+      - School
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Closet
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC637\uC7A5"
+      - Closet
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Exit
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB098\uAC00\uAE30"
+      - Exit
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Map
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC9C0\uB3C4"
+      - Map
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_PickUp
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC90D\uAE30"
+      - PickUp
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Vegetation
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC2DD\uBB3C"
+      - Vegetation
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Equipment
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC7A5\uBE44"
+      - Equipment
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_PreviousTab
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC774\uC804"
+      - Previous Tab
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_NextTab
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2E4\uC74C"
+      - Next Tab
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Close
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2EB\uAE30"
+      - Close
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Select
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC120\uD0DD"
+      - Select
+      Flags: 0000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
-    mLanguages: []
+    mLanguages:
+    - Name: Korean
+      Code: ko
+      Flags: 0
+    - Name: English
+      Code: en
+      Flags: 0
     IgnoreDeviceLanguage: 0
     _AllowUnloadingLanguages: 0
-    Google_WebServiceURL: 
-    Google_SpreadsheetKey: 
-    Google_SpreadsheetName: 
+    Google_WebServiceURL: https://script.google.com/macros/s/AKfycbyhtKuRGbVh0rq0haD1ivWIDiZqHkXoRN37-r8Gwm-Cmdk-Ki9wlCpaRrCH2XaSJ-zr/exec
+    Google_SpreadsheetKey: 1k0daqck4R-xCW8CkRGQhK_yEW1aa-XYGCLRzCRDweZg
+    Google_SpreadsheetName: I2Loc AnimeGame Localization
     Google_LastUpdatedVersion: 
-    Google_Password: change_this
+    Google_Password: Tkfkdgo5759!
     GoogleUpdateFrequency: 3
     GoogleInEditorCheckFrequency: 2
     GoogleUpdateSynchronization: 1
     GoogleUpdateDelay: 0
     Assets: []
-    Spreadsheet_LocalFileName: 
+    Spreadsheet_LocalFileName: _0_Game/LanguageLocalize/Localization.csv
     Spreadsheet_LocalCSVSeparator: ','
     Spreadsheet_LocalCSVEncoding: utf-8
     Spreadsheet_SpecializationAsRows: 1

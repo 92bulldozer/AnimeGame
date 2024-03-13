@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using EJ;
+using I2.Loc;
 using UnityEngine;
+
+
 
 public class InteractSender : MonoBehaviour
 {
@@ -10,6 +13,8 @@ public class InteractSender : MonoBehaviour
     public Vector3 panelOffset;
     public string interactText;
     public string interactReverseText;
+    public EInteractText eInteractText;
+    public EInteractText eInteractReverseText;
 
     private void Awake()
     {
@@ -24,9 +29,9 @@ public class InteractSender : MonoBehaviour
             //"ShowInteractPanel".Log();
 
             if (!iInteract.isInteracted)
-                InteractPresenter.Instance.ShowInteractPanel(transform.parent,panelOffset,interactText);
+                InteractPresenter.Instance.ShowInteractPanel(transform.parent,panelOffset,eInteractText);
             else
-                InteractPresenter.Instance.ShowInteractPanel(transform.parent,panelOffset,interactReverseText);
+                InteractPresenter.Instance.ShowInteractPanel(transform.parent,panelOffset,eInteractReverseText);
             
             iInteract.ShowInteractPanel();
         }
@@ -48,13 +53,15 @@ public class InteractSender : MonoBehaviour
         if (!iInteract.isInteracted)
         {
             "열기텍스트".Log();
-            InteractPresenter.Instance.ShowInteractPanel(transform.parent,panelOffset,interactText);
+            InteractPresenter.Instance.ShowInteractPanel(transform.parent,panelOffset,eInteractText);
            
         }
         else
         {
             "닫기텍스트".Log();
-            InteractPresenter.Instance.ShowInteractPanel(transform.parent,panelOffset,interactReverseText);
+            InteractPresenter.Instance.ShowInteractPanel(transform.parent,panelOffset,eInteractReverseText);
         }
     }
+
+   
 }

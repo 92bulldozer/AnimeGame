@@ -1,10 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using Doozy.Engine.UI;
 using EJ;
+using I2.Loc;
 using TMPro;
 using UnityEngine;
+
+
+public enum EInteractText
+{
+    Interact_Closet=0,
+    Interact_PickUp,
+    Interact_Open,
+    Interact_Close,
+    Interact_Map,
+    Interact_Equipment,
+    Interact_Vegetation,
+    Interact_Exit,
+}
 
 public class InteractPresenter : MonoBehaviour
 {
@@ -17,10 +32,13 @@ public class InteractPresenter : MonoBehaviour
     public RectTransform panelTransform;
     public Canvas interactionCanvas;
     private Transform _targetTransform;
-    public TextMeshProUGUI interactText;
+   
 
     [Header("Field")] [Space(10)] 
     public Vector3 panelOffset;
+
+    public Localize localize;
+    public StringBuilder sb;
 
 
     private void Awake()
@@ -31,9 +49,15 @@ public class InteractPresenter : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        Init();
     }
 
-   
+
+    void Init()
+    {
+        sb = new StringBuilder();
+    }
     
     void LateUpdate()
     {
@@ -42,7 +66,7 @@ public class InteractPresenter : MonoBehaviour
     }
 
 
-    public void ShowInteractPanel(Transform target,Vector3 offset,string text)
+    public void ShowInteractPanel(Transform target,Vector3 offset,EInteractText eInteractText)
     {
         view.Show();
         
@@ -54,7 +78,16 @@ public class InteractPresenter : MonoBehaviour
         Vector3 worldPoint;
         RectTransformUtility.ScreenPointToWorldPointInRectangle(panelTransform, sp, interactionCanvas.worldCamera, out worldPoint);
         panelTransform.position = worldPoint ;
-        interactText.text = text;
+        SetInteractText(eInteractText);
+    }
+    
+    public void SetInteractText(EInteractText eInteractText)
+    {
+        sb.Clear();
+        sb.Append("Interact/");
+        sb.Append(eInteractText.ToString());
+        //sb.ToString().Log();
+        localize.Term = sb.ToString();
     }
 
     public void HideInteractPanel()

@@ -5,12 +5,20 @@ using AnimeGame;
 using DarkTonic.MasterAudio;
 using DG.Tweening;
 using EJ;
+using I2.Loc;
 using MoreMountains.Feedbacks;
 using Rewired;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
+
+public enum ELanguage
+{
+    KOREAN=0,
+    ENGLISH
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -27,9 +35,11 @@ public class GameManager : MonoBehaviour
 
     [Space(20)] [Header("Input")] [Space(10)]
     private Player _player;
-    
-    
-    
+
+    [Space(20)] [Header("UI")] [Space(10)] 
+    public List<RectTransform> rebuildList;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -42,10 +52,19 @@ public class GameManager : MonoBehaviour
         Init();
     }
 
+   
+
 
     private void Init()
     {
         _player = ReInput.players.GetPlayer(0);
+        LanguageInit();
+    }
+
+    public void LanguageInit()
+    {
+        //ES3.Save("Language","ENGLISH");
+        LocalizationManager.CurrentLanguage = ES3.Load<string>("Language");
     }
 
     private void Update()
@@ -53,13 +72,40 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             "GameManagerZ".Log();
-            Discovered();
+            //Discovered();
+            LocalizationManager.CurrentLanguage = ELanguage.KOREAN.ToString() ;
+            ES3.Save<string>("Language","KOREAN");
+            UIForceRebuild();
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
             "GameManagerX".Log();
-            NotDiscovered();
+            LocalizationManager.CurrentLanguage = ELanguage.ENGLISH.ToString() ;
+            ES3.Save("Language","ENGLISH");
+            UIForceRebuild();
+            //NotDiscovered();
+
         }
+
+       
+    }
+
+    public void UIForceRebuild()
+    {
+        StartCoroutine(UIForceRebuildCor());
+
+    }
+
+    public IEnumerator UIForceRebuildCor()
+    {
+        foreach (var VARIABLE in rebuildList)
+            LayoutRebuilder.ForceRebuildLayoutImmediate(VARIABLE);
+        
+        yield return ExtensionMethods.CoroutineHelper.WaitForSeconds(0.1f);
+        
+        foreach (var VARIABLE in rebuildList)
+            LayoutRebuilder.ForceRebuildLayoutImmediate(VARIABLE);
+        
     }
 
 
