@@ -1,30 +1,34 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using AnimeGame;
-using DarkTonic.MasterAudio;
+using EJ;
 using EPOOutline;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
-public class InteractableObject : MonoBehaviour, IInteract
+public class InteractableObject : MonoBehaviour,IInteract
 {
-    public string enterSfx;
-    public string clickSfx;
+    
+    [Space(20)] [Header("Field")] [Space(10)]
     public bool canInteract = true;
-    public UnityEvent interactEvent;
+    public Vector3 panelOffset;
+    public Transform interactCenterPosition;
+    public Vector3 centerPositionOffset;
     public bool isInteracted { get; set; }
-
-    [SerializeField] private bool affectOutlinable = false;
+    public bool affectOutlinable = false;
+    public bool useReverseInteract = false;
+    public bool isReverse = false;
+    public EInteractText eInteractText;
+    public EInteractText eInteractReverseText;
+    public UnityEvent interactEvent;
 
     private Outlinable outlinable;
-
+    
     public virtual void Awake()
     {
         canInteract = true;
+        Init();
     }
-
     public virtual void Start()
     {
         if (!affectOutlinable)
@@ -33,54 +37,84 @@ public class InteractableObject : MonoBehaviour, IInteract
         outlinable = GetComponent<Outlinable>();
         outlinable.enabled = false;
     }
-
-    public void ResetOutline()
+    
+    public virtual void Init()
     {
-        outlinable.enabled = false;
+        try
+        {
+            interactCenterPosition = transform.GetChild(0).GetComponent<Transform>();
+
+        }
+        catch (Exception e)
+        {
+            interactCenterPosition = transform;
+        }
+        interactCenterPosition.localPosition += centerPositionOffset;
     }
-    public void ResetInteract()
+    
+    public void EnableOutline()
     {
-        canInteract = true;
+        if (affectOutlinable)
+        {
+            outlinable.enabled = true;
+        }
     }
 
+    public void DisableOutline()
+    {
+        if (affectOutlinable)
+        {
+            outlinable.enabled = false;
+        }
+    }
+    
     public virtual void Interact()
     {
-        if (!PlayerPresenter.Instance.canInteract || !canInteract)
+        "interact".Log();
+        if (isInteracted)
             return;
-
-     
-        canInteract = false;
-        isInteracted = !isInteracted;
         
-
-        //AudioSource.PlayClipAtPoint(interactionSound, transform.position, 1.0f);
-        MasterAudio.PlaySound3DAtTransform(clickSfx, transform);
         interactEvent?.Invoke();
+        
     }
 
     public virtual void ShowInteractPanel()
     {
-        if (!PlayerPresenter.Instance.canInteract)
-            return;
-        
-        if(affectOutlinable)
-            outlinable.enabled = true;
+        "ShowInteractPanel".Log();
+        if (useReverseInteract)
+        {
+            if (isReverse)
+                InteractPresenter.Instance.ShowInteractPanel(interactCenterPosition,panelOffset,eInteractReverseText);
+            else
+                InteractPresenter.Instance.ShowInteractPanel(interactCenterPosition,panelOffset,eInteractText);
+            
+        }
+        else
+        {
+            InteractPresenter.Instance.ShowInteractPanel(interactCenterPosition,panelOffset,eInteractText);
 
-
-        MasterAudio.PlaySound3DAtTransform(enterSfx, transform);
-        PlayerPresenter.Instance.SetInteractObject(this);
-        
-        
+        }
     }
 
     public virtual void HideInteractPanel()
     {
-        if (!PlayerPresenter.Instance.canInteract)
-            return;
-
-        PlayerPresenter.Instance.interactableObject = null;
-
-        if(affectOutlinable)
-            outlinable.enabled = false;
+        "HideInteractPanel".Log();
+        InteractPresenter.Instance.HideInteractPanel();
+    }
+    
+    public void UpdateReverseText(bool _isReverse)
+    {
+        if (!_isReverse)
+        {
+            InteractPresenter.Instance.ShowInteractPanel(interactCenterPosition,panelOffset,eInteractText);
+            isReverse=false;
+            "ReverseTrue".Log();
+        }
+        else
+        {
+            InteractPresenter.Instance.ShowInteractPanel(interactCenterPosition,panelOffset,eInteractReverseText);
+            isReverse=true;
+            "ReverseFalse".Log();
+        }
     }
 }

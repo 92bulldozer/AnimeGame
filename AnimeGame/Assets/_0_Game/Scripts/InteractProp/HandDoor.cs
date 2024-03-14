@@ -9,12 +9,12 @@ namespace AnimeGame
 {
     public class HandDoor : InteractableObject
     {
+        [Space(20)] [Header("DoorField")] [Space(10)] 
         public Transform door;
         public float moveValue;
         public bool isOpened;
         public string openDoorSfx;
         public string closeDoorSfx;
-        public InteractSender sender;
 
         public override void Awake()
         {
@@ -28,7 +28,7 @@ namespace AnimeGame
 
         public override void Interact()
         {
-            if (!canInteract)
+            if (!canInteract || isInteracted)
                 return;
 
             base.Interact();
@@ -52,28 +52,29 @@ namespace AnimeGame
         {
             isOpened = true;
             MasterAudio.PlaySound3DAtTransform(openDoorSfx, transform);
+            isInteracted = true;
             door.DOLocalRotate(new Vector3(0,moveValue,0),1.5f).SetRelative(true).SetEase(Ease.OutQuad).OnComplete(() =>
             {
-                canInteract = true;
+                isInteracted = false;
             });
            
             "Door 열기".Log();
-            sender.UpdateReverseText();
+            UpdateReverseText(true);
         }
 
         public void CloseDoor()
         {
             isOpened = false;
             MasterAudio.PlaySound3DAtTransform(closeDoorSfx, transform);
-
+            isInteracted = true;
             door.DOLocalRotate(new Vector3(0,-moveValue,0),0.2f).SetRelative(true).SetEase(Ease.OutQuad).OnComplete(() =>
             {
 
-                canInteract = true;
+                isInteracted = false;
             });
           
             "Door 닫기".Log();
-            sender.UpdateReverseText();
+            UpdateReverseText(false);
         }
     }
 }

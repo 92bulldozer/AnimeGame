@@ -15,7 +15,7 @@ MonoBehaviour:
   mSource:
     UserAgreesToHaveItOnTheScene: 0
     UserAgreesToHaveItInsideThePluginsFolder: 0
-    GoogleLiveSyncIsUptoDate: 1
+    GoogleLiveSyncIsUptoDate: 0
     mTerms:
     - Term: Basement/Basement_BasementMap_AbandonVillage
       TermType: 0
@@ -135,6 +135,41 @@ MonoBehaviour:
       Languages:
       - "\uC120\uD0DD"
       - Select
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Open
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC5F4\uAE30"
+      - Open
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Close
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2EB\uAE30"
+      - Close
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter1
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC55\uD130 1"
+      - CHAPTER 1
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter1_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uAD34\uBB3C\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uC0DD\uC874 \uBC0F \n\uC544\uC774\uD15C\uC744
+        \uC218\uC9D1 \uD558\uC138\uC694."
+      - 'Surviving among monsters and
+
+        Collect the items.'
       Flags: 0000
       Languages_Touch: []
     CaseInsensitiveTerms: 0

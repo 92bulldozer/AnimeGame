@@ -9425,6 +9425,7 @@ GameObject:
   - component: {fileID: 1006081789674424202}
   - component: {fileID: 5290409082932287901}
   - component: {fileID: 5148883917749414167}
+  - component: {fileID: 8792632865069370408}
   m_Layer: 6
   m_Name: PuppetShojo
   m_TagString: Player
@@ -9495,13 +9496,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canInteract: 0
   isFlashOn: 0
+  interactRange: 2
   isRagDoll: 0
+  playerID: 0
+  isInteractBtnDown: 0
   puppetMaster: {fileID: 3584821871880739435}
   ragDollCollisionList: []
   flashLight: {fileID: 7313210927946797372}
   interactableObject: {fileID: 0}
   virtualCamera: {fileID: 0}
-  playerInput: {fileID: 0}
   _animator: {fileID: 0}
   MMF_CameraShake: {fileID: 0}
   footStepSfx: FootStepConcrete
@@ -9633,6 +9636,19 @@ MonoBehaviour:
   _maxMidAirJumps: 1
   _useRootMotion: 0
   _rootMotionRotation: 0
+  playerID: 0
+--- !u!114 &8792632865069370408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066702847645227848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab8c4a3e5116c443940f341b8a1cd40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7125208805630517992
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,14 +21,14 @@ namespace UniHumanoid
             {
                 if (IsStreamingAsset(path))
                 {
-                    Debug.LogFormat("Skip StreamingAssets: {0}", path);
+                    //Debug.LogFormat("Skip StreamingAssets: {0}", path);
                     continue;
                 }
 
                 var ext = Path.GetExtension(path).ToLower();
                 if (ext == ".bvh")
                 {
-                    Debug.LogFormat("ImportBvh: {0}", path);
+                    //Debug.LogFormat("ImportBvh: {0}", path);
                     var context = new BvhImporterContext();
                     try
                     {

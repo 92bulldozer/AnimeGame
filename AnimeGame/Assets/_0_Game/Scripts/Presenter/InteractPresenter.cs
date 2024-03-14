@@ -31,6 +31,7 @@ public class InteractPresenter : MonoBehaviour
     [Header("UI")] [Space(10)] 
     public RectTransform panelTransform;
     public Canvas interactionCanvas;
+    public GameObject currentInteractObject;
     private Transform _targetTransform;
    
 
@@ -57,7 +58,10 @@ public class InteractPresenter : MonoBehaviour
     void Init()
     {
         sb = new StringBuilder();
+        if (interactionCanvas.worldCamera == null)
+            interactionCanvas.worldCamera = Camera.main;
     }
+
     
     void LateUpdate()
     {
@@ -79,6 +83,14 @@ public class InteractPresenter : MonoBehaviour
         RectTransformUtility.ScreenPointToWorldPointInRectangle(panelTransform, sp, interactionCanvas.worldCamera, out worldPoint);
         panelTransform.position = worldPoint ;
         SetInteractText(eInteractText);
+
+
+        // if (currentInteractObject != newGameObject && currentInteractObject != null)
+        // {
+        //     currentInteractObject.GetComponent<InteractSender>().HidePreviousInteractPanel();
+        // }
+        //
+        // currentInteractObject = newGameObject;
     }
     
     public void SetInteractText(EInteractText eInteractText)
@@ -92,9 +104,11 @@ public class InteractPresenter : MonoBehaviour
 
     public void HideInteractPanel()
     {
+        
         view.Hide();
         _targetTransform = null;
         panelOffset = Vector3.zero;
+        currentInteractObject = null;
     }
 
    

@@ -10,13 +10,13 @@ namespace AnimeGame
 {
     public class SlideDoor : InteractableObject
     {
+        [Space(20)] [Header("DoorField")] [Space(10)] 
         public Transform door;
         public float moveValue;
         public bool isOpened;
         public string openDoorSfx;
         public string closeDoorSfx;
-        public InteractSender sender;
-        
+
         public override void Awake()
         {
             base.Awake();
@@ -27,12 +27,15 @@ namespace AnimeGame
             base.Start();
         }
 
+       
+
         public override void Interact()
         {
-            if (!canInteract)
+            if (!canInteract || isInteracted)
                 return;
             
             base.Interact();
+            
             if(isOpened)
                 CloseDoor();
             else
@@ -55,24 +58,29 @@ namespace AnimeGame
         {
             isOpened = true;
             MasterAudio.PlaySound3DAtTransform(openDoorSfx, transform);
+            isInteracted = true;
             door.DOLocalMoveX(-moveValue, 1.5f).SetEase(Ease.OutQuad).SetRelative(true).OnComplete(() =>
             {
-                canInteract = true;
+                isInteracted = false;
             });
+            UpdateReverseText(true);
             "Door 열기".Log();
-            sender.UpdateReverseText();
+            //sender.UpdateReverseText();
         }
 
         public void CloseDoor()
         {
             isOpened = false;
+            isInteracted = true;
             MasterAudio.PlaySound3DAtTransform(closeDoorSfx, transform);
             door.DOLocalMoveX(moveValue, 1.5f).SetEase(Ease.OutQuad).SetRelative(true).OnComplete(() =>
             {
-                canInteract = true;
+                isInteracted = false;
             });
+            
+            UpdateReverseText(false);
             "Door 닫기".Log();
-            sender.UpdateReverseText();
+            //sender.UpdateReverseText();
             
         }
     }

@@ -36,14 +36,13 @@ public enum KnockBackDirection
 
 namespace AnimeGame
 {
+    [RequireComponent(typeof(PlayerInteract))]
     public class PlayerPresenter : MonoBehaviour
     {
         public static PlayerPresenter Instance;
 
         [Space(20)] [Header("Field")] [Space(10)] 
-        public bool canInteract = false;
         public bool isFlashOn;
-      
         public bool isRagDoll;
         public bool isAlive { get; set; }
 
@@ -51,15 +50,14 @@ namespace AnimeGame
         public Player player;
 
         public int playerID;
-        public bool isInteractBtnDown;
 
 
         [Space(20)] [Header("Component")] [Space(10)] 
         public PuppetMaster puppetMaster;
         public List<MuscleCollisionBroadcaster> ragDollCollisionList;
         public GameObject flashLight;
-        public InteractableObject interactableObject;
         public GameObject virtualCamera;
+        public PlayerInteract playerInteract;
 
 
 
@@ -99,7 +97,7 @@ namespace AnimeGame
 
         private void Update()
         {
-           
+            playerInteract.FindInteractObject();
 
             if (player.GetButtonDown("Interact"))
             {
@@ -116,14 +114,16 @@ namespace AnimeGame
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                AttachTo(null);
+                $"PlayerPresenterAlpha1".Log();
+                //AttachTo(null);
                 //GetDamaged(null,KnockBackDirection.LEFT);
                 //GetDamaged(null,true);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                DetachTo();
+                $"PlayerPresenterAlpha2".Log();
+                //DetachTo();
                 //GetDamaged(null,KnockBackDirection.RIGHT);
                 //DeActiveRagDoll();
             }
@@ -168,12 +168,13 @@ namespace AnimeGame
         public void Init()
         {
             isAlive = true;
-            canInteract=true;
             _animator = GetComponent<Animator>();
             _rb = GetComponent<Rigidbody>();
             _mainCamera = Camera.main;
             _capsuleCollider = GetComponent<CapsuleCollider>();
             player = ReInput.players.GetPlayer(playerID);
+            playerInteract = GetComponent<PlayerInteract>();
+            playerInteract.Init();
             //player.controllers.maps.GetMap(ControllerType.Keyboard, 0, 0).enabled=false;
 
 
@@ -189,7 +190,7 @@ namespace AnimeGame
 
         public void ResetInteract()
         {
-            canInteract = true;
+            //canInteract = true;
             GameEventMessage.SendEvent("ResetInteract");
         }
 
@@ -264,18 +265,17 @@ namespace AnimeGame
             "RagDollDeActive".Log();
         }
 
+        
+
         public void Interact()
         {
-            if (interactableObject == null)
+            if (playerInteract.currentInteractableObject == null || !playerInteract.canInteract)
                 return;
             
-            interactableObject.Interact();   
+            playerInteract.currentInteractableObject.Interact();   
         }
 
-        public void SetInteractObject(InteractableObject _interactableObject)
-        {
-            interactableObject = _interactableObject;
-        }
+      
 
         public void ChangeVirtualCamera(GameObject _virtualCamera)
         {
