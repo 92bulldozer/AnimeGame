@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DarkTonic.MasterAudio;
 using DG.Tweening;
 using Doozy.Engine.UI;
+using EJ;
+using Michsky.UI.Dark;
 using Rewired;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,23 +17,50 @@ public class MapUIData
     public GameObject[] unLockArray;
 }
 
+public enum EEquipmentTab
+{
+    Equipment=0,
+    Consume,
+    Material
+}
+
 public class BasementPresenter : MonoBehaviour
 {
     public static BasementPresenter Instance;
 
     [Space(20)] [Header("UI")] [Space(10)]
     public UIView mapView;
+    public UIView equipmentView;
+    public UIView exitView;
     public List<GameObject> keyboardUIList;
     public List<GameObject> joystickUIList;
+    [Space(20)] [Header("UI_Map")] [Space(10)]
     public List<Button> mapButtonList;
-    public RectTransform mapSelectHighLight;
     public List<MapUIData> mapUnLockDataList;
     public GameObject destinationPanel;
+    public RectTransform mapSelectHighLight;
+
+    [Space(20)] [Header("UI_Equipment")] [Space(10)]
+    public bool isEquipmentCanvas;
+    public Color normalColor;
+    public Color selectColor;
+    public int currentEquipmentTabIdx;
+    public List<Button> equipmentTabButtonList;
+    public List<CanvasGroup> equipmentCGList;
+    private List<Sequence> equipmentScrollSequenceList;
+
+    [Space(20)] [Header("UI_Exit")] [Space(10)]
+    public UIDissolveEffect exitDissolve;
+    public Sequence exitDissolveSequence;
 
     [Space(20)] [Header("Field")] [Space(10)]
     public GameObject mapCloseBtn;
     public int unLockLevel;
     public int currentMap;
+    public GameObject vcamEquipment;
+    public GameObject vcam1;
+    
+    
     
     [Space(20)] [Header("Input")] [Space(10)]
     private Player _player;
@@ -54,14 +84,48 @@ public class BasementPresenter : MonoBehaviour
         {
             UnLockMap();
         }
+
+        
+        
+        EquipmentInput();
+        
     }
 
 
     public void Init()
     {
+        _player = ReInput.players.GetPlayer(0);
         unLockLevel = 2;
         AddControllerChangeCallback();
         InitUnLockMap();
+        equipmentScrollSequenceList = new List<Sequence>();
+        
+        equipmentScrollSequenceList.Add(
+            DOTween.Sequence().Append(equipmentCGList[0].DOFade(1,1) 
+                    .SetEase(Ease.OutQuad)).OnStart(()=>equipmentCGList[0].alpha=0).SetAutoKill(false)
+            );
+        
+        equipmentScrollSequenceList.Add(
+            DOTween.Sequence().Append(equipmentCGList[1].DOFade(1,1) 
+                .SetEase(Ease.OutQuad)).OnStart(()=>equipmentCGList[1].alpha=0).SetAutoKill(false));
+        
+        equipmentScrollSequenceList.Add(
+            DOTween.Sequence().Append(equipmentCGList[2].DOFade(1,1) 
+                .SetEase(Ease.OutQuad)).OnStart(()=>equipmentCGList[2].alpha=0).SetAutoKill(false));
+
+        exitDissolveSequence = DOTween.Sequence().SetAutoKill(false).Append(
+            DOTween.To(() => exitDissolve.location, x => exitDissolve.location = x, 0, 1)
+                .OnStart(()=>exitDissolve.location=1).SetEase(Ease.OutQuad)
+        );
+
+        // for (int i = 0; i < 3; i++)
+        // {
+        //     equipmentScrollSequenceList.Add(
+        //         DOTween.Sequence().Append(equipmentCGList[i].DOFade(1,1) 
+        //             .SetEase(Ease.OutQuad)).OnStart(()=>equipmentCGList[i].alpha=1).SetAutoKill(false));
+        // }
+
+
     }
 
     public void AddControllerChangeCallback()
@@ -107,6 +171,144 @@ public class BasementPresenter : MonoBehaviour
         
     }
 
+    public void EquipmentInput()
+    {
+        if (!isEquipmentCanvas)
+            return;
+        
+        
+        if(_player.GetNegativeButtonDown("UIHorizontal"))
+        {
+            if (_player.GetAxis("UIHorizontal") < 0)
+            {
+                "Basement UI Left".Log();
+            }
+        }
+        else if (_player.GetButtonDown("UIHorizontal"))
+        {
+            if (_player.GetAxis("UIHorizontal") > 0)
+            {
+                "Basement UI Right".Log();
+            }
+          
+            //_player.GetAxis("UIHorizontal").Log();
+        }
+
+        if (_player.GetNegativeButtonDown("UIVertical"))
+        {
+            if (_player.GetAxis("UIVertical") < 0)
+            {
+                "Basement UI Down".Log();
+            }
+        }
+        else if (_player.GetButtonDown("UIVertical"))
+        {
+            if (_player.GetAxis("UIVertical") > 0)
+            {
+                "Basement UI Up".Log();
+            }
+           
+            //_player.GetAxis("UIVertical").Log();
+        }
+        
+        if (_player.GetButtonDown("Prev"))
+        {
+            "Basement UI Prev".Log();
+            PreviousEquipmentTab();
+        }
+        
+        if (_player.GetButtonDown("Next"))
+        {
+            "Basement UI Next".Log();
+            NextEquipmentTab();
+        }
+        
+        if (_player.GetButtonDown("UISubmit"))
+        {
+            "Basement UI Submit".Log();
+        }
+    }
+    public void OpenEquipment()
+    {
+        DOVirtual.DelayedCall(0.5f,()=>isEquipmentCanvas = true);
+        
+        equipmentView.Show();
+        EventSystem.current.SetSelectedGameObject(equipmentTabButtonList[0].gameObject);
+        vcam1.SetActive(false);
+        vcamEquipment.SetActive(true);
+        currentEquipmentTabIdx = 0;
+        SelectEquipmentTab(currentEquipmentTabIdx);
+    }
+    
+    public void HideEquipment()
+    {
+        isEquipmentCanvas = false;
+        equipmentView.Hide();
+        vcam1.SetActive(true);
+        vcamEquipment.SetActive(false);
+    }
+
+    public void SelectEquipmentTab(int idx)
+    {
+        foreach (var button in equipmentTabButtonList)
+            button.image.color = normalColor;
+        
+        for (int i = 0; i < equipmentTabButtonList.Count; i++)
+            if (i == idx)
+            {
+                equipmentTabButtonList[idx].image.color = selectColor;
+                currentEquipmentTabIdx = idx;
+                SetEquipmentScrollViewPanel((EEquipmentTab)idx);
+                break;
+            }
+    }
+
+    public void SetEquipmentScrollViewPanel(EEquipmentTab tab)
+    {
+        foreach (var cg in equipmentCGList)
+        {
+            cg.alpha = 0;
+            cg.interactable = false;
+            cg.blocksRaycasts = false;
+        }
+
+        foreach (var sequence in equipmentScrollSequenceList)
+        {
+            sequence.Rewind();
+        }
+
+        equipmentScrollSequenceList[(int)tab].Restart();
+        equipmentCGList[(int)tab].interactable = true;
+        equipmentCGList[(int)tab].blocksRaycasts = true;
+    }
+
+    public void PreviousEquipmentTab()
+    {
+        currentEquipmentTabIdx--;
+        if (currentEquipmentTabIdx < 0)
+        {
+            currentEquipmentTabIdx = 0;
+            return;
+        }
+        SelectEquipmentTab(currentEquipmentTabIdx);
+        MasterAudio.PlaySound("Click");
+    }
+    
+    public void NextEquipmentTab()
+    {
+        currentEquipmentTabIdx++;
+        if (currentEquipmentTabIdx > 2)
+        {
+            currentEquipmentTabIdx = 2;
+            return;
+        }
+        SelectEquipmentTab(currentEquipmentTabIdx);
+        MasterAudio.PlaySound("Click");
+    }
+    
+    
+    
+
     public void SetSelectedMapBtn()
     {
         EventSystem.current.SetSelectedGameObject(mapCloseBtn);
@@ -121,9 +323,8 @@ public class BasementPresenter : MonoBehaviour
     {
         foreach (var mapButton in mapButtonList)
         {
-            mapButton.enabled = false;
             mapButton.interactable = false;
-            mapButton.GetComponent<UIButton>().enabled = false;
+            //mapButton.GetComponent<UIButton>().enabled = false;
         }
     }
 
@@ -170,6 +371,19 @@ public class BasementPresenter : MonoBehaviour
         DisableMapButton();
         DOVirtual.DelayedCall(0.74f, () => { mapView.Hide(); });
         currentMap = idx;
+    }
+
+    public void ShowExit()
+    {
+        exitView.Show();
+        exitDissolveSequence.Restart();
+    }
+
+    public void HideExit()
+    {
+        "Exit".Log();
+        exitView.Hide();
+        MasterAudio.PlaySound("Click");
     }
     
 }

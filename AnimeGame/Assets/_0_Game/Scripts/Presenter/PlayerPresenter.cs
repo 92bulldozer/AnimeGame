@@ -153,15 +153,7 @@ namespace AnimeGame
             
         }
 
-        private void FixedUpdate()
-        {
-            if (isRagDoll)
-                return;
-            
-          
-            
-        }
-
+    
         
 
 

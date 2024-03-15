@@ -70,7 +70,7 @@ public class InteractableObject : MonoBehaviour,IInteract
     
     public virtual void Interact()
     {
-        "interact".Log();
+        //"interact".Log();
         if (isInteracted)
             return;
         
@@ -80,7 +80,7 @@ public class InteractableObject : MonoBehaviour,IInteract
 
     public virtual void ShowInteractPanel()
     {
-        "ShowInteractPanel".Log();
+        //"ShowInteractPanel".Log();
         if (useReverseInteract)
         {
             if (isReverse)
@@ -98,7 +98,7 @@ public class InteractableObject : MonoBehaviour,IInteract
 
     public virtual void HideInteractPanel()
     {
-        "HideInteractPanel".Log();
+        //"HideInteractPanel".Log();
         InteractPresenter.Instance.HideInteractPanel();
     }
     
@@ -108,13 +108,13 @@ public class InteractableObject : MonoBehaviour,IInteract
         {
             InteractPresenter.Instance.ShowInteractPanel(interactCenterPosition,panelOffset,eInteractText);
             isReverse=false;
-            "ReverseTrue".Log();
+            //"ReverseTrue".Log();
         }
         else
         {
             InteractPresenter.Instance.ShowInteractPanel(interactCenterPosition,panelOffset,eInteractReverseText);
             isReverse=true;
-            "ReverseFalse".Log();
+            //"ReverseFalse".Log();
         }
     }
 }

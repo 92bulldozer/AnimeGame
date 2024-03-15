@@ -172,6 +172,105 @@ MonoBehaviour:
         Collect the items.'
       Flags: 0000
       Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter2
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC55\uD130 2"
+      - Chapter 2
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter2_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC880\uBE44\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uC0DD\uC874 \uBC0F \n\uCE58\uB8CC\uC81C\uB97C
+        \uD68D\uB4DD\uD558\uC5EC \uADC0\uD658\uD558\uC138\uC694."
+      - Get a survival and cure among zombies and return.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter3
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC55\uD130 3"
+      - Chapter 3
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter4
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC55\uD130 4"
+      - Chapter 4
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter3_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uAC10\uC5FC\uC790\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uC0DD\uC874\uBC0F \uAE30\uBC00
+        \uC11C\uB958\uB97C \uD68D\uB4DD\uD558\uC5EC \uC0DD\uC874\uD558\uC138\uC694."
+      - Survive and survive by obtaining confidential documents among infected people.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter4_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC545\uB839\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uC0DD\uC874 \uBC0F \uC2DD\uB7C9\uC744
+        \uC5BB\uC73C\uC138\uC694."
+      - Survive and get food among evil spirits.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementEquipment_Previous
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC774\uC804"
+      - Previous
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementEquipment_Next
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2E4\uC74C"
+      - Next
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Title
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB098\uAC00\uAE30"
+      - Exit
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC815\uB9D0 \uBC16\uC73C\uB85C \uB098\uAC00\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+      - Do you really want to go outside?
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Confirm
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD655\uC778"
+      - Confirm
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Cancel
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCDE8\uC18C"
+      - Cancel
+      Flags: 0000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
