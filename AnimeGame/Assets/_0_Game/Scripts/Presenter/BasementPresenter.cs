@@ -5,6 +5,7 @@ using DarkTonic.MasterAudio;
 using DG.Tweening;
 using Doozy.Engine.UI;
 using EJ;
+using EPOOutline;
 using Michsky.UI.Dark;
 using Rewired;
 using UnityEngine;
@@ -24,6 +25,15 @@ public enum EEquipmentTab
     Material
 }
 
+public enum EBasementCanvas
+{
+    None=0,
+    Map,
+    Equipment,
+    Inventory,
+    Exit
+}
+
 public class BasementPresenter : MonoBehaviour
 {
     public static BasementPresenter Instance;
@@ -31,6 +41,7 @@ public class BasementPresenter : MonoBehaviour
     [Space(20)] [Header("UI")] [Space(10)]
     public UIView mapView;
     public UIView equipmentView;
+    public UIView inventoryView;
     public UIView exitView;
     public List<GameObject> keyboardUIList;
     public List<GameObject> joystickUIList;
@@ -41,7 +52,6 @@ public class BasementPresenter : MonoBehaviour
     public RectTransform mapSelectHighLight;
 
     [Space(20)] [Header("UI_Equipment")] [Space(10)]
-    public bool isEquipmentCanvas;
     public Color normalColor;
     public Color selectColor;
     public int currentEquipmentTabIdx;
@@ -49,21 +59,29 @@ public class BasementPresenter : MonoBehaviour
     public List<CanvasGroup> equipmentCGList;
     private List<Sequence> equipmentScrollSequenceList;
 
+    [Space(20)] [Header("UI_Inventory")] [Space(10)]
     [Space(20)] [Header("UI_Exit")] [Space(10)]
     public UIDissolveEffect exitDissolve;
     public Sequence exitDissolveSequence;
 
     [Space(20)] [Header("Field")] [Space(10)]
+    public Camera mainCamera;
     public GameObject mapCloseBtn;
     public int unLockLevel;
     public int currentMap;
     public GameObject vcamEquipment;
     public GameObject vcam1;
+    public GameObject vcam2;
+    public GameObject vcamInventory;
+    public Outliner cameraOutliner;
+    public EBasementCanvas eBasementCanvas;
+   
     
     
     
     [Space(20)] [Header("Input")] [Space(10)]
     private Player _player;
+    private int cameraLayer;
     public ControllerType currentControllerType;
 
     private void Awake()
@@ -87,13 +105,14 @@ public class BasementPresenter : MonoBehaviour
 
         
         
-        EquipmentInput();
-        
+        ProcessCanvasInput();        
     }
 
 
     public void Init()
     {
+        Cursor.visible = false;
+        mainCamera = Camera.main;
         _player = ReInput.players.GetPlayer(0);
         unLockLevel = 2;
         AddControllerChangeCallback();
@@ -118,19 +137,11 @@ public class BasementPresenter : MonoBehaviour
                 .OnStart(()=>exitDissolve.location=1).SetEase(Ease.OutQuad)
         );
 
-        // for (int i = 0; i < 3; i++)
-        // {
-        //     equipmentScrollSequenceList.Add(
-        //         DOTween.Sequence().Append(equipmentCGList[i].DOFade(1,1) 
-        //             .SetEase(Ease.OutQuad)).OnStart(()=>equipmentCGList[i].alpha=1).SetAutoKill(false));
-        // }
-
-
     }
 
     public void AddControllerChangeCallback()
     {
-        ReInput.controllers.AddLastActiveControllerChangedDelegate(new ActiveControllerChangedDelegate(controller =>
+        ReInput.controllers.AddLastActiveControllerChangedDelegate(controller =>
         {
             currentControllerType = controller.type;
             switch (currentControllerType)
@@ -140,6 +151,7 @@ public class BasementPresenter : MonoBehaviour
                         keyboardUI.SetActive(true);
                     foreach (var joystickUI in joystickUIList)
                         joystickUI.SetActive(false);
+                    EscMenuPresenter.Instance.ShowCursor();
                     break;
         
                 case ControllerType.Joystick:
@@ -147,36 +159,43 @@ public class BasementPresenter : MonoBehaviour
                         keyboardUI.SetActive(false);
                     foreach (var joystickUI in joystickUIList)
                         joystickUI.SetActive(true);
+                    EscMenuPresenter.Instance.HideCursor();
                     break;
                 
             }
             
             GameManager.Instance.UIForceRebuild();
 
-        }));
+        });
         
 
     }
 
 
 
-    public void OpenMap()
+    public void ProcessCanvasInput()
     {
-        mapView.Show();
+        switch (eBasementCanvas)
+        {
+            case EBasementCanvas.None:
+                break;
+            case EBasementCanvas.Map:
+                MapInput();
+                break;
+            case EBasementCanvas.Equipment:
+                EquipmentInput();
+                break;
+         
+            case EBasementCanvas.Exit:
+                ExitInput();
+                break;
+            
+        }
     }
 
-    public void CloseMap()
+    public void MapInput()
     {
-        mapView.Hide();
-        
-    }
-
-    public void EquipmentInput()
-    {
-        if (!isEquipmentCanvas)
-            return;
-        
-        
+      
         if(_player.GetNegativeButtonDown("UIHorizontal"))
         {
             if (_player.GetAxis("UIHorizontal") < 0)
@@ -191,7 +210,6 @@ public class BasementPresenter : MonoBehaviour
                 "Basement UI Right".Log();
             }
           
-            //_player.GetAxis("UIHorizontal").Log();
         }
 
         if (_player.GetNegativeButtonDown("UIVertical"))
@@ -208,7 +226,6 @@ public class BasementPresenter : MonoBehaviour
                 "Basement UI Up".Log();
             }
            
-            //_player.GetAxis("UIVertical").Log();
         }
         
         if (_player.GetButtonDown("Prev"))
@@ -227,14 +244,220 @@ public class BasementPresenter : MonoBehaviour
         {
             "Basement UI Submit".Log();
         }
+        if (_player.GetButtonDown("UICancel"))
+        {
+            "Basement UI Cancel".Log();
+        }
     }
-    public void OpenEquipment()
+    public void EquipmentInput()
     {
-        DOVirtual.DelayedCall(0.5f,()=>isEquipmentCanvas = true);
+       
+        
+        if(_player.GetNegativeButtonDown("UIHorizontal"))
+        {
+            if (_player.GetAxis("UIHorizontal") < 0)
+            {
+                "Basement UI Left".Log();
+            }
+        }
+        else if (_player.GetButtonDown("UIHorizontal"))
+        {
+            if (_player.GetAxis("UIHorizontal") > 0)
+            {
+                "Basement UI Right".Log();
+            }
+          
+        }
+
+        if (_player.GetNegativeButtonDown("UIVertical"))
+        {
+            if (_player.GetAxis("UIVertical") < 0)
+            {
+                "Basement UI Down".Log();
+            }
+        }
+        else if (_player.GetButtonDown("UIVertical"))
+        {
+            if (_player.GetAxis("UIVertical") > 0)
+            {
+                "Basement UI Up".Log();
+            }
+           
+        }
+        
+        if (_player.GetButtonDown("Prev"))
+        {
+            "Basement UI Prev".Log();
+            PreviousEquipmentTab();
+        }
+        
+        if (_player.GetButtonDown("Next"))
+        {
+            "Basement UI Next".Log();
+            NextEquipmentTab();
+        }
+        
+        if (_player.GetButtonDown("UISubmit"))
+        {
+            "Basement UI Submit".Log();
+        }
+        if (_player.GetButtonDown("UICancel"))
+        {
+            "Basement UI Cancel".Log();
+        }
+    }
+    
+    public void ExitInput()
+    {
+       
+        if(_player.GetNegativeButtonDown("UIHorizontal"))
+        {
+            if (_player.GetAxis("UIHorizontal") < 0)
+            {
+                "Basement UI Left".Log();
+            }
+        }
+        else if (_player.GetButtonDown("UIHorizontal"))
+        {
+            if (_player.GetAxis("UIHorizontal") > 0)
+            {
+                "Basement UI Right".Log();
+            }
+          
+        }
+
+        if (_player.GetNegativeButtonDown("UIVertical"))
+        {
+            if (_player.GetAxis("UIVertical") < 0)
+            {
+                "Basement UI Down".Log();
+            }
+        }
+        else if (_player.GetButtonDown("UIVertical"))
+        {
+            if (_player.GetAxis("UIVertical") > 0)
+            {
+                "Basement UI Up".Log();
+            }
+           
+        }
+        
+        if (_player.GetButtonDown("Prev"))
+        {
+            "Basement UI Prev".Log();
+            PreviousEquipmentTab();
+        }
+        
+        if (_player.GetButtonDown("Next"))
+        {
+            "Basement UI Next".Log();
+            NextEquipmentTab();
+        }
+        
+        if (_player.GetButtonDown("UISubmit"))
+        {
+            "Basement UI Submit".Log();
+        }
+        if (_player.GetButtonDown("UICancel"))
+        {
+            "Basement UI Cancel".Log();
+        }
+    }
+
+   
+
+
+
+    #region Map
+    
+    public void ShowMap()
+    {
+        eBasementCanvas = EBasementCanvas.Map;
+        mapView.Show();
+    }
+
+    public void HideMap()
+    {
+        eBasementCanvas = EBasementCanvas.None;
+        mapView.Hide();
+        
+    }
+    
+    public void DisableMapButton()
+    {
+        foreach (var mapButton in mapButtonList)
+        {
+            mapButton.interactable = false;
+            //mapButton.GetComponent<UIButton>().enabled = false;
+        }
+    }
+
+    public void InitUnLockMap()
+    {
+        for (int i = 0; i < unLockLevel; i++)
+        {
+            mapButtonList[i].enabled = true;
+            mapButtonList[i].interactable = true;
+            mapButtonList[i].GetComponent<UIButton>().enabled = true;
+            foreach (var VARIABLE in mapUnLockDataList[i].unLockArray)
+            {
+                VARIABLE.SetActive(false);
+            }
+        }
+    }
+
+    public void UnLockMap()
+    {
+        unLockLevel++;
+        for (int i = 0; i < unLockLevel; i++)
+        {
+            mapButtonList[i].enabled = true;
+            mapButtonList[i].interactable = true;
+            mapButtonList[i].GetComponent<UIButton>().enabled = true;
+            foreach (var VARIABLE in mapUnLockDataList[i].unLockArray)
+            {
+                VARIABLE.SetActive(false);
+            }
+        }
+        destinationPanel.SetActive(false);
+        destinationPanel.SetActive(true);
+    }
+
+    public void HoverMapHighlight(int idx)
+    {
+        mapSelectHighLight.transform.parent = mapButtonList[idx].transform;
+        mapSelectHighLight.anchoredPosition = new Vector2(0, 0);
+        mapSelectHighLight.SetAsFirstSibling();
+    }
+    
+    public void SetSelectedMapBtn()
+    {
+        EventSystem.current.SetSelectedGameObject(mapCloseBtn);
+
+    }
+
+    public void SelectMap(int idx)
+    {
+        DisableMapButton();
+        DOVirtual.DelayedCall(0.74f, () => { mapView.Hide(); });
+        currentMap = idx;
+    }
+    
+    
+    #endregion
+
+
+
+    #region Equipment
+
+    public void ShowEquipment()
+    {
+       
+        DOVirtual.DelayedCall(0.5f,()=> eBasementCanvas = EBasementCanvas.Equipment);
         
         equipmentView.Show();
         EventSystem.current.SetSelectedGameObject(equipmentTabButtonList[0].gameObject);
-        vcam1.SetActive(false);
+        vcam2.SetActive(false);
         vcamEquipment.SetActive(true);
         currentEquipmentTabIdx = 0;
         SelectEquipmentTab(currentEquipmentTabIdx);
@@ -242,9 +465,9 @@ public class BasementPresenter : MonoBehaviour
     
     public void HideEquipment()
     {
-        isEquipmentCanvas = false;
+        eBasementCanvas = EBasementCanvas.None;
         equipmentView.Hide();
-        vcam1.SetActive(true);
+        vcam2.SetActive(true);
         vcamEquipment.SetActive(false);
     }
 
@@ -305,85 +528,54 @@ public class BasementPresenter : MonoBehaviour
         SelectEquipmentTab(currentEquipmentTabIdx);
         MasterAudio.PlaySound("Click");
     }
+
+    #endregion
+
+
+    #region Inventory
+
+    public void ShowInventory()
+    {
+
+        eBasementCanvas = EBasementCanvas.Inventory;
+        
+        inventoryView.Show();
+        vcam2.SetActive(false);
+        vcamInventory.SetActive(true);
+      
+    }
     
+    public void HideInventory()
+    {
+        eBasementCanvas = EBasementCanvas.None;
+        inventoryView.Hide();
+        vcam2.SetActive(true);
+        vcamInventory.SetActive(false);
+    }
     
-    
 
-    public void SetSelectedMapBtn()
-    {
-        EventSystem.current.SetSelectedGameObject(mapCloseBtn);
+    #endregion
 
-    }
 
-   
-
-   
-    
-    public void DisableMapButton()
-    {
-        foreach (var mapButton in mapButtonList)
-        {
-            mapButton.interactable = false;
-            //mapButton.GetComponent<UIButton>().enabled = false;
-        }
-    }
-
-    public void InitUnLockMap()
-    {
-        for (int i = 0; i < unLockLevel; i++)
-        {
-            mapButtonList[i].enabled = true;
-            mapButtonList[i].interactable = true;
-            mapButtonList[i].GetComponent<UIButton>().enabled = true;
-            foreach (var VARIABLE in mapUnLockDataList[i].unLockArray)
-            {
-                VARIABLE.SetActive(false);
-            }
-        }
-    }
-
-    public void UnLockMap()
-    {
-        unLockLevel++;
-        for (int i = 0; i < unLockLevel; i++)
-        {
-            mapButtonList[i].enabled = true;
-            mapButtonList[i].interactable = true;
-            mapButtonList[i].GetComponent<UIButton>().enabled = true;
-            foreach (var VARIABLE in mapUnLockDataList[i].unLockArray)
-            {
-                VARIABLE.SetActive(false);
-            }
-        }
-        destinationPanel.SetActive(false);
-        destinationPanel.SetActive(true);
-    }
-
-    public void HoverMapHighlight(int idx)
-    {
-        mapSelectHighLight.transform.parent = mapButtonList[idx].transform;
-        mapSelectHighLight.anchoredPosition = new Vector2(0, 0);
-        mapSelectHighLight.SetAsFirstSibling();
-    }
-
-    public void SelectMap(int idx)
-    {
-        DisableMapButton();
-        DOVirtual.DelayedCall(0.74f, () => { mapView.Hide(); });
-        currentMap = idx;
-    }
-
+    #region Exit
     public void ShowExit()
     {
+        eBasementCanvas = EBasementCanvas.Exit;
         exitView.Show();
         exitDissolveSequence.Restart();
     }
 
     public void HideExit()
     {
+        eBasementCanvas = EBasementCanvas.None;
         "Exit".Log();
         exitView.Hide();
         MasterAudio.PlaySound("Click");
     }
+    
+
+    #endregion
+
+   
     
 }

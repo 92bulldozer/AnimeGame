@@ -5,10 +5,12 @@ using AnimeGame;
 using Doozy.Engine.UI;
 using EJ;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CloseUIEvent : MonoBehaviour
 {
     public UIView uiView;
+    public UnityEvent closeEvent;
     
     private void Awake()
     {
@@ -21,7 +23,7 @@ public class CloseUIEvent : MonoBehaviour
     {
         if (PlayerPresenter.Instance.player.GetButtonDown("UICancel") && uiView.IsVisible)
         {
-            uiView.Hide();
+            closeEvent?.Invoke();
         }
     }
 }

@@ -11,7 +11,7 @@ using UnityEngine;
 
 public enum EInteractText
 {
-    Interact_Closet=0,
+    Interact_Inventory=0,
     Interact_PickUp,
     Interact_Open,
     Interact_Close,

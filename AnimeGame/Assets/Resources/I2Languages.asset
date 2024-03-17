@@ -57,14 +57,6 @@ MonoBehaviour:
       - School
       Flags: 0000
       Languages_Touch: []
-    - Term: Interact/Interact_Closet
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC637\uC7A5"
-      - Closet
-      Flags: 0000
-      Languages_Touch: []
     - Term: Interact/Interact_Exit
       TermType: 0
       Description: 
@@ -269,6 +261,14 @@ MonoBehaviour:
       Languages:
       - "\uCDE8\uC18C"
       - Cancel
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Inventory
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC18C\uC9C0\uD488"
+      - Inventory
       Flags: 0000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
