@@ -17,7 +17,7 @@ MonoBehaviour:
   geometryTag: Untagged
   geometryRenderQueue: 3000
   geometryRenderQueueHD: 3100
-  m_RenderPipeline: 1
+  m_RenderPipeline: 0
   m_RenderingMode: 1
   ditheringFactor: 0
   useLightColorTemperature: 1
@@ -55,7 +55,7 @@ MonoBehaviour:
     _UniqueID: 3
   m_DefaultRaymarchingQualityUniqueID: 2
   pluginVersion: 20103
-  _DummyMaterial: {fileID: 2100000, guid: 0134fbc1e2468ea489e191c1210b0799, type: 2}
-  _DummyMaterialHD: {fileID: 2100000, guid: 65b88935503b07c47a21ade21f2a577f, type: 2}
-  _BeamShader: {fileID: 4800000, guid: fd4a1cad226ef444698f688b69133356, type: 3}
-  _BeamShaderHD: {fileID: 4800000, guid: c9b086dd241ea2f4cab697f789e68590, type: 3}
+  _DummyMaterial: {fileID: 2100000, guid: 91612dc198207b74aa75ac3a29d436f6, type: 2}
+  _DummyMaterialHD: {fileID: 2100000, guid: 257a4ac1d7867184b849a3b039d77b19, type: 2}
+  _BeamShader: {fileID: 4800000, guid: 7fd9b60362f23cd439ded5cd49ed2f7a, type: 3}
+  _BeamShaderHD: {fileID: 4800000, guid: 1b91c89932cf70942b6b4c0822c86b0f, type: 3}

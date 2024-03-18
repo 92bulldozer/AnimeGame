@@ -8,6 +8,7 @@ using EJ;
 using EPOOutline;
 using Michsky.UI.Dark;
 using Rewired;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -20,17 +21,24 @@ public class MapUIData
 
 public enum EEquipmentTab
 {
-    Equipment=0,
+    Equipment = 0,
+    Consume,
+    Material
+}
+
+public enum EStashTab
+{
+    Equipment = 0,
     Consume,
     Material
 }
 
 public enum EBasementCanvas
 {
-    None=0,
+    None = 0,
     Map,
     Equipment,
-    Inventory,
+    Stash,
     Exit
 }
 
@@ -38,49 +46,63 @@ public class BasementPresenter : MonoBehaviour
 {
     public static BasementPresenter Instance;
 
-    [Space(20)] [Header("UI")] [Space(10)]
-    public UIView mapView;
+    [Space(20)] [Header("UI")] [Space(10)] public UIView mapView;
     public UIView equipmentView;
-    public UIView inventoryView;
+    public UIView stashView;
     public UIView exitView;
     public List<GameObject> keyboardUIList;
     public List<GameObject> joystickUIList;
+
     [Space(20)] [Header("UI_Map")] [Space(10)]
     public List<Button> mapButtonList;
+
     public List<MapUIData> mapUnLockDataList;
     public GameObject destinationPanel;
     public RectTransform mapSelectHighLight;
 
     [Space(20)] [Header("UI_Equipment")] [Space(10)]
     public Color normalColor;
+
     public Color selectColor;
     public int currentEquipmentTabIdx;
     public List<Button> equipmentTabButtonList;
     public List<CanvasGroup> equipmentCGList;
     private List<Sequence> equipmentScrollSequenceList;
 
-    [Space(20)] [Header("UI_Inventory")] [Space(10)]
+    [Space(20)] [Header("UI_Stash")] [Space(10)]
+    public int currentStashTabIdx;
+    public List<Button> stashTabButtonList;
+    public List<CanvasGroup> stashCGList;
+    private List<Sequence> stashScrollSequenceList;
+    public List<StashSlotUI> equipmentStashSlotUIList;
+    public List<StashSlotUI> consumeStashSlotUIList;
+    public List<StashSlotUI> materialStashSlotUIList;
+    public Image detailIcon;
+    public TextMeshProUGUI detailTitleText;
+    public TextMeshProUGUI detailDescriptionText;
+
     [Space(20)] [Header("UI_Exit")] [Space(10)]
     public UIDissolveEffect exitDissolve;
+
     public Sequence exitDissolveSequence;
 
     [Space(20)] [Header("Field")] [Space(10)]
     public Camera mainCamera;
+
     public GameObject mapCloseBtn;
     public int unLockLevel;
     public int currentMap;
     public GameObject vcamEquipment;
     public GameObject vcam1;
     public GameObject vcam2;
-    public GameObject vcamInventory;
+    public GameObject vcamStash;
     public Outliner cameraOutliner;
     public EBasementCanvas eBasementCanvas;
-   
-    
-    
-    
+
+
     [Space(20)] [Header("Input")] [Space(10)]
     private Player _player;
+
     private int cameraLayer;
     public ControllerType currentControllerType;
 
@@ -92,7 +114,7 @@ public class BasementPresenter : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+
         Init();
     }
 
@@ -103,9 +125,8 @@ public class BasementPresenter : MonoBehaviour
             UnLockMap();
         }
 
-        
-        
-        ProcessCanvasInput();        
+
+        ProcessCanvasInput();
     }
 
 
@@ -118,25 +139,39 @@ public class BasementPresenter : MonoBehaviour
         AddControllerChangeCallback();
         InitUnLockMap();
         equipmentScrollSequenceList = new List<Sequence>();
-        
-        equipmentScrollSequenceList.Add(
-            DOTween.Sequence().Append(equipmentCGList[0].DOFade(1,1) 
-                    .SetEase(Ease.OutQuad)).OnStart(()=>equipmentCGList[0].alpha=0).SetAutoKill(false)
-            );
-        
-        equipmentScrollSequenceList.Add(
-            DOTween.Sequence().Append(equipmentCGList[1].DOFade(1,1) 
-                .SetEase(Ease.OutQuad)).OnStart(()=>equipmentCGList[1].alpha=0).SetAutoKill(false));
-        
-        equipmentScrollSequenceList.Add(
-            DOTween.Sequence().Append(equipmentCGList[2].DOFade(1,1) 
-                .SetEase(Ease.OutQuad)).OnStart(()=>equipmentCGList[2].alpha=0).SetAutoKill(false));
+        stashScrollSequenceList = new List<Sequence>();
 
-        exitDissolveSequence = DOTween.Sequence().SetAutoKill(false).Append(
-            DOTween.To(() => exitDissolve.location, x => exitDissolve.location = x, 0, 1)
-                .OnStart(()=>exitDissolve.location=1).SetEase(Ease.OutQuad)
+        // equipmentScrollSequenceList.Add(
+        //     DOTween.Sequence().Append(equipmentCGList[0].DOFade(1, 1)
+        //         .SetEase(Ease.OutQuad)).OnStart(() => equipmentCGList[0].alpha = 0).SetAutoKill(false)
+        // );
+        //
+        // equipmentScrollSequenceList.Add(
+        //     DOTween.Sequence().Append(equipmentCGList[1].DOFade(1, 1)
+        //         .SetEase(Ease.OutQuad)).OnStart(() => equipmentCGList[1].alpha = 0).SetAutoKill(false));
+        //
+        // equipmentScrollSequenceList.Add(
+        //     DOTween.Sequence().Append(equipmentCGList[2].DOFade(1, 1)
+        //         .SetEase(Ease.OutQuad)).OnStart(() => equipmentCGList[2].alpha = 0).SetAutoKill(false));
+        
+        stashScrollSequenceList.Add(
+            DOTween.Sequence().Append(stashCGList[0].DOFade(1, 1)
+                .SetEase(Ease.OutQuad)).OnStart(() => stashCGList[0].alpha = 0).SetAutoKill(false)
         );
 
+        stashScrollSequenceList.Add(
+            DOTween.Sequence().Append(stashCGList[1].DOFade(1, 1)
+                .SetEase(Ease.OutQuad)).OnStart(() => stashCGList[1].alpha = 0).SetAutoKill(false));
+
+        stashScrollSequenceList.Add(
+            DOTween.Sequence().Append(stashCGList[2].DOFade(1, 1)
+                .SetEase(Ease.OutQuad)).OnStart(() => stashCGList[2].alpha = 0).SetAutoKill(false));
+        
+
+        exitDissolveSequence = DOTween.Sequence().Append(
+            DOTween.To(() => exitDissolve.location, x => exitDissolve.location = x, 0, 1)
+                .OnStart(() => exitDissolve.location = 1).SetEase(Ease.OutQuad).SetAutoKill(false)
+        );
     }
 
     public void AddControllerChangeCallback()
@@ -153,7 +188,7 @@ public class BasementPresenter : MonoBehaviour
                         joystickUI.SetActive(false);
                     EscMenuPresenter.Instance.ShowCursor();
                     break;
-        
+
                 case ControllerType.Joystick:
                     foreach (var keyboardUI in keyboardUIList)
                         keyboardUI.SetActive(false);
@@ -161,16 +196,11 @@ public class BasementPresenter : MonoBehaviour
                         joystickUI.SetActive(true);
                     EscMenuPresenter.Instance.HideCursor();
                     break;
-                
             }
-            
+
             GameManager.Instance.UIForceRebuild();
-
         });
-        
-
     }
-
 
 
     public void ProcessCanvasInput()
@@ -185,18 +215,19 @@ public class BasementPresenter : MonoBehaviour
             case EBasementCanvas.Equipment:
                 EquipmentInput();
                 break;
-         
+            case EBasementCanvas.Stash:
+                StashInput();
+                break;
+
             case EBasementCanvas.Exit:
                 ExitInput();
                 break;
-            
         }
     }
 
     public void MapInput()
     {
-      
-        if(_player.GetNegativeButtonDown("UIHorizontal"))
+        if (_player.GetNegativeButtonDown("UIHorizontal"))
         {
             if (_player.GetAxis("UIHorizontal") < 0)
             {
@@ -209,7 +240,6 @@ public class BasementPresenter : MonoBehaviour
             {
                 "Basement UI Right".Log();
             }
-          
         }
 
         if (_player.GetNegativeButtonDown("UIVertical"))
@@ -225,35 +255,34 @@ public class BasementPresenter : MonoBehaviour
             {
                 "Basement UI Up".Log();
             }
-           
         }
-        
+
         if (_player.GetButtonDown("Prev"))
         {
             "Basement UI Prev".Log();
             PreviousEquipmentTab();
         }
-        
+
         if (_player.GetButtonDown("Next"))
         {
             "Basement UI Next".Log();
             NextEquipmentTab();
         }
-        
+
         if (_player.GetButtonDown("UISubmit"))
         {
             "Basement UI Submit".Log();
         }
+
         if (_player.GetButtonDown("UICancel"))
         {
             "Basement UI Cancel".Log();
         }
     }
+
     public void EquipmentInput()
     {
-       
-        
-        if(_player.GetNegativeButtonDown("UIHorizontal"))
+        if (_player.GetNegativeButtonDown("UIHorizontal"))
         {
             if (_player.GetAxis("UIHorizontal") < 0)
             {
@@ -266,7 +295,6 @@ public class BasementPresenter : MonoBehaviour
             {
                 "Basement UI Right".Log();
             }
-          
         }
 
         if (_player.GetNegativeButtonDown("UIVertical"))
@@ -282,35 +310,35 @@ public class BasementPresenter : MonoBehaviour
             {
                 "Basement UI Up".Log();
             }
-           
         }
-        
+
         if (_player.GetButtonDown("Prev"))
         {
             "Basement UI Prev".Log();
             PreviousEquipmentTab();
         }
-        
+
         if (_player.GetButtonDown("Next"))
         {
             "Basement UI Next".Log();
             NextEquipmentTab();
         }
-        
+
         if (_player.GetButtonDown("UISubmit"))
         {
             "Basement UI Submit".Log();
         }
+
         if (_player.GetButtonDown("UICancel"))
         {
             "Basement UI Cancel".Log();
         }
     }
     
-    public void ExitInput()
+    
+    public void StashInput()
     {
-       
-        if(_player.GetNegativeButtonDown("UIHorizontal"))
+        if (_player.GetNegativeButtonDown("UIHorizontal"))
         {
             if (_player.GetAxis("UIHorizontal") < 0)
             {
@@ -323,7 +351,6 @@ public class BasementPresenter : MonoBehaviour
             {
                 "Basement UI Right".Log();
             }
-          
         }
 
         if (_player.GetNegativeButtonDown("UIVertical"))
@@ -339,37 +366,89 @@ public class BasementPresenter : MonoBehaviour
             {
                 "Basement UI Up".Log();
             }
-           
         }
-        
+
         if (_player.GetButtonDown("Prev"))
         {
             "Basement UI Prev".Log();
-            PreviousEquipmentTab();
+            PreviousStashTab();
         }
-        
+
         if (_player.GetButtonDown("Next"))
         {
             "Basement UI Next".Log();
-            NextEquipmentTab();
+            NextStashTab();
         }
-        
+
         if (_player.GetButtonDown("UISubmit"))
         {
-            "Basement UI Submit".Log();
+            //"Basement UI Submit".Log();
         }
+
         if (_player.GetButtonDown("UICancel"))
         {
             "Basement UI Cancel".Log();
         }
     }
 
-   
+    public void ExitInput()
+    {
+        if (_player.GetNegativeButtonDown("UIHorizontal"))
+        {
+            if (_player.GetAxis("UIHorizontal") < 0)
+            {
+                "Basement UI Left".Log();
+            }
+        }
+        else if (_player.GetButtonDown("UIHorizontal"))
+        {
+            if (_player.GetAxis("UIHorizontal") > 0)
+            {
+                "Basement UI Right".Log();
+            }
+        }
 
+        if (_player.GetNegativeButtonDown("UIVertical"))
+        {
+            if (_player.GetAxis("UIVertical") < 0)
+            {
+                "Basement UI Down".Log();
+            }
+        }
+        else if (_player.GetButtonDown("UIVertical"))
+        {
+            if (_player.GetAxis("UIVertical") > 0)
+            {
+                "Basement UI Up".Log();
+            }
+        }
+
+        if (_player.GetButtonDown("Prev"))
+        {
+            "Basement UI Prev".Log();
+            PreviousEquipmentTab();
+        }
+
+        if (_player.GetButtonDown("Next"))
+        {
+            "Basement UI Next".Log();
+            NextEquipmentTab();
+        }
+
+        if (_player.GetButtonDown("UISubmit"))
+        {
+            "Basement UI Submit".Log();
+        }
+
+        if (_player.GetButtonDown("UICancel"))
+        {
+            "Basement UI Cancel".Log();
+        }
+    }
 
 
     #region Map
-    
+
     public void ShowMap()
     {
         eBasementCanvas = EBasementCanvas.Map;
@@ -380,9 +459,8 @@ public class BasementPresenter : MonoBehaviour
     {
         eBasementCanvas = EBasementCanvas.None;
         mapView.Hide();
-        
     }
-    
+
     public void DisableMapButton()
     {
         foreach (var mapButton in mapButtonList)
@@ -419,6 +497,7 @@ public class BasementPresenter : MonoBehaviour
                 VARIABLE.SetActive(false);
             }
         }
+
         destinationPanel.SetActive(false);
         destinationPanel.SetActive(true);
     }
@@ -429,11 +508,10 @@ public class BasementPresenter : MonoBehaviour
         mapSelectHighLight.anchoredPosition = new Vector2(0, 0);
         mapSelectHighLight.SetAsFirstSibling();
     }
-    
+
     public void SetSelectedMapBtn()
     {
         EventSystem.current.SetSelectedGameObject(mapCloseBtn);
-
     }
 
     public void SelectMap(int idx)
@@ -442,19 +520,16 @@ public class BasementPresenter : MonoBehaviour
         DOVirtual.DelayedCall(0.74f, () => { mapView.Hide(); });
         currentMap = idx;
     }
-    
-    
-    #endregion
 
+    #endregion
 
 
     #region Equipment
 
     public void ShowEquipment()
     {
-       
-        DOVirtual.DelayedCall(0.5f,()=> eBasementCanvas = EBasementCanvas.Equipment);
-        
+        DOVirtual.DelayedCall(0.5f, () => eBasementCanvas = EBasementCanvas.Equipment);
+
         equipmentView.Show();
         EventSystem.current.SetSelectedGameObject(equipmentTabButtonList[0].gameObject);
         vcam2.SetActive(false);
@@ -462,7 +537,7 @@ public class BasementPresenter : MonoBehaviour
         currentEquipmentTabIdx = 0;
         SelectEquipmentTab(currentEquipmentTabIdx);
     }
-    
+
     public void HideEquipment()
     {
         eBasementCanvas = EBasementCanvas.None;
@@ -475,7 +550,7 @@ public class BasementPresenter : MonoBehaviour
     {
         foreach (var button in equipmentTabButtonList)
             button.image.color = normalColor;
-        
+
         for (int i = 0; i < equipmentTabButtonList.Count; i++)
             if (i == idx)
             {
@@ -513,10 +588,11 @@ public class BasementPresenter : MonoBehaviour
             currentEquipmentTabIdx = 0;
             return;
         }
+
         SelectEquipmentTab(currentEquipmentTabIdx);
         MasterAudio.PlaySound("Click");
     }
-    
+
     public void NextEquipmentTab()
     {
         currentEquipmentTabIdx++;
@@ -525,6 +601,7 @@ public class BasementPresenter : MonoBehaviour
             currentEquipmentTabIdx = 2;
             return;
         }
+
         SelectEquipmentTab(currentEquipmentTabIdx);
         MasterAudio.PlaySound("Click");
     }
@@ -532,32 +609,143 @@ public class BasementPresenter : MonoBehaviour
     #endregion
 
 
-    #region Inventory
+    #region Stash
 
-    public void ShowInventory()
+    public void ShowStash()
     {
+        DOVirtual.DelayedCall(0.5f, () => eBasementCanvas = EBasementCanvas.Stash);
 
-        eBasementCanvas = EBasementCanvas.Inventory;
-        
-        inventoryView.Show();
+        stashView.Show();
         vcam2.SetActive(false);
-        vcamInventory.SetActive(true);
-      
+        vcamStash.SetActive(true);
+        currentStashTabIdx = 0;
+        SelectStashTab(currentStashTabIdx);
+        HoverEquipmentStashSlotUI(0);
     }
-    
-    public void HideInventory()
+
+    public void HideStash()
     {
         eBasementCanvas = EBasementCanvas.None;
-        inventoryView.Hide();
+        stashView.Hide();
         vcam2.SetActive(true);
-        vcamInventory.SetActive(false);
+        vcamStash.SetActive(false);
+    }
+
+    public void SelectStashTab(int idx)
+    {
+        foreach (var button in stashTabButtonList)
+            button.image.color = normalColor;
+
+        for (int i = 0; i < stashTabButtonList.Count; i++)
+            if (i == idx)
+            {
+                stashTabButtonList[idx].image.color = selectColor;
+                currentStashTabIdx = idx;
+                SetStashScrollViewPanel((EStashTab)idx);
+                break;
+            }
+    }
+
+    public void SetStashScrollViewPanel(EStashTab tab)
+    {
+        foreach (var cg in stashCGList)
+        {
+            cg.alpha = 0;
+            cg.interactable = false;
+            cg.blocksRaycasts = false;
+        }
+
+        foreach (var sequence in stashScrollSequenceList)
+        {
+            sequence.Rewind();
+        }
+
+        stashScrollSequenceList[(int)tab].Restart();
+        stashCGList[(int)tab].interactable = true;
+        stashCGList[(int)tab].blocksRaycasts = true;
+
+        switch (tab)
+        {
+            case EStashTab.Equipment:
+                HoverEquipmentStashSlotUI(0);
+                break;
+            case EStashTab.Consume:
+                HoverConsumptionStashSlotUI(0);
+                break;
+            case EStashTab.Material:
+                HoverMaterialStashSlotUI(0);
+                break;
+            
+        }
+    }
+
+    public void HoverEquipmentStashSlotUI(int idx)
+    {
+        for (int i = 0; i < equipmentStashSlotUIList.Count; i++)
+            if(i==idx)
+            {
+                equipmentStashSlotUIList[i].HoverEnter();
+                EventSystem.current.SetSelectedGameObject(equipmentStashSlotUIList[0].gameObject);
+                break;
+            }
+        
     }
     
+    public void HoverConsumptionStashSlotUI(int idx)
+    {
+        for (int i = 0; i < consumeStashSlotUIList.Count; i++)
+            if(i==idx)
+            {
+                consumeStashSlotUIList[i].HoverEnter();
+                EventSystem.current.SetSelectedGameObject(consumeStashSlotUIList[0].gameObject);
+                break;
+            }
+        
+    }
+    
+    public void HoverMaterialStashSlotUI(int idx)
+    {
+        for (int i = 0; i < materialStashSlotUIList.Count; i++)
+            if(i==idx)
+            {
+                materialStashSlotUIList[i].HoverEnter();
+                EventSystem.current.SetSelectedGameObject(materialStashSlotUIList[0].gameObject);
+                break;
+            }
+        
+    }
+
+    public void PreviousStashTab()
+    {
+        currentStashTabIdx--;
+        if (currentStashTabIdx < 0)
+        {
+            currentStashTabIdx = 0;
+            return;
+        }
+
+        SelectStashTab(currentStashTabIdx);
+        MasterAudio.PlaySound("Click");
+    }
+
+    public void NextStashTab()
+    {
+        currentStashTabIdx++;
+        if (currentStashTabIdx > 2)
+        {
+            currentStashTabIdx = 2;
+            return;
+        }
+
+        SelectStashTab(currentStashTabIdx);
+        MasterAudio.PlaySound("Click");
+    }
 
     #endregion
 
 
     #region Exit
+
     public void ShowExit()
     {
         eBasementCanvas = EBasementCanvas.Exit;
@@ -572,10 +760,6 @@ public class BasementPresenter : MonoBehaviour
         exitView.Hide();
         MasterAudio.PlaySound("Click");
     }
-    
 
     #endregion
-
-   
-    
 }
