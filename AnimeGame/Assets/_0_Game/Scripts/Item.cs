@@ -14,6 +14,5 @@ public enum EItemType
 [Serializable]
 public class Item
 {
-    public ItemData itemData;
     
 }

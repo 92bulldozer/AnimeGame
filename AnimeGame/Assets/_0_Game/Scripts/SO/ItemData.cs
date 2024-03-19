@@ -1,13 +1,13 @@
-using System.Numerics;
+
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ItemData", menuName = "SO/ItemData")]
-public class ItemData : ScriptableObject
+[CreateAssetMenu(fileName = "ItemData", menuName = "SO/Item Data")]
+public abstract class ItemData :ScriptableObject
 {
-    public string itemID;
-    public string itemName;
-    public string itemDescription;
-    public bool isStackable;
+    
+    public int itemID;
+    public Sprite icon;
+    public string name;
     public EItemType itemType;
-    public Sprite iconSprite;
+
 }

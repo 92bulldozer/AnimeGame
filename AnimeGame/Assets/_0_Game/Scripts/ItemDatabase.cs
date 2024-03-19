@@ -1,14 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
+using EJ;
 using UnityEngine;
 
-public class ItemDatabase : SerializedMonoBehaviour
+[Serializable]
+public class ItemDicionary
+{
+    public int id;
+    public string name;
+}
+
+public class ItemDatabase : MonoBehaviour
 {
     public static ItemDatabase Instance;
 
-    public Dictionary<string, int> dic;
+    public List<ItemDicionary> itemDictionary;
+
+    public Dictionary<int, string> _itemDictionary;
+    
+    
+    //[health]
+
 
     private void Awake()
     {
@@ -20,13 +33,27 @@ public class ItemDatabase : SerializedMonoBehaviour
         }
         
         DontDestroyOnLoad(gameObject);
+        
+        Init();
+    }
+
+    private void Init()
+    {
+        _itemDictionary = new Dictionary<int, string>();
+        foreach (var VARIABLE in itemDictionary)
+        {
+            _itemDictionary.Add(VARIABLE.id,VARIABLE.name);
+        }
+
+        foreach (var VARIABLE in _itemDictionary)
+        {
+            $"{VARIABLE.Key} {VARIABLE.Value}".Log();
+        }
+
     }
 
     private void Start()
     {
-        foreach (var VARIABLE in dic)
-        {
-            Debug.Log( $"{VARIABLE.Key} {VARIABLE.Value}");
-        }
+
     }
 }
