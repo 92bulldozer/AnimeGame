@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AssetKits.ParticleImage;
 using DarkTonic.MasterAudio;
 using DG.Tweening;
 using Doozy.Engine.UI;
@@ -54,7 +55,10 @@ public class BasementPresenter : MonoBehaviour
     public List<GameObject> joystickUIList;
 
     [Space(20)] [Header("UI_Map")] [Space(10)]
+    public int maxMap;
     public List<Button> mapButtonList;
+    public List<ParticleImage> mapSelectEffectList;
+    public List<Animator> mapBtnAnimatorList;
 
     public List<MapUIData> mapUnLockDataList;
     public GameObject destinationPanel;
@@ -260,18 +264,19 @@ public class BasementPresenter : MonoBehaviour
         if (_player.GetButtonDown("Prev"))
         {
             "Basement UI Prev".Log();
-            PreviousEquipmentTab();
+            PrevSelectMap();
         }
 
         if (_player.GetButtonDown("Next"))
         {
             "Basement UI Next".Log();
-            NextEquipmentTab();
+            NextSelectMap();
         }
 
         if (_player.GetButtonDown("UISubmit"))
         {
             "Basement UI Submit".Log();
+            SelectMap(currentMap);
         }
 
         if (_player.GetButtonDown("UICancel"))
@@ -451,14 +456,31 @@ public class BasementPresenter : MonoBehaviour
 
     public void ShowMap()
     {
-        eBasementCanvas = EBasementCanvas.Map;
+        DOVirtual.DelayedCall(0.5f, () =>  eBasementCanvas = EBasementCanvas.Map);
         mapView.Show();
+       
+        DOVirtual.DelayedCall(0.5f, () =>
+        {
+            foreach (var animator in mapBtnAnimatorList)
+            {
+                animator.SetFloat("Speed",1);
+            }
+        });
+
+      
     }
 
     public void HideMap()
     {
         eBasementCanvas = EBasementCanvas.None;
         mapView.Hide();
+        DOVirtual.DelayedCall(0.1f, () =>
+        {
+            foreach (var animator in mapBtnAnimatorList)
+            {
+                animator.SetFloat("Speed",10);
+            }
+        });
     }
 
     public void DisableMapButton()
@@ -486,6 +508,9 @@ public class BasementPresenter : MonoBehaviour
 
     public void UnLockMap()
     {
+        if (unLockLevel >= maxMap)
+            return;
+        
         unLockLevel++;
         for (int i = 0; i < unLockLevel; i++)
         {
@@ -498,27 +523,79 @@ public class BasementPresenter : MonoBehaviour
             }
         }
 
+        
         destinationPanel.SetActive(false);
         destinationPanel.SetActive(true);
     }
 
     public void HoverMapHighlight(int idx)
     {
+        currentMap = idx;
+        EventSystem.current.SetSelectedGameObject(mapButtonList[idx].gameObject);
+
         mapSelectHighLight.transform.parent = mapButtonList[idx].transform;
         mapSelectHighLight.anchoredPosition = new Vector2(0, 0);
         mapSelectHighLight.SetAsFirstSibling();
     }
 
+    public void MapUnHover()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+
+    }
+
+
+    public void PrevSelectMap()
+    {
+        currentMap--;
+        if (currentMap < 0)
+        {
+            currentMap = 0;
+            return;
+        }
+        
+        EventSystem.current.SetSelectedGameObject(mapButtonList[currentMap].gameObject);
+        HoverMapHighlight(currentMap);
+        MasterAudio.PlaySound("Hover");
+    }
+    
+    public void NextSelectMap()
+    {
+        if (currentMap >= unLockLevel-1)
+            return;
+        $"{currentMap} {unLockLevel-1}".Log();
+        
+        currentMap++;
+        if (currentMap > 3)
+        {
+            currentMap = 3;
+            return;
+        }
+        EventSystem.current.SetSelectedGameObject(mapButtonList[currentMap].gameObject);
+        HoverMapHighlight(currentMap);
+        MasterAudio.PlaySound("Hover");
+    }
+
     public void SetSelectedMapBtn()
     {
-        EventSystem.current.SetSelectedGameObject(mapCloseBtn);
+        EventSystem.current.SetSelectedGameObject(mapButtonList[currentMap].gameObject);
+        HoverMapHighlight(currentMap);
     }
 
     public void SelectMap(int idx)
     {
-        DisableMapButton();
-        DOVirtual.DelayedCall(0.74f, () => { mapView.Hide(); });
         currentMap = idx;
+        EventSystem.current.SetSelectedGameObject(mapButtonList[currentMap].gameObject);
+        eBasementCanvas = EBasementCanvas.None;
+        DisableMapButton();
+        mapSelectEffectList[currentMap].Play();
+        DOVirtual.DelayedCall(0.74f, () => { mapView.Hide(); });
+        MasterAudio.PlaySound("Select");
+        MasterAudio.PlaySound("Click");
+        foreach (var animator in mapBtnAnimatorList)
+            animator.SetFloat("Speed",10);
+        
+       
     }
 
     #endregion
