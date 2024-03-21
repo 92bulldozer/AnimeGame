@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     public void LanguageInit()
     {
         //ES3.Save("Language","ENGLISH");
-        LocalizationManager.CurrentLanguage = ES3.Load<string>("Language");
+        LocalizationManager.CurrentLanguage = ES3.Load<string>("Language","English",true);
     }
 
     private void Update()

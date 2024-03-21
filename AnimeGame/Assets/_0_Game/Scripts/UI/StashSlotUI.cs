@@ -10,8 +10,10 @@ using UnityEngine.UI;
 public class StashSlotUI : MonoBehaviour
 {
     public Image icon;
+    public int itemID = -1;
     public TextMeshProUGUI amountText;
     public GameObject highLightObject;
+    public ItemData itemData;
     public bool isEmpty = true;
 
     [ContextMenu("AutoInit/AutoGetChild")]
@@ -30,16 +32,18 @@ public class StashSlotUI : MonoBehaviour
         $"{gameObject.name}".Log();
     }
     
-    
-    public void HoverEnter()
-    {
+    public void HoverEnter()=>
         highLightObject.SetActive(true);
-       
+    public void HoverExit()=>
+        highLightObject.SetActive(false);
+
+
+    public void SetSlot(ItemData _itemData)
+    {
+        isEmpty = false;
+        itemData = _itemData;
+        icon.sprite = itemData.icon;
+        itemID = itemData.itemID;
     }
     
-    public void HoverExit()
-    {
-        highLightObject.SetActive(false);
-        
-    }
 }

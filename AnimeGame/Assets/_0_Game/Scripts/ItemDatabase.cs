@@ -4,6 +4,7 @@ using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+
 using UnityEngine;
 
 [Serializable]
@@ -23,14 +24,11 @@ public class ItemDatabase : MonoBehaviour
 {
     public static ItemDatabase Instance;
 
-    public List<ItemDictionaryData> itemDictionary;
+    public List<ItemDictionaryData> itemDictionaryInspector;
 
-    public Dictionary<int, ItemData> _itemDictionary;
+    public Dictionary<int, ItemData> itemDictionary;
 
-    public int a;
-
-
-    //[health]
+   
 
 
     private void Awake()
@@ -49,34 +47,32 @@ public class ItemDatabase : MonoBehaviour
 
     private void Init()
     {
-        _itemDictionary = new Dictionary<int, ItemData>();
-        foreach (var VARIABLE in itemDictionary)
-            _itemDictionary.Add(VARIABLE.id, VARIABLE.itemData);
+        itemDictionary = new Dictionary<int, ItemData>();
+        foreach (var VARIABLE in itemDictionaryInspector)
+            itemDictionary.Add(VARIABLE.id, VARIABLE.itemData);
         
 
-        foreach (var VARIABLE in _itemDictionary)
+        foreach (var VARIABLE in itemDictionary)
         {
             Debug.Log($"{VARIABLE.Key} {VARIABLE.Value.name}");
             //$"{VARIABLE.Key} {VARIABLE.Value}".Log();
         }
         
-        Debug.Log(a);
     }
 
 
 #if UNITY_EDITOR
-
     [ContextMenu("AutoInit/Init_ItemData")]
     void InitItemData()
     {
-        itemDictionary = new List<ItemDictionaryData>();
+        itemDictionaryInspector = new List<ItemDictionaryData>();
         
         string[] guids = AssetDatabase.FindAssets("t:" + typeof(ConsumableItemData).Name);
         for (int i = 0; i < guids.Length; i++)
         {
             string assetPath = AssetDatabase.GUIDToAssetPath(guids[i]);
             ConsumableItemData citem =  (ConsumableItemData)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ConsumableItemData));
-            itemDictionary.Add(new ItemDictionaryData(citem.itemID,citem));
+            itemDictionaryInspector.Add(new ItemDictionaryData(citem.itemID,citem));
         }
         
         guids = AssetDatabase.FindAssets("t:" + typeof(EquipmentItemData).Name);
@@ -84,7 +80,7 @@ public class ItemDatabase : MonoBehaviour
         {
             string assetPath = AssetDatabase.GUIDToAssetPath(guids[i]);
             EquipmentItemData eitem =  (EquipmentItemData)AssetDatabase.LoadAssetAtPath(assetPath, typeof(EquipmentItemData));
-            itemDictionary.Add(new ItemDictionaryData(eitem.itemID,eitem));
+            itemDictionaryInspector.Add(new ItemDictionaryData(eitem.itemID,eitem));
         }
         
         guids = AssetDatabase.FindAssets("t:" + typeof(MaterialItemData).Name);
@@ -92,12 +88,23 @@ public class ItemDatabase : MonoBehaviour
         {
             string assetPath = AssetDatabase.GUIDToAssetPath(guids[i]);
             MaterialItemData eitem =  (MaterialItemData)AssetDatabase.LoadAssetAtPath(assetPath, typeof(MaterialItemData));
-            itemDictionary.Add(new ItemDictionaryData(eitem.itemID,eitem));
+            itemDictionaryInspector.Add(new ItemDictionaryData(eitem.itemID,eitem));
         }
     }
 #endif
 
     private void Start()
     {
+    }
+
+    public ItemData GetItem(int itemID)
+    {
+        if (itemDictionary.TryGetValue(itemID, out ItemData itemData))
+        {
+            return itemData;
+        }
+
+        return null;
+
     }
 }
