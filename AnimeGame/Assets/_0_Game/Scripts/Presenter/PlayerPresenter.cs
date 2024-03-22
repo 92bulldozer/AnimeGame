@@ -1,16 +1,15 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DarkTonic.MasterAudio;
 using DG.Tweening;
 using Doozy.Engine;
 using EJ;
+using MarkupAttributes;
 using MoreMountains.Feedbacks;
 using Rewired;
 using RootMotion.Dynamics;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public enum EBody
 {
@@ -37,46 +36,43 @@ public enum KnockBackDirection
 namespace AnimeGame
 {
     [RequireComponent(typeof(PlayerInteract))]
-    public class PlayerPresenter : MonoBehaviour
+    public class PlayerPresenter : AnimeBehaviour
     {
         public static PlayerPresenter Instance;
 
-        [Space(20)] [Header("Field")] [Space(10)] 
-        public bool isFlashOn;
-        public bool isRagDoll;
-        public bool isAlive { get; set; }
-
-        [Space(20)] [Header("Rewired")] [Space(10)]
-        public Player player;
-
+        [TabScope("Tab Scope", "Rewired|Component|MMF|Sfx|HangTransform", box: true,20)]
+  
+        [Tab("./Rewired")]
         public int playerID;
-
-
-        [Space(20)] [Header("Component")] [Space(10)] 
+        public Player player;
+        
+        [Tab("../Component")]
         public PuppetMaster puppetMaster;
         public List<MuscleCollisionBroadcaster> ragDollCollisionList;
         public GameObject flashLight;
         public GameObject virtualCamera;
         public PlayerInteract playerInteract;
-
-
-
-        private Camera _mainCamera;
         private CapsuleCollider _capsuleCollider;
         private Rigidbody _rb;
         public Animator _animator;
+        private Camera _mainCamera;
 
-        [Space(20)] [Header("MMF")] [Space(10)] 
+        [Tab("../MMF")]
         public MMF_Player MMF_CameraShake;
-        [Space(20)] [Header("Sfx")] [Space(10)] 
+        
+        [Tab("../Sfx")]
         public string footStepSfx;
 
-        [Space(20)] [Header("HangTransform")] [Space(10)] 
+        [Tab("../HangTransform")]
         public Transform LHandTarget;
         public Transform RHandTarget;
         public Transform chestTarget;
         public Transform headTarget;
         
+        [Box("Field",true,10)]
+        public bool isFlashOn;
+        public bool isRagDoll;
+        public bool isAlive { get; set; }
 
        
 

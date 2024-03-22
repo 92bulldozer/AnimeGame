@@ -21,18 +21,14 @@ Material:
   - N_F_SS_ON
   - N_F_TRANSAFFSHA_ON
   - N_F_TRANS_ON
-  - _ADDITIONAL_LIGHTS
-  - _ADDITIONAL_LIGHT_SHADOWS
   - _ALPHATEST_ON
-  - _MAIN_LIGHT_SHADOWS
-  - _MAIN_LIGHT_SHADOWS_CASCADE
-  - _SHADOWS_SOFT
+  - _NORMALMAP
   m_InvalidKeywords:
-  - N_F_TRANSAFFSHA
+  - MTOON_OUTLINE_COLOR_FIXED
+  - MTOON_OUTLINE_WIDTH_WORLD
   - _CUSTOMLIGHTDIRECTIONFOLLOWOBJECTROTATION_OFF
   - _GIFLATSHADE_OFF
   - _GLOSSTEXTUREFOLLOWOBJECTROTATION_OFF
-  - _GRADIENT_DIRECTION_X
   - _LIGHTAFFECTOUTLINECOLOR_OFF
   - _LIGHTAFFECTRIMLIGHTCOLOR_OFF
   - _LIGHTAFFECTSHADOW_OFF
@@ -53,7 +49,7 @@ Material:
   - _VERTEXCOLORBLUEAFFECTOUTLINEWITDH_OFF
   - _VERTEXCOLORGREENCONTROLSELFSHADOWTHRESHOLD_OFF
   - _VERTEXCOLORREDCONTROLSMOOTHOBJECTNORMAL_OFF
-  m_LightmapFlags: 0
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2450
@@ -64,10 +60,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 40be2e4b26093154b97ce498b84335fd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 49d0ff925371b9e4c8240e17652bd5b7, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -116,10 +108,6 @@ Material:
         m_Texture: {fileID: 2800000, guid: 49d0ff925371b9e4c8240e17652bd5b7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _OutlineWidthControl:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -160,14 +148,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SpecularMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Specular_Texture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _SphereAdd:
         m_Texture: {fileID: 2800000, guid: 58c9f50857ffffc4a9add6664edc6386, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -176,41 +156,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ADDITIONAL_LIGHTS: 1
-    - _ADDITIONAL_LIGHT_SHADOWS: 1
-    - _AdditionalLightShadows: 1
-    - _AdditionalLightsEnabled: 1
-    - _AdditionalLightsMidPoint: 0
-    - _AdditionalLightsSmothness: 1
-    - _AdditionalLightsSpecular: 0
-    - _AdditionalShadowsPower: 1
     - _AlphaBaseCutout: 1
-    - _AlphaClip: 1
-    - _AlphaToMask: 1
-    - _Alpha_Clipping: 0.5
+    - _AlphaToMask: 0
     - _BleModDest: 10
     - _BleModSour: 5
-    - _Blend: 0
     - _BlendMode: 1
     - _BumpScale: 1
-    - _CastShadows: 1
     - _Compa: 4
     - _ComputeMeshIndex: 0
-    - _Cull: 2
     - _CullMode: 0
     - _Culling: 0
     - _CustomLightDirectionFollowObjectRotation: 0
@@ -223,13 +178,10 @@ Material:
     - _DoubleSidedOutline: 1
     - _DstBlend: 0
     - _DynamicNoisyOutline: 0
-    - _DynamicRemap: 0.5
-    - _Emission: 0
     - _EnvironmentalLightingIntensity: 1
     - _FarDistanceMaxWidth: 10
     - _GIFlatShade: 0
     - _GIShadeThreshold: 0
-    - _GRADIENT_DIRECTION: 0
     - _GlossColorPower: 10
     - _GlossIntensity: 1
     - _GlossSoftness: 0
@@ -239,12 +191,8 @@ Material:
     - _GlossTextureSoftness: 0
     - _Glossiness: 0.6
     - _Glow_Edge_Width: 1
-    - _Gradient_Enabled: 0
-    - _Gradient_Multiplier: 1
-    - _Gradient_Offset: 0
     - _HighlightColorPower: 0.7
     - _IndirectLightIntensity: 0.1
-    - _Inverse_Colors: 0
     - _LigIgnoYNorDir: 0
     - _LightAffectOutlineColor: 0
     - _LightAffectRimLightColor: 0
@@ -253,17 +201,11 @@ Material:
     - _LightFalloffAffectShadowT: 0
     - _LightFalloffSoftness: 1
     - _LightIntensity: 1
-    - _MAIN_LIGHT_SHADOWS: 1
-    - _MAIN_LIGHT_SHADOWS_CASCADE: 1
     - _MCIALO: 0
     - _MCapIntensity: 1
     - _MToonVersion: 39
     - _MVCOL: 0
     - _MaiColPo: 0.8
-    - _MainLightMidPoint: 0.28
-    - _MainLightSmoothness: 0.1
-    - _MainLightSpecular: 0
-    - _MainShadowsPower: 0.5
     - _MaxFadDistance: 2
     - _MinFadDistance: 0
     - _MixMainTexToOutline: 0
@@ -300,7 +242,6 @@ Material:
     - _N_F_STIS: 0
     - _NoisyOutlineIntensity: 0
     - _NormalMapIntensity: 1
-    - _OcclusionPower: 1
     - _Opacity: 1
     - _Oper: 0
     - _OutlineColorMode: 0
@@ -308,7 +249,7 @@ Material:
     - _OutlineExtrudeMethod: 0
     - _OutlineLightingMix: 1
     - _OutlineScaledMaxDistance: 1
-    - _OutlineWidth: 0.2
+    - _OutlineWidth: 0.12
     - _OutlineWidthAffectedByViewDistance: 0
     - _OutlineWidthMode: 1
     - _OutlineZPostionInCamera: 0
@@ -316,21 +257,14 @@ Material:
     - _PSGLOTEX: 0
     - _PTexturePower: 1
     - _PointSpotlightIntensity: 0
-    - _Preview_X: 0
-    - _Preview_Y: 0
-    - _Preview_Z: 0
-    - _QueueControl: 0
-    - _QueueOffset: 0
     - _RELG: 1
     - _ReceiveShadowRate: 1
-    - _ReceiveShadowsEnabled: 1
     - _ReduSha: 0.5
     - _RefMetallic: 0
     - _RefVal: 0
     - _ReflectionIntensity: 0
     - _ReflectionRoughtness: 0
     - _RimFresnelPower: 100
-    - _RimHideOnShadow: 1
     - _RimLift: 0.1
     - _RimLigInt: 1
     - _RimLightColorPower: 10
@@ -338,10 +272,6 @@ Material:
     - _RimLightSoftness: 1
     - _RimLightUnfill: 1.5
     - _RimLightingMix: 0
-    - _RimMidPoint: 0.6
-    - _RimSmoothness: 0.1
-    - _Rim_Enabled: 0
-    - _SHADOWS_SOFT: 1
     - _SPECIN: 1
     - _SPECMODE: 0
     - _STIL: 0
@@ -365,21 +295,13 @@ Material:
     - _ShadowTIntensity: 1
     - _ShadowTLightThreshold: 50
     - _ShadowTShadowThreshold: 0
-    - _Shadow_Smoothness: 1
     - _ShowInAmbientLightShadowIntensity: 1
     - _ShowInAmbientLightShadowThreshold: 0.4
     - _ShowNormal: 0
-    - _Shrink_Size: -0.1
     - _SimTrans: 0
     - _SkinMatrixIndex: 0
     - _SmoothObjectNormal: 0
-    - _SpecularMapPower: 0
-    - _SpecularMidPoint: 0.9
-    - _SpecularSmoothness: 0.1
-    - _Specular_Customize_Enabled: 0
-    - _Specular_Hide_On_Shadows: 1
     - _SrcBlend: 1
-    - _Surface: 0
     - _TEXMCOLINT: 1
     - _TRANSMODE: 1
     - _TexturePatternStyle: 0
@@ -393,33 +315,16 @@ Material:
     - _VertexColorBlueAffectOutlineWitdh: 0
     - _VertexColorGreenControlSelfShadowThreshold: 0
     - _VertexColorRedControlSmoothObjectNormal: 0
-    - _X_Modifier: 0
-    - _X_Offset: 0
-    - _X_Pos_Multiplier: 10
-    - _Y_Modifier: 0
-    - _Y_Offset: 0
-    - _Y_Pos_Multiplier: 10
-    - _ZTest: 4
     - _ZWrite: 1
-    - _ZWriteControl: 0
-    - _Z_Modifier: 0
-    - _Z_Offset: 0
-    - _Z_Pos_Multiplier: 10
-    - _is_Face: 0
     m_Colors:
-    - _Ambient: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
-    - _BaseColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
-    - _BaseMapTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CustomLightDirection: {r: 0, g: 0, b: 10, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GColor_1: {r: 0, g: 0, b: 0, a: 0}
-    - _GColor_2: {r: 0, g: 0, b: 0, a: 0}
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _Glow_Color: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.075355604, g: 0.0081353225, b: 0.015747773, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
     - _OverallShadowColor: {r: 0.65896195, g: 0.704283, b: 0.93823904, a: 1}
     - _PTCol: {r: 0, g: 0, b: 0, a: 1}
@@ -430,7 +335,5 @@ Material:
     - _SelfShadowRealTimeShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadeColor: {r: 0.8117647, g: 0.8392157, b: 0.9686274, a: 1}
     - _ShadowTColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularTint: {r: 1, g: 1, b: 1, a: 1}
-    - _Specular_Texture_Color: {r: 1, g: 1, b: 1, a: 1}
     - _XYZPosition: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

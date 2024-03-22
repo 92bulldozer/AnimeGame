@@ -48,6 +48,12 @@ public class StashSlot
 {
     public ItemData itemData;
     public bool isEmpty;
+
+    public StashSlot(ItemData itemData=null, bool isEmpty=true)
+    {
+        this.itemData = itemData;
+        this.isEmpty = isEmpty;
+    }
 }
 
 
@@ -69,7 +75,6 @@ public class BasementPresenter : AnimeBehaviour
     public List<GameObject> keyboardUIList;
     public List<GameObject> joystickUIList;
 
-    //[Foldout("UI_Map",true,10)]
     [Tab("../UI_Map")]
      public int maxMap;
      public List<Button> mapButtonList;
@@ -81,7 +86,6 @@ public class BasementPresenter : AnimeBehaviour
 
 
    
-    //[Foldout("UI_Equipment",true,10)]
     [Tab("../UI_Equipment")]
     public Color normalColor;
     public Color selectColor;
@@ -91,7 +95,6 @@ public class BasementPresenter : AnimeBehaviour
     private List<Sequence> equipmentScrollSequenceList;
 
     
-    //[Foldout("UI_Stash",true,10)]
     [Tab("../UI_Stash")]
     public int currentStashTabIdx;
     public List<Button> stashTabButtonList;
@@ -109,15 +112,13 @@ public class BasementPresenter : AnimeBehaviour
     public UIDissolveEffect exitDissolve;
     public Sequence exitDissolveSequence;
 
-    //[Foldout("RewiredInput",true,10)]
     [Tab("../RewiredInput")]
     public ControllerType currentControllerType;
     private Player _player;
     private int cameraLayer;
     
   
-    //[Foldout("Field",true,10)]
-    [Box("Field",true,10)]
+    [Box("Field",true,20)]
     public Camera mainCamera;
     public int unLockLevel;
     public int currentMap;
@@ -173,8 +174,7 @@ public class BasementPresenter : AnimeBehaviour
 
         stashScrollSequenceList.Add(
             DOTween.Sequence().Append(stashCGList[0].DOFade(1, 1)
-                .SetEase(Ease.OutQuad)).OnStart(() => stashCGList[0].alpha = 0).SetAutoKill(false)
-        );
+                .SetEase(Ease.OutQuad)).OnStart(() => stashCGList[0].alpha = 0).SetAutoKill(false));
 
         stashScrollSequenceList.Add(
             DOTween.Sequence().Append(stashCGList[1].DOFade(1, 1)
@@ -189,6 +189,9 @@ public class BasementPresenter : AnimeBehaviour
             DOTween.To(() => exitDissolve.location, x => exitDissolve.location = x, 0, 1)
                 .OnStart(() => exitDissolve.location = 1).SetEase(Ease.OutQuad).SetAutoKill(false)
         );
+        
+        InitEquipmentStashInventory();
+
     }
 
     public void AddControllerChangeCallback()
@@ -537,6 +540,7 @@ public class BasementPresenter : AnimeBehaviour
         destinationPanel.SetActive(true);
     }
 
+    //호버 라이트
     public void HoverMapHighlight(int idx)
     {
         currentMap = idx;
@@ -591,6 +595,10 @@ public class BasementPresenter : AnimeBehaviour
         HoverMapHighlight(currentMap);
     }
 
+    /// <summary>
+    /// 맵 셀렉트
+    /// </summary>
+    /// <param name="idx"></param>
     public void SelectMap(int idx)
     {
         currentMap = idx;
@@ -823,6 +831,17 @@ public class BasementPresenter : AnimeBehaviour
 
     public void InitEquipmentStashInventory()
     {
+        equipmentStashSlotDataList = new List<StashSlot>();
+    }
+    
+    public void InitConsumptionStashInventory()
+    {
+        consumeStashSlotDataList = new List<StashSlot>();
+    }
+    
+    public void InitMaterialStashInventory()
+    {
+        materialStashSlotDataList = new List<StashSlot>();
     }
 
     #endregion

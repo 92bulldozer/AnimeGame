@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using Array2DEditor;
 using EJ;
 using UnityEditor;
 using UnityEngine;

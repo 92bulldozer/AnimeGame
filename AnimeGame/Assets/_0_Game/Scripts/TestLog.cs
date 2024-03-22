@@ -16,9 +16,7 @@ public class TestLog : AnimeBehaviour
      public ItemData loadItemData;
      public List<ItemData> ItemDatas;
      public List<ItemData> loadItemDatas;
-     
-    
-   
+
 
      
     

@@ -1,5 +1,4 @@
-﻿using EJ;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace FIMSpace.FProceduralAnimation
