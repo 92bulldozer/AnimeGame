@@ -20,7 +20,6 @@ Material:
   - N_F_RELGI_ON
   - N_F_SS_ON
   - N_F_TRANSAFFSHA_ON
-  - N_F_TRANS_ON
   - _ALPHATEST_ON
   - _NORMALMAP
   m_InvalidKeywords:
@@ -47,14 +46,13 @@ Material:
   - _TEXTUREPATTERNSTYLE_OFF
   - _USESECONDARYCUTOUT_OFF
   - _VERTEXCOLORBLUEAFFECTOUTLINEWITDH_OFF
-  - _VERTEXCOLORGREENCONTROLSELFSHADOWTHRESHOLD_OFF
   - _VERTEXCOLORREDCONTROLSMOOTHOBJECTNORMAL_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: -1
   stringTagMap:
-    RenderType: TransparentCutout
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -160,8 +158,8 @@ Material:
     m_Floats:
     - _AlphaBaseCutout: 1
     - _AlphaToMask: 0
-    - _BleModDest: 10
-    - _BleModSour: 5
+    - _BleModDest: 0
+    - _BleModSour: 1
     - _BlendMode: 1
     - _BumpScale: 1
     - _Compa: 4
@@ -169,7 +167,7 @@ Material:
     - _CullMode: 2
     - _Culling: 2
     - _CustomLightDirectionFollowObjectRotation: 0
-    - _CustomLightDirectionIntensity: 0
+    - _CustomLightDirectionIntensity: 0.286
     - _Cutoff: 0.5
     - _Cutout: 0.4
     - _DebugMode: 0
@@ -181,7 +179,7 @@ Material:
     - _EnvironmentalLightingIntensity: 1
     - _FarDistanceMaxWidth: 10
     - _GIFlatShade: 0
-    - _GIShadeThreshold: 0
+    - _GIShadeThreshold: 1
     - _GlossColorPower: 10
     - _GlossIntensity: 1
     - _GlossSoftness: 0
@@ -200,12 +198,12 @@ Material:
     - _LightColorAttenuation: 0
     - _LightFalloffAffectShadowT: 0
     - _LightFalloffSoftness: 1
-    - _LightIntensity: 1
+    - _LightIntensity: 1.69
     - _MCIALO: 0
     - _MCapIntensity: 1
     - _MToonVersion: 39
     - _MVCOL: 0
-    - _MaiColPo: 0.8
+    - _MaiColPo: 0.85
     - _MaxFadDistance: 2
     - _MinFadDistance: 0
     - _MixMainTexToOutline: 0
@@ -281,10 +279,10 @@ Material:
     - _SelfLitPower: 2
     - _SelfShadowAffectedByLightShadowStrength: 0
     - _SelfShadowHardness: 1
-    - _SelfShadowRealTimeShadowColorPower: 1
+    - _SelfShadowRealTimeShadowColorPower: 1.16
     - _SelfShadowRealtimeShadowIntensity: 1
     - _SelfShadowShadowTAtViewDirection: 0
-    - _SelfShadowThreshold: 0.93
+    - _SelfShadowThreshold: 1
     - _ShadeShift: 0.16666567
     - _ShadeToony: 1
     - _ShadingGradeRate: 1
@@ -303,7 +301,7 @@ Material:
     - _SmoothObjectNormal: 0
     - _SrcBlend: 1
     - _TEXMCOLINT: 1
-    - _TRANSMODE: 1
+    - _TRANSMODE: 0
     - _TexturePatternStyle: 0
     - _TransAffSha: 1
     - _TransparentThreshold: 0
@@ -313,12 +311,12 @@ Material:
     - _UvAnimScrollX: 0
     - _UvAnimScrollY: 0
     - _VertexColorBlueAffectOutlineWitdh: 0
-    - _VertexColorGreenControlSelfShadowThreshold: 0
+    - _VertexColorGreenControlSelfShadowThreshold: 1
     - _VertexColorRedControlSmoothObjectNormal: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _CustomLightDirection: {r: 0, g: 0, b: 10, a: 0}
+    - _CustomLightDirection: {r: 0, g: 0, b: -4.15, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _Glow_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -326,7 +324,7 @@ Material:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.075355604, g: 0.0081353225, b: 0.015747773, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
-    - _OverallShadowColor: {r: 0.93823904, g: 0.65896195, b: 0.73757786, a: 1}
+    - _OverallShadowColor: {r: 0.9386859, g: 0.65837497, b: 0.7379107, a: 1}
     - _PTCol: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}

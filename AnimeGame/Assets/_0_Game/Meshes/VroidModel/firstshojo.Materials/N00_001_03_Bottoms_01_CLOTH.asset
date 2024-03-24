@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - N_F_CLD_ON
   - N_F_CO_ON
   - N_F_EAL_ON
   - N_F_NM_ON
@@ -34,7 +35,6 @@ Material:
   - _LIGHTAFFECTSHADOW_OFF
   - _LIGHTFALLOFFAFFECTSHADOWT_OFF
   - _LIGIGNOYNORDIR_OFF
-  - _MCIALO_OFF
   - _MIXMAINTEXTOOUTLINE_OFF
   - _MVCOL_OFF
   - _OUTLINEWIDTHAFFECTEDBYVIEWDISTANCE_OFF
@@ -169,7 +169,7 @@ Material:
     - _CullMode: 0
     - _Culling: 0
     - _CustomLightDirectionFollowObjectRotation: 0
-    - _CustomLightDirectionIntensity: 0
+    - _CustomLightDirectionIntensity: 1
     - _Cutoff: 0.5
     - _Cutout: 0.4
     - _DebugMode: 0
@@ -191,7 +191,7 @@ Material:
     - _GlossTextureSoftness: 0
     - _Glossiness: 0.6
     - _Glow_Edge_Width: 1
-    - _HighlightColorPower: 0.7
+    - _HighlightColorPower: 0.54
     - _IndirectLightIntensity: 0.1
     - _LigIgnoYNorDir: 0
     - _LightAffectOutlineColor: 0
@@ -201,16 +201,16 @@ Material:
     - _LightFalloffAffectShadowT: 0
     - _LightFalloffSoftness: 1
     - _LightIntensity: 1
-    - _MCIALO: 0
+    - _MCIALO: 1
     - _MCapIntensity: 1
     - _MToonVersion: 39
     - _MVCOL: 0
-    - _MaiColPo: 0.8
+    - _MaiColPo: 0.36
     - _MaxFadDistance: 2
     - _MinFadDistance: 0
     - _MixMainTexToOutline: 0
     - _N_F_CA: 0
-    - _N_F_CLD: 0
+    - _N_F_CLD: 1
     - _N_F_CO: 1
     - _N_F_COEDGL: 0
     - _N_F_DCS: 0
@@ -281,7 +281,7 @@ Material:
     - _SelfLitPower: 2
     - _SelfShadowAffectedByLightShadowStrength: 0
     - _SelfShadowHardness: 1
-    - _SelfShadowRealTimeShadowColorPower: 1
+    - _SelfShadowRealTimeShadowColorPower: 1.7
     - _SelfShadowRealtimeShadowIntensity: 1
     - _SelfShadowShadowTAtViewDirection: 0
     - _SelfShadowThreshold: 0.93
@@ -318,7 +318,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _CustomLightDirection: {r: 0, g: 0, b: 10, a: 0}
+    - _CustomLightDirection: {r: -12.9, g: 0, b: 10, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _Glow_Color: {r: 1, g: 1, b: 1, a: 1}

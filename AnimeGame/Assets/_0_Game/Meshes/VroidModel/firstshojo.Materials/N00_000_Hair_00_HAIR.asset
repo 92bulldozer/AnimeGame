@@ -18,6 +18,7 @@ Material:
   - N_F_O_ON
   - N_F_RDC_ON
   - N_F_RELGI_ON
+  - N_F_RL_ON
   - N_F_SS_ON
   - N_F_TRANSAFFSHA_ON
   - N_F_TRANS_ON
@@ -187,9 +188,9 @@ Material:
     - _GlossTextureFollowObjectRotation: 0
     - _GlossTextureRotate: 0
     - _GlossTextureSoftness: 0
-    - _Glossiness: 0.6
+    - _Glossiness: 0.662
     - _Glow_Edge_Width: 1
-    - _HighlightColorPower: 0.7
+    - _HighlightColorPower: 1
     - _IndirectLightIntensity: 0.1
     - _LigIgnoYNorDir: 0
     - _LightAffectOutlineColor: 0
@@ -203,7 +204,7 @@ Material:
     - _MCapIntensity: 1
     - _MToonVersion: 39
     - _MVCOL: 0
-    - _MaiColPo: 0.8
+    - _MaiColPo: 1
     - _MaxFadDistance: 2
     - _MinFadDistance: 0
     - _MixMainTexToOutline: 0
@@ -230,7 +231,7 @@ Material:
     - _N_F_PT: 0
     - _N_F_R: 0
     - _N_F_RDC: 1
-    - _N_F_RL: 0
+    - _N_F_RL: 1
     - _N_F_SCT: 0
     - _N_F_SL: 0
     - _N_F_SON: 0
@@ -265,10 +266,10 @@ Material:
     - _RimFresnelPower: 100
     - _RimLift: 0.1
     - _RimLigInt: 1
-    - _RimLightColorPower: 10
+    - _RimLightColorPower: 1.99
     - _RimLightInLight: 1
     - _RimLightSoftness: 1
-    - _RimLightUnfill: 1.5
+    - _RimLightUnfill: 1.49
     - _RimLightingMix: 0
     - _SPECIN: 1
     - _SPECMODE: 0
@@ -288,7 +289,7 @@ Material:
     - _ShadingGradeRate: 1
     - _ShadowColorTexturePower: 0
     - _ShadowHardness: 0
-    - _ShadowTColorPower: 1
+    - _ShadowTColorPower: 0.67
     - _ShadowTHardness: 1
     - _ShadowTIntensity: 1
     - _ShadowTLightThreshold: 50
@@ -324,10 +325,10 @@ Material:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.27450973, g: 0.09019599, b: 0.1254901, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
-    - _OverallShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _PTCol: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimLightColor: {r: 0.8490566, g: 0.5278673, b: 0.25231397, a: 1}
     - _SSAOColor: {r: 0, g: 0, b: 0, a: 0}
     - _SelfLitColor: {r: 1, g: 1, b: 1, a: 1}
     - _SelfShadowRealTimeShadowColor: {r: 1, g: 1, b: 1, a: 1}

@@ -16,6 +16,7 @@ Material:
   - N_F_O_ON
   - N_F_RDC_ON
   - N_F_RELGI_ON
+  - N_F_SIMTRANS_ON
   - N_F_SS_ON
   - N_F_TRANSAFFSHA_ON
   - N_F_TRANS_ON
@@ -295,7 +296,7 @@ Material:
     - _ShowInAmbientLightShadowIntensity: 1
     - _ShowInAmbientLightShadowThreshold: 0.4
     - _ShowNormal: 0
-    - _SimTrans: 0
+    - _SimTrans: 1
     - _SkinMatrixIndex: 0
     - _SmoothObjectNormal: 0
     - _SrcBlend: 5

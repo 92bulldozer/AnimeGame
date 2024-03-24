@@ -25,7 +25,7 @@ namespace EJ
 
         private void Start()
         {
-            int frame = ES3.Load<int>("Frame", 144);
+            int frame = 144;//ES3.Load<int>("Frame", 144);
             Application.runInBackground = false;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             switch (frame)
@@ -40,6 +40,9 @@ namespace EJ
                     TargetFrame144();
                     break;
             }
+            
+            
+            
         }
 
        

@@ -18,6 +18,7 @@ Material:
   - N_F_O_ON
   - N_F_RDC_ON
   - N_F_RELGI_ON
+  - N_F_RL_ON
   - N_F_SS_ON
   - N_F_TRANSAFFSHA_ON
   - N_F_TRANS_ON
@@ -190,7 +191,7 @@ Material:
     - _GlossTextureSoftness: 0
     - _Glossiness: 0.6
     - _Glow_Edge_Width: 1
-    - _HighlightColorPower: 0.71
+    - _HighlightColorPower: 1
     - _IndirectLightIntensity: 0.1
     - _LigIgnoYNorDir: 0
     - _LightAffectOutlineColor: 0
@@ -204,7 +205,7 @@ Material:
     - _MCapIntensity: 1
     - _MToonVersion: 39
     - _MVCOL: 0
-    - _MaiColPo: 0.8
+    - _MaiColPo: 1
     - _MaxFadDistance: 2
     - _MinFadDistance: 0
     - _MixMainTexToOutline: 0
@@ -231,7 +232,7 @@ Material:
     - _N_F_PT: 0
     - _N_F_R: 0
     - _N_F_RDC: 1
-    - _N_F_RL: 0
+    - _N_F_RL: 1
     - _N_F_SCT: 0
     - _N_F_SL: 0
     - _N_F_SON: 0
@@ -252,7 +253,7 @@ Material:
     - _OutlineWidthAffectedByViewDistance: 0
     - _OutlineWidthMode: 0
     - _OutlineZPostionInCamera: 0
-    - _OverallShadowColorPower: 0.2
+    - _OverallShadowColorPower: 0.7
     - _PSGLOTEX: 0
     - _PTexturePower: 1
     - _PointSpotlightIntensity: 0
@@ -266,7 +267,7 @@ Material:
     - _RimFresnelPower: 100
     - _RimLift: 0.1
     - _RimLigInt: 1
-    - _RimLightColorPower: 10
+    - _RimLightColorPower: 2
     - _RimLightInLight: 1
     - _RimLightSoftness: 1
     - _RimLightUnfill: 1.5
@@ -325,10 +326,10 @@ Material:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
-    - _OverallShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _PTCol: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
-    - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimLightColor: {r: 0.23966089, g: 0.23082057, b: 0.8584906, a: 1}
     - _SSAOColor: {r: 0, g: 0, b: 0, a: 0}
     - _SelfLitColor: {r: 1, g: 1, b: 1, a: 1}
     - _SelfShadowRealTimeShadowColor: {r: 1, g: 1, b: 1, a: 1}

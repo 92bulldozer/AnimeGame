@@ -73,7 +73,8 @@ public class ItemWindow : EditorWindow
             string[] guids = AssetDatabase.FindAssets("t:" + typeof(ConsumableItemData).Name);
             
             ConsumableItemData consumableItemData = CreateInstance<ConsumableItemData>();
-            consumableItemData.name = $"{guids.Length}_" + "consumableItem";
+            consumableItemData.name = $"{guids.Length}_" + "consumableItemName";
+            consumableItemData.description = $"{guids.Length}_" + "consumableItemDescription";
             consumableItemData.itemID = guids.Length;
             consumableItemData.itemType = EItemType.Consumption;
             string path = $"Assets/_0_Game/ItemSO/ConsumableItemData/{guids.Length}_" + "consumableItem.asset";
@@ -96,7 +97,8 @@ public class ItemWindow : EditorWindow
             string[] guids = AssetDatabase.FindAssets("t:" + typeof(EquipmentItemData).Name);
             
             EquipmentItemData equipmentItemData = CreateInstance<EquipmentItemData>();
-            equipmentItemData.name = $"{guids.Length+1000}_" + "equipmentItem";
+            equipmentItemData.name = $"{guids.Length+1000}_" + "equipmentItemName";
+            equipmentItemData.description = $"{guids.Length+1000}_" + "equipmentItemDescription";
             equipmentItemData.itemID = guids.Length+1000;
             equipmentItemData.itemType = EItemType.Equipment;
             string path = $"Assets/_0_Game/ItemSO/EquipmentItemData/{guids.Length+1000}_" + "equipmentItem.asset";
@@ -119,7 +121,8 @@ public class ItemWindow : EditorWindow
             string[] guids = AssetDatabase.FindAssets("t:" + typeof(MaterialItemData).Name);
             
             MaterialItemData materialItemData = CreateInstance<MaterialItemData>();
-            materialItemData.name = $"{guids.Length+2000}_" + "materialItem";
+            materialItemData.name = $"{guids.Length+2000}_" + "materialItemName";
+            materialItemData.description = $"{guids.Length+2000}_" + "materialItemDescription";
             materialItemData.itemID = guids.Length+2000;
             materialItemData.itemType = EItemType.Material;
             string path = $"Assets/_0_Game/ItemSO/MaterialItemData/{guids.Length+2000}_" + "materialItem.asset";

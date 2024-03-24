@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AnimeGame;
 using EJ;
 using TMPro;
 using UnityEngine;
@@ -37,13 +38,40 @@ public class StashSlotUI : MonoBehaviour
     public void HoverExit()=>
         highLightObject.SetActive(false);
 
+    
 
-    public void SetSlot(ItemData _itemData)
+    public void SetSlot(StashSlot stashSlot)
     {
+        icon.gameObject.SetActive(true);
+        amountText.gameObject.SetActive(true);
         isEmpty = false;
-        itemData = _itemData;
+        itemData = stashSlot.itemData;
         icon.sprite = itemData.icon;
         itemID = itemData.itemID;
+        amountText.text = stashSlot.amount.ToString();
+
+    }
+
+    public void SetSlotEmpty()
+    {
+        isEmpty = true;
+        itemData = null;
+        icon.sprite = null;
+        itemID = -1;
+        amountText.text = 0.ToString();
+        icon.gameObject.SetActive(false);
+        amountText.gameObject.SetActive(false);
+    }
+
+    public void UpdateStashDetailPanel()
+    {
+        if (itemData == null)
+        {
+            BasementPresenter.Instance.UpdateDetailPanel(null);
+            return;
+        }
+        
+        BasementPresenter.Instance.UpdateDetailPanel(itemData);
     }
     
 }

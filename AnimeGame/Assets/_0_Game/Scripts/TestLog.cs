@@ -82,16 +82,16 @@ public class TestLog : AnimeBehaviour
     [ContextMenu("AutoInit/Save")]
     public void TestSave()
     {
-        ES3.Save("myItemData",itemData);
-        ES3.Save("myItemDataList",ItemDatas);
+        //ES3.Save("myItemData",itemData);
+        //ES3.Save("myItemDataList",ItemDatas);
         //ES3.Save("myItemDataList",cuslist);
     }
     
     [ContextMenu("AutoInit/Load")]
     public void TestLoad()
     {
-        loadItemData = ES3.Load<ItemData>("myItemData");
-        loadItemDatas = ES3.Load<List<ItemData>>("myItemDataList");
+        //loadItemData = ES3.Load<ItemData>("myItemData");
+        //loadItemDatas = ES3.Load<List<ItemData>>("myItemDataList");
         //Testcls = ES3.Load("myItemDataList",Testcls);
         //cuslist=ES3.Load<List<int>>("myItemDataList");
     }

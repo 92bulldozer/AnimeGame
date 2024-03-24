@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
+using AnimeGame;
 using AssetKits.ParticleImage;
 using DarkTonic.MasterAudio;
 using DG.Tweening;
 using Doozy.Engine.UI;
 using EJ;
 using EPOOutline;
+using I2.Loc;
 using MarkupAttributes;
 using Michsky.UI.Dark;
 using Rewired;
@@ -43,25 +46,13 @@ public enum EBasementCanvas
     Exit
 }
 
-[Serializable]
-public class StashSlot
-{
-    public ItemData itemData;
-    public bool isEmpty;
 
-    public StashSlot(ItemData itemData=null, bool isEmpty=true)
-    {
-        this.itemData = itemData;
-        this.isEmpty = isEmpty;
-    }
-}
 
 
 public class BasementPresenter : AnimeBehaviour
 {
     public static BasementPresenter Instance;
 
-    
     
     [TabScope("Tab Scope", "UI|UI_Map|UI_Equipment|UI_Stash|RewiredInput", box: true,20)]
   
@@ -100,15 +91,15 @@ public class BasementPresenter : AnimeBehaviour
     public List<Button> stashTabButtonList;
     public List<CanvasGroup> stashCGList;
     private List<Sequence> stashScrollSequenceList;
-    public List<StashSlot> equipmentStashSlotDataList;
-    public List<StashSlot> consumeStashSlotDataList;
-    public List<StashSlot> materialStashSlotDataList;
+   
     public List<StashSlotUI> equipmentStashSlotUIList;
     public List<StashSlotUI> consumeStashSlotUIList;
     public List<StashSlotUI> materialStashSlotUIList;
     public Image detailIcon;
-    public TextMeshProUGUI detailTitleText;
-    public TextMeshProUGUI detailDescriptionText;
+    public Localize detailTitleLocalize;
+    public Localize detailDescriptionLocalize;
+    public StringBuilder sbTitle;
+    public StringBuilder sbDescription;
     public UIDissolveEffect exitDissolve;
     public Sequence exitDissolveSequence;
 
@@ -141,8 +132,13 @@ public class BasementPresenter : AnimeBehaviour
             Destroy(gameObject);
         }
 
-        Init();
         Debug.Log("WWW");
+    }
+
+    private void Start()
+    {
+        Init();
+
     }
 
     private void Update()
@@ -151,6 +147,8 @@ public class BasementPresenter : AnimeBehaviour
         {
             UnLockMap();
         }
+        
+       
 
 
         ProcessCanvasInput();
@@ -167,9 +165,9 @@ public class BasementPresenter : AnimeBehaviour
         InitUnLockMap();
         equipmentScrollSequenceList = new List<Sequence>();
         stashScrollSequenceList = new List<Sequence>();
-        equipmentStashSlotDataList = new List<StashSlot>(36);
-        consumeStashSlotDataList = new List<StashSlot>(36);
-        materialStashSlotDataList = new List<StashSlot>(36);
+        sbTitle = new StringBuilder();
+        sbDescription = new StringBuilder();
+      
 
 
         stashScrollSequenceList.Add(
@@ -191,6 +189,8 @@ public class BasementPresenter : AnimeBehaviour
         );
         
         InitEquipmentStashInventory();
+        InitConsumptionStashInventory();
+        InitMaterialStashInventory();
 
     }
 
@@ -221,6 +221,8 @@ public class BasementPresenter : AnimeBehaviour
             GameManager.Instance.UIForceRebuild();
         });
     }
+
+    #region Input
 
     public void ProcessCanvasInput()
     {
@@ -464,7 +466,9 @@ public class BasementPresenter : AnimeBehaviour
             "Basement UI Cancel".Log();
         }
     }
-
+    
+    #endregion
+    
 
     #region Map
 
@@ -831,18 +835,92 @@ public class BasementPresenter : AnimeBehaviour
 
     public void InitEquipmentStashInventory()
     {
-        equipmentStashSlotDataList = new List<StashSlot>();
+       
+        InitEquipmentStashUI();
+    }
+
+    public void InitEquipmentStashUI()
+    {
+        for (int i = 0; i < equipmentStashSlotUIList.Count; i++)
+        {
+            if(InventoryManager.Instance.equipmentStashSlotDataList[i].isEmpty)
+                continue;
+
+            try
+            {
+                equipmentStashSlotUIList[i].SetSlot(InventoryManager.Instance.equipmentStashSlotDataList[i]);
+                InventoryManager.Instance.equipmentStashSlotDataList[i].isEmpty = false;
+                $"InitEquipmentSlotUI {InventoryManager.Instance.equipmentStashSlotDataList[i].itemData.name}".Log();
+            }
+            catch (Exception e)
+            {
+              
+            }
+          
+        }
+        
+    }
+
+    public void UpdateEquipmentStashUI()
+    {
+        "UpdateEquipmentStashSlotUI".Log();
+        for (int i = 0; i < equipmentStashSlotUIList.Count; i++)
+        {
+            if (InventoryManager.Instance.equipmentStashSlotDataList[i].isEmpty)
+            {
+                equipmentStashSlotUIList[i].SetSlotEmpty();
+                continue;
+            }
+
+            try
+            {
+                equipmentStashSlotUIList[i].SetSlot(InventoryManager.Instance.equipmentStashSlotDataList[i]);
+            }
+            catch (Exception e)
+            {
+              
+            }
+          
+        }
     }
     
     public void InitConsumptionStashInventory()
     {
-        consumeStashSlotDataList = new List<StashSlot>();
+        
     }
     
     public void InitMaterialStashInventory()
     {
-        materialStashSlotDataList = new List<StashSlot>();
+        
     }
+
+    public void UpdateDetailPanel(ItemData itemData)
+    {
+        if (itemData == null)
+        {
+            sbTitle.Clear();
+            sbTitle.Append("Item/NULL");
+            sbDescription.Clear();
+            sbDescription.Append("Item/NULL");
+            detailTitleLocalize.Term = sbTitle.ToString();
+            detailDescriptionLocalize.Term = sbDescription.ToString();
+            detailIcon.gameObject.SetActive(false);
+            return;
+        }
+        
+        detailIcon.gameObject.SetActive(true);
+        detailIcon.sprite = itemData.icon;
+        sbTitle.Clear();
+        sbTitle.Append("Item/");
+        sbTitle.Append(itemData.name);
+        sbDescription.Clear();
+        sbDescription.Append("Item/");
+        sbDescription.Append(itemData.description);
+        detailTitleLocalize.Term = sbTitle.ToString();
+        detailDescriptionLocalize.Term = sbDescription.ToString();
+    }
+
+   
 
     #endregion
 

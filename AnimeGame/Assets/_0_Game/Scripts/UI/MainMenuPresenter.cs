@@ -28,8 +28,10 @@ public class MainMenuPresenter : MonoBehaviour
     [Header("Field")] [Space(20)] 
     public TMP_ColorGradient colorGradient;
 
+    public GameObject gameStartBtnObject;
     public GameObject optionMenuBtnObject;
     public GameObject controlButtonObject;
+    public GameObject exitBtnObject;
     
     public CanvasGroup controlPanelCG;
     public CanvasGroup graphicPanelCG;
@@ -92,6 +94,8 @@ public class MainMenuPresenter : MonoBehaviour
         tabPanelTextList.Add(graphicButtonText);
         tabPanelTextList.Add(soundButtonText);
         tabPanelTextList.Add(languageButtonText);
+        
+        EventSystem.current.SetSelectedGameObject(gameStartBtnObject);
     }
 
     public void QuitGame()

@@ -17,6 +17,54 @@ MonoBehaviour:
     UserAgreesToHaveItInsideThePluginsFolder: 0
     GoogleLiveSyncIsUptoDate: 1
     mTerms:
+    - Term: Basement/Basement_BasementEquipment_Next
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2E4\uC74C"
+      - Next
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementEquipment_Previous
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC774\uC804"
+      - Previous
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Cancel
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCDE8\uC18C"
+      - Cancel
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Confirm
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD655\uC778"
+      - Confirm
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC815\uB9D0 \uBC16\uC73C\uB85C \uB098\uAC00\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+      - Do you really want to go outside?
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Title
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB098\uAC00\uAE30"
+      - Exit
+      Flags: 0000
+      Languages_Touch: []
     - Term: Basement/Basement_BasementMap_AbandonVillage
       TermType: 0
       Description: 
@@ -31,118 +79,6 @@ MonoBehaviour:
       Languages:
       - "\uBE4C\uB529"
       - Building
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementMap_Destination
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uBAA9\uC801\uC9C0"
-      - Destination
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementMap_Hospital
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uBCD1\uC6D0"
-      - Hospital
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementMap_School
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uD559\uAD50"
-      - School
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Interact/Interact_Exit
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uB098\uAC00\uAE30"
-      - Exit
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Interact/Interact_Map
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC9C0\uB3C4"
-      - Map
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Interact/Interact_PickUp
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC90D\uAE30"
-      - PickUp
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Interact/Interact_Vegetation
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC2DD\uBB3C"
-      - Vegetation
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Interact/Interact_Equipment
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC7A5\uBE44"
-      - Equipment
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementMap_PreviousTab
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC774\uC804"
-      - Previous Tab
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementMap_NextTab
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uB2E4\uC74C"
-      - Next Tab
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementMap_Close
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uB2EB\uAE30"
-      - Close
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementMap_Select
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC120\uD0DD"
-      - Select
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Interact/Interact_Open
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC5F4\uAE30"
-      - Open
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Interact/Interact_Close
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uB2EB\uAE30"
-      - Close
       Flags: 0000
       Languages_Touch: []
     - Term: Basement/Basement_BasementMap_Chapter1
@@ -189,14 +125,6 @@ MonoBehaviour:
       - Chapter 3
       Flags: 0000
       Languages_Touch: []
-    - Term: Basement/Basement_BasementMap_Chapter4
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uCC55\uD130 4"
-      - Chapter 4
-      Flags: 0000
-      Languages_Touch: []
     - Term: Basement/Basement_BasementMap_Chapter3_Description
       TermType: 0
       Description: 
@@ -204,6 +132,14 @@ MonoBehaviour:
       - "\uAC10\uC5FC\uC790\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uC0DD\uC874\uBC0F \uAE30\uBC00
         \uC11C\uB958\uB97C \uD68D\uB4DD\uD558\uC5EC \uC0DD\uC874\uD558\uC138\uC694."
       - Survive and survive by obtaining confidential documents among infected people.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter4
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC55\uD130 4"
+      - Chapter 4
       Flags: 0000
       Languages_Touch: []
     - Term: Basement/Basement_BasementMap_Chapter4_Description
@@ -215,68 +151,60 @@ MonoBehaviour:
       - Survive and get food among evil spirits.
       Flags: 0000
       Languages_Touch: []
-    - Term: Basement/Basement_BasementEquipment_Previous
+    - Term: Basement/Basement_BasementMap_Close
       TermType: 0
       Description: 
       Languages:
-      - "\uC774\uC804"
-      - Previous
+      - "\uB2EB\uAE30"
+      - Close
       Flags: 0000
       Languages_Touch: []
-    - Term: Basement/Basement_BasementEquipment_Next
+    - Term: Basement/Basement_BasementMap_Destination
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBAA9\uC801\uC9C0"
+      - Destination
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Hospital
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBCD1\uC6D0"
+      - Hospital
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_NextTab
       TermType: 0
       Description: 
       Languages:
       - "\uB2E4\uC74C"
-      - Next
+      - Next Tab
       Flags: 0000
       Languages_Touch: []
-    - Term: Basement/Basement_BasementExit_Title
+    - Term: Basement/Basement_BasementMap_PreviousTab
       TermType: 0
       Description: 
       Languages:
-      - "\uB098\uAC00\uAE30"
-      - Exit
+      - "\uC774\uC804"
+      - Previous Tab
       Flags: 0000
       Languages_Touch: []
-    - Term: Basement/Basement_BasementExit_Description
+    - Term: Basement/Basement_BasementMap_School
       TermType: 0
       Description: 
       Languages:
-      - "\uC815\uB9D0 \uBC16\uC73C\uB85C \uB098\uAC00\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
-      - Do you really want to go outside?
+      - "\uD559\uAD50"
+      - School
       Flags: 0000
       Languages_Touch: []
-    - Term: Basement/Basement_BasementExit_Confirm
+    - Term: Basement/Basement_BasementMap_Select
       TermType: 0
       Description: 
       Languages:
-      - "\uD655\uC778"
-      - Confirm
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementExit_Cancel
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uCDE8\uC18C"
-      - Cancel
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Interact/Interact_Stash
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uCC3D\uACE0"
-      - Stash
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementStash_Equipment
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC7A5\uBE44"
-      - Equipment
+      - "\uC120\uD0DD"
+      - Select
       Flags: 0000
       Languages_Touch: []
     - Term: Basement/Basement_BasementStash_Consumption
@@ -287,12 +215,125 @@ MonoBehaviour:
       - Consumption
       Flags: 0000
       Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Equipment
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC7A5\uBE44"
+      - Equipment
+      Flags: 0000
+      Languages_Touch: []
     - Term: Basement/Basement_BasementStash_Material
       TermType: 0
       Description: 
       Languages:
       - "\uC7AC\uB8CC"
       - Material
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Close
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2EB\uAE30"
+      - Close
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Equipment
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC7A5\uBE44"
+      - Equipment
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Exit
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB098\uAC00\uAE30"
+      - Exit
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Map
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC9C0\uB3C4"
+      - Map
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Open
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC5F4\uAE30"
+      - Open
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_PickUp
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC90D\uAE30"
+      - PickUp
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Stash
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC3D\uACE0"
+      - Stash
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Vegetation
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC2DD\uBB3C"
+      - Vegetation
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/0_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBE60\uB974\uAC8C \uB2EC\uB9B4\uC218 \uC788\uB294 \uC544\uC774\uD15C \uC785\uB2C8\uB2E4."
+      - This Is An Item That Allows You To Run Quickly.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/0_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB0A0\uAC1C"
+      - Wing
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/1_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB0B4\uAD6C\uC131\uC774 \uC57D\uD558\uC9C0\uB9CC \uD55C \uBC88\uCBE4\uC740
+        \uBCF4\uD638\uD560 \uC218 \uC788\uC744 \uAC83 \uAC19\uC2B5\uB2C8\uB2E4."
+      - It's Not Very Durable, But I Think It Can Protect Me At Least Once.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/1_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD574\uACE8 \uD22C\uAD6C"
+      - Skull Helmet
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/NULL
+      TermType: 0
+      Description: 
+      Languages:
+      - ' '
+      - ' '
       Flags: 0000
       Languages_Touch: []
     CaseInsensitiveTerms: 0

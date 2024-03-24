@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using DarkTonic.MasterAudio;
 using DG.Tweening;
 using EJ;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace AnimeGame
