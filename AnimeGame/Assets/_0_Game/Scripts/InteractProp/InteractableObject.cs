@@ -1,6 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AnimeGame;
+using DarkTonic.MasterAudio;
+using DG.Tweening;
+using Doozy.Engine;
 using EJ;
 using EPOOutline;
 using UnityEngine;
@@ -8,8 +12,10 @@ using UnityEngine.Events;
 
 public class InteractableObject : MonoBehaviour,IInteract
 {
-    
+
     [Space(20)] [Header("Field")] [Space(10)]
+    public int itemID = -1;
+    public string getItemSfx;
     public bool canInteract = true;
     public Vector3 panelOffset;
     public Transform interactCenterPosition;
@@ -116,5 +122,25 @@ public class InteractableObject : MonoBehaviour,IInteract
             isReverse=true;
             //"ReverseFalse".Log();
         }
+    }
+
+    public void GetItem()
+    {
+        if (itemID == -1)
+            return;
+        
+        InventoryManager.Instance.AddInventoryItem(itemID);
+        DOVirtual.DelayedCall(0.4f, () =>
+        {
+            MasterAudio.PlaySound3DAtTransformAndForget(getItemSfx, transform);
+            Destroy(gameObject);
+
+        });
+
+        if (eInteractText == EInteractText.Interact_PickUp)
+        {
+            PlayerPresenter.Instance.PickUp();
+        }
+        
     }
 }

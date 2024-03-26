@@ -32,7 +32,7 @@ public class InteractPresenter : MonoBehaviour
     public RectTransform panelTransform;
     public Canvas interactionCanvas;
     public GameObject currentInteractObject;
-    private Transform _targetTransform;
+    public Transform _targetTransform;
    
 
     [Header("Field")] [Space(10)] 
@@ -62,10 +62,15 @@ public class InteractPresenter : MonoBehaviour
             interactionCanvas.worldCamera = Camera.main;
     }
 
-    
-    void LateUpdate()
+    private void Update()
     {
         UpdateInteractPanelPosition();
+    }
+
+
+    void LateUpdate()
+    {
+        //UpdateInteractPanelPosition();
 
     }
 
@@ -106,6 +111,10 @@ public class InteractPresenter : MonoBehaviour
     {
         
         view.Hide();
+    }
+
+    public void ResetTarget()
+    {
         _targetTransform = null;
         panelOffset = Vector3.zero;
         currentInteractObject = null;
@@ -115,14 +124,23 @@ public class InteractPresenter : MonoBehaviour
 
     public void UpdateInteractPanelPosition()
     {
-        if(view.IsVisible)
+        if(view.IsShowing || view.IsVisible || view.IsHiding)
         {
-            var vp = Camera.main.WorldToViewportPoint(_targetTransform.transform.position + panelOffset);
-            var sp = interactionCanvas.worldCamera.ViewportToScreenPoint(vp);
-            Vector3 worldPoint;
-            RectTransformUtility.ScreenPointToWorldPointInRectangle(panelTransform, sp, interactionCanvas.worldCamera, out worldPoint);
-            panelTransform.position = worldPoint ;
+            try
+            {
+                var vp = Camera.main.WorldToViewportPoint(_targetTransform.transform.position + panelOffset);
+                var sp = interactionCanvas.worldCamera.ViewportToScreenPoint(vp);
+                Vector3 worldPoint;
+                RectTransformUtility.ScreenPointToWorldPointInRectangle(panelTransform, sp, interactionCanvas.worldCamera, out worldPoint);
+                panelTransform.position = worldPoint ;
+            }
+            catch (Exception e)
+            {
+                HideInteractPanel();
+                ResetTarget();
+            }
         }
+      
 
     }
 }

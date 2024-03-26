@@ -3,15 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Reflection;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 
 
 namespace EJ
 {
+
+    public enum EColor
+    {
+        RED=0,
+        BLACK,
+        WHITE,
+        GREY,
+        YELLOW,
+        BLUE,
+        PURPLE,
+        GREEN
+    }
    
     public static class ExtensionMethods
     {
+        public static StringBuilder sb = new StringBuilder();
+        
         public static string ToCommaString(this BigInteger b)
         {
             if (b == 0)
@@ -170,6 +185,47 @@ namespace EJ
         {
 #if UNITY_EDITOR
             Debug.Log(value.ToString());
+#endif
+        }
+        
+        public static void Log(this object value, EColor eColor)
+        {
+#if UNITY_EDITOR
+            sb.Clear();
+            
+            switch (eColor)
+            {
+                case EColor.RED:
+                    sb.Append("<color=red>");
+                    break;
+                case EColor.BLACK:
+                    sb.Append("<color=black>");
+                    break;
+                case EColor.WHITE:
+                    sb.Append("<color=white>");
+                    break;
+                case EColor.GREY:
+                    sb.Append("<color=grey>");
+                    break;
+                case EColor.YELLOW:
+                    sb.Append("<color=yellow>");
+                    break;
+               
+                case EColor.BLUE:
+                    sb.Append("<color=blue>");
+                    break;
+                case EColor.PURPLE:
+                    sb.Append("<color=purple>");
+                    break;
+                case EColor.GREEN:
+                    sb.Append("<color=green>");
+                    break;
+               
+            }
+            sb.Append(value);
+            sb.Append("</color>");
+            Debug.Log(sb.ToString());
+
 #endif
         }
 

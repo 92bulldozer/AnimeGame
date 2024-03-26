@@ -73,5 +73,16 @@ public class StashSlotUI : MonoBehaviour
         
         BasementPresenter.Instance.UpdateDetailPanel(itemData);
     }
+
+    public void UpdateInventoryDetailPanel()
+    {
+        if (itemData == null)
+        {
+            InventoryManager.Instance.UpdateDetailPanel(null);
+            return;
+        }
+        
+        InventoryManager.Instance.UpdateDetailPanel(itemData);
+    }
     
 }

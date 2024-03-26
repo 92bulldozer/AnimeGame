@@ -336,6 +336,46 @@ MonoBehaviour:
       - ' '
       Flags: 0000
       Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Prev
+      TermType: 0
+      Description: 
+      Languages:
+      - "[<color=#FF8900>Q</color>] \uC774\uC804"
+      - '[<color=#FF8900>Q</color>] Previous'
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Next
+      TermType: 0
+      Description: 
+      Languages:
+      - "[<color=#FF8900>E</color>] \uB2E4\uC74C"
+      - '[<color=#FF8900>E</color>] Next'
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Inventory
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC778\uBCA4\uD1A0\uB9AC"
+      - Inventory
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2000_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBC30\uD130\uB9AC"
+      - Battery
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2000_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uACE0\uC131\uB2A5 \uBC30\uD130\uB9AC \uC785\uB2C8\uB2E4."
+      - This Is A High-Performance Battery.
+      Flags: 0000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

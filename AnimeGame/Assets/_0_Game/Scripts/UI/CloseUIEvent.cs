@@ -1,17 +1,26 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using AnimeGame;
+using Doozy.Engine;
 using Doozy.Engine.UI;
-using EJ;
 using UnityEngine;
 using UnityEngine.Events;
+using MarkupAttributes;
 
-public class CloseUIEvent : MonoBehaviour
+
+public class CloseUIEvent : AnimeBehaviour
 {
+
     public UIView uiView;
+    public bool useMessage;
+   
+    [ShowIfGroup("Shown If Boolean", nameof(useMessage))]
+    public string eventName;
+    [HideIfGroup("Hidden If Bollean",nameof(useMessage))]
     public UnityEvent closeEvent;
-    
+   
+
+
+
     private void Awake()
     {
         uiView = transform.parent.GetComponent<UIView>();
@@ -23,7 +32,10 @@ public class CloseUIEvent : MonoBehaviour
     {
         if (PlayerPresenter.Instance.player.GetButtonDown("UICancel") && uiView.IsVisible)
         {
-            closeEvent?.Invoke();
+            if (!useMessage)
+                closeEvent?.Invoke();
+            else
+                GameEventMessage.SendEvent(eventName);
         }
     }
 }

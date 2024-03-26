@@ -83,7 +83,6 @@ public class BasementPresenter : AnimeBehaviour
     public int currentEquipmentTabIdx;
     public List<Button> equipmentTabButtonList;
     public List<CanvasGroup> equipmentCGList;
-    private List<Sequence> equipmentScrollSequenceList;
 
     
     [Tab("../UI_Stash")]
@@ -107,16 +106,16 @@ public class BasementPresenter : AnimeBehaviour
     public ControllerType currentControllerType;
     private Player _player;
     private int cameraLayer;
-    
-  
-    [Box("Field",true,20)]
+
+
+    [Box("Field", true, 20)] 
+    public GameObject exitCancelBtn;
     public Camera mainCamera;
     public int unLockLevel;
     public int currentMap;
     public GameObject vcamEquipment;
-    public GameObject vcam1;
-    public GameObject vcam2;
     public GameObject vcamStash;
+    public GameObject vcamDollyTrack;
     public Outliner cameraOutliner;
     public EBasementCanvas eBasementCanvas;
 
@@ -145,7 +144,8 @@ public class BasementPresenter : AnimeBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            UnLockMap();
+            // "BasementPresenter UnLockMap".Log();
+            // UnLockMap();
         }
         
        
@@ -163,7 +163,6 @@ public class BasementPresenter : AnimeBehaviour
         unLockLevel = 2;
         AddControllerChangeCallback();
         InitUnLockMap();
-        equipmentScrollSequenceList = new List<Sequence>();
         stashScrollSequenceList = new List<Sequence>();
         sbTitle = new StringBuilder();
         sbDescription = new StringBuilder();
@@ -447,13 +446,11 @@ public class BasementPresenter : AnimeBehaviour
         if (_player.GetButtonDown("Prev"))
         {
             "Basement UI Prev".Log();
-            PreviousEquipmentTab();
         }
 
         if (_player.GetButtonDown("Next"))
         {
             "Basement UI Next".Log();
-            NextEquipmentTab();
         }
 
         if (_player.GetButtonDown("UISubmit"))
@@ -628,7 +625,7 @@ public class BasementPresenter : AnimeBehaviour
 
         equipmentView.Show();
         EventSystem.current.SetSelectedGameObject(equipmentTabButtonList[0].gameObject);
-        vcam2.SetActive(false);
+        vcamDollyTrack.SetActive(false);
         vcamEquipment.SetActive(true);
         currentEquipmentTabIdx = 0;
         SelectEquipmentTab(currentEquipmentTabIdx);
@@ -638,7 +635,7 @@ public class BasementPresenter : AnimeBehaviour
     {
         eBasementCanvas = EBasementCanvas.None;
         equipmentView.Hide();
-        vcam2.SetActive(true);
+        vcamDollyTrack.SetActive(true);
         vcamEquipment.SetActive(false);
     }
 
@@ -666,12 +663,7 @@ public class BasementPresenter : AnimeBehaviour
             cg.blocksRaycasts = false;
         }
 
-        foreach (var sequence in equipmentScrollSequenceList)
-        {
-            sequence.Rewind();
-        }
-
-        equipmentScrollSequenceList[(int)tab].Restart();
+       
         equipmentCGList[(int)tab].interactable = true;
         equipmentCGList[(int)tab].blocksRaycasts = true;
     }
@@ -712,7 +704,7 @@ public class BasementPresenter : AnimeBehaviour
         DOVirtual.DelayedCall(0.5f, () => eBasementCanvas = EBasementCanvas.Stash);
 
         stashView.Show();
-        vcam2.SetActive(false);
+        vcamDollyTrack.SetActive(false);
         vcamStash.SetActive(true);
         currentStashTabIdx = 0;
         SelectStashTab(currentStashTabIdx);
@@ -723,7 +715,7 @@ public class BasementPresenter : AnimeBehaviour
     {
         eBasementCanvas = EBasementCanvas.None;
         stashView.Hide();
-        vcam2.SetActive(true);
+        vcamDollyTrack.SetActive(true);
         vcamStash.SetActive(false);
     }
 
@@ -932,6 +924,7 @@ public class BasementPresenter : AnimeBehaviour
         eBasementCanvas = EBasementCanvas.Exit;
         exitView.Show();
         exitDissolveSequence.Restart();
+        EventSystem.current.SetSelectedGameObject(exitCancelBtn);
     }
 
     public void HideExit()

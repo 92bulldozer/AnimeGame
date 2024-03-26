@@ -73,6 +73,7 @@ namespace AnimeGame
         public bool isFlashOn;
         public bool isRagDoll;
         public bool isAlive { get; set; }
+        private Sequence pickupSequence;
 
        
 
@@ -105,12 +106,14 @@ namespace AnimeGame
                 FlashLightToggle();
             }
             
+            
+            
       
 
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                $"PlayerPresenterAlpha1".Log();
+                //$"PlayerPresenterAlpha1".Log();
                 //AttachTo(null);
                 //GetDamaged(null,KnockBackDirection.LEFT);
                 //GetDamaged(null,true);
@@ -118,7 +121,7 @@ namespace AnimeGame
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                $"PlayerPresenterAlpha2".Log();
+                //$"PlayerPresenterAlpha2".Log();
                 //DetachTo();
                 //GetDamaged(null,KnockBackDirection.RIGHT);
                 //DeActiveRagDoll();
@@ -163,6 +166,15 @@ namespace AnimeGame
             player = ReInput.players.GetPlayer(playerID);
             playerInteract = GetComponent<PlayerInteract>();
             playerInteract.Init();
+            pickupSequence = DOTween.Sequence().SetAutoKill(false).Pause().OnPlay(()=>
+            {
+                "DisableInput".Log();
+                DisableInput();
+            }).SetDelay(0.8f).OnComplete(() =>
+            {
+                "EnableInput".Log();
+                EnableInput();
+            });
             //player.controllers.maps.GetMap(ControllerType.Keyboard, 0, 0).enabled=false;
 
 
@@ -278,10 +290,18 @@ namespace AnimeGame
 
         public void DisableInput()
         {
+            GameManager.Instance.DisableInput();
         }
         
         public void EnableInput()
         {
+            GameManager.Instance.EnableInput();
+        }
+
+        public void PickUp()
+        {
+            _animator.SetTrigger("PickUp");
+            pickupSequence.Restart();
         }
 
         #region Hit_Blood
