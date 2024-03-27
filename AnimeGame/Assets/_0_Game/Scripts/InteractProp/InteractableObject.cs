@@ -7,6 +7,7 @@ using DG.Tweening;
 using Doozy.Engine;
 using EJ;
 using EPOOutline;
+using UnityEditor.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -43,6 +44,44 @@ public class InteractableObject : MonoBehaviour,IInteract
         outlinable = GetComponent<Outlinable>();
         outlinable.enabled = false;
     }
+    
+#if UNITY_EDITOR
+    [ContextMenu("AutoInit/AutoSetupBox")]
+    void InitItemData()
+    {
+        getItemSfx = "GetItem";
+        eInteractText = EInteractText.Interact_PickUp;
+        eInteractReverseText = EInteractText.Interact_PickUp;
+        affectOutlinable = true;
+        
+        if (interactEvent == null)
+            interactEvent = new UnityEvent();
+ 
+        var targetInfo = UnityEvent.GetValidMethodInfo(this, nameof(GetItem), new Type[0]);
+        UnityAction methodDelegate = Delegate.CreateDelegate(typeof(UnityAction), this, targetInfo) as UnityAction;
+        UnityEventTools.AddPersistentListener(interactEvent, methodDelegate);
+        
+        
+        panelOffset = new Vector3(0, 0.5f, 0);
+        gameObject.layer = LayerMask.NameToLayer("InteractableObject");
+        GameObject childObject = new GameObject("InteractCenterPosition");
+        childObject.transform.parent = transform;
+        childObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        childObject.layer = LayerMask.NameToLayer("InteractableObject");
+        
+        Outlinable outlinable = gameObject.AddComponent<Outlinable>();
+        outlinable.RenderStyle = RenderStyle.FrontBack;
+        outlinable.BackParameters.Enabled = false;
+        outlinable.FrontParameters.Enabled = true;
+        outlinable.FrontParameters.Color = new Color32(58, 58, 58,255);
+        outlinable.FrontParameters.DilateShift = 0.65f;
+        gameObject.AddComponent<Rigidbody>();
+        gameObject.AddComponent<PhysicsSound>();
+        gameObject.AddComponent<BoxCollider>();
+      
+    }
+#endif
+    
     
     public virtual void Init()
     {

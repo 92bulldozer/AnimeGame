@@ -231,6 +231,22 @@ MonoBehaviour:
       - Material
       Flags: 0000
       Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Next
+      TermType: 0
+      Description: 
+      Languages:
+      - "[<color=#FF8900>E</color>] \uB2E4\uC74C"
+      - '[<color=#FF8900>E</color>] Next'
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Prev
+      TermType: 0
+      Description: 
+      Languages:
+      - "[<color=#FF8900>Q</color>] \uC774\uC804"
+      - '[<color=#FF8900>Q</color>] Previous'
+      Flags: 0000
+      Languages_Touch: []
     - Term: Interact/Interact_Close
       TermType: 0
       Description: 
@@ -295,6 +311,14 @@ MonoBehaviour:
       - Vegetation
       Flags: 0000
       Languages_Touch: []
+    - Term: Inventory
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC778\uBCA4\uD1A0\uB9AC"
+      - Inventory
+      Flags: 0000
+      Languages_Touch: []
     - Term: Item/0_consumableItemDescription
       TermType: 0
       Description: 
@@ -328,36 +352,12 @@ MonoBehaviour:
       - Skull Helmet
       Flags: 0000
       Languages_Touch: []
-    - Term: Item/NULL
+    - Term: Item/2000_materialItemDescription
       TermType: 0
       Description: 
       Languages:
-      - ' '
-      - ' '
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementStash_Prev
-      TermType: 0
-      Description: 
-      Languages:
-      - "[<color=#FF8900>Q</color>] \uC774\uC804"
-      - '[<color=#FF8900>Q</color>] Previous'
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Basement/Basement_BasementStash_Next
-      TermType: 0
-      Description: 
-      Languages:
-      - "[<color=#FF8900>E</color>] \uB2E4\uC74C"
-      - '[<color=#FF8900>E</color>] Next'
-      Flags: 0000
-      Languages_Touch: []
-    - Term: Inventory
-      TermType: 0
-      Description: 
-      Languages:
-      - "\uC778\uBCA4\uD1A0\uB9AC"
-      - Inventory
+      - "\uACE0\uC131\uB2A5 \uBC30\uD130\uB9AC \uC785\uB2C8\uB2E4."
+      - This Is A High-Performance Battery.
       Flags: 0000
       Languages_Touch: []
     - Term: Item/2000_materialItemName
@@ -368,12 +368,108 @@ MonoBehaviour:
       - Battery
       Flags: 0000
       Languages_Touch: []
-    - Term: Item/2000_materialItemDescription
+    - Term: Item/2001_materialItemDescription
       TermType: 0
       Description: 
       Languages:
-      - "\uACE0\uC131\uB2A5 \uBC30\uD130\uB9AC \uC785\uB2C8\uB2E4."
-      - This Is A High-Performance Battery.
+      - "\uACE0\uAE09 \uD718\uBC1C\uC720\uAC00 \uB4E4\uC5B4\uC788\uB294 \uD1B5\uC774\uB2E4."
+      - This Is A Barrel Containing High-Quality Gasoline.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2001_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD718\uBC1C\uC720"
+      - Gasoline
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2002_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD488\uC9C8\uC774 \uC870\uC545\uD55C \uD718\uBC1C\uC720."
+      - Poor Quality Gasoline.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2002_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD718\uBC1C\uC720"
+      - Gasoline
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2003_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB34\uC5B8\uAC00\uB97C \uBD99\uC77C\uC218 \uC788\uC744\uAC83 \uAC19\uC2B5\uB2C8\uB2E4."
+      - It Looks Like Something Could Be Attached.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2003_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD14C\uC774\uD504"
+      - Tape
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB9C8\uC2DC\uBA74 \uAC08\uC99D\uC774 \uD574\uC18C\uB420\uAC83 \uAC19\uC2B5\uB2C8\uB2E4."
+      - I Think Drinking It Will Quench Your Thirst.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC0DD\uC218"
+      - Bottled Water
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/NULL
+      TermType: 0
+      Description: 
+      Languages:
+      - ' '
+      - ' '
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2004_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC2A4\uD328\uB108"
+      - Spanner
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2004_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB34\uC5B8\uAC00\uB97C \uB9CC\uB4E4\uC218 \uC788\uB294  \uB3C4\uAD6C"
+      - A Tool To Create Something
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2005_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBE68\uAC04 \uD50C\uB77C\uC774\uC5B4"
+      - Red Plier
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2005_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC804\uC120\uC744 \uC790\uB974\uB294\uB370 \uD544\uC694\uD569\uB2C8\uB2E4."
+      - You Will Need It To Cut The Wire.
       Flags: 0000
       Languages_Touch: []
     CaseInsensitiveTerms: 0

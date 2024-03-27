@@ -8,9 +8,9 @@ using UnityEngine;
 public class PhysicsSound : MonoBehaviour
 {
     private Rigidbody _rb;
-    
-    public string physicsSound;
-    public float startVelocityMagnitude = 10;
+
+    public string physicsSound = "CardBoard";
+    public float startVelocityMagnitude = 0.5f;
 
     private void Awake()
     {
