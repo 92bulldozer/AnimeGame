@@ -112,6 +112,7 @@ namespace AnimeGame
             
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
+                AllClearInventoryItem();
                 //AddEquipmentItem(1);
                 "inventory 4".Log();
             }
@@ -370,6 +371,15 @@ namespace AnimeGame
                 
                
             }
+        }
+
+        public void AllClearInventoryItem()
+        {
+            foreach (var inventorySlotData in inventorySlotDataList)
+            {
+                inventorySlotData.SetEmpty();
+            }
+            GameEventMessage.SendEvent("UpdateInventory");
         }
 
         #region TestUniTask
