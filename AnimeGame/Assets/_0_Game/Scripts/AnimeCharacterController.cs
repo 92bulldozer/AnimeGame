@@ -16,8 +16,10 @@ public class AnimeCharacterController : BaseCharacterController
         //movement.velocity.magnitude.Log();
         float characterAnimationSpeed = movement.velocity.magnitude.Remap(0, 2.5f, 0, 1);
         animator.SetFloat("MoveSpeed",characterAnimationSpeed,0.1f,Time.deltaTime);
+        
+        animator.SetBool("Crouch", isCrouching);
 
-        // Compute move vector in local space
+        //Compute move vector in local space
 
         // var move = transform.InverseTransformDirection(moveDirection);
         //

@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Doozy.Engine.UI;
+using EJ;
+using Rewired;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MainMenuPresenter : MonoBehaviour
 {
@@ -14,6 +17,7 @@ public class MainMenuPresenter : MonoBehaviour
     [Header("View")] [Space(20)] 
     public UIView mainMenuView;
     public UIView mainMenuOption;
+    public UIView creditView;
 
 
 
@@ -23,14 +27,19 @@ public class MainMenuPresenter : MonoBehaviour
     public TextMeshProUGUI soundButtonText;
     public TextMeshProUGUI languageButtonText;
     public List<TextMeshProUGUI> tabPanelTextList;
+    public Scrollbar creditScrollbar;
 
 
     [Header("Field")] [Space(20)] 
+    public bool isCreditMenu;
+
+    public float creditTime;
     public TMP_ColorGradient colorGradient;
 
     public GameObject gameStartBtnObject;
     public GameObject optionMenuBtnObject;
     public GameObject controlButtonObject;
+    public GameObject creditButtonObject;
     public GameObject exitBtnObject;
     
     public CanvasGroup controlPanelCG;
@@ -50,6 +59,9 @@ public class MainMenuPresenter : MonoBehaviour
     public GameObject soundPanelFirstGameObject;
     public GameObject languagePanelFirstGameObject;
 
+    
+    private Player _player;
+    private Sequence creditSequence;
 
 
     private void Awake()
@@ -96,6 +108,22 @@ public class MainMenuPresenter : MonoBehaviour
         tabPanelTextList.Add(languageButtonText);
         
         EventSystem.current.SetSelectedGameObject(gameStartBtnObject);
+        
+        _player = ReInput.players.GetPlayer(0);
+        creditSequence = DOTween.Sequence().SetAutoKill(false).Pause()
+            .Append(DOTween.To(() => creditScrollbar.value, x => creditScrollbar.value = x, 1.0f, creditTime));
+
+    }
+
+    private void Update()
+    {
+        if (_player.GetAnyButton())
+        {
+            "AnyButtonDown".Log();
+            
+            if(isCreditMenu)
+                CloseCreditMenu();
+        }
     }
 
     public void QuitGame()
@@ -124,6 +152,26 @@ public class MainMenuPresenter : MonoBehaviour
         mainMenuOption.Hide();
         EventSystem.current.SetSelectedGameObject(optionMenuBtnObject);
      
+    }
+
+    public void OpenCreditMenu()
+    {
+        DOVirtual.DelayedCall(0.5f,()=> isCreditMenu = true);
+        creditScrollbar.value = 0;
+       
+        creditView.Show();
+        mainMenuView.Hide();
+        creditSequence.Restart();
+    }
+
+    public void CloseCreditMenu()
+    {
+        isCreditMenu = false;
+        mainMenuView.Show();
+        creditView.Hide();
+        creditScrollbar.value = 0;
+        EventSystem.current.SetSelectedGameObject(creditButtonObject);
+      
     }
     
     

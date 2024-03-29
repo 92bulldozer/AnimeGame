@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using AnimeGame;
+using Cinemachine;
 using DarkTonic.MasterAudio;
 using DG.Tweening;
 using EJ;
@@ -38,6 +39,9 @@ public class GameManager : MonoBehaviour
 
     [Space(20)] [Header("UI")] [Space(10)] 
     public List<RectTransform> rebuildList;
+
+    [Space(20)] [Header("Camera")] [Space(10)]
+    public CinemachineBrain cb;
 
 
     private void Awake()
@@ -134,6 +138,8 @@ public class GameManager : MonoBehaviour
         jumpScareCamera.PlayFeedbacks();
 
     }
+
+ 
     
     public void EnableInput()
     {

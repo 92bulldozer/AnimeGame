@@ -52,6 +52,7 @@ namespace AnimeGame
         public GameObject flashLight;
         public GameObject virtualCamera;
         public PlayerInteract playerInteract;
+        public AnimeCharacterController ac;
         private CapsuleCollider _capsuleCollider;
         private Rigidbody _rb;
         public Animator _animator;
@@ -72,6 +73,7 @@ namespace AnimeGame
         [Box("Field",true,10)]
         public bool isFlashOn;
         public bool isRagDoll;
+        public bool isCrouch;
         public bool isAlive { get; set; }
         private Sequence pickupSequence;
 
@@ -106,7 +108,25 @@ namespace AnimeGame
                 FlashLightToggle();
             }
             
-            
+            if (player.GetButtonDown("Crouch"))
+            {
+                if (!isCrouch)
+                {
+                    isCrouch = true;
+                    ac.crouch = true;
+                    ac.speed = 2;
+                 
+                    "CrouchTrue".Log();
+                }
+                else
+                {
+                    isCrouch = false;
+                    ac.crouch = false;
+                    ac.speed = 5;
+                    "CrouchFalse".Log();
+                }
+              
+            }
             
       
 

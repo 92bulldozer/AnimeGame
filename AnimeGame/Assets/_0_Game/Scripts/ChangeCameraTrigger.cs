@@ -2,16 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using AnimeGame;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+
+public enum ECinemachineBlendType
+{
+    CUT=0,
+    EASE_OUT
+}
 
 public class ChangeCameraTrigger : MonoBehaviour
 {
     public GameObject newCamera;
     public bool isActive;
     public List<GameObject> activeObjectList;
+ 
     public UnityEvent triggerCallback;
-  
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +27,7 @@ public class ChangeCameraTrigger : MonoBehaviour
         {
             if (newCamera != null && PlayerPresenter.Instance != null)
             {
+                
                 PlayerPresenter.Instance.ChangeVirtualCamera(newCamera);
                 triggerCallback?.Invoke();
 
@@ -29,9 +38,13 @@ public class ChangeCameraTrigger : MonoBehaviour
                     else
                         activeObject.SetActive(false);
                 }
+
+           
                 
             }
            
         }
     }
+
+    
 }
