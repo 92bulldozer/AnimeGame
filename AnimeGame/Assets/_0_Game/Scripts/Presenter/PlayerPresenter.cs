@@ -179,6 +179,7 @@ namespace AnimeGame
         public void Init()
         {
             isAlive = true;
+            ac = GetComponent<AnimeCharacterController>();
             _animator = GetComponent<Animator>();
             _rb = GetComponent<Rigidbody>();
             _mainCamera = Camera.main;
@@ -186,6 +187,7 @@ namespace AnimeGame
             player = ReInput.players.GetPlayer(playerID);
             playerInteract = GetComponent<PlayerInteract>();
             playerInteract.Init();
+            virtualCamera = GameManager.Instance.firstVirtualCamera;
             pickupSequence = DOTween.Sequence().SetAutoKill(false).Pause().OnPlay(()=>
             {
                 "DisableInput".Log();
@@ -299,7 +301,10 @@ namespace AnimeGame
 
         public void ChangeVirtualCamera(GameObject _virtualCamera)
         {
-          
+
+            if (virtualCamera == null)
+                return;
+            
             virtualCamera.SetActive(false);
             _virtualCamera.SetActive(true);
             virtualCamera = _virtualCamera;

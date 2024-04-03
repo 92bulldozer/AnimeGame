@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using AnimeGame;
 using Cinemachine;
 using DarkTonic.MasterAudio;
@@ -11,9 +12,8 @@ using MoreMountains.Feedbacks;
 using Rewired;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public enum ELanguage
 {
@@ -26,9 +26,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Space(20)] [Header("Field")] [Space(10)]
-    public Transform target;
     public bool isDiscovered;
-    
+    public PlayerPresenter playerPresenter;
+    public List<GameObject> playerPrefabList;
+    public GameObject firstVirtualCamera;
+
     [Space(20)] [Header("MMF")] [Space(10)]
     public MMF_Player ca;
     public MMF_Player caReverse;
@@ -42,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     [Space(20)] [Header("Camera")] [Space(10)]
     public CinemachineBrain cb;
+
+    public List<CinemachineVirtualCamera> virtualCameraList;
 
 
     private void Awake()
@@ -63,6 +67,8 @@ public class GameManager : MonoBehaviour
     {
         _player = ReInput.players.GetPlayer(0);
         LanguageInit();
+        SetPlayer();
+        SetupAllVirtualCamera();
     }
 
     public void LanguageInit()
@@ -139,7 +145,28 @@ public class GameManager : MonoBehaviour
 
     }
 
- 
+    public void SetPlayer()
+    {
+        GameObject playerObj = Instantiate(playerPrefabList[Random.Range(0, playerPrefabList.Count)], new Vector3(3,-0.5f,5.8f),
+            Quaternion.Euler(0, -90, 0));
+        playerPresenter = playerObj.transform.GetChild(2).GetComponent<PlayerPresenter>();
+    }
+
+    public void AddVirtualCamera(CinemachineVirtualCamera cvc)
+    {
+        virtualCameraList.Add(cvc);
+    }
+
+    public void SetupAllVirtualCamera()
+    {
+        foreach (var cinemachineVirtualCamera in virtualCameraList)
+        {
+            cinemachineVirtualCamera.Follow = playerPresenter.transform;
+            cinemachineVirtualCamera.LookAt = playerPresenter.transform;
+        }
+    }
+
+    
     
     public void EnableInput()
     {
