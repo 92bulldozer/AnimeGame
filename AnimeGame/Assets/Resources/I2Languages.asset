@@ -15,7 +15,7 @@ MonoBehaviour:
   mSource:
     UserAgreesToHaveItOnTheScene: 0
     UserAgreesToHaveItInsideThePluginsFolder: 0
-    GoogleLiveSyncIsUptoDate: 1
+    GoogleLiveSyncIsUptoDate: 0
     mTerms:
     - Term: Basement/Basement_BasementEquipment_Next
       TermType: 0
@@ -1011,6 +1011,22 @@ MonoBehaviour:
       Languages:
       - "\uBB34\uC5B8\uAC00\uB97C \uC791\uB3D9 \uC2DC\uD0AC\uC218 \uC788\uB294 \uAC74\uC804\uC9C0"
       - A Battery That Can Operate Something
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Hide
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC228\uAE30"
+      - Hide In
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_ComeOut
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD0C8\uCD9C"
+      - Come Out
       Flags: 0000
       Languages_Touch: []
     CaseInsensitiveTerms: 0

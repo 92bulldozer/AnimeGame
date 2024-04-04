@@ -19,6 +19,8 @@ public enum EInteractText
     Interact_Equipment,
     Interact_Vegetation,
     Interact_Exit,
+    Interact_Hide,
+    Interact_ComeOut
 }
 
 public class InteractPresenter : MonoBehaviour

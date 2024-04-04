@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 314853
+  controlID: 45260
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -697,9 +697,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.5776714, y: 2.674702, z: -13.178819}
+    m_Target: {x: -9.873092, y: -1.544282, z: 5.213657}
     speed: 2
-    m_Value: {x: -0.5776714, y: 2.674702, z: -13.178819}
+    m_Value: {x: -9.873092, y: -1.544282, z: 5.213657}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -745,13 +745,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.007893039, y: 0.99069333, z: 0.06518757, w: -0.12112219}
+    m_Target: {x: -0.14070873, y: -0.70626014, z: 0.14623527, w: -0.6786176}
     speed: 2
-    m_Value: {x: 0.007891242, y: 0.9904678, z: 0.06517273, w: -0.121094614}
+    m_Value: {x: -0.14067294, y: -0.7060805, z: 0.14619808, w: -0.678445}
   m_Size:
-    m_Target: 10
+    m_Target: 7.1527357
     speed: 2
-    m_Value: 10
+    m_Value: 7.1527357
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2415,7 +2415,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 314854
+  controlID: 45261
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2444,7 +2444,7 @@ MonoBehaviour:
   - {fileID: 16}
   - {fileID: 17}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 3
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2749,8 +2749,8 @@ MonoBehaviour:
     y: 652
     width: 1089
     height: 335
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -3428,7 +3428,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -3950440
+  m_LastSelectedObjectID: 77300
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52

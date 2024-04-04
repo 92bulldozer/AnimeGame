@@ -202,8 +202,8 @@ public class GameManager : MonoBehaviour
                 VARIABLE.enabled = true;
         }
     }
-    
-    
+
+  
     
     
     

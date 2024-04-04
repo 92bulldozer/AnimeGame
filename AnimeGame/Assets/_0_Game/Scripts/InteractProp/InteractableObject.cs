@@ -7,7 +7,10 @@ using DG.Tweening;
 using Doozy.Engine;
 using EJ;
 using EPOOutline;
+
+#if UNITY_EDITOR
 using UnityEditor.Events;
+#endif
 using UnityEngine;
 using UnityEngine.Events;
 

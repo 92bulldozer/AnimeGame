@@ -57,6 +57,7 @@ namespace AnimeGame
         private Rigidbody _rb;
         public Animator _animator;
         private Camera _mainCamera;
+        public List<SkinnedMeshRenderer> characterSkinnedMeshRendererList;
 
         [Tab("../MMF")]
         public MMF_Player MMF_CameraShake;
@@ -322,6 +323,8 @@ namespace AnimeGame
         {
             GameManager.Instance.EnableInput();
         }
+
+   
 
         public void PickUp()
         {
