@@ -4,14 +4,18 @@ using System.Collections.Generic;
 using System.Linq;
 using AnimeGame;
 using Cinemachine;
+using Cysharp.Threading.Tasks;
 using DarkTonic.MasterAudio;
 using DG.Tweening;
 using EJ;
 using I2.Loc;
+using INab.BetterFog.URP;
 using MoreMountains.Feedbacks;
 using Rewired;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -30,11 +34,21 @@ public class GameManager : MonoBehaviour
     public PlayerPresenter playerPresenter;
     public List<GameObject> playerPrefabList;
     public GameObject firstVirtualCamera;
+    public Color inSideAmbientColor;
+    public List<Color> outSideAmbientColor;
 
     [Space(20)] [Header("MMF")] [Space(10)]
     public MMF_Player ca;
     public MMF_Player caReverse;
     public MMF_Player jumpScareCamera;
+
+    [Space(20)] [Header("Volume")] [Space(10)]
+    public Volume volume;
+
+    public BetterFogVolume betterFogVolume;
+    public float mentality;
+
+    private VolumeProfile _volumeProfile;
 
     [Space(20)] [Header("Input")] [Space(10)]
     private Player _player;
@@ -44,8 +58,8 @@ public class GameManager : MonoBehaviour
 
     [Space(20)] [Header("Camera")] [Space(10)]
     public CinemachineBrain cb;
-
     public List<CinemachineVirtualCamera> virtualCameraList;
+    private static readonly int PlaneHeight = Shader.PropertyToID("_PlaneHeight");
 
 
     private void Awake()
@@ -60,7 +74,10 @@ public class GameManager : MonoBehaviour
         Init();
     }
 
-   
+    private void Start()
+    {
+        //DecreaseMentality().Forget();
+    }
 
 
     private void Init()
@@ -69,6 +86,19 @@ public class GameManager : MonoBehaviour
         LanguageInit();
         SetPlayer();
         SetupAllVirtualCamera();
+        if(volume != null)
+            _volumeProfile = volume.profile;
+        betterFogVolume = new BetterFogVolume();
+        
+       
+        
+        _volumeProfile.TryGet(out betterFogVolume);
+        if (betterFogVolume)
+        {
+            "BetterFogVolume 있음".Log(EColor.YELLOW);
+            mentality = 10;
+            betterFogVolume._Height.value = mentality;
+        }
     }
 
     public void LanguageInit()
@@ -79,6 +109,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+       
+        
         if (Input.GetKeyDown(KeyCode.Z))
         {
             "GameManagerZ".Log();
@@ -147,7 +179,9 @@ public class GameManager : MonoBehaviour
 
     public void SetPlayer()
     {
-        GameObject playerObj = Instantiate(playerPrefabList[Random.Range(0, playerPrefabList.Count)], new Vector3(3,-0.5f,5.8f),
+        // GameObject playerObj = Instantiate(playerPrefabList[Random.Range(0, playerPrefabList.Count)], new Vector3(3,-0.5f,5.8f),
+        //     Quaternion.Euler(0, -90, 0));
+        GameObject playerObj = Instantiate(playerPrefabList[1], new Vector3(3,-0.5f,5.8f),
             Quaternion.Euler(0, -90, 0));
         playerPresenter = playerObj.transform.GetChild(2).GetComponent<PlayerPresenter>();
     }
@@ -203,8 +237,56 @@ public class GameManager : MonoBehaviour
         }
     }
 
-  
+    public void ChangeAmbientLight(bool isInside)
+    {
+        // switch (isInside)
+        // {
+        //     case true:
+        //         RenderSettings.ambientMode = AmbientMode.Flat;
+        //         RenderSettings.ambientSkyColor = inSideAmbientColor;
+        //         break;
+        //     case false:
+        //         RenderSettings.ambientMode = AmbientMode.Trilight;
+        //         RenderSettings.ambientSkyColor = outSideAmbientColor[0];
+        //         RenderSettings.ambientEquatorColor = outSideAmbientColor[1];
+        //         RenderSettings.ambientGroundColor = outSideAmbientColor[2];
+        //         break;
+        // }
+    }
+
+    public async UniTaskVoid DecreaseMentality()
+    {
+        float heightDensity = 0;
+        while (true)
+        {
+
+            
+           
+            heightDensity += Time.deltaTime * 0.1f;
+            mentality += Time.deltaTime;
+            
+            _volumeProfile.TryGet(out betterFogVolume);
+            if (betterFogVolume)
+            {
+                betterFogVolume._Height.value = mentality;
+
+            }
+            
+            await UniTask.Yield();
+
+            if (mentality > 35)
+            {
+                "게임오버".Log(EColor.RED);
+                break;
+            }
+        }
+    }
     
+
+
+
+   
+   
     
     
 }

@@ -18,6 +18,8 @@ namespace AnimeGame
         public RoomData roomData;
         public Room room;
         public ERoomType eRoomType;
+        public bool isDebugMode;
+        public int debugIdx;
 
 
         private void Start()
@@ -27,6 +29,15 @@ namespace AnimeGame
 
         public void SpawnRoom()
         {
+            if (isDebugMode)
+            {
+                GameObject classRoomObj = Instantiate(roomData.bigClassRoomList[ debugIdx], transform);
+                room = classRoomObj.GetComponent<Room>();
+                room.transform.SetLocalPositionAndRotation(Vector3.zero, quaternion.identity);
+                room.transform.localScale = Vector3.one;
+                return;
+            }
+            
             switch (eRoomType)
             {
                 case ERoomType.BigClassRoom:
@@ -47,8 +58,11 @@ namespace AnimeGame
 
         public void ExitRoom()
         {
+            GameManager.Instance.ChangeAmbientLight(false);
+            PlayerPresenter.Instance.DeActiveLight();
             try
             {
+                
                 room.deActiveCallback?.Invoke();
             }
             catch (Exception e)
@@ -56,5 +70,7 @@ namespace AnimeGame
                
             }
         }
+
+     
     }
 }

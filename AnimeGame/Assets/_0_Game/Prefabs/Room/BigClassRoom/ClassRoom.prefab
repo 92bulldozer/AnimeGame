@@ -4693,7 +4693,19 @@ MonoBehaviour:
   - {fileID: 6083583828092909464}
   triggerCallback:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 983270863876812182}
+        m_TargetAssemblyTypeName: AnimeGame.Room, AnimeGame.Scripts
+        m_MethodName: EnterRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2011868759124612945
 GameObject:
   m_ObjectHideFlags: 0
@@ -17444,7 +17456,7 @@ GameObject:
   - component: {fileID: 3618265510153994193}
   - component: {fileID: 6051730369575825742}
   - component: {fileID: 3204620856690414553}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: platform01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

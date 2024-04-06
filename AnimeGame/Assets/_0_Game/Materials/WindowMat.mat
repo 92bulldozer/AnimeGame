@@ -40,7 +40,6 @@ Material:
   - _LIGHTAFFECTSHADOW_OFF
   - _LIGHTFALLOFFAFFECTSHADOWT_OFF
   - _LIGIGNOYNORDIR_OFF
-  - _MCIALO_OFF
   - _MIXMAINTEXTOOUTLINE_OFF
   - _MVCOL_OFF
   - _OUTLINEWIDTHAFFECTEDBYVIEWDISTANCE_OFF
@@ -60,7 +59,8 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses:
   - SRPDEFAULTUNLIT
   m_LockedProperties: 
@@ -223,7 +223,7 @@ Material:
     - _Glossiness: 1
     - _GlossyReflections: 0
     - _Glow_Edge_Width: 1
-    - _HighlightColorPower: 1.46
+    - _HighlightColorPower: 0.97
     - _LigIgnoYNorDir: 0
     - _LightAffectOutlineColor: 0
     - _LightAffectRimLightColor: 0
@@ -231,10 +231,10 @@ Material:
     - _LightFalloffAffectShadowT: 0
     - _LightFalloffSoftness: 1
     - _LightIntensity: 1
-    - _MCIALO: 0
+    - _MCIALO: 1
     - _MCapIntensity: 1
     - _MVCOL: 0
-    - _MaiColPo: 1
+    - _MaiColPo: 1.15
     - _MaxFadDistance: 2
     - _Metallic: 0
     - _MinFadDistance: 0

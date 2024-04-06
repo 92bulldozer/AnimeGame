@@ -12,14 +12,19 @@ namespace AnimeGame
 
         public UnityEvent deActiveCallback;
 
-        private void Awake()
-        {
-        }
 
         private void Start()
         {
             vcam.LookAt = PlayerPresenter.Instance.transform;
 
         }
+
+        public void EnterRoom()
+        {
+            GameManager.Instance.ChangeAmbientLight(true);
+            PlayerPresenter.Instance.ActiveLight();
+        }
+
+      
     }
 }

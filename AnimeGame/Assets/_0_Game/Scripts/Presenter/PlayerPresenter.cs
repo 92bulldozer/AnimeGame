@@ -57,7 +57,8 @@ namespace AnimeGame
         private Rigidbody _rb;
         public Animator _animator;
         private Camera _mainCamera;
-        public List<SkinnedMeshRenderer> characterSkinnedMeshRendererList;
+        public GameObject characterSpotLight;
+        public GameObject characterPointLight;
 
         [Tab("../MMF")]
         public MMF_Player MMF_CameraShake;
@@ -129,8 +130,6 @@ namespace AnimeGame
               
             }
             
-      
-
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -153,23 +152,7 @@ namespace AnimeGame
                 //ActiveRagDoll();
                 //GetDamaged(null,KnockBackDirection.BACK);
             }
-            
-         
-            
-            // if (moveDirection != Vector3.zero)
-            // {
-            //     Quaternion lookRotation = Quaternion.LookRotation(moveDirection.normalized);
-            //     _rb.rotation = Quaternion.Slerp(_rb.rotation,lookRotation,rotationSpeed*Time.deltaTime);
-            //     
-            // }
-            // else
-            // {
-            //     _rb.angularVelocity=Vector3.zero;
-            //     _rb.velocity  = Vector3.zero;
-            // }
-
-            // float characterAnimationSpeed = _rb.velocity.magnitude.Remap(0, 2, 0, 1);
-            // _animator.SetFloat("MoveSpeed",characterAnimationSpeed,animationSmoothTime,Time.deltaTime);
+   
             
         }
 
@@ -424,9 +407,20 @@ namespace AnimeGame
         
 
         #endregion
-        
-        
-        
+
+
+        public void ActiveLight()
+        {
+            characterSpotLight.SetActive(true);
+            characterPointLight.SetActive(true);
+        }
+
+        public void DeActiveLight()
+        {
+            
+            characterSpotLight.SetActive(false);
+            characterPointLight.SetActive(false);
+        }
         
     
     }
