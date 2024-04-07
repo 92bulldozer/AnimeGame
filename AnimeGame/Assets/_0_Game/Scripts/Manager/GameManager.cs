@@ -239,19 +239,19 @@ public class GameManager : MonoBehaviour
 
     public void ChangeAmbientLight(bool isInside)
     {
-        // switch (isInside)
-        // {
-        //     case true:
-        //         RenderSettings.ambientMode = AmbientMode.Flat;
-        //         RenderSettings.ambientSkyColor = inSideAmbientColor;
-        //         break;
-        //     case false:
-        //         RenderSettings.ambientMode = AmbientMode.Trilight;
-        //         RenderSettings.ambientSkyColor = outSideAmbientColor[0];
-        //         RenderSettings.ambientEquatorColor = outSideAmbientColor[1];
-        //         RenderSettings.ambientGroundColor = outSideAmbientColor[2];
-        //         break;
-        // }
+        switch (isInside)
+        {
+            case true:
+                RenderSettings.ambientMode = AmbientMode.Flat;
+                RenderSettings.ambientSkyColor = inSideAmbientColor;
+                break;
+            case false:
+                RenderSettings.ambientMode = AmbientMode.Trilight;
+                RenderSettings.ambientSkyColor = outSideAmbientColor[0];
+                RenderSettings.ambientEquatorColor = outSideAmbientColor[1];
+                RenderSettings.ambientGroundColor = outSideAmbientColor[2];
+                break;
+        }
     }
 
     public async UniTaskVoid DecreaseMentality()

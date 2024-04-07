@@ -41,13 +41,13 @@ namespace AnimeGame
             switch (eRoomType)
             {
                 case ERoomType.BigClassRoom:
-                    GameObject classRoomObj = Instantiate(roomData.bigClassRoomList[ Random.Range(0, 2)], transform);
+                    GameObject classRoomObj = Instantiate(roomData.bigClassRoomList[ Random.Range(0, roomData.bigClassRoomList.Count)], transform);
                     room = classRoomObj.GetComponent<Room>();
                     room.transform.SetLocalPositionAndRotation(Vector3.zero, quaternion.identity);
                     room.transform.localScale = Vector3.one;
                     break;
                 case ERoomType.smallClassRoom:
-                    GameObject smallRoomObj = Instantiate(roomData.bigClassRoomList[ Random.Range(0, 2)], transform);
+                    GameObject smallRoomObj = Instantiate(roomData.smallClassRoomList[ Random.Range(0, roomData.smallClassRoomList.Count)], transform);
                     room = smallRoomObj.GetComponent<Room>();
                     room.transform.SetLocalPositionAndRotation(Vector3.zero, quaternion.identity);
                     room.transform.localScale = Vector3.one;
