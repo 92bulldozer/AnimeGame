@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1445107617625466417}
   - component: {fileID: 2706641864802517405}
   - component: {fileID: 7045599386478606903}
+  - component: {fileID: 1534683292915690319}
   m_Layer: 0
   m_Name: HeadTarget
   m_TagString: Untagged
@@ -246,6 +247,18 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1534683292915690319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11496603571906057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &55662936819476852
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +399,7 @@ GameObject:
   - component: {fileID: 3315349434163307010}
   - component: {fileID: 6299103475836162247}
   - component: {fileID: 432043067281954542}
+  - component: {fileID: 2940529011651797195}
   m_Layer: 0
   m_Name: LHandTarget
   m_TagString: Untagged
@@ -587,6 +601,18 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2940529011651797195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159269199748097342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &162458616235201605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,6 +1502,7 @@ GameObject:
   - component: {fileID: 3378694933343989333}
   - component: {fileID: 6369889875152409744}
   - component: {fileID: 1209501578702869709}
+  - component: {fileID: 5622975529986133349}
   m_Layer: 6
   m_Name: Halo_main
   m_TagString: Untagged
@@ -1549,6 +1576,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5622975529986133349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606675133678274348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &615415087396176257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,6 +1630,7 @@ GameObject:
   - component: {fileID: 1335433995655635375}
   - component: {fileID: 1770704938587178837}
   - component: {fileID: 4831313926719980092}
+  - component: {fileID: 8662112381286048228}
   m_Layer: 6
   m_Name: Halo_sub1
   m_TagString: Untagged
@@ -1663,6 +1703,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8662112381286048228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615473202619747859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &617706457785875066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,6 +1944,7 @@ GameObject:
   - component: {fileID: 3136051053117468959}
   - component: {fileID: 2723829935964312494}
   - component: {fileID: 3589874392623890961}
+  - component: {fileID: 816145476605231446}
   m_Layer: 6
   m_Name: Halo_main_rhombus_sub
   m_TagString: Untagged
@@ -1964,6 +2017,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &816145476605231446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748362785031651755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &757533020899045812
 GameObject:
   m_ObjectHideFlags: 0
@@ -3117,6 +3182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8534133275233298356}
   - component: {fileID: 1810155364961512173}
+  - component: {fileID: 5342653196404678629}
   m_Layer: 9
   m_Name: Selestia_hair_tail (1)
   m_TagString: Untagged
@@ -3460,6 +3526,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000046483474, y: 0.012469382, z: -0.0009869603}
     m_Extent: {x: 0.0023787268, y: 0.0011594547, z: 0.0011045286}
   m_DirtyAABB: 0
+--- !u!114 &5342653196404678629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959998274863065232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985136851532364767
 GameObject:
   m_ObjectHideFlags: 0
@@ -3598,6 +3676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8156496855018167578}
   - component: {fileID: 7330765447142022858}
+  - component: {fileID: 3927918724657836978}
   m_Layer: 6
   m_Name: Selestia_costume_shoes
   m_TagString: Untagged
@@ -3939,6 +4018,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00000864797, y: 0.001029199, z: 0.000032310258}
     m_Extent: {x: 0.0016119382, y: 0.0016262252, z: 0.0014953669}
   m_DirtyAABB: 0
+--- !u!114 &3927918724657836978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084121607374972012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1091099815976308503
 GameObject:
   m_ObjectHideFlags: 0
@@ -4045,6 +4136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6566163962311594922}
   - component: {fileID: 6686233686175076425}
+  - component: {fileID: 3036652463424500369}
   m_Layer: 9
   m_Name: Selestia_hair_back_long (1)
   m_TagString: Untagged
@@ -4385,6 +4477,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00022359658, y: 0.008152049, z: -0.0026831273}
     m_Extent: {x: 0.006145712, y: 0.0050614476, z: 0.0045215553}
   m_DirtyAABB: 0
+--- !u!114 &3036652463424500369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125800207555842357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1144249570887245875
 GameObject:
   m_ObjectHideFlags: 0
@@ -4698,6 +4802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 933024381411400350}
   - component: {fileID: 6062538909831004872}
+  - component: {fileID: 2675948799240716562}
   m_Layer: 9
   m_Name: Body (1)
   m_TagString: Untagged
@@ -5392,6 +5497,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 5.820766e-11, y: 0.011837116, z: -0.000120954704}
     m_Extent: {x: 0.00096067897, y: 0.0011664145, z: 0.0011315291}
   m_DirtyAABB: 0
+--- !u!114 &2675948799240716562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346657214770193082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1396969931590973992
 GameObject:
   m_ObjectHideFlags: 0
@@ -6141,6 +6258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7262304414979181936}
   - component: {fileID: 1198497718015362223}
+  - component: {fileID: 881261317133847949}
   m_Layer: 6
   m_Name: Selestia_body
   m_TagString: Untagged
@@ -6510,6 +6628,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000000005355105, y: 0.0057831034, z: -0.000114867056}
     m_Extent: {x: 0.006011879, y: 0.0059598843, z: 0.0016775227}
   m_DirtyAABB: 0
+--- !u!114 &881261317133847949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674170010527148626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1676747310657937448
 GameObject:
   m_ObjectHideFlags: 0
@@ -10378,6 +10508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2816542864284238786}
   - component: {fileID: 604393632005635285}
+  - component: {fileID: 5762343494971912800}
   m_Layer: 6
   m_Name: Selestia_underwear_bra
   m_TagString: Untagged
@@ -10720,6 +10851,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0000073507545, y: 0.009878305, z: 0.00022576301}
     m_Extent: {x: 0.0014678966, y: 0.0012166733, z: 0.0012056481}
   m_DirtyAABB: 0
+--- !u!114 &5762343494971912800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461043972306348565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3472150738052124076
 GameObject:
   m_ObjectHideFlags: 0
@@ -10829,6 +10972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7214001367527910535}
   - component: {fileID: 745157738966770321}
+  - component: {fileID: 2278504584197512685}
   m_Layer: 9
   m_Name: Selestia_hair_acc (1)
   m_TagString: Untagged
@@ -11170,6 +11314,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00061070285, y: 0.012942299, z: -0.00022545524}
     m_Extent: {x: 0.0014584716, y: 0.001102584, z: 0.0008587205}
   m_DirtyAABB: 0
+--- !u!114 &2278504584197512685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485862477099018480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3525323039591556626
 GameObject:
   m_ObjectHideFlags: 0
@@ -12558,6 +12714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4242453450132009901}
   - component: {fileID: 207961118867204880}
+  - component: {fileID: 5251618408743395581}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -13252,6 +13409,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 5.820766e-11, y: 0.011837116, z: -0.000120954704}
     m_Extent: {x: 0.00096067897, y: 0.0011664145, z: 0.0011315291}
   m_DirtyAABB: 0
+--- !u!114 &5251618408743395581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3663940004071857624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3706813413076735166
 GameObject:
   m_ObjectHideFlags: 0
@@ -13544,6 +13713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8441674324170785217}
   - component: {fileID: 4394507058416052054}
+  - component: {fileID: 7232258613985149886}
   m_Layer: 6
   m_Name: Selestia_hair_acc
   m_TagString: Untagged
@@ -13885,6 +14055,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00061070285, y: 0.012942299, z: -0.00022545524}
     m_Extent: {x: 0.0014584716, y: 0.001102584, z: 0.0008587205}
   m_DirtyAABB: 0
+--- !u!114 &7232258613985149886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3817993797874508353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3891031274370761658
 GameObject:
   m_ObjectHideFlags: 0
@@ -14948,6 +15130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5904512157835474283}
   - component: {fileID: 8357881110626124710}
+  - component: {fileID: 5799257272595365}
   m_Layer: 9
   m_Name: Selestia_body (1)
   m_TagString: Untagged
@@ -15317,6 +15500,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000000005355105, y: 0.0057831034, z: -0.000114867056}
     m_Extent: {x: 0.006011879, y: 0.0059598843, z: 0.0016775227}
   m_DirtyAABB: 0
+--- !u!114 &5799257272595365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151245161027181428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4175875642917292604
 GameObject:
   m_ObjectHideFlags: 0
@@ -15362,6 +15557,7 @@ GameObject:
   - component: {fileID: 4282979383044449520}
   - component: {fileID: 1178660953945953289}
   - component: {fileID: 3801300416930989274}
+  - component: {fileID: 387375475521900367}
   m_Layer: 0
   m_Name: RHandTarget
   m_TagString: Untagged
@@ -15563,6 +15759,18 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &387375475521900367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186900548892343686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4202261698574939702
 GameObject:
   m_ObjectHideFlags: 0
@@ -15656,6 +15864,7 @@ GameObject:
   - component: {fileID: 7385909266223488339}
   - component: {fileID: 7738763997760785511}
   - component: {fileID: 5283133687753462949}
+  - component: {fileID: 8219446392106844976}
   m_Layer: 6
   m_Name: Halo_main_ring
   m_TagString: Untagged
@@ -15728,6 +15937,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8219446392106844976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4213031910046409200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4213191663876904073
 GameObject:
   m_ObjectHideFlags: 0
@@ -15874,6 +16095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6714597008707699209}
   - component: {fileID: 6009204771661308724}
+  - component: {fileID: 3926379698545073708}
   m_Layer: 9
   m_Name: Selestia_hair_back_short (1)
   m_TagString: Untagged
@@ -16214,6 +16436,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00009968993, y: 0.011743347, z: -0.0011501275}
     m_Extent: {x: 0.0023991151, y: 0.0018227203, z: 0.0018860579}
   m_DirtyAABB: 0
+--- !u!114 &3926379698545073708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4251440193547519018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4304409623918046636
 GameObject:
   m_ObjectHideFlags: 0
@@ -17380,6 +17614,7 @@ GameObject:
   - component: {fileID: 5021239592665364002}
   - component: {fileID: 2626064306484308509}
   - component: {fileID: 8966840098317334277}
+  - component: {fileID: 7214228765774739827}
   m_Layer: 6
   m_Name: Halo_main_sphere
   m_TagString: Untagged
@@ -17452,6 +17687,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7214228765774739827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662663625340377496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4672854948360392640
 GameObject:
   m_ObjectHideFlags: 0
@@ -17867,6 +18114,7 @@ GameObject:
   - component: {fileID: 3573918764338906333}
   - component: {fileID: 4464137489343138066}
   - component: {fileID: 8740463547308838481}
+  - component: {fileID: 4375700900406088955}
   m_Layer: 6
   m_Name: Flashlight
   m_TagString: Untagged
@@ -17941,6 +18189,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4375700900406088955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802919014550853849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4823807199204609886
 GameObject:
   m_ObjectHideFlags: 0
@@ -18149,6 +18409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2238058857439265647}
   - component: {fileID: 8298865465418288272}
+  - component: {fileID: 605204687942215336}
   m_Layer: 6
   m_Name: Selestia_hair_back_long
   m_TagString: Untagged
@@ -18489,6 +18750,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00022359658, y: 0.008152049, z: -0.0026831273}
     m_Extent: {x: 0.006145712, y: 0.0050614476, z: 0.0045215553}
   m_DirtyAABB: 0
+--- !u!114 &605204687942215336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885290880099081728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4898369599869603331
 GameObject:
   m_ObjectHideFlags: 0
@@ -18909,6 +19182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2013938555615590991}
   - component: {fileID: 3638554363464925959}
+  - component: {fileID: 8865834352834132172}
   m_Layer: 6
   m_Name: Selestia_hair_side
   m_TagString: Untagged
@@ -19254,6 +19528,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00019169797, y: 0.011225177, z: 0.00036465155}
     m_Extent: {x: 0.0020948234, y: 0.001998519, z: 0.0019870596}
   m_DirtyAABB: 0
+--- !u!114 &8865834352834132172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042693438116812970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5053990450445218126
 GameObject:
   m_ObjectHideFlags: 0
@@ -19681,6 +19967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7520426860367994556}
   - component: {fileID: 6156493412214502629}
+  - component: {fileID: 1666970997678411782}
   m_Layer: 6
   m_Name: Selestia_costume_glove
   m_TagString: Untagged
@@ -20018,6 +20305,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.010369804, z: -0.000425431}
     m_Extent: {x: 0.0054469286, y: 0.0004775119, z: 0.0005405753}
   m_DirtyAABB: 0
+--- !u!114 &1666970997678411782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237068580465328947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5260205456674101246
 GameObject:
   m_ObjectHideFlags: 0
@@ -20060,6 +20359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3960822333452122738}
   - component: {fileID: 995892080850091972}
+  - component: {fileID: 1047867628716069197}
   m_Layer: 6
   m_Name: Selestia_underwear_panty
   m_TagString: Untagged
@@ -20399,6 +20699,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.0070468364, z: -0.00047036767}
     m_Extent: {x: 0.0015744295, y: 0.00085230335, z: 0.0010412554}
   m_DirtyAABB: 0
+--- !u!114 &1047867628716069197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5278766022229456771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5305497483592929231
 GameObject:
   m_ObjectHideFlags: 0
@@ -20910,6 +21222,7 @@ GameObject:
   - component: {fileID: 6589917442678043791}
   - component: {fileID: 311228281843488932}
   - component: {fileID: 6119882129644170113}
+  - component: {fileID: 3975943997012916104}
   m_Layer: 6
   m_Name: Halo_sub2
   m_TagString: Untagged
@@ -20982,6 +21295,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3975943997012916104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683806825047800023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5684032537466203048
 GameObject:
   m_ObjectHideFlags: 0
@@ -21027,6 +21352,7 @@ GameObject:
   - component: {fileID: 6216523415549780319}
   - component: {fileID: 6905415868306621293}
   - component: {fileID: 3081609000083553232}
+  - component: {fileID: 6939057000905376994}
   m_Layer: 0
   m_Name: ChestTarget
   m_TagString: Untagged
@@ -21242,6 +21568,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &6939057000905376994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5688609641201696190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5712643579464160141
 GameObject:
   m_ObjectHideFlags: 0
@@ -21253,6 +21591,7 @@ GameObject:
   - component: {fileID: 5213007827257805150}
   - component: {fileID: 4549731584026735703}
   - component: {fileID: 2525556404170226605}
+  - component: {fileID: 3858646715972208301}
   m_Layer: 6
   m_Name: Halo_main_rhombus
   m_TagString: Untagged
@@ -21325,6 +21664,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3858646715972208301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712643579464160141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5713135733255443848
 GameObject:
   m_ObjectHideFlags: 0
@@ -21663,6 +22014,7 @@ GameObject:
   - component: {fileID: 6555365258266752930}
   - component: {fileID: 924391383749273221}
   - component: {fileID: 5550825428488683637}
+  - component: {fileID: 6500722121651453954}
   m_Layer: 6
   m_Name: PuppetSelestia
   m_TagString: Player
@@ -21917,6 +22269,737 @@ MonoBehaviour:
   _ledgeOffset: 0
   _castDistance: 0.2
   _triggerInteraction: 1
+--- !u!114 &6500722121651453954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930715011972684704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  complexMaskingMode: 0
+  drawingMode: 1
+  outlineLayer: 0
+  outlineTargets:
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 1209501578702869709}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 2525556404170226605}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 3589874392623890961}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 5283133687753462949}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 8966840098317334277}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 4831313926719980092}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 6119882129644170113}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 8740463547308838481}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 8740463547308838481}
+    SubmeshIndex: 1
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 207961118867204880}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 207961118867204880}
+    SubmeshIndex: 1
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 6062538909831004872}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 6062538909831004872}
+    SubmeshIndex: 1
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 1198497718015362223}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 8357881110626124710}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 6156493412214502629}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 7599718071710768485}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 7330765447142022858}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 7998083648842445668}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 4394507058416052054}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 745157738966770321}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 1906433502323720736}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 63744855407272777}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 8298865465418288272}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 6686233686175076425}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 1665870546511088767}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 6009204771661308724}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 6954908213071143781}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 1796437171062500001}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 3638554363464925959}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 1901959608640585459}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 641797607791596413}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 1810155364961512173}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 604393632005635285}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 995892080850091972}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 4282979383044449520}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 1445107617625466417}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 8854251187741019989}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  - IsVisible: 0
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 3315349434163307010}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  renderStyle: 2
+  outlineParameters:
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+  backParameters:
+    enabled: 1
+    color: {r: 0.23, g: 0.23, b: 0.23, a: 1}
+    dilateShift: 0.65
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 4800000, guid: 77ea1b923175bd6439416078316b6264, type: 3}
+      serializedProperties:
+      - PropertyName: _PublicColor
+        Property:
+          ColorValue: {r: 0.45, g: 0.45, b: 0.45, a: 1}
+          FloatValue: 0
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 0
+      - PropertyName: _PublicHorizontalSize
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 1
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 2
+      - PropertyName: _PublicVerticalSize
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 1
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 2
+      - PropertyName: _PublicHorizontalGapSize
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 0.5
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 3
+      - PropertyName: _PublicVerticalGapSize
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 0.5
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 3
+      - PropertyName: _PublicHorizontalSoftness
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 0.2
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 3
+      - PropertyName: _PublicVerticalSoftness
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 0.2
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 3
+      - PropertyName: _PublicHorizontalSpeed
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 0
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 2
+      - PropertyName: _PublicVerticalSpeed
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 0
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 2
+      - PropertyName: _PublicAngle
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 30
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 3
+      - PropertyName: _PublicSecondaryAlpha
+        Property:
+          ColorValue: {r: 1, g: 0, b: 0, a: 1}
+          FloatValue: 0.2
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 3
+  frontParameters:
+    enabled: 0
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
 --- !u!1 &5956188942851601488
 GameObject:
   m_ObjectHideFlags: 0
@@ -22684,6 +23767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2324651297778216504}
   - component: {fileID: 7599718071710768485}
+  - component: {fileID: 8314602759409098362}
   m_Layer: 6
   m_Name: Selestia_costume_main
   m_TagString: Untagged
@@ -23031,6 +24115,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000014985213, y: 0.008147517, z: -0.00057500764}
     m_Extent: {x: 0.0034353712, y: 0.003444389, z: 0.002904325}
   m_DirtyAABB: 0
+--- !u!114 &8314602759409098362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244852596078864270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6293991611397822353
 GameObject:
   m_ObjectHideFlags: 0
@@ -23041,6 +24137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4213647371209002328}
   - component: {fileID: 63744855407272777}
+  - component: {fileID: 9114065001576209795}
   m_Layer: 9
   m_Name: Selestia_hair_atama (1)
   m_TagString: Untagged
@@ -23377,6 +24474,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00000094040297, y: 0.012169354, z: -0.00046924377}
     m_Extent: {x: 0.00086031336, y: 0.0012074988, z: 0.001184699}
   m_DirtyAABB: 0
+--- !u!114 &9114065001576209795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6293991611397822353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6333918478930331662
 GameObject:
   m_ObjectHideFlags: 0
@@ -25671,6 +26780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3292132671177243103}
   - component: {fileID: 1665870546511088767}
+  - component: {fileID: 2600339249778358217}
   m_Layer: 6
   m_Name: Selestia_hair_back_short
   m_TagString: Untagged
@@ -26011,6 +27121,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00009968993, y: 0.011743347, z: -0.0011501275}
     m_Extent: {x: 0.0023991151, y: 0.0018227203, z: 0.0018860579}
   m_DirtyAABB: 0
+--- !u!114 &2600339249778358217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175596164744759786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7179371775660747829
 GameObject:
   m_ObjectHideFlags: 0
@@ -26340,6 +27462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9087776662226501126}
   - component: {fileID: 1901959608640585459}
+  - component: {fileID: 5734939748456596978}
   m_Layer: 9
   m_Name: Selestia_hair_side (1)
   m_TagString: Untagged
@@ -26685,6 +27808,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00019169797, y: 0.011225177, z: 0.00036465155}
     m_Extent: {x: 0.0020948234, y: 0.001998519, z: 0.0019870596}
   m_DirtyAABB: 0
+--- !u!114 &5734939748456596978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7398091886420307847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7434165318422318226
 GameObject:
   m_ObjectHideFlags: 0
@@ -27943,6 +29078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4122285915739824832}
   - component: {fileID: 641797607791596413}
+  - component: {fileID: 5048550546202667439}
   m_Layer: 6
   m_Name: Selestia_hair_tail
   m_TagString: Untagged
@@ -28286,6 +29422,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000046483474, y: 0.012469382, z: -0.0009869603}
     m_Extent: {x: 0.0023787268, y: 0.0011594547, z: 0.0011045286}
   m_DirtyAABB: 0
+--- !u!114 &5048550546202667439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7934803248200003080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7951747173226143482
 GameObject:
   m_ObjectHideFlags: 0
@@ -28360,6 +29508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2334815991115425764}
   - component: {fileID: 1796437171062500001}
+  - component: {fileID: 6818133691947540857}
   m_Layer: 9
   m_Name: Selestia_hair_bang (1)
   m_TagString: Untagged
@@ -28707,6 +29856,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00060284836, y: 0.012604881, z: -0.00021640863}
     m_Extent: {x: 0.0015373249, y: 0.0013544881, z: 0.001173903}
   m_DirtyAABB: 0
+--- !u!114 &6818133691947540857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015882884273771441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8057610602298967576
 GameObject:
   m_ObjectHideFlags: 0
@@ -28749,6 +29910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1122997881084452762}
   - component: {fileID: 6954908213071143781}
+  - component: {fileID: 7423052180272446647}
   m_Layer: 6
   m_Name: Selestia_hair_bang
   m_TagString: Untagged
@@ -29096,6 +30258,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00060284836, y: 0.012604881, z: -0.00021640863}
     m_Extent: {x: 0.0015373249, y: 0.0013544881, z: 0.001173903}
   m_DirtyAABB: 0
+--- !u!114 &7423052180272446647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8083178272623091657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8166252870644784834
 GameObject:
   m_ObjectHideFlags: 0
@@ -29420,6 +30594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983743629896623441}
   - component: {fileID: 1906433502323720736}
+  - component: {fileID: 9069542713333040381}
   m_Layer: 6
   m_Name: Selestia_hair_atama
   m_TagString: Untagged
@@ -29756,6 +30931,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00000094040297, y: 0.012169354, z: -0.00046924377}
     m_Extent: {x: 0.00086031336, y: 0.0012074988, z: 0.001184699}
   m_DirtyAABB: 0
+--- !u!114 &9069542713333040381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281064609812136045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8322003958898333498
 GameObject:
   m_ObjectHideFlags: 0
@@ -29861,6 +31048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5882264432760564070}
   - component: {fileID: 7998083648842445668}
+  - component: {fileID: 713700177773752783}
   m_Layer: 6
   m_Name: Selestia_costume_stocking
   m_TagString: Untagged
@@ -30206,6 +31394,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.002911362, z: 0.00027683028}
     m_Extent: {x: 0.0015520025, y: 0.0032105276, z: 0.0012717284}
   m_DirtyAABB: 0
+--- !u!114 &713700177773752783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8377814231058870328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8398620541772906590
 GameObject:
   m_ObjectHideFlags: 0

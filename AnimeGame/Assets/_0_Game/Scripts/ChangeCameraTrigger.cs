@@ -14,6 +14,7 @@ public enum ECinemachineBlendType
 
 public class ChangeCameraTrigger : MonoBehaviour
 {
+    public bool useTimeStop;
     public GameObject newCamera;
     public bool isActive;
     public List<GameObject> activeObjectList;
@@ -39,8 +40,12 @@ public class ChangeCameraTrigger : MonoBehaviour
                         activeObject.SetActive(false);
                 }
 
-           
-                
+                if (useTimeStop)
+                {
+                    Time.timeScale = 0.1f;
+                    DOVirtual.DelayedCall(1f, () => Time.timeScale = 1);
+                }
+               
             }
            
         }
