@@ -22281,7 +22281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  complexMaskingMode: 0
+  complexMaskingMode: 1
   drawingMode: 1
   outlineLayer: 0
   outlineTargets:
@@ -22924,7 +22924,7 @@ MonoBehaviour:
     dilateShift: 0.65
     blurShift: 1
     fillPass:
-      shader: {fileID: 4800000, guid: 77ea1b923175bd6439416078316b6264, type: 3}
+      shader: {fileID: 0}
       serializedProperties:
       - PropertyName: _PublicColor
         Property:

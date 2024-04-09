@@ -43,7 +43,7 @@ public class ChangeCameraTrigger : MonoBehaviour
                 if (useTimeStop)
                 {
                     Time.timeScale = 0.1f;
-                    DOVirtual.DelayedCall(1f, () => Time.timeScale = 1);
+                    DOVirtual.DelayedCall(0.6f, () => Time.timeScale = 1);
                 }
                
             }

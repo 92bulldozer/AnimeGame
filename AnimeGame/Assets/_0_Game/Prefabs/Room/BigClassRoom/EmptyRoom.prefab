@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 6268121757121204803}
   - component: {fileID: 3172978073217836120}
   - component: {fileID: 2787739131354406439}
+  - component: {fileID: 2012642809185617629}
   m_Layer: 0
   m_Name: window01_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6268121757121204803
 Transform:
@@ -84,6 +85,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2012642809185617629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149484431103407499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640568
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640568
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 149484431103407499}
+        _renderer: {fileID: 2787739131354406439}
+        _mesh: {fileID: 4300008, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &339284332923041428
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,12 +128,13 @@ GameObject:
   - component: {fileID: 608051382261958033}
   - component: {fileID: 2015472194699100085}
   - component: {fileID: 5950085694849573092}
+  - component: {fileID: 8290177481617112149}
   m_Layer: 0
   m_Name: classroom01_shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &608051382261958033
 Transform:
@@ -167,6 +201,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8290177481617112149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339284332923041428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640563
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640563
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 339284332923041428}
+        _renderer: {fileID: 5950085694849573092}
+        _mesh: {fileID: 4300000, guid: 56a5400b7c04a51409e6819ddc08e7eb, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &615471209662546867
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +248,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5443895224614231155
 Transform:
@@ -235,7 +301,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &291765448565118258
 Transform:
@@ -288,7 +354,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1116913693273525234
 Transform:
@@ -340,7 +406,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3297275626487782314
 Transform:
@@ -382,12 +448,13 @@ GameObject:
   - component: {fileID: 4647561281540664501}
   - component: {fileID: 3176975939171924872}
   - component: {fileID: 8189913612311692045}
+  - component: {fileID: 1666124752706830234}
   m_Layer: 0
   m_Name: window01_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4647561281540664501
 Transform:
@@ -455,6 +522,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1666124752706830234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776039301577663136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640580
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640580
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 1776039301577663136}
+        _renderer: {fileID: 8189913612311692045}
+        _mesh: {fileID: 4300014, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &2227363292672115249
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,12 +565,13 @@ GameObject:
   - component: {fileID: 5621102760138264946}
   - component: {fileID: 7441091900939809211}
   - component: {fileID: 1660052296561785494}
+  - component: {fileID: 8224353611834195959}
   m_Layer: 0
   m_Name: window01_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5621102760138264946
 Transform:
@@ -539,6 +639,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8224353611834195959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2227363292672115249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640572
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640572
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 2227363292672115249}
+        _renderer: {fileID: 1660052296561785494}
+        _mesh: {fileID: 4300016, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &2412296520124803965
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +686,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5560475905424985752
 Transform:
@@ -603,12 +735,13 @@ GameObject:
   - component: {fileID: 1651078300575538923}
   - component: {fileID: 6782677667030325900}
   - component: {fileID: 3537488614561886632}
+  - component: {fileID: 5669926241196352353}
   m_Layer: 0
   m_Name: window01_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1651078300575538923
 Transform:
@@ -676,6 +809,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5669926241196352353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540589380355026624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640569
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640569
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 2540589380355026624}
+        _renderer: {fileID: 3537488614561886632}
+        _mesh: {fileID: 4300010, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &2560401612179906220
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,12 +852,13 @@ GameObject:
   - component: {fileID: 5181014347114273966}
   - component: {fileID: 6225778039355190074}
   - component: {fileID: 6083624793676693771}
+  - component: {fileID: 3057927471277662754}
   m_Layer: 0
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5181014347114273966
 Transform:
@@ -759,6 +925,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3057927471277662754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560401612179906220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640562
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640562
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 2560401612179906220}
+        _renderer: {fileID: 6083624793676693771}
+        _mesh: {fileID: 4300000, guid: 0e418c4783a968c4ba858e66d755633d, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &3782440401666548639
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +972,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2188256576242399247
 Transform:
@@ -823,12 +1021,13 @@ GameObject:
   - component: {fileID: 2331526519641448849}
   - component: {fileID: 3703500601208152862}
   - component: {fileID: 4120660667391542422}
+  - component: {fileID: 4838944667960078353}
   m_Layer: 0
   m_Name: window01_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2331526519641448849
 Transform:
@@ -896,6 +1095,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4838944667960078353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4037784580605127906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640575
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640575
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 4037784580605127906}
+        _renderer: {fileID: 4120660667391542422}
+        _mesh: {fileID: 4300004, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &4473086565347749733
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,12 +1138,13 @@ GameObject:
   - component: {fileID: 5519546589672622135}
   - component: {fileID: 347555296344305803}
   - component: {fileID: 6630503652966193718}
+  - component: {fileID: 6228555389930294448}
   m_Layer: 0
   m_Name: window01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5519546589672622135
 Transform:
@@ -979,6 +1211,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6228555389930294448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473086565347749733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640573
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640573
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 4473086565347749733}
+        _renderer: {fileID: 6630503652966193718}
+        _mesh: {fileID: 4300000, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &4623507215944412240
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +1259,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 0
 --- !u!4 &8750886825998078956
 Transform:
@@ -1108,12 +1372,13 @@ GameObject:
   - component: {fileID: 8324521604380122784}
   - component: {fileID: 3679025630421327777}
   - component: {fileID: 5381896714707914788}
+  - component: {fileID: 8059230365946298819}
   m_Layer: 0
   m_Name: window01_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8324521604380122784
 Transform:
@@ -1181,6 +1446,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8059230365946298819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5045997226443441405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640577
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640577
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 5045997226443441405}
+        _renderer: {fileID: 5381896714707914788}
+        _mesh: {fileID: 4300008, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &5287854028255648743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,12 +1489,13 @@ GameObject:
   - component: {fileID: 4614244051002463331}
   - component: {fileID: 438361536364095672}
   - component: {fileID: 2492942845445667699}
+  - component: {fileID: 6517229281360377662}
   m_Layer: 0
   m_Name: window01_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4614244051002463331
 Transform:
@@ -1265,6 +1563,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6517229281360377662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287854028255648743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640581
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640581
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 5287854028255648743}
+        _renderer: {fileID: 2492942845445667699}
+        _mesh: {fileID: 4300016, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &5684304034007599518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1613,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2106039821662620766
 Transform:
@@ -1415,12 +1745,13 @@ GameObject:
   - component: {fileID: 8185543357711775706}
   - component: {fileID: 1688002041349782426}
   - component: {fileID: 8090010259689704834}
+  - component: {fileID: 6751989166387782947}
   m_Layer: 0
   m_Name: window01_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8185543357711775706
 Transform:
@@ -1488,6 +1819,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6751989166387782947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799732792534845871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640571
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640571
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 5799732792534845871}
+        _renderer: {fileID: 8090010259689704834}
+        _mesh: {fileID: 4300014, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &5927161975059982231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,12 +1862,13 @@ GameObject:
   - component: {fileID: 4415154996583710818}
   - component: {fileID: 8153007590338873112}
   - component: {fileID: 7647126997988764299}
+  - component: {fileID: 6671066536000692426}
   m_Layer: 0
   m_Name: window01_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4415154996583710818
 Transform:
@@ -1572,6 +1936,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6671066536000692426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927161975059982231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640570
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640570
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 5927161975059982231}
+        _renderer: {fileID: 7647126997988764299}
+        _mesh: {fileID: 4300012, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &5932949444451746548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,12 +1979,13 @@ GameObject:
   - component: {fileID: 8247487486159331691}
   - component: {fileID: 911345624242405638}
   - component: {fileID: 2090553761984074659}
+  - component: {fileID: 6450927422548467119}
   m_Layer: 0
   m_Name: window01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8247487486159331691
 Transform:
@@ -1655,6 +2052,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6450927422548467119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932949444451746548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640564
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640564
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 5932949444451746548}
+        _renderer: {fileID: 2090553761984074659}
+        _mesh: {fileID: 4300000, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &6208007857679534118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,12 +2095,13 @@ GameObject:
   - component: {fileID: 3573454445602550412}
   - component: {fileID: 5717176679103680402}
   - component: {fileID: 2210441229827959709}
+  - component: {fileID: 2041642610408449817}
   m_Layer: 0
   m_Name: window01_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3573454445602550412
 Transform:
@@ -1739,6 +2169,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2041642610408449817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6208007857679534118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640574
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640574
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 6208007857679534118}
+        _renderer: {fileID: 2210441229827959709}
+        _mesh: {fileID: 4300002, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &6338527480409433852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,7 +2217,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 0
 --- !u!4 &5935041805443069067
 Transform:
@@ -1833,12 +2295,13 @@ GameObject:
   - component: {fileID: 774563739996283041}
   - component: {fileID: 1365043886669140456}
   - component: {fileID: 5412316012787301398}
+  - component: {fileID: 7118664967003931722}
   m_Layer: 0
   m_Name: window01_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &774563739996283041
 Transform:
@@ -1906,6 +2369,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7118664967003931722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6696159517880903792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640565
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640565
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 6696159517880903792}
+        _renderer: {fileID: 5412316012787301398}
+        _mesh: {fileID: 4300002, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &6945029076772597626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,7 +2416,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 0
 --- !u!4 &4938143674076519426
 Transform:
@@ -1994,7 +2489,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5756468672892203452
 Transform:
@@ -2072,12 +2567,13 @@ GameObject:
   - component: {fileID: 8448726261252752113}
   - component: {fileID: 1088228567242882595}
   - component: {fileID: 5402745289960820755}
+  - component: {fileID: 1066978515306419465}
   m_Layer: 0
   m_Name: window01_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8448726261252752113
 Transform:
@@ -2145,6 +2641,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1066978515306419465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7121151546245235196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640567
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640567
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 7121151546245235196}
+        _renderer: {fileID: 5402745289960820755}
+        _mesh: {fileID: 4300006, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &7156248736083833426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,7 +2688,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8744392034955125734
 Transform:
@@ -2213,7 +2741,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3737330776775493414
 Transform:
@@ -2266,7 +2794,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4931146512529255418
 Transform:
@@ -2319,7 +2847,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8556506162395787495
 Transform:
@@ -2368,12 +2896,13 @@ GameObject:
   - component: {fileID: 4108952679519197509}
   - component: {fileID: 2835129170437073022}
   - component: {fileID: 1034118923708212881}
+  - component: {fileID: 1034996174551015914}
   m_Layer: 0
   m_Name: window01_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4108952679519197509
 Transform:
@@ -2441,6 +2970,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1034996174551015914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924900738957427250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640578
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640578
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 7924900738957427250}
+        _renderer: {fileID: 1034118923708212881}
+        _mesh: {fileID: 4300010, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &8025595238240491384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,12 +3013,13 @@ GameObject:
   - component: {fileID: 4843304054115896100}
   - component: {fileID: 4531095699166109947}
   - component: {fileID: 7863479872011147116}
+  - component: {fileID: 1377274400215349264}
   m_Layer: 0
   m_Name: window01_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4843304054115896100
 Transform:
@@ -2525,6 +3087,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1377274400215349264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025595238240491384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640576
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640576
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 8025595238240491384}
+        _renderer: {fileID: 7863479872011147116}
+        _mesh: {fileID: 4300006, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &8063432291105679259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,7 +3134,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2774209333496813000
 Transform:
@@ -2617,12 +3211,13 @@ GameObject:
   - component: {fileID: 4107604323669667359}
   - component: {fileID: 5837308361953688061}
   - component: {fileID: 3366807555219431164}
+  - component: {fileID: 4784491871009591667}
   m_Layer: 0
   m_Name: beams
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4107604323669667359
 Transform:
@@ -2689,6 +3284,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4784491871009591667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103650307437307335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640560
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640560
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 8103650307437307335}
+        _renderer: {fileID: 3366807555219431164}
+        _mesh: {fileID: 4300006, guid: 0e418c4783a968c4ba858e66d755633d, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &8199418253190753361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,7 +3332,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 0
 --- !u!4 &1849275500147680625
 Transform:
@@ -2824,7 +3451,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3810864751360595236
 Transform:
@@ -2921,7 +3548,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &998698479017044894
 Transform:
@@ -2958,12 +3585,13 @@ GameObject:
   - component: {fileID: 4607364903746000604}
   - component: {fileID: 6240735549191567251}
   - component: {fileID: 8129723384781962152}
+  - component: {fileID: 5928517325112398426}
   m_Layer: 0
   m_Name: window01_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4607364903746000604
 Transform:
@@ -3031,6 +3659,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5928517325112398426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419089860035442236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640566
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640566
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 8419089860035442236}
+        _renderer: {fileID: 8129723384781962152}
+        _mesh: {fileID: 4300004, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &8696050233421074922
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,7 +3705,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6721824905906114606
 Transform:
@@ -3082,12 +3742,13 @@ GameObject:
   - component: {fileID: 6757182818236229503}
   - component: {fileID: 7233364564797575289}
   - component: {fileID: 625614288302035604}
+  - component: {fileID: 3381103881306513239}
   m_Layer: 0
   m_Name: window01_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6757182818236229503
 Transform:
@@ -3155,6 +3816,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3381103881306513239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910534925962444637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640579
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640579
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 8910534925962444637}
+        _renderer: {fileID: 625614288302035604}
+        _mesh: {fileID: 4300012, guid: ce32c8c93ab63bf48b721a36436f08d5, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &8979025295605461002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,7 +3863,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3694549821165788563
 Transform:
@@ -3219,17 +3912,17 @@ PrefabInstance:
     - target: {fileID: 806188063538072076, guid: 16a503df46747a54e8fae150d739d0af,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 844462130908009413, guid: 16a503df46747a54e8fae150d739d0af,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4017991974083050856, guid: 16a503df46747a54e8fae150d739d0af,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4318274366547400978, guid: 16a503df46747a54e8fae150d739d0af,
         type: 3}
@@ -3239,12 +3932,12 @@ PrefabInstance:
     - target: {fileID: 4318274366547400978, guid: 16a503df46747a54e8fae150d739d0af,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5085766311337263095, guid: 16a503df46747a54e8fae150d739d0af,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8258473209841538710, guid: 16a503df46747a54e8fae150d739d0af,
         type: 3}
@@ -3314,11 +4007,109 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5085766311337263095, guid: 16a503df46747a54e8fae150d739d0af,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 481088733770021703}
+    - targetCorrespondingSourceObject: {fileID: 4017991974083050856, guid: 16a503df46747a54e8fae150d739d0af,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6747674440486091050}
   m_SourcePrefab: {fileID: 100100000, guid: 16a503df46747a54e8fae150d739d0af, type: 3}
+--- !u!23 &1318927823619789930 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4538846354234492777, guid: 16a503df46747a54e8fae150d739d0af,
+    type: 3}
+  m_PrefabInstance: {fileID: 3220352356705489667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1453918757817012704 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4079599357252338403, guid: 16a503df46747a54e8fae150d739d0af,
+    type: 3}
+  m_PrefabInstance: {fileID: 3220352356705489667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1977708064074296939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4017991974083050856, guid: 16a503df46747a54e8fae150d739d0af,
+    type: 3}
+  m_PrefabInstance: {fileID: 3220352356705489667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6747674440486091050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977708064074296939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640583
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640583
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 1977708064074296939}
+        _renderer: {fileID: 1318927823619789930}
+        _mesh: {fileID: 2619086233303812490, guid: f72bb8932ccaac7449cb288c60f8bf5e,
+          type: 3}
+        _collider: {fileID: 0}
 --- !u!4 &6785518127031158165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8258473209841538710, guid: 16a503df46747a54e8fae150d739d0af,
     type: 3}
   m_PrefabInstance: {fileID: 3220352356705489667}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7648441389807709428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5085766311337263095, guid: 16a503df46747a54e8fae150d739d0af,
+    type: 3}
+  m_PrefabInstance: {fileID: 3220352356705489667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &481088733770021703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648441389807709428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 1
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615004045640582
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615004045640582
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 7648441389807709428}
+        _renderer: {fileID: 1453918757817012704}
+        _mesh: {fileID: -1053093794917909690, guid: f72bb8932ccaac7449cb288c60f8bf5e,
+          type: 3}
+        _collider: {fileID: 0}
