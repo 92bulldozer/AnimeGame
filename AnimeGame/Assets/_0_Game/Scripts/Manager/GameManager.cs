@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public MMF_Player ca;
     public MMF_Player caReverse;
     public MMF_Player jumpScareCamera;
+    public MMF_Player MMF_CameraShake;
 
     [Space(20)] [Header("Volume")] [Space(10)]
     public Volume volume;
@@ -59,6 +60,14 @@ public class GameManager : MonoBehaviour
     [Space(20)] [Header("Camera")] [Space(10)]
     public CinemachineBrain cb;
     public List<CinemachineVirtualCamera> virtualCameraList;
+
+
+    [Space(20)] [Header("AStar")] [Space(10)]
+    public AstarPath astarPath;
+    public GameObject enemyPrefab;
+    
+    
+
     private static readonly int PlaneHeight = Shader.PropertyToID("_PlaneHeight");
 
 
@@ -78,6 +87,7 @@ public class GameManager : MonoBehaviour
     {
         //DecreaseMentality().Forget();
     }
+    
 
 
     private void Init()
@@ -109,7 +119,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            "GameManager 0".Log();
+            ScanUpdate();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            "GameManager 1".Log();
+            SpawnEnemy();
+        }
         
         if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -280,6 +300,18 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void ScanUpdate()
+    {
+        Debug.Log("UpdateScan");
+        astarPath.Scan();
+    }
+
+    public void SpawnEnemy()
+    {
+        Instantiate(enemyPrefab, new Vector3(-6, -0.5f, 6), Quaternion.identity);
+
     }
     
 

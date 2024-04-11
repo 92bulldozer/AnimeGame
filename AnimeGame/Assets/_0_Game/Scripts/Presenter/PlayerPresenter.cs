@@ -40,7 +40,7 @@ namespace AnimeGame
     {
         public static PlayerPresenter Instance;
 
-        [TabScope("Tab Scope", "Rewired|Component|MMF|Sfx|HangTransform", box: true,20)]
+        [TabScope("Tab Scope", "Rewired|Component|Sfx|HangTransform", box: true,20)]
   
         [Tab("./Rewired")]
         public int playerID;
@@ -60,8 +60,6 @@ namespace AnimeGame
         public GameObject characterSpotLight;
         public GameObject characterPointLight;
 
-        [Tab("../MMF")]
-        public MMF_Player MMF_CameraShake;
         
         [Tab("../Sfx")]
         public string footStepSfx;
@@ -368,7 +366,7 @@ namespace AnimeGame
             }
             
             
-            MMF_CameraShake.PlayFeedbacks();
+            GameManager.Instance.MMF_CameraShake.PlayFeedbacks();
            
         }
         
@@ -400,7 +398,7 @@ namespace AnimeGame
             }
             
             
-            MMF_CameraShake.PlayFeedbacks();
+            GameManager.Instance.MMF_CameraShake.PlayFeedbacks();
            
         }
 

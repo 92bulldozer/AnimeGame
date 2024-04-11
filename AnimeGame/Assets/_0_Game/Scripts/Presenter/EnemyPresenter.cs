@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AnimeGame;
 using BehaviorDesigner.Runtime;
 using DarkTonic.MasterAudio;
 using EJ;
@@ -25,6 +26,7 @@ public class EnemyPresenter : MonoBehaviour
     public float FollowSpeed { get; set; }
     public bool IsSprint { get; set; }
     public GameObject targetObject { get; set; }
+    public List<GameObject> wayPointList { get; set; }
     //[Header("Sfx")] [Space(10)] 
     
 
@@ -44,6 +46,7 @@ public class EnemyPresenter : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         aiPath = GetComponent<AIPath>();
         isPatrolling = true;
+        wayPointList = WayPointManager.Instance.wayPointList;
     }
 
     public void UpdateLocomotion()

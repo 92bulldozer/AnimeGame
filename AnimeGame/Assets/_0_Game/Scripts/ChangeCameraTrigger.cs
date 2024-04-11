@@ -14,11 +14,11 @@ public enum ECinemachineBlendType
 
 public class ChangeCameraTrigger : MonoBehaviour
 {
+    public ECameraPositionType eCameraPositionType;
     public bool useTimeStop;
     public GameObject newCamera;
     public bool isActive;
     public List<GameObject> activeObjectList;
- 
     public UnityEvent triggerCallback;
 
 
@@ -44,6 +44,17 @@ public class ChangeCameraTrigger : MonoBehaviour
                 {
                     Time.timeScale = 0.1f;
                     DOVirtual.DelayedCall(0.6f, () => Time.timeScale = 1);
+                }
+
+                switch (eCameraPositionType)
+                {
+                    case ECameraPositionType.Floor:
+                        CameraTriggerManager.Instance.SetStairTimeStop();
+                        break;
+                    case ECameraPositionType.Stair:
+                        CameraTriggerManager.Instance.SetFloorTimeStop();
+                        break;
+                    
                 }
                
             }
