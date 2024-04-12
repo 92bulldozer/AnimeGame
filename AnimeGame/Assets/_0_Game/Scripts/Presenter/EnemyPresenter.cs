@@ -13,6 +13,9 @@ public class EnemyPresenter : MonoBehaviour
     [Header("Field")] [Space(10)] 
     public bool isPatrolling;
     public bool useSprintAnimation;
+    public float interactRange = 1;
+    public int layerMask;
+    private WaitForSeconds checkInteractableObjectWs;
     
     [Header("Component")] [Space(10)]
     public Animator animator;
@@ -26,13 +29,22 @@ public class EnemyPresenter : MonoBehaviour
     public float FollowSpeed { get; set; }
     public bool IsSprint { get; set; }
     public GameObject targetObject { get; set; }
+    public bool isRandomPatrol { get; set; }
     public List<GameObject> wayPointList { get; set; }
     //[Header("Sfx")] [Space(10)] 
+    
+    
+    private Collider[] interactColliderArray;
     
 
     private void Awake()
     {
         Init();
+    }
+
+    private void Start()
+    {
+        StartCoroutine(CheckInteractableObject());
     }
 
     private void Update()
@@ -46,7 +58,11 @@ public class EnemyPresenter : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         aiPath = GetComponent<AIPath>();
         isPatrolling = true;
-        wayPointList = WayPointManager.Instance.wayPointList;
+        wayPointList = new List<GameObject> { WayPointManager.Instance.SelectRandomWayPoint() };
+        checkInteractableObjectWs = new WaitForSeconds(3f);
+        interactColliderArray = new Collider[10];
+        layerMask = 1 << LayerMask.NameToLayer("InteractableObject");
+        isRandomPatrol = true;
     }
 
     public void UpdateLocomotion()
@@ -65,6 +81,65 @@ public class EnemyPresenter : MonoBehaviour
      
     }
 
-    
+    IEnumerator CheckInteractableObject()
+    {
+        while (true)
+        {
+            Array.Clear(interactColliderArray, 0, 10);
+            var size = Physics.OverlapSphereNonAlloc(transform.position, interactRange, interactColliderArray,layerMask);
+            GameObject shortDistanceObject = null;
+            //currentInteractableObject = null;
+            float shortDistance = 1000000000;
 
+            for (int i = 0; i < size; i++)
+            {
+                float distance = Vector3.Distance(gameObject.transform.position, interactColliderArray[i].transform.position);
+
+                if (distance < shortDistance)
+                {
+                    shortDistanceObject = interactColliderArray[i].gameObject;
+                    shortDistance = distance;
+                
+                
+                }
+            }
+            
+            if (size == 0)
+            {
+               //"size =0".Log();
+            }
+            else
+            {
+                InteractableObject io = shortDistanceObject.GetComponent<InteractableObject>();
+
+                try
+                {
+                    io.Interact();
+                    "InteractObjectEnemy".Log();
+
+                }
+                catch (Exception e)
+                {
+                    
+                }
+            
+            }
+            
+            
+            
+            yield return checkInteractableObjectWs;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("InteractableObject"))
+        {
+            if (other.TryGetComponent(out InteractableObject io))
+            {
+                "InteractObjectEnemy".Log();
+                io.Interact();
+            }
+        }
+    }
 }

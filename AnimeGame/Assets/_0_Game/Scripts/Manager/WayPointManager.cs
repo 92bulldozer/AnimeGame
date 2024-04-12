@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace AnimeGame
 {
@@ -20,6 +21,11 @@ namespace AnimeGame
             {
                 Destroy(gameObject);
             }
+        }
+
+        public GameObject SelectRandomWayPoint()
+        {
+            return wayPointList[Random.Range(0, wayPointList.Count)];
         }
     }
 }

@@ -4,6 +4,7 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
+[TaskCategory("AnimeGame")]
 public class EnemyLookTarget : Action
 {
     public SharedGameObject targetObject;

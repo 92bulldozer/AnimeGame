@@ -4,6 +4,7 @@ using BehaviorDesigner.Runtime.Tasks;
 using Doozy.Engine;
 using UnityEngine;
 
+[TaskCategory("AnimeGame")]
 public class EventSenderAction : Action
 {
     public string eventName;

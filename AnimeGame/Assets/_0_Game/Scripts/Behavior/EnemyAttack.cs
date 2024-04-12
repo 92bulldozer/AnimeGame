@@ -8,6 +8,7 @@ using EJ;
 using Pathfinding;
 using UnityEngine;
 
+[TaskCategory("AnimeGame")]
 public class EnemyAttack : EnemyAction
 {
     public bool isAttackEnd;

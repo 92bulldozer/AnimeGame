@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using BehaviorDesigner.Runtime;
-using BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject;
+
+using AnimeGame;
+using EJ;
 using UnityEngine;
 
 namespace BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject
 {
+    [TaskCategory("AnimeGame")]
     public class EnemyPatrol : IAstarAIMovement
     {
-        [Tooltip("Should the agent patrol the waypoints randomly?")]
-        public SharedBool randomPatrol = false;
 
         [Tooltip("The length of time that the agent should pause when arriving at a waypoint")]
         public SharedFloat waypointPauseDuration = 0;
@@ -17,6 +15,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject
         public EnemyPresenter enemyPresenter;
 
         public float animationSpeed;
+        public bool isRoomEnter;
 
 
         [Tooltip("The waypoints to move to")] public SharedGameObjectList waypoints;
@@ -30,17 +29,15 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject
             base.OnAwake();
             enemyPresenter = gameObject.GetComponent<EnemyPresenter>();
             enemyPresenter.isPatrolling = true;
-          
         }
 
 
         public override void OnStart()
         {
             base.OnStart();
-            
+
             Animator animator = transform.GetComponentInChildren<Animator>();
             animator.SetFloat("AnimationSpeed", animationSpeed);
-
             // initially move towards the closest waypoint
             float distance = Mathf.Infinity;
             float localDistance;
@@ -54,6 +51,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject
                 }
             }
 
+            waypointIndex = 0;
             waypointReachedTime = -waypointPauseDuration.Value;
             SetDestination(Target());
         }
@@ -66,46 +64,84 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject
                 return TaskStatus.Failure;
             }
 
+
+            $"{waypointIndex}".Log(EColor.RED);
+
             if (HasArrived())
             {
-                if (waypointReachedTime == -waypointPauseDuration.Value)
-                {
-                    waypointReachedTime = Time.time;
-                }
-
-                // wait the required duration before switching waypoints.
-                if (waypointReachedTime + waypointPauseDuration.Value <= Time.time)
-                {
-                    if (randomPatrol.Value)
-                    {
-                        if (waypoints.Value.Count == 1)
-                        {
-                            waypointIndex = 0;
-                        }
-                        else
-                        {
-                            // prevent the same waypoint from being selected
-                            var newWaypointIndex = waypointIndex;
-                            while (newWaypointIndex == waypointIndex)
-                            {
-                                newWaypointIndex = Random.Range(0, waypoints.Value.Count);
-                            }
-
-                            waypointIndex = newWaypointIndex;
-                        }
-                    }
-                    else
-                    {
-                        waypointIndex = (waypointIndex + 1) % waypoints.Value.Count;
-                    }
-
-                    SetDestination(Target());
-                    waypointReachedTime = -waypointPauseDuration.Value;
-                }
+                waypoints.Value[0].GetComponent<EnemyRoomTrigger>().EnterRoom(enemyPresenter);
+                return TaskStatus.Success;
             }
+
+            // if (HasArrived())
+            // {
+            //     if (waypointReachedTime == -waypointPauseDuration.Value)
+            //     {
+            //         waypointReachedTime = Time.time;
+            //     }
+            //
+            //     // wait the required duration before switching waypoints.
+            //     if (waypointReachedTime + waypointPauseDuration.Value <= Time.time)
+            //     {
+            //         if (randomPatrol.Value)
+            //         {
+            //             if (waypoints.Value.Count == 1)
+            //             {
+            //                 "EnterRoom".Log(EColor.RED);
+            //                 waypoints.Value[0].GetComponent<EnemyRoomTrigger>().EnterRoom(enemyPresenter);
+            //                 enemyPresenter.isRandomPatrol = false;
+            //
+            //                 waypointIndex = 0;
+            //             }
+            //             else
+            //             {
+            //                 // // prevent the same waypoint from being selected
+            //                 // var newWaypointIndex = waypointIndex;
+            //                 // while (newWaypointIndex == waypointIndex)
+            //                 // {
+            //                 //     newWaypointIndex = Random.Range(0, waypoints.Value.Count);
+            //                 // }
+            //                 //
+            //                 // waypointIndex = newWaypointIndex;
+            //                 // $"waypointIndex RandomPatrol".Log();
+            //             }
+            //         }
+            //         else
+            //         {
+            //             if (waypoints.Value.Count == 1)
+            //             {
+            //             }
+            //             else
+            //             {
+            //             }
+            //
+            //             waypointIndex.Log(EColor.YELLOW);
+            //             //마지막 DoorTrigger 떄문에 -1
+            //             if (waypointIndex == waypoints.Value.Count - 1)
+            //             {
+            //                 $"waypointIndex={waypointIndex} waypoints.Value.Count={waypoints.Value.Count}".Log(
+            //                     EColor.YELLOW);
+            //                 waypointIndex = 0;
+            //                 // waypoints.Value.Clear();
+            //                 // waypoints.Value.Add(WayPointManager.Instance.SelectRandomWayPoint());
+            //                 return TaskStatus.Success;
+            //             }
+            //             else
+            //             {
+            //                 "WayPointIndex Add".Log(EColor.GREEN);
+            //                 waypointIndex = (waypointIndex + 1) % waypoints.Value.Count;
+            //             }
+            //         }
+            //
+            //         SetDestination(Target());
+            //         waypointReachedTime = -waypointPauseDuration.Value;
+            //     }
+            // }
+
 
             return TaskStatus.Running;
         }
+
 
         // Return the current waypoint index position
         private Vector3 Target()
@@ -123,7 +159,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement.AstarPathfindingProject
         {
             base.OnReset();
 
-            randomPatrol = false;
             waypointPauseDuration = 0;
             waypoints = null;
         }

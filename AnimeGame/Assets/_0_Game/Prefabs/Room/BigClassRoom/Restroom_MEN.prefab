@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8276189327634643978}
   - component: {fileID: 471114474139472876}
   - component: {fileID: 1922283252261177309}
-  - component: {fileID: 2564799547999086516}
+  - component: {fileID: 6570917085762983047}
   m_Layer: 0
   m_Name: shoe01_L
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2564799547999086516
+--- !u!114 &6570917085762983047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,11 +102,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362660
+    rid: 406615083830740439
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362660
+    - rid: 406615083830740439
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 7356954517605705828}
   - component: {fileID: 5798487099077831098}
   - component: {fileID: 5780116569509466063}
-  - component: {fileID: 6302383332730410642}
+  - component: {fileID: 8972325615017061215}
   m_Layer: 0
   m_Name: bucket01_2 (1)
   m_TagString: Untagged
@@ -200,7 +200,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6302383332730410642
+--- !u!114 &8972325615017061215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,11 +218,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362720
+    rid: 406615083830740497
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362720
+    - rid: 406615083830740497
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 8471890104973917431}
   - component: {fileID: 8265188507951261656}
   - component: {fileID: 6844355236747980223}
-  - component: {fileID: 5072261889038801379}
+  - component: {fileID: 4782176680704524393}
   m_Layer: 0
   m_Name: tool01_deckbrush (2)
   m_TagString: Untagged
@@ -316,7 +316,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5072261889038801379
+--- !u!114 &4782176680704524393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -334,11 +334,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362671
+    rid: 406615083830740450
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362671
+    - rid: 406615083830740450
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 1711570929131730269}
   - component: {fileID: 6420416984589216445}
   - component: {fileID: 2180901887819227902}
-  - component: {fileID: 6901683777841687379}
+  - component: {fileID: 4003995063092385343}
   m_Layer: 0
   m_Name: hose01_1 (1)
   m_TagString: Untagged
@@ -432,7 +432,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6901683777841687379
+--- !u!114 &4003995063092385343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -450,11 +450,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362719
+    rid: 406615083830740496
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362719
+    - rid: 406615083830740496
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 8117290597459035965}
   - component: {fileID: 3099713962172386474}
   - component: {fileID: 4015322782533595374}
-  - component: {fileID: 7446006447316056309}
+  - component: {fileID: 1472584022706738382}
   m_Layer: 0
   m_Name: partition01_3
   m_TagString: Untagged
@@ -570,7 +570,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.18499999, y: 2, z: 1.1871362}
   m_Center: {x: -0.6375011, y: 1, z: 0.14356995}
---- !u!114 &7446006447316056309
+--- !u!114 &1472584022706738382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -588,11 +588,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362728
+    rid: 406615083830740505
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362728
+    - rid: 406615083830740505
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 3123003076215905880}
   - component: {fileID: 1242220204736700768}
   - component: {fileID: 5113723055327080798}
-  - component: {fileID: 809820176645210318}
+  - component: {fileID: 5665039963431304785}
   m_Layer: 0
   m_Name: lock
   m_TagString: Untagged
@@ -686,7 +686,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &809820176645210318
+--- !u!114 &5665039963431304785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -704,11 +704,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362729
+    rid: 406615083830740506
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362729
+    - rid: 406615083830740506
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 3263731337848531888}
   - component: {fileID: 967340712729310658}
   - component: {fileID: 3633435697064655698}
-  - component: {fileID: 7871590682460411013}
+  - component: {fileID: 1500930601205674050}
   m_Layer: 0
   m_Name: mirror01 (2)
   m_TagString: Untagged
@@ -802,7 +802,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7871590682460411013
+--- !u!114 &1500930601205674050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -820,11 +820,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362709
+    rid: 406615083830740488
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362709
+    - rid: 406615083830740488
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 6090764933999637615}
   - component: {fileID: 590405641029207458}
   - component: {fileID: 863137889089872138}
-  - component: {fileID: 4828541362647167710}
+  - component: {fileID: 1953522252249309947}
   m_Layer: 0
   m_Name: shoe01_R
   m_TagString: Untagged
@@ -918,7 +918,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4828541362647167710
+--- !u!114 &1953522252249309947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -936,11 +936,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362661
+    rid: 406615083830740440
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362661
+    - rid: 406615083830740440
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -961,7 +961,7 @@ GameObject:
   - component: {fileID: 5608840292575592815}
   - component: {fileID: 8454024409936858480}
   - component: {fileID: 3296414806872903084}
-  - component: {fileID: 6565739464868599903}
+  - component: {fileID: 7068018827242989134}
   m_Layer: 0
   m_Name: soap01
   m_TagString: Untagged
@@ -1034,7 +1034,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6565739464868599903
+--- !u!114 &7068018827242989134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1052,11 +1052,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362696
+    rid: 406615083830740475
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362696
+    - rid: 406615083830740475
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -1110,7 +1110,7 @@ GameObject:
   - component: {fileID: 8988345534978534928}
   - component: {fileID: 2769721685303424304}
   - component: {fileID: 3438602588926658719}
-  - component: {fileID: 3051636990578027170}
+  - component: {fileID: 912937592530432403}
   m_Layer: 0
   m_Name: tool01_detergent (1)
   m_TagString: Untagged
@@ -1183,7 +1183,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3051636990578027170
+--- !u!114 &912937592530432403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1201,11 +1201,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362669
+    rid: 406615083830740448
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362669
+    - rid: 406615083830740448
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -1259,7 +1259,7 @@ GameObject:
   - component: {fileID: 4185213394936744218}
   - component: {fileID: 6385572704458224460}
   - component: {fileID: 8956196948213459622}
-  - component: {fileID: 892092015351671269}
+  - component: {fileID: 5310281204255806784}
   m_Layer: 0
   m_Name: restroom01_shadow_Men
   m_TagString: Untagged
@@ -1332,7 +1332,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &892092015351671269
+--- !u!114 &5310281204255806784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1350,11 +1350,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362739
+    rid: 406615083830740516
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362739
+    - rid: 406615083830740516
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 6635811172939401766}
   - component: {fileID: 2166086734771106347}
   - component: {fileID: 5718827793998194275}
-  - component: {fileID: 6768190247908714071}
+  - component: {fileID: 8535414765734041287}
   m_Layer: 0
   m_Name: shoe01_L
   m_TagString: Untagged
@@ -1448,7 +1448,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6768190247908714071
+--- !u!114 &8535414765734041287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1466,11 +1466,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362666
+    rid: 406615083830740445
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362666
+    - rid: 406615083830740445
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -1524,7 +1524,7 @@ GameObject:
   - component: {fileID: 8214368120945253752}
   - component: {fileID: 3554792088159229916}
   - component: {fileID: 8831304589316132175}
-  - component: {fileID: 5584084004310904788}
+  - component: {fileID: 5999472256296739937}
   m_Layer: 0
   m_Name: lamp02
   m_TagString: Untagged
@@ -1597,7 +1597,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5584084004310904788
+--- !u!114 &5999472256296739937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1615,11 +1615,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362712
+    rid: 406615083830740491
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362712
+    - rid: 406615083830740491
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -1680,7 +1680,7 @@ GameObject:
   - component: {fileID: 4979674311804813300}
   - component: {fileID: 1214013448175356382}
   - component: {fileID: 1465283666615130650}
-  - component: {fileID: 7174578096783137169}
+  - component: {fileID: 3450777026746022428}
   m_Layer: 0
   m_Name: bucket01_2
   m_TagString: Untagged
@@ -1753,7 +1753,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7174578096783137169
+--- !u!114 &3450777026746022428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1771,11 +1771,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362721
+    rid: 406615083830740498
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362721
+    - rid: 406615083830740498
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -1796,7 +1796,7 @@ GameObject:
   - component: {fileID: 5022603277907639280}
   - component: {fileID: 2898957319731234558}
   - component: {fileID: 8541453898141779978}
-  - component: {fileID: 2991798495138815385}
+  - component: {fileID: 1038160601465547344}
   m_Layer: 0
   m_Name: window01_win3
   m_TagString: Untagged
@@ -1870,7 +1870,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2991798495138815385
+--- !u!114 &1038160601465547344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1888,11 +1888,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362650
+    rid: 406615083830740429
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362650
+    - rid: 406615083830740429
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -1913,7 +1913,7 @@ GameObject:
   - component: {fileID: 8663130600866165711}
   - component: {fileID: 1684462802516188271}
   - component: {fileID: 3575956183587580675}
-  - component: {fileID: 8332435047330225912}
+  - component: {fileID: 8226556410059404520}
   m_Layer: 0
   m_Name: shoe01_L
   m_TagString: Untagged
@@ -1986,7 +1986,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8332435047330225912
+--- !u!114 &8226556410059404520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2004,11 +2004,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362656
+    rid: 406615083830740435
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362656
+    - rid: 406615083830740435
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -2029,7 +2029,7 @@ GameObject:
   - component: {fileID: 3282569359247567480}
   - component: {fileID: 4995589015855512900}
   - component: {fileID: 2342170936273888716}
-  - component: {fileID: 8790184278081799009}
+  - component: {fileID: 2963931947886477313}
   m_Layer: 0
   m_Name: poster01_2
   m_TagString: Untagged
@@ -2102,7 +2102,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8790184278081799009
+--- !u!114 &2963931947886477313
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2120,11 +2120,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362701
+    rid: 406615083830740480
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362701
+    - rid: 406615083830740480
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -2145,7 +2145,7 @@ GameObject:
   - component: {fileID: 2833061356303831931}
   - component: {fileID: 8993695833211106681}
   - component: {fileID: 250255351622497653}
-  - component: {fileID: 7241838217372713513}
+  - component: {fileID: 5800060448810005925}
   m_Layer: 0
   m_Name: tool03_paper (1)
   m_TagString: Untagged
@@ -2218,7 +2218,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7241838217372713513
+--- !u!114 &5800060448810005925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2236,11 +2236,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362673
+    rid: 406615083830740452
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362673
+    - rid: 406615083830740452
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -2261,7 +2261,7 @@ GameObject:
   - component: {fileID: 2493436678325079178}
   - component: {fileID: 4977386008211080612}
   - component: {fileID: 8123089774671125213}
-  - component: {fileID: 7890047404704443041}
+  - component: {fileID: 3983706120579361311}
   m_Layer: 0
   m_Name: lock
   m_TagString: Untagged
@@ -2334,7 +2334,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7890047404704443041
+--- !u!114 &3983706120579361311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2352,11 +2352,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362726
+    rid: 406615083830740503
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362726
+    - rid: 406615083830740503
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -2377,7 +2377,7 @@ GameObject:
   - component: {fileID: 3725806579552937452}
   - component: {fileID: 4739510451338159923}
   - component: {fileID: 7722336055774386358}
-  - component: {fileID: 1249063069603809176}
+  - component: {fileID: 2276275063262249598}
   m_Layer: 0
   m_Name: window01_win1
   m_TagString: Untagged
@@ -2451,7 +2451,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1249063069603809176
+--- !u!114 &2276275063262249598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2469,11 +2469,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362652
+    rid: 406615083830740431
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362652
+    - rid: 406615083830740431
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -2494,7 +2494,7 @@ GameObject:
   - component: {fileID: 6347761273692818589}
   - component: {fileID: 6389936042315830772}
   - component: {fileID: 5006683933534562644}
-  - component: {fileID: 7207357983592826983}
+  - component: {fileID: 5139100932182975303}
   m_Layer: 0
   m_Name: tool02_drain
   m_TagString: Untagged
@@ -2567,7 +2567,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7207357983592826983
+--- !u!114 &5139100932182975303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2585,11 +2585,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362684
+    rid: 406615083830740463
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362684
+    - rid: 406615083830740463
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -2611,7 +2611,7 @@ GameObject:
   - component: {fileID: 5108559327757561138}
   - component: {fileID: 1645387425382682054}
   - component: {fileID: 2351797680598035548}
-  - component: {fileID: 969656224509538087}
+  - component: {fileID: 7540467975000280690}
   m_Layer: 0
   m_Name: partition01_4
   m_TagString: Untagged
@@ -2706,7 +2706,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b74ae1acc72ecc24db2ed7ebeea0806d, type: 3}
---- !u!114 &969656224509538087
+--- !u!114 &7540467975000280690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2724,11 +2724,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362725
+    rid: 406615083830740502
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362725
+    - rid: 406615083830740502
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -2749,7 +2749,7 @@ GameObject:
   - component: {fileID: 3468114154609749084}
   - component: {fileID: 1541731958167318841}
   - component: {fileID: 1174605803822002648}
-  - component: {fileID: 7502648555088236767}
+  - component: {fileID: 6674599726743798251}
   m_Layer: 0
   m_Name: shoe01_L
   m_TagString: Untagged
@@ -2822,7 +2822,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7502648555088236767
+--- !u!114 &6674599726743798251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2840,11 +2840,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362664
+    rid: 406615083830740443
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362664
+    - rid: 406615083830740443
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -2866,7 +2866,7 @@ GameObject:
   - component: {fileID: 580938964161351936}
   - component: {fileID: 2050202976285049729}
   - component: {fileID: 7049454051506811255}
-  - component: {fileID: 4194110062732497773}
+  - component: {fileID: 1299627883000810965}
   m_Layer: 0
   m_Name: toilet02 (4)
   m_TagString: Untagged
@@ -2960,7 +2960,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32003778, y: 1.1299989, z: 0.33765286}
   m_Center: {x: 0.0000009536743, y: 0.56499946, z: 0.16883016}
---- !u!114 &4194110062732497773
+--- !u!114 &1299627883000810965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2978,11 +2978,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362690
+    rid: 406615083830740469
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362690
+    - rid: 406615083830740469
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -3004,7 +3004,7 @@ GameObject:
   - component: {fileID: 5669561237107783111}
   - component: {fileID: 8865717332048929245}
   - component: {fileID: 7152236137154499965}
-  - component: {fileID: 5882085179687406766}
+  - component: {fileID: 3642669213960783835}
   m_Layer: 0
   m_Name: sink01_2 (1)
   m_TagString: Untagged
@@ -3099,7 +3099,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.39999962, y: 0.44598457, z: 0.3199997}
   m_Center: {x: 0, y: -0.15299235, z: 0.15999985}
---- !u!114 &5882085179687406766
+--- !u!114 &3642669213960783835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3117,11 +3117,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362697
+    rid: 406615083830740476
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362697
+    - rid: 406615083830740476
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -3142,7 +3142,7 @@ GameObject:
   - component: {fileID: 2333765474596437467}
   - component: {fileID: 5462222605869903248}
   - component: {fileID: 2538776753359742808}
-  - component: {fileID: 3627951605548842613}
+  - component: {fileID: 7368842329998031548}
   m_Layer: 0
   m_Name: pipe01_2 (2)
   m_TagString: Untagged
@@ -3215,7 +3215,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3627951605548842613
+--- !u!114 &7368842329998031548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3233,11 +3233,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362667
+    rid: 406615083830740446
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362667
+    - rid: 406615083830740446
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -3294,7 +3294,7 @@ GameObject:
   - component: {fileID: 415153198390999207}
   - component: {fileID: 6746246040204598577}
   - component: {fileID: 6578246471407061214}
-  - component: {fileID: 3120516528493507378}
+  - component: {fileID: 2074828280177900769}
   m_Layer: 0
   m_Name: shoe01_L
   m_TagString: Untagged
@@ -3367,7 +3367,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3120516528493507378
+--- !u!114 &2074828280177900769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3385,11 +3385,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362658
+    rid: 406615083830740437
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362658
+    - rid: 406615083830740437
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -3411,7 +3411,7 @@ GameObject:
   - component: {fileID: 7561864570583271515}
   - component: {fileID: 5867383790605647612}
   - component: {fileID: 7377453612063657726}
-  - component: {fileID: 4448592004508177230}
+  - component: {fileID: 5671906063768551949}
   m_Layer: 0
   m_Name: toilet02
   m_TagString: Untagged
@@ -3510,7 +3510,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32003778, y: 1.1299989, z: 0.33765286}
   m_Center: {x: 0, y: 0.56499946, z: 0.16883016}
---- !u!114 &4448592004508177230
+--- !u!114 &5671906063768551949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3528,11 +3528,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362694
+    rid: 406615083830740473
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362694
+    - rid: 406615083830740473
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -3554,7 +3554,7 @@ GameObject:
   - component: {fileID: 4320330490774651154}
   - component: {fileID: 6689570174921273445}
   - component: {fileID: 360111735847567147}
-  - component: {fileID: 5988172829112936616}
+  - component: {fileID: 712054024834447383}
   m_Layer: 0
   m_Name: partition01_1
   m_TagString: Untagged
@@ -3649,7 +3649,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: eb0e644745059d64789f4ee2e609ec4c, type: 3}
---- !u!114 &5988172829112936616
+--- !u!114 &712054024834447383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3667,11 +3667,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362731
+    rid: 406615083830740508
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362731
+    - rid: 406615083830740508
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -3692,7 +3692,7 @@ GameObject:
   - component: {fileID: 2173856060245956471}
   - component: {fileID: 4174801493764999273}
   - component: {fileID: 3277235222607798053}
-  - component: {fileID: 1097163626938325071}
+  - component: {fileID: 3924671768504990686}
   m_Layer: 0
   m_Name: tool01_deckbrush (1)
   m_TagString: Untagged
@@ -3765,7 +3765,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1097163626938325071
+--- !u!114 &3924671768504990686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3783,11 +3783,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362672
+    rid: 406615083830740451
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362672
+    - rid: 406615083830740451
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -3808,7 +3808,7 @@ GameObject:
   - component: {fileID: 2312688915680429508}
   - component: {fileID: 5144983321173786837}
   - component: {fileID: 2537726077324182123}
-  - component: {fileID: 8217709545375388918}
+  - component: {fileID: 7025297578408698604}
   m_Layer: 0
   m_Name: tool03_paper (1)
   m_TagString: Untagged
@@ -3881,7 +3881,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8217709545375388918
+--- !u!114 &7025297578408698604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3899,11 +3899,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362676
+    rid: 406615083830740455
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362676
+    - rid: 406615083830740455
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -3925,7 +3925,7 @@ GameObject:
   - component: {fileID: 3675468163044326869}
   - component: {fileID: 8163697191747157075}
   - component: {fileID: 277549779247654582}
-  - component: {fileID: 1500261555553835714}
+  - component: {fileID: 2981156715428322827}
   m_Layer: 0
   m_Name: toilet02 (1)
   m_TagString: Untagged
@@ -4019,7 +4019,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32003778, y: 1.1299989, z: 0.33765286}
   m_Center: {x: 0, y: 0.56499946, z: 0.16883016}
---- !u!114 &1500261555553835714
+--- !u!114 &2981156715428322827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4037,11 +4037,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362693
+    rid: 406615083830740472
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362693
+    - rid: 406615083830740472
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -4062,7 +4062,7 @@ GameObject:
   - component: {fileID: 3188327021559800325}
   - component: {fileID: 7024772975108462515}
   - component: {fileID: 343505498497704761}
-  - component: {fileID: 6423104585333854222}
+  - component: {fileID: 4934797978795353840}
   m_Layer: 0
   m_Name: pipe01_2
   m_TagString: Untagged
@@ -4135,7 +4135,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6423104585333854222
+--- !u!114 &4934797978795353840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4153,11 +4153,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362707
+    rid: 406615083830740486
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362707
+    - rid: 406615083830740486
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -4296,7 +4296,7 @@ GameObject:
   - component: {fileID: 5549872836646357114}
   - component: {fileID: 5302722671056658652}
   - component: {fileID: 8899520097749386226}
-  - component: {fileID: 6979129755250306446}
+  - component: {fileID: 3420550148423767852}
   m_Layer: 0
   m_Name: tool03_holder2
   m_TagString: Untagged
@@ -4369,7 +4369,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6979129755250306446
+--- !u!114 &3420550148423767852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4387,11 +4387,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362679
+    rid: 406615083830740458
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362679
+    - rid: 406615083830740458
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -4413,7 +4413,7 @@ GameObject:
   - component: {fileID: 2548204886538217255}
   - component: {fileID: 2584682374217732600}
   - component: {fileID: 2285209658989728157}
-  - component: {fileID: 2288043672523896905}
+  - component: {fileID: 7250574433438908520}
   m_Layer: 14
   m_Name: floor
   m_TagString: Untagged
@@ -4510,7 +4510,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 727c7a91599c59e42b6425cf96271a2c, type: 3}
---- !u!114 &2288043672523896905
+--- !u!114 &7250574433438908520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4524,15 +4524,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ControllerID>k__BackingField: 0
   <SourceType>k__BackingField: 0
-  <CullingMethod>k__BackingField: 0
+  <CullingMethod>k__BackingField: 1
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362741
+    rid: 406615083830740518
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362741
+    - rid: 406615083830740518
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -4553,7 +4553,7 @@ GameObject:
   - component: {fileID: 1222265911669104821}
   - component: {fileID: 6887805513916982772}
   - component: {fileID: 633063994225102717}
-  - component: {fileID: 6029955413022702340}
+  - component: {fileID: 2994951083801861798}
   m_Layer: 0
   m_Name: tool01_brush
   m_TagString: Untagged
@@ -4626,7 +4626,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6029955413022702340
+--- !u!114 &2994951083801861798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4644,11 +4644,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362688
+    rid: 406615083830740467
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362688
+    - rid: 406615083830740467
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -4670,7 +4670,7 @@ GameObject:
   - component: {fileID: 1463089700317927740}
   - component: {fileID: 6484941559260262694}
   - component: {fileID: 4023024805100911105}
-  - component: {fileID: 7953296351280479496}
+  - component: {fileID: 3648925655206711952}
   m_Layer: 0
   m_Name: toilet02 (5)
   m_TagString: Untagged
@@ -4764,7 +4764,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32003778, y: 1.1299989, z: 0.33765286}
   m_Center: {x: 0.0000019073486, y: 0.56499946, z: 0.16883016}
---- !u!114 &7953296351280479496
+--- !u!114 &3648925655206711952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4782,11 +4782,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362689
+    rid: 406615083830740468
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362689
+    - rid: 406615083830740468
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -4808,7 +4808,7 @@ GameObject:
   - component: {fileID: 3258923185585708073}
   - component: {fileID: 4113851633916347838}
   - component: {fileID: 3410203838453449733}
-  - component: {fileID: 3573599011860552103}
+  - component: {fileID: 2540721489547634334}
   m_Layer: 0
   m_Name: toilet02 (3)
   m_TagString: Untagged
@@ -4902,7 +4902,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32003778, y: 1.1299989, z: 0.33765286}
   m_Center: {x: 0.0000019073486, y: 0.56499946, z: 0.16883016}
---- !u!114 &3573599011860552103
+--- !u!114 &2540721489547634334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4920,11 +4920,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362691
+    rid: 406615083830740470
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362691
+    - rid: 406615083830740470
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -4945,7 +4945,7 @@ GameObject:
   - component: {fileID: 3269877725535049056}
   - component: {fileID: 4003428424955402864}
   - component: {fileID: 3126256164449738995}
-  - component: {fileID: 3558326798859158424}
+  - component: {fileID: 6833229052592072260}
   m_Layer: 0
   m_Name: poster01_1 (5)
   m_TagString: Untagged
@@ -5018,7 +5018,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3558326798859158424
+--- !u!114 &6833229052592072260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5036,11 +5036,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362703
+    rid: 406615083830740482
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362703
+    - rid: 406615083830740482
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -5061,7 +5061,7 @@ GameObject:
   - component: {fileID: 1402469446700148135}
   - component: {fileID: 2565659661308606916}
   - component: {fileID: 8186553678381462331}
-  - component: {fileID: 5014262079211580068}
+  - component: {fileID: 8186477040220455835}
   m_Layer: 0
   m_Name: poster01_1
   m_TagString: Untagged
@@ -5134,7 +5134,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5014262079211580068
+--- !u!114 &8186477040220455835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5152,11 +5152,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362705
+    rid: 406615083830740484
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362705
+    - rid: 406615083830740484
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -5177,7 +5177,7 @@ GameObject:
   - component: {fileID: 2349571966914378404}
   - component: {fileID: 4503750778012205139}
   - component: {fileID: 8824102292966274872}
-  - component: {fileID: 3677017809360987676}
+  - component: {fileID: 2253422592563979246}
   m_Layer: 0
   m_Name: tool03_paper (3)
   m_TagString: Untagged
@@ -5250,7 +5250,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3677017809360987676
+--- !u!114 &2253422592563979246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5268,11 +5268,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362674
+    rid: 406615083830740453
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362674
+    - rid: 406615083830740453
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -5293,7 +5293,7 @@ GameObject:
   - component: {fileID: 4311908954783315437}
   - component: {fileID: 4205742627279797227}
   - component: {fileID: 9165621250890449377}
-  - component: {fileID: 140789425880037706}
+  - component: {fileID: 5129937646853103154}
   m_Layer: 0
   m_Name: tool01_deckbrush
   m_TagString: Untagged
@@ -5366,7 +5366,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &140789425880037706
+--- !u!114 &5129937646853103154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5384,11 +5384,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362686
+    rid: 406615083830740465
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362686
+    - rid: 406615083830740465
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -5442,7 +5442,7 @@ GameObject:
   - component: {fileID: 5039033340039812056}
   - component: {fileID: 4686044798677113210}
   - component: {fileID: 2170054377740039805}
-  - component: {fileID: 582922464438915093}
+  - component: {fileID: 8764197633617462344}
   m_Layer: 0
   m_Name: lock
   m_TagString: Untagged
@@ -5515,7 +5515,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &582922464438915093
+--- !u!114 &8764197633617462344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5533,11 +5533,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362723
+    rid: 406615083830740500
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362723
+    - rid: 406615083830740500
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -5737,6 +5737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70815d32f43d2dd45bf78e8f88e4c87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eCameraPositionType: 0
   useTimeStop: 0
   newCamera: {fileID: 4585545327386120934}
   isActive: 1
@@ -5770,7 +5771,7 @@ GameObject:
   - component: {fileID: 1727671644423045442}
   - component: {fileID: 7732537905502948782}
   - component: {fileID: 5007943832732192861}
-  - component: {fileID: 7291756370033256124}
+  - component: {fileID: 7105888263930941348}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -5864,7 +5865,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7975002, y: 1.919983, z: 0.075}
   m_Center: {x: -0.15125194, y: 1.0399915, z: 0.6925021}
---- !u!114 &7291756370033256124
+--- !u!114 &7105888263930941348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5882,11 +5883,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362724
+    rid: 406615083830740501
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362724
+    - rid: 406615083830740501
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -5908,12 +5909,13 @@ GameObject:
   - component: {fileID: 5302102722729645389}
   - component: {fileID: 5515644938228344110}
   - component: {fileID: 5611789975830377804}
+  - component: {fileID: 3589948102872272271}
   m_Layer: 0
   m_Name: DoorFrameBugCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7453949715922432102
 Transform:
@@ -6001,6 +6003,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3589948102872272271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4756537689229630457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 0
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615083830740426
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615083830740426
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 4756537689229630457}
+        _renderer: {fileID: 5515644938228344110}
+        _mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+        _collider: {fileID: 0}
 --- !u!1 &4774092689727314964
 GameObject:
   m_ObjectHideFlags: 0
@@ -6012,7 +6046,7 @@ GameObject:
   - component: {fileID: 495310819234656604}
   - component: {fileID: 2055610196678876653}
   - component: {fileID: 5370369354878309156}
-  - component: {fileID: 2698612898688818964}
+  - component: {fileID: 994566540115374676}
   m_Layer: 0
   m_Name: tool02_drain (1)
   m_TagString: Untagged
@@ -6085,7 +6119,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2698612898688818964
+--- !u!114 &994566540115374676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6103,11 +6137,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362683
+    rid: 406615083830740462
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362683
+    - rid: 406615083830740462
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -6128,7 +6162,7 @@ GameObject:
   - component: {fileID: 6480368987993592864}
   - component: {fileID: 5144030527391014484}
   - component: {fileID: 324886711192756186}
-  - component: {fileID: 5294419586673357653}
+  - component: {fileID: 2528681485799001033}
   m_Layer: 0
   m_Name: tool01_deckbrush (3)
   m_TagString: Untagged
@@ -6201,7 +6235,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5294419586673357653
+--- !u!114 &2528681485799001033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6219,11 +6253,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362687
+    rid: 406615083830740466
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362687
+    - rid: 406615083830740466
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -6277,7 +6311,7 @@ GameObject:
   - component: {fileID: 1805665879962442317}
   - component: {fileID: 4751094360549423269}
   - component: {fileID: 7465420751832635410}
-  - component: {fileID: 8123895839099786075}
+  - component: {fileID: 1046793809002633678}
   m_Layer: 0
   m_Name: shoe01_L
   m_TagString: Untagged
@@ -6350,7 +6384,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8123895839099786075
+--- !u!114 &1046793809002633678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6368,11 +6402,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362662
+    rid: 406615083830740441
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362662
+    - rid: 406615083830740441
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -6511,7 +6545,7 @@ GameObject:
   - component: {fileID: 7386084998515317219}
   - component: {fileID: 8487082344012998952}
   - component: {fileID: 407603310081630106}
-  - component: {fileID: 4517033375805058104}
+  - component: {fileID: 6452575288516050775}
   m_Layer: 0
   m_Name: window01_win2
   m_TagString: Untagged
@@ -6585,7 +6619,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4517033375805058104
+--- !u!114 &6452575288516050775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6603,11 +6637,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362651
+    rid: 406615083830740430
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362651
+    - rid: 406615083830740430
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -6628,7 +6662,7 @@ GameObject:
   - component: {fileID: 4878364585445504870}
   - component: {fileID: 7811340916454325266}
   - component: {fileID: 4045824720505684032}
-  - component: {fileID: 2208323299119836925}
+  - component: {fileID: 7340270251742034667}
   m_Layer: 0
   m_Name: poster01_1 (1)
   m_TagString: Untagged
@@ -6701,7 +6735,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2208323299119836925
+--- !u!114 &7340270251742034667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6719,11 +6753,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362704
+    rid: 406615083830740483
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362704
+    - rid: 406615083830740483
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -6744,7 +6778,7 @@ GameObject:
   - component: {fileID: 6959861150314882866}
   - component: {fileID: 4641832861158669142}
   - component: {fileID: 2268563922433395956}
-  - component: {fileID: 2470305721514837155}
+  - component: {fileID: 1390299600404186773}
   m_Layer: 0
   m_Name: shoe01_R
   m_TagString: Untagged
@@ -6817,7 +6851,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2470305721514837155
+--- !u!114 &1390299600404186773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6835,11 +6869,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362663
+    rid: 406615083830740442
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362663
+    - rid: 406615083830740442
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -6861,7 +6895,7 @@ GameObject:
   - component: {fileID: 4294035058644715968}
   - component: {fileID: 4139149317556795173}
   - component: {fileID: 5261262395182254892}
-  - component: {fileID: 6234840487096529737}
+  - component: {fileID: 5527316594025847863}
   m_Layer: 0
   m_Name: sink01_2
   m_TagString: Untagged
@@ -6956,7 +6990,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.39999962, y: 0.44598457, z: 0.3199997}
   m_Center: {x: 0, y: -0.15299235, z: 0.15999985}
---- !u!114 &6234840487096529737
+--- !u!114 &5527316594025847863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6974,11 +7008,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362699
+    rid: 406615083830740478
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362699
+    - rid: 406615083830740478
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -6999,7 +7033,7 @@ GameObject:
   - component: {fileID: 2652265145701587332}
   - component: {fileID: 7065969115207801165}
   - component: {fileID: 8115713148064154866}
-  - component: {fileID: 7037061560164440765}
+  - component: {fileID: 7583538356776772185}
   m_Layer: 0
   m_Name: lamp01_2 (1)
   m_TagString: Untagged
@@ -7072,7 +7106,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7037061560164440765
+--- !u!114 &7583538356776772185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7090,11 +7124,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362713
+    rid: 406615083830740492
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362713
+    - rid: 406615083830740492
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -7115,7 +7149,7 @@ GameObject:
   - component: {fileID: 9212295333205077203}
   - component: {fileID: 3513638034977401519}
   - component: {fileID: 8857781800231508455}
-  - component: {fileID: 4883245352502295363}
+  - component: {fileID: 2769603471940696808}
   m_Layer: 0
   m_Name: tool01_detergent
   m_TagString: Untagged
@@ -7188,7 +7222,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4883245352502295363
+--- !u!114 &2769603471940696808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7206,11 +7240,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362685
+    rid: 406615083830740464
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362685
+    - rid: 406615083830740464
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -7231,7 +7265,7 @@ GameObject:
   - component: {fileID: 2398906123391724973}
   - component: {fileID: 5023239866621448514}
   - component: {fileID: 3148283577522805605}
-  - component: {fileID: 3937165710355189645}
+  - component: {fileID: 3010417409609778874}
   m_Layer: 0
   m_Name: tool03_hodler1
   m_TagString: Untagged
@@ -7304,7 +7338,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3937165710355189645
+--- !u!114 &3010417409609778874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7322,11 +7356,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362680
+    rid: 406615083830740459
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362680
+    - rid: 406615083830740459
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -7347,7 +7381,7 @@ GameObject:
   - component: {fileID: 6056116323578183691}
   - component: {fileID: 7430484132155734747}
   - component: {fileID: 3458366119408110213}
-  - component: {fileID: 474268693526218166}
+  - component: {fileID: 6213056426790353877}
   m_Layer: 0
   m_Name: partition01_bar
   m_TagString: Untagged
@@ -7420,7 +7454,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &474268693526218166
+--- !u!114 &6213056426790353877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7438,11 +7472,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362734
+    rid: 406615083830740511
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362734
+    - rid: 406615083830740511
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -7464,7 +7498,7 @@ GameObject:
   - component: {fileID: 3867553698469839755}
   - component: {fileID: 199480180028051245}
   - component: {fileID: 7046663315069507098}
-  - component: {fileID: 7317269249920263910}
+  - component: {fileID: 4818937149855085152}
   m_Layer: 0
   m_Name: wall_men
   m_TagString: Untagged
@@ -7560,7 +7594,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 727c7a91599c59e42b6425cf96271a2c, type: 3}
---- !u!114 &7317269249920263910
+--- !u!114 &4818937149855085152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7578,11 +7612,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362740
+    rid: 406615083830740517
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362740
+    - rid: 406615083830740517
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -7603,7 +7637,7 @@ GameObject:
   - component: {fileID: 7756874576596626349}
   - component: {fileID: 1613157381696091739}
   - component: {fileID: 4181638994869071853}
-  - component: {fileID: 4200386026399994986}
+  - component: {fileID: 4050036966528120704}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -7677,7 +7711,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4200386026399994986
+--- !u!114 &4050036966528120704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7695,11 +7729,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362733
+    rid: 406615083830740510
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362733
+    - rid: 406615083830740510
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -7720,7 +7754,7 @@ GameObject:
   - component: {fileID: 4842155505194069554}
   - component: {fileID: 1596395559838523754}
   - component: {fileID: 7826737680108871980}
-  - component: {fileID: 8055379670971624771}
+  - component: {fileID: 3888979050707545528}
   m_Layer: 0
   m_Name: tool03_paper (2)
   m_TagString: Untagged
@@ -7793,7 +7827,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8055379670971624771
+--- !u!114 &3888979050707545528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7811,11 +7845,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362675
+    rid: 406615083830740454
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362675
+    - rid: 406615083830740454
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -7836,7 +7870,7 @@ GameObject:
   - component: {fileID: 8948949186416127944}
   - component: {fileID: 4743763699919800398}
   - component: {fileID: 7833854766720464854}
-  - component: {fileID: 5205328348072244604}
+  - component: {fileID: 4946502990892475239}
   m_Layer: 0
   m_Name: shoe01_R
   m_TagString: Untagged
@@ -7909,7 +7943,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5205328348072244604
+--- !u!114 &4946502990892475239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7927,11 +7961,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362657
+    rid: 406615083830740436
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362657
+    - rid: 406615083830740436
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -7952,7 +7986,7 @@ GameObject:
   - component: {fileID: 8500452266365373998}
   - component: {fileID: 1776627631079062674}
   - component: {fileID: 2900662315027512345}
-  - component: {fileID: 8275719908279634253}
+  - component: {fileID: 6930289778509846998}
   m_Layer: 0
   m_Name: tool02_plunger1
   m_TagString: Untagged
@@ -8025,7 +8059,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8275719908279634253
+--- !u!114 &6930289778509846998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8043,11 +8077,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362681
+    rid: 406615083830740460
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362681
+    - rid: 406615083830740460
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -8068,7 +8102,7 @@ GameObject:
   - component: {fileID: 489750876386619458}
   - component: {fileID: 2780100843570969770}
   - component: {fileID: 960263468283108481}
-  - component: {fileID: 7236780762025819913}
+  - component: {fileID: 754745728989409699}
   m_Layer: 0
   m_Name: hose01_2
   m_TagString: Untagged
@@ -8141,7 +8175,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7236780762025819913
+--- !u!114 &754745728989409699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8159,11 +8193,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362717
+    rid: 406615083830740494
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362717
+    - rid: 406615083830740494
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -8185,7 +8219,7 @@ GameObject:
   - component: {fileID: 6812098758668856043}
   - component: {fileID: 8703844743362180583}
   - component: {fileID: 5269674915380649943}
-  - component: {fileID: 5749145054857739044}
+  - component: {fileID: 2800902670288786794}
   m_Layer: 0
   m_Name: toilet01 (8)
   m_TagString: Untagged
@@ -8279,7 +8313,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.65999955, y: 0.4049996, z: 0.2868858}
   m_Center: {x: -0.0000019073486, y: 0.07249993, z: 0.009544896}
---- !u!114 &5749145054857739044
+--- !u!114 &2800902670288786794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8297,11 +8331,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362735
+    rid: 406615083830740512
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362735
+    - rid: 406615083830740512
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -8414,6 +8448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96218e734f8984440a8faa524213efa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontWayPointList: []
+  backWayPointList: []
   vcam: {fileID: 6241751059270436307}
   deActiveCallback:
     m_PersistentCalls:
@@ -8453,7 +8489,7 @@ GameObject:
   - component: {fileID: 2583037298554311004}
   - component: {fileID: 2676723005498189127}
   - component: {fileID: 2719411986684235729}
-  - component: {fileID: 3487588472589796266}
+  - component: {fileID: 500240337776718840}
   m_Layer: 0
   m_Name: poster01_1 (6)
   m_TagString: Untagged
@@ -8526,7 +8562,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3487588472589796266
+--- !u!114 &500240337776718840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8544,11 +8580,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362702
+    rid: 406615083830740481
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362702
+    - rid: 406615083830740481
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -8569,7 +8605,7 @@ GameObject:
   - component: {fileID: 2251990185699007591}
   - component: {fileID: 3303241735463695526}
   - component: {fileID: 8303895811123938650}
-  - component: {fileID: 2261410769400220051}
+  - component: {fileID: 340079295906225721}
   m_Layer: 0
   m_Name: window01
   m_TagString: Untagged
@@ -8643,7 +8679,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2261410769400220051
+--- !u!114 &340079295906225721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8661,11 +8697,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362653
+    rid: 406615083830740432
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362653
+    - rid: 406615083830740432
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -8686,7 +8722,7 @@ GameObject:
   - component: {fileID: 186573689172537784}
   - component: {fileID: 2105631290228728147}
   - component: {fileID: 3358362938298901718}
-  - component: {fileID: 6080032562418869184}
+  - component: {fileID: 3248527177389172918}
   m_Layer: 0
   m_Name: tool02_plunger1 (1)
   m_TagString: Untagged
@@ -8759,7 +8795,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6080032562418869184
+--- !u!114 &3248527177389172918
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8777,11 +8813,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362670
+    rid: 406615083830740449
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362670
+    - rid: 406615083830740449
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -8803,7 +8839,7 @@ GameObject:
   - component: {fileID: 5420800582470814696}
   - component: {fileID: 5653113537251943700}
   - component: {fileID: 1843143683267496379}
-  - component: {fileID: 5669683444143041993}
+  - component: {fileID: 1556600174227176243}
   m_Layer: 0
   m_Name: trashcan01
   m_TagString: Untagged
@@ -8897,7 +8933,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.39999962, y: 0.5999994, z: 0.2999997}
   m_Center: {x: 0, y: 0.2999997, z: -0.000000044703484}
---- !u!114 &5669683444143041993
+--- !u!114 &1556600174227176243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8915,11 +8951,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362654
+    rid: 406615083830740433
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362654
+    - rid: 406615083830740433
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -8974,7 +9010,7 @@ GameObject:
   - component: {fileID: 231261364995059010}
   - component: {fileID: 8345642962509050472}
   - component: {fileID: 421860329696290104}
-  - component: {fileID: 7367635986557727545}
+  - component: {fileID: 5567225189302840982}
   m_Layer: 0
   m_Name: tool01_detergent (2)
   m_TagString: Untagged
@@ -9047,7 +9083,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7367635986557727545
+--- !u!114 &5567225189302840982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9065,11 +9101,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362668
+    rid: 406615083830740447
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362668
+    - rid: 406615083830740447
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -9090,7 +9126,7 @@ GameObject:
   - component: {fileID: 4563426105904609756}
   - component: {fileID: 7436481289435363024}
   - component: {fileID: 4085709455127051017}
-  - component: {fileID: 4793753381961236347}
+  - component: {fileID: 8683208562236809058}
   m_Layer: 0
   m_Name: tool02_drain (2)
   m_TagString: Untagged
@@ -9163,7 +9199,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4793753381961236347
+--- !u!114 &8683208562236809058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9181,11 +9217,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362682
+    rid: 406615083830740461
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362682
+    - rid: 406615083830740461
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -9206,7 +9242,7 @@ GameObject:
   - component: {fileID: 535282452480995141}
   - component: {fileID: 716035066895855582}
   - component: {fileID: 7759678716305681305}
-  - component: {fileID: 7450959872733172138}
+  - component: {fileID: 7774801868686133824}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -9280,7 +9316,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7450959872733172138
+--- !u!114 &7774801868686133824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9298,11 +9334,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362727
+    rid: 406615083830740504
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362727
+    - rid: 406615083830740504
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -9324,7 +9360,7 @@ GameObject:
   - component: {fileID: 4259294858449029869}
   - component: {fileID: 8179325954898735692}
   - component: {fileID: 6946978321374422776}
-  - component: {fileID: 7265842356930901668}
+  - component: {fileID: 6492390488500418710}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -9419,7 +9455,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7975002, y: 1.919983, z: 0.075}
   m_Center: {x: -0.15125194, y: 1.0399915, z: 0.6925002}
---- !u!114 &7265842356930901668
+--- !u!114 &6492390488500418710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9437,11 +9473,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362730
+    rid: 406615083830740507
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362730
+    - rid: 406615083830740507
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -9563,7 +9599,7 @@ GameObject:
   - component: {fileID: 130823828447831680}
   - component: {fileID: 4728193123072771205}
   - component: {fileID: 3303683004309231405}
-  - component: {fileID: 8952943665607056250}
+  - component: {fileID: 2491180812724117780}
   m_Layer: 0
   m_Name: lock
   m_TagString: Untagged
@@ -9636,7 +9672,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8952943665607056250
+--- !u!114 &2491180812724117780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9654,11 +9690,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362732
+    rid: 406615083830740509
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362732
+    - rid: 406615083830740509
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -9679,7 +9715,7 @@ GameObject:
   - component: {fileID: 2017686579535682219}
   - component: {fileID: 9154832328503570384}
   - component: {fileID: 627104313332410099}
-  - component: {fileID: 8475857111841157993}
+  - component: {fileID: 2586638648618053330}
   m_Layer: 0
   m_Name: poster01_2 (1)
   m_TagString: Untagged
@@ -9752,7 +9788,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8475857111841157993
+--- !u!114 &2586638648618053330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9770,11 +9806,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362700
+    rid: 406615083830740479
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362700
+    - rid: 406615083830740479
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -9795,7 +9831,7 @@ GameObject:
   - component: {fileID: 4939443111489612556}
   - component: {fileID: 9106546199549608796}
   - component: {fileID: 4438222176224324088}
-  - component: {fileID: 115283404135280297}
+  - component: {fileID: 6797563849050082040}
   m_Layer: 0
   m_Name: ceiling
   m_TagString: Untagged
@@ -9868,7 +9904,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &115283404135280297
+--- !u!114 &6797563849050082040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9886,11 +9922,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362742
+    rid: 406615083830740519
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362742
+    - rid: 406615083830740519
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -9911,7 +9947,7 @@ GameObject:
   - component: {fileID: 5731894368203715532}
   - component: {fileID: 3440868400356634984}
   - component: {fileID: 8338895315442904819}
-  - component: {fileID: 294120084587121075}
+  - component: {fileID: 5463919877064197115}
   m_Layer: 0
   m_Name: soap01
   m_TagString: Untagged
@@ -9984,7 +10020,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &294120084587121075
+--- !u!114 &5463919877064197115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10002,11 +10038,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362698
+    rid: 406615083830740477
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362698
+    - rid: 406615083830740477
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -10028,7 +10064,7 @@ GameObject:
   - component: {fileID: 2621506219603318418}
   - component: {fileID: 7541205191496919048}
   - component: {fileID: 504397016523138657}
-  - component: {fileID: 6206908965138246965}
+  - component: {fileID: 3350009273207054443}
   m_Layer: 0
   m_Name: partition01_2
   m_TagString: Untagged
@@ -10122,7 +10158,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5175001, y: 2, z: 1.1871362}
   m_Center: {x: -0.8037521, y: 1, z: 0.14356995}
---- !u!114 &6206908965138246965
+--- !u!114 &3350009273207054443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10140,11 +10176,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362722
+    rid: 406615083830740499
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362722
+    - rid: 406615083830740499
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -10198,7 +10234,7 @@ GameObject:
   - component: {fileID: 3523389611677644096}
   - component: {fileID: 3518388800490505897}
   - component: {fileID: 1642621138433459796}
-  - component: {fileID: 6826770584645999773}
+  - component: {fileID: 64916114678118849}
   m_Layer: 0
   m_Name: shoe01_R
   m_TagString: Untagged
@@ -10271,7 +10307,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6826770584645999773
+--- !u!114 &64916114678118849
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10289,11 +10325,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362659
+    rid: 406615083830740438
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362659
+    - rid: 406615083830740438
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -10314,7 +10350,7 @@ GameObject:
   - component: {fileID: 4963215304409811664}
   - component: {fileID: 4781442962901205161}
   - component: {fileID: 7401576748986621786}
-  - component: {fileID: 2245772005832580921}
+  - component: {fileID: 4581786572284652232}
   m_Layer: 0
   m_Name: shoe01_R
   m_TagString: Untagged
@@ -10387,7 +10423,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2245772005832580921
+--- !u!114 &4581786572284652232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10405,11 +10441,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362665
+    rid: 406615083830740444
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362665
+    - rid: 406615083830740444
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -10430,7 +10466,7 @@ GameObject:
   - component: {fileID: 2822895850993590575}
   - component: {fileID: 7025946866068520562}
   - component: {fileID: 6494946587710001456}
-  - component: {fileID: 7752206255471953514}
+  - component: {fileID: 2078770332426835762}
   m_Layer: 0
   m_Name: lamp02 (1)
   m_TagString: Untagged
@@ -10503,7 +10539,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7752206255471953514
+--- !u!114 &2078770332426835762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10521,11 +10557,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362711
+    rid: 406615083830740490
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362711
+    - rid: 406615083830740490
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -10547,7 +10583,7 @@ GameObject:
   - component: {fileID: 3384827103439173697}
   - component: {fileID: 2382845913867695055}
   - component: {fileID: 4511649247581104052}
-  - component: {fileID: 7821409366946705780}
+  - component: {fileID: 5401426148289529789}
   m_Layer: 0
   m_Name: toilet01 (6)
   m_TagString: Untagged
@@ -10641,7 +10677,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.65999955, y: 0.4049996, z: 0.2868858}
   m_Center: {x: 0, y: 0.07249993, z: 0.009544896}
---- !u!114 &7821409366946705780
+--- !u!114 &5401426148289529789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10659,11 +10695,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362737
+    rid: 406615083830740514
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362737
+    - rid: 406615083830740514
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -10684,7 +10720,7 @@ GameObject:
   - component: {fileID: 4983720217024124616}
   - component: {fileID: 1589722708767864636}
   - component: {fileID: 793377636943799039}
-  - component: {fileID: 3891753957576772465}
+  - component: {fileID: 3937325795055074743}
   m_Layer: 0
   m_Name: window01_win4
   m_TagString: Untagged
@@ -10758,7 +10794,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3891753957576772465
+--- !u!114 &3937325795055074743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10776,11 +10812,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362649
+    rid: 406615083830740428
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362649
+    - rid: 406615083830740428
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -10802,7 +10838,7 @@ GameObject:
   - component: {fileID: 1281088513475719613}
   - component: {fileID: 2817162403688927584}
   - component: {fileID: 1270956235396811814}
-  - component: {fileID: 3786443407472008215}
+  - component: {fileID: 1831065523687548462}
   m_Layer: 0
   m_Name: toilet02 (2)
   m_TagString: Untagged
@@ -10896,7 +10932,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32003778, y: 1.1299989, z: 0.33765286}
   m_Center: {x: 0.0000009536743, y: 0.56499946, z: 0.16883016}
---- !u!114 &3786443407472008215
+--- !u!114 &1831065523687548462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10914,11 +10950,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362692
+    rid: 406615083830740471
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362692
+    - rid: 406615083830740471
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -10939,7 +10975,7 @@ GameObject:
   - component: {fileID: 4935657258713839792}
   - component: {fileID: 2715853793076406039}
   - component: {fileID: 372431027484012262}
-  - component: {fileID: 8692377062996138302}
+  - component: {fileID: 7226992394889644248}
   m_Layer: 0
   m_Name: tool03_paper
   m_TagString: Untagged
@@ -11015,7 +11051,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8692377062996138302
+--- !u!114 &7226992394889644248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11033,11 +11069,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362677
+    rid: 406615083830740456
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362677
+    - rid: 406615083830740456
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -11058,8 +11094,8 @@ GameObject:
   - component: {fileID: 8129457020467718566}
   - component: {fileID: 6908512084256150196}
   - component: {fileID: 4118551904576410168}
-  - component: {fileID: 7382692799687786968}
   - component: {fileID: 7198828660156069098}
+  - component: {fileID: 420943699720422520}
   m_Layer: 14
   m_Name: floor01_1
   m_TagString: Untagged
@@ -11132,38 +11168,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7382692799687786968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8372573371432496658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <ControllerID>k__BackingField: 0
-  <SourceType>k__BackingField: 0
-  <CullingMethod>k__BackingField: 0
-  <IsIncompatible>k__BackingField: 0
-  <IncompatibilityReason>k__BackingField: 
-  _strategy:
-    rid: 406615002879362738
-  references:
-    version: 2
-    RefIds:
-    - rid: 406615002879362738
-      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
-        asm: AdvancedCullingSystem.Runtime}
-      data:
-        <Layer>k__BackingField: 15
-        <Baked>k__BackingField: 0
-        _go: {fileID: 8372573371432496658}
-        _renderer: {fileID: 4118551904576410168}
-        _mesh: {fileID: 4300000, guid: 49fee9e6fb5b3564182a011abd3e6054, type: 3}
-        _collider: {fileID: 0}
 --- !u!64 &7198828660156069098
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11186,6 +11190,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 49fee9e6fb5b3564182a011abd3e6054, type: 3}
+--- !u!114 &420943699720422520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8372573371432496658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c875cee7cb37347bb452cbbeb62af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ControllerID>k__BackingField: 0
+  <SourceType>k__BackingField: 0
+  <CullingMethod>k__BackingField: 0
+  <IsIncompatible>k__BackingField: 0
+  <IncompatibilityReason>k__BackingField: 
+  _strategy:
+    rid: 406615083830740515
+  references:
+    version: 2
+    RefIds:
+    - rid: 406615083830740515
+      type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
+        asm: AdvancedCullingSystem.Runtime}
+      data:
+        <Layer>k__BackingField: 15
+        <Baked>k__BackingField: 0
+        _go: {fileID: 8372573371432496658}
+        _renderer: {fileID: 4118551904576410168}
+        _mesh: {fileID: 4300000, guid: 49fee9e6fb5b3564182a011abd3e6054, type: 3}
+        _collider: {fileID: 0}
 --- !u!1 &8420461374508451638
 GameObject:
   m_ObjectHideFlags: 0
@@ -11197,7 +11233,7 @@ GameObject:
   - component: {fileID: 5979132110292505350}
   - component: {fileID: 1477605164138051392}
   - component: {fileID: 7918748175865049307}
-  - component: {fileID: 2359038232555609766}
+  - component: {fileID: 7351751562197582996}
   m_Layer: 0
   m_Name: hose01_1 (1)
   m_TagString: Untagged
@@ -11270,7 +11306,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2359038232555609766
+--- !u!114 &7351751562197582996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11288,11 +11324,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362718
+    rid: 406615083830740495
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362718
+    - rid: 406615083830740495
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -11314,7 +11350,7 @@ GameObject:
   - component: {fileID: 9211754390006942787}
   - component: {fileID: 2401779159496113479}
   - component: {fileID: 6116301293878106388}
-  - component: {fileID: 1091466402620995535}
+  - component: {fileID: 9174965463016274028}
   m_Layer: 0
   m_Name: toilet01 (7)
   m_TagString: Untagged
@@ -11408,7 +11444,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.65999955, y: 0.4049996, z: 0.2868858}
   m_Center: {x: -0.0000009536743, y: 0.07249993, z: 0.009544896}
---- !u!114 &1091466402620995535
+--- !u!114 &9174965463016274028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11426,11 +11462,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362736
+    rid: 406615083830740513
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362736
+    - rid: 406615083830740513
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -11451,7 +11487,7 @@ GameObject:
   - component: {fileID: 4350158716320727776}
   - component: {fileID: 6549113174091864956}
   - component: {fileID: 7310912804125114617}
-  - component: {fileID: 2551084345005470425}
+  - component: {fileID: 7679369056157014486}
   m_Layer: 0
   m_Name: shoe01_R
   m_TagString: Untagged
@@ -11524,7 +11560,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2551084345005470425
+--- !u!114 &7679369056157014486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11542,11 +11578,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362655
+    rid: 406615083830740434
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362655
+    - rid: 406615083830740434
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -11695,7 +11731,7 @@ GameObject:
   - component: {fileID: 7364601260918462060}
   - component: {fileID: 5027466928422699149}
   - component: {fileID: 2366271079355407938}
-  - component: {fileID: 2008543056819765274}
+  - component: {fileID: 5320917193319984539}
   m_Layer: 0
   m_Name: pipe01_1
   m_TagString: Untagged
@@ -11768,7 +11804,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2008543056819765274
+--- !u!114 &5320917193319984539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11786,11 +11822,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362708
+    rid: 406615083830740487
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362708
+    - rid: 406615083830740487
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -11811,7 +11847,7 @@ GameObject:
   - component: {fileID: 2506139173876186554}
   - component: {fileID: 243539371862285230}
   - component: {fileID: 3078123002846228750}
-  - component: {fileID: 8448216477308902402}
+  - component: {fileID: 4631294446436627364}
   m_Layer: 0
   m_Name: pipe01_2 (1)
   m_TagString: Untagged
@@ -11884,7 +11920,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8448216477308902402
+--- !u!114 &4631294446436627364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11902,11 +11938,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362706
+    rid: 406615083830740485
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362706
+    - rid: 406615083830740485
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -11927,7 +11963,7 @@ GameObject:
   - component: {fileID: 303798327017644135}
   - component: {fileID: 2776090188240263677}
   - component: {fileID: 6988703007591462331}
-  - component: {fileID: 260914950239508668}
+  - component: {fileID: 3721407973028784977}
   m_Layer: 0
   m_Name: lamp01_2
   m_TagString: Untagged
@@ -12000,7 +12036,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &260914950239508668
+--- !u!114 &3721407973028784977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12018,11 +12054,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362714
+    rid: 406615083830740493
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362714
+    - rid: 406615083830740493
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -12043,7 +12079,7 @@ GameObject:
   - component: {fileID: 3998033804177114386}
   - component: {fileID: 9019056443541625516}
   - component: {fileID: 1123981579806013502}
-  - component: {fileID: 174804480088983332}
+  - component: {fileID: 8058519184619245888}
   m_Layer: 0
   m_Name: window01_bar
   m_TagString: Untagged
@@ -12116,7 +12152,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &174804480088983332
+--- !u!114 &8058519184619245888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12134,11 +12170,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362648
+    rid: 406615083830740427
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362648
+    - rid: 406615083830740427
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -12159,7 +12195,7 @@ GameObject:
   - component: {fileID: 532539892902261862}
   - component: {fileID: 5154706649790525639}
   - component: {fileID: 455188419742365980}
-  - component: {fileID: 5659143768089517528}
+  - component: {fileID: 4697171416513975084}
   m_Layer: 0
   m_Name: mirror01 (1)
   m_TagString: Untagged
@@ -12232,7 +12268,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5659143768089517528
+--- !u!114 &4697171416513975084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12250,11 +12286,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362710
+    rid: 406615083830740489
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362710
+    - rid: 406615083830740489
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -12276,7 +12312,7 @@ GameObject:
   - component: {fileID: 7677895140351003431}
   - component: {fileID: 3871158146499614907}
   - component: {fileID: 8003647929732255061}
-  - component: {fileID: 8309588632751306180}
+  - component: {fileID: 4548777948556707281}
   m_Layer: 0
   m_Name: sink02
   m_TagString: Untagged
@@ -12370,7 +12406,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.57321346, y: 0.99999905, z: 0.45752358}
   m_Center: {x: 0, y: 0.49999952, z: 0.10066185}
---- !u!114 &8309588632751306180
+--- !u!114 &4548777948556707281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12388,11 +12424,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362695
+    rid: 406615083830740474
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362695
+    - rid: 406615083830740474
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:
@@ -12413,7 +12449,7 @@ GameObject:
   - component: {fileID: 3667712548119375662}
   - component: {fileID: 5902193174923304621}
   - component: {fileID: 7153634515085545321}
-  - component: {fileID: 806647923153604990}
+  - component: {fileID: 2690880417241512957}
   m_Layer: 0
   m_Name: tool03_holder3
   m_TagString: Untagged
@@ -12486,7 +12522,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &806647923153604990
+--- !u!114 &2690880417241512957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12504,11 +12540,11 @@ MonoBehaviour:
   <IsIncompatible>k__BackingField: 0
   <IncompatibilityReason>k__BackingField: 
   _strategy:
-    rid: 406615002879362678
+    rid: 406615083830740457
   references:
     version: 2
     RefIds:
-    - rid: 406615002879362678
+    - rid: 406615083830740457
       type: {class: DC_RendererSourceSettingsStrategy, ns: NGS.AdvancedCullingSystem.Dynamic,
         asm: AdvancedCullingSystem.Runtime}
       data:

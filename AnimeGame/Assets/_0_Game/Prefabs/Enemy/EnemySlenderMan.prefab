@@ -2591,8 +2591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
-  height: 2
+  radius: 0.4
+  height: 3
   canMove: 1
   maxSpeed: 3
   gravity: {x: NaN, y: NaN, z: NaN}
@@ -2800,7 +2800,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.4
-  m_Height: 3.2
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.57, z: 0}
 --- !u!1 &8083280628592025983
