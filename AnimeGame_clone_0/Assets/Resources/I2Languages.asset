@@ -1,0 +1,1058 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0b0c553be8edd4682e9180fdd13e37, type: 3}
+  m_Name: I2Languages
+  m_EditorClassIdentifier: 
+  mSource:
+    UserAgreesToHaveItOnTheScene: 0
+    UserAgreesToHaveItInsideThePluginsFolder: 0
+    GoogleLiveSyncIsUptoDate: 0
+    mTerms:
+    - Term: Basement/Basement_BasementEquipment_Next
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2E4\uC74C"
+      - Next
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementEquipment_Previous
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC774\uC804"
+      - Previous
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Cancel
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCDE8\uC18C"
+      - Cancel
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Confirm
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD655\uC778"
+      - Confirm
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC815\uB9D0 \uBC16\uC73C\uB85C \uB098\uAC00\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+      - Do you really want to go outside?
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementExit_Title
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB098\uAC00\uAE30"
+      - Exit
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_AbandonVillage
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBC84\uB824\uC9C4 \uB9C8\uC744"
+      - AbandonVillage
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Building
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBE4C\uB529"
+      - Building
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter1
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC55\uD130 1"
+      - CHAPTER 1
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter1_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uAD34\uBB3C\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uC0DD\uC874 \uBC0F \n\uC544\uC774\uD15C\uC744
+        \uC218\uC9D1 \uD558\uC138\uC694."
+      - 'Surviving among monsters and
+
+        Collect the items.'
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter2
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC55\uD130 2"
+      - Chapter 2
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter2_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC880\uBE44\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uC0DD\uC874 \uBC0F \n\uCE58\uB8CC\uC81C\uB97C
+        \uD68D\uB4DD\uD558\uC5EC \uADC0\uD658\uD558\uC138\uC694."
+      - Get a survival and cure among zombies and return.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter3
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC55\uD130 3"
+      - Chapter 3
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter3_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uAC10\uC5FC\uC790\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uC0DD\uC874\uBC0F \uAE30\uBC00
+        \uC11C\uB958\uB97C \uD68D\uB4DD\uD558\uC5EC \uC0DD\uC874\uD558\uC138\uC694."
+      - Survive and survive by obtaining confidential documents among infected people.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter4
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC55\uD130 4"
+      - Chapter 4
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Chapter4_Description
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC545\uB839\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uC0DD\uC874 \uBC0F \uC2DD\uB7C9\uC744
+        \uC5BB\uC73C\uC138\uC694."
+      - Survive and get food among evil spirits.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Close
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2EB\uAE30"
+      - Close
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Destination
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBAA9\uC801\uC9C0"
+      - Destination
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Hospital
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBCD1\uC6D0"
+      - Hospital
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_NextTab
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2E4\uC74C"
+      - Next Tab
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_PreviousTab
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC774\uC804"
+      - Previous Tab
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_School
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD559\uAD50"
+      - School
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementMap_Select
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC120\uD0DD"
+      - Select
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Consumption
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC18C\uBE44\uD488"
+      - Consumption
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Equipment
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC7A5\uBE44"
+      - Equipment
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Material
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC7AC\uB8CC"
+      - Material
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Next
+      TermType: 0
+      Description: 
+      Languages:
+      - "[<color=#FF8900>E</color>] \uB2E4\uC74C"
+      - '[<color=#FF8900>E</color>] Next'
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Basement/Basement_BasementStash_Prev
+      TermType: 0
+      Description: 
+      Languages:
+      - "[<color=#FF8900>Q</color>] \uC774\uC804"
+      - '[<color=#FF8900>Q</color>] Previous'
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Inventory
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC778\uBCA4\uD1A0\uB9AC"
+      - Inventory
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/0_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBE60\uB974\uAC8C \uB2EC\uB9B4\uC218 \uC788\uB294 \uC544\uC774\uD15C \uC785\uB2C8\uB2E4"
+      - This Is An Item That Allows You To Run Quickly
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/0_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB0A0\uAC1C"
+      - Wing
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/1_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB0B4\uAD6C\uC131\uC774 \uC57D\uD558\uC9C0\uB9CC \uD55C \uBC88\uCBE4\uC740
+        \uBCF4\uD638\uD560 \uC218 \uC788\uC744 \uAC83 \uAC19\uC2B5\uB2C8\uB2E4"
+      - It's Not Very Durable, But I Think It Can Protect Me At Least Once
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/1_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD574\uACE8 \uD22C\uAD6C"
+      - Skull Helmet
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2000_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uACE0\uC131\uB2A5 \uBC30\uD130\uB9AC \uC785\uB2C8\uB2E4"
+      - This Is A High-Performance Battery
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2000_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBC30\uD130\uB9AC"
+      - Battery
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2001_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uACE0\uAE09 \uD718\uBC1C\uC720\uAC00 \uB4E4\uC5B4\uC788\uB294 \uD1B5\uC774\uB2E4"
+      - This Is A Barrel Containing High-Quality Gasoline
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2001_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD718\uBC1C\uC720"
+      - Gasoline
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2002_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD488\uC9C8\uC774 \uC870\uC545\uD55C \uD718\uBC1C\uC720"
+      - Poor Quality Gasoline
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2002_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD718\uBC1C\uC720"
+      - Gasoline
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2003_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB34\uC5B8\uAC00\uB97C \uBD99\uC77C\uC218 \uC788\uC744\uAC83 \uAC19\uC2B5\uB2C8\uB2E4"
+      - It Looks Like Something Could Be Attached
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2003_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD14C\uC774\uD504"
+      - Tape
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2004_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB34\uC5B8\uAC00\uB97C \uB9CC\uB4E4\uC218 \uC788\uB294  \uB3C4\uAD6C"
+      - A Tool To Create Something
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2004_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC2A4\uD328\uB108"
+      - Spanner
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2005_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC804\uC120\uC744 \uC790\uB974\uB294\uB370 \uD544\uC694\uD569\uB2C8\uB2E4"
+      - You Will Need It To Cut The Wire
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2005_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBE68\uAC04 \uD50C\uB77C\uC774\uC5B4"
+      - Red Plier
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2006_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC804\uC120 \uB610\uB294 \uCCA0\uC0AC\uB97C \uC790\uB974\uB294\uB370 \uC4F8\uC218
+        \uC788\uC744\uAC83 \uAC19\uB2E4"
+      - I Think It Can Be Used To Cut Wires Or Wires
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2006_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB178\uB780\uC0C9 \uD50C\uB77C\uC774\uC5B4"
+      - Yellow Pliers
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2007_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB098\uC0AC\uB97C \uC870\uC774\uAC70\uB098 \uD480\uB54C \uC4F0\uB294 \uB3C4\uAD6C"
+      - A Tool Used To Tighten Or Loosen Screws
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2007_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB4DC\uB77C\uC774\uBC84"
+      - ScrewDriver
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2008_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD06C\uACE0 \uBB34\uAC70\uC6B4 \uD0C0\uC774\uC5B4"
+      - Big And Heavy Tires
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2008_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD0C0\uC774\uC5B4"
+      - Tire
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2009_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC74C\uC2DD\uC744 \uC2E0\uC120\uD558\uAC8C \uBCF4\uAD00\uD560\uC218 \uC788\uC744\uAC83
+        \uAC19\uB2E4"
+      - I Think It Can Keep Food Fresh
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2009_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC544\uC774\uC2A4 \uBC15\uC2A4"
+      - Ice Box
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2010_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB354\uB7EC\uC6CC\uC9C4 \uAC83\uC744 \uB2E6\uC744\uC218 \uC788\uB2E4"
+      - You Can Clean Dirty Things
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2010_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD2F0\uC288"
+      - Tissue
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2011_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB34\uC5B8\uAC00 \uC815\uBCF4\uB97C \uC5BB\uC744\uC218 \uC788\uC744\uAC83
+        \uAC19\uB2E4"
+      - I Think I Can Get Some Information
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2011_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB77C\uB514\uC624"
+      - Radio
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2012_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC694\uB9AC\uC5D0 \uD544\uC694\uD55C \uB3C4\uAD6C"
+      - Tools Needed For Cooking
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2012_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB0C4\uBE44"
+      - Pot
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2013_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uAE30\uB984\uC744 \uC800\uC7A5\uD560\uC218 \uC788\uAC8C \uD574\uC900\uB2E4"
+      - Allows You To Store Oil
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2013_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uAE30\uB984\uD1B5"
+      - Oil Drum
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2014_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC6A9\uB7C9\uC774 \uD070 \uAC00\uC2A4\uD1B5"
+      - Large Capacity Gas Cylinder
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2014_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBE68\uAC04\uC0C9 \uAC00\uC2A4\uD1B5"
+      - Red Gas Cylinder
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2015_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC6A9\uB7C9\uC774 \uC791\uC740 \uAC00\uC2A4\uD1B5"
+      - Small Capacity Gas Bottle
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2015_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB178\uB780\uC0C9 \uAC00\uC2A4\uD1B5"
+      - Yellow Gas Cylinder
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2016_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC561\uCCB4\uB97C \uB2F4\uC744\uC218 \uC788\uB294 \uC591\uB3D9\uC774"
+      - Bucket For Holding Liquid
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2016_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD30C\uB780\uC0C9 \uC591\uB3D9\uC774"
+      - Blue Bucket
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2017_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC885\uC774\uC5D0 \uAE00\uC744 \uC4F8\uC218 \uC788\uB294 \uC5F0\uD544"
+      - Pencil For Writing On Paper
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2017_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC5F0\uD544"
+      - Pencil
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB9C8\uC2DC\uBA74 \uAC08\uC99D\uC774 \uD574\uC18C\uB420\uAC83 \uAC19\uC2B5\uB2C8\uB2E4"
+      - I Think Drinking It Will Quench Your Thirst
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC0DD\uC218"
+      - Bottled Water
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/3_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD45C\uC9C0\uAC00 \uC5C6\uC5B4\uC11C \uC5B4\uB5A4 \uB9DB\uC778\uC9C0 \uC54C\uC218\uAC00
+        \uC5C6\uB2E4"
+      - There's No Label So I Can't Tell What It Tastes Like
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/3_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD45C\uC9C0\uAC00 \uC5C6\uB294 \uD1B5\uC870\uB9BC"
+      - Canned Food Without Label
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/4_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD45C\uC9C0\uAC00 \uC5C6\uC5B4\uC11C \uC5B4\uB5A4 \uB9DB\uC778\uC9C0 \uC54C\uC218
+        \uC5C6\uB2E4"
+      - There's No Label, So I Can't Tell What It Tastes Like
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/4_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB0A9\uC791\uD55C \uD1B5\uC870\uB9BC"
+      - Flat Canned Food
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/5_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD1A0\uB9C8\uD1A0\uB85C \uB9CC\uB4E4\uC5B4\uC9C4 \uD1B5\uC870\uB9BC"
+      - Canned Food Made From Tomatoes
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/5_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD1A0\uB9C8\uD1A0 \uD1B5\uC870\uB9BC"
+      - Canned Tomatoes
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/6_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC625\uC218\uC218 \uD5A5\uC774 \uC9C4\uD55C \uD1B5\uC870\uB9BC"
+      - Canned Food With A Strong Corn Flavor
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/6_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC625\uC218\uC218 \uD1B5\uC870\uB9BC"
+      - Canned Corn
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/7_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2E4\uCE5C\uACF3\uC774 \uB9D0\uB054\uD558\uAC8C \uCE58\uB8CC\uB420\uAC83
+        \uAC19\uB2E4"
+      - It Looks Like The Injured Area Will Heal Completely
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/7_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB300\uD615 \uC751\uAE09 \uD0A4\uD2B8"
+      - Large Emergency Kit
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/8_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC57D\uAC04 \uACE0\uD1B5\uC744 \uB35C\uC218 \uC788\uC744\uAC83 \uAC19\uB2E4"
+      - I Think It Might Relieve Some Of The Pain
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/8_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC18C\uD615 \uC751\uAE09 \uD0A4\uD2B8"
+      - Small Emergency Kit
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/NULL
+      TermType: 0
+      Description: 
+      Languages:
+      - ' '
+      - ' '
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Close
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB2EB\uAE30"
+      - Close
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Equipment
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC7A5\uBE44"
+      - Equipment
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Exit
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB098\uAC00\uAE30"
+      - Exit
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Map
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC9C0\uB3C4"
+      - Map
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Open
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC5F4\uAE30"
+      - Open
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_PickUp
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC90D\uAE30"
+      - PickUp
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Stash
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uCC3D\uACE0"
+      - Stash
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Vegetation
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC2DD\uBB3C"
+      - Vegetation
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2018_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD30C\uB780\uC0C9 \uB9C8\uCEE4"
+      - Blue Marker
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2018_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD654\uC774\uD2B8 \uBCF4\uB4DC\uC5D0 \uAE00\uC744 \uC4F8\uC218 \uC788\uB294
+        \uBB3C\uAC74"
+      - Objects For Writing On A White Board
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2019_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC791\uC740 \uC0AC\uAC01\uD615 \uAC74\uC804\uC9C0"
+      - Small Square Battery
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2019_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB34\uC5B8\uAC00\uB97C \uC791\uB3D9\uC2DC\uD0AC\uC218 \uC788\uC744\uAC83
+        \uAC19\uC2B5\uB2C8\uB2E4"
+      - I Think It Might Make Something Work
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2020_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uACF5\uCC45"
+      - Notebook
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2020_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC5F0\uD544\uC774 \uC788\uC73C\uBA74 \uBB54\uAC00\uB97C \uC801\uC744\uC218
+        \uC788\uC744\uAC83 \uAC19\uC2B5\uB2C8\uB2E4"
+      - I Think I Could Write Something If I Had A Pencil
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2021_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC0DD\uC218\uD1B5"
+      - Big Bottled Water
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2021_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC6A9\uB7C9\uC774 \uD070 \uC0DD\uC218\uD1B5"
+      - Large Capacity Water Bottle
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2022_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC804\uB3D9 \uB4DC\uB9B4"
+      - Electric Drill
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2022_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB3C\uAC74\uC744 \uB9CC\uB4DC\uB294\uB370 \uC0AC\uC6A9\uB418\uB294 \uC804\uB3D9
+        \uB4DC\uB9B4"
+      - Power Drill Used To Make Things
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2023_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC811\uCC29\uC81C"
+      - Glue
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2023_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB34\uC5B8\uAC00\uB97C \uBD99\uC77C\uC218 \uC788\uC744\uAC83 \uAC19\uC2B5\uB2C8\uB2E4"
+      - I Think I Can Attach Something To It
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2024_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB80C\uCE58"
+      - Wrench
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2024_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC870\uC774\uAC70\uB098 \uD480\uB54C \uC4F0\uB294 \uB3C4\uAD6C"
+      - A Tool Used To Tighten Or Loosen
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2025_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBCFC\uD2B8 \uBC15\uC2A4"
+      - Bolt Box
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2025_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBCFC\uD2B8\uAC00 \uB4E4\uC5B4\uC788\uB294 \uBC15\uC2A4"
+      - Box With Bolts
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2026_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB108\uD2B8\uBC15\uC2A4"
+      - Nut Box
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2026_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB108\uD2B8\uAC00 \uB4E4\uC5B4\uC788\uB294 \uBC15\uC2A4"
+      - Box With Nuts
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2027_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBE68\uAC04\uC0C9 \uB9C8\uCEE4"
+      - Red Marker
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2027_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD654\uC774\uD2B8 \uBCF4\uB4DC\uC5D0 \uBE68\uAC04\uC0C9\uC73C\uB85C \uAE00\uC528\uB97C
+        \uC801\uC744\uC218 \uC788\uB2E4"
+      - You Can Write In Red On The Whiteboard.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2028_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB34\uC804\uAE30"
+      - Walkie
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2028_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBA40\uB9AC \uB5A8\uC5B4\uC9C4 \uC704\uCE58\uC5D0\uC11C\uB3C4 \uC18C\uD1B5\uD560
+        \uC218 \uC788\uB294 \uBB3C\uAC74"
+      - An Object That Allows Communication Even In Distant Locations
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2029_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC791\uC740 \uC6D0\uD1B5\uD615 \uAC74\uC804\uC9C0"
+      - Small Cylindrical Battery
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/9_consumableItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB545\uCF69 \uD1B5\uC870\uB9BC"
+      - Canned Peanuts
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/9_consumableItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uB545\uCF69\uC774 \uB4E4\uC5B4\uC788\uB294 \uD1B5\uC870\uB9BC"
+      - Canned Food Containing Peanuts
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2031_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC190\uC804\uB4F1"
+      - Flashlight
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2031_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC5B4\uB450\uC6B4 \uACF3\uC744 \uBC1D\uAC8C \uBE44\uCD9C\uC218 \uC788\uB294
+        \uBB3C\uAC74"
+      - An Object That Can Brighten A Dark Place
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2030_materialItemName
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC54C\uC57D"
+      - Pill
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2030_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC7A0\uC2DC \uACE0\uD1B5\uC744 \uC78A\uC744\uC218 \uC788\uB294 \uC57D"
+      - A Medicine That Can Help You Forget The Pain For A While
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Item/2029_materialItemDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uBB34\uC5B8\uAC00\uB97C \uC791\uB3D9 \uC2DC\uD0AC\uC218 \uC788\uB294 \uAC74\uC804\uC9C0"
+      - A Battery That Can Operate Something
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_Hide
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uC228\uAE30"
+      - Hide In
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Interact/Interact_ComeOut
+      TermType: 0
+      Description: 
+      Languages:
+      - "\uD0C8\uCD9C"
+      - Come Out
+      Flags: 0000
+      Languages_Touch: []
+    CaseInsensitiveTerms: 0
+    OnMissingTranslation: 1
+    mTerm_AppName: 
+    mLanguages:
+    - Name: Korean
+      Code: ko
+      Flags: 0
+    - Name: English
+      Code: en
+      Flags: 0
+    IgnoreDeviceLanguage: 0
+    _AllowUnloadingLanguages: 0
+    Google_WebServiceURL: https://script.google.com/macros/s/AKfycbyhtKuRGbVh0rq0haD1ivWIDiZqHkXoRN37-r8Gwm-Cmdk-Ki9wlCpaRrCH2XaSJ-zr/exec
+    Google_SpreadsheetKey: 1k0daqck4R-xCW8CkRGQhK_yEW1aa-XYGCLRzCRDweZg
+    Google_SpreadsheetName: I2Loc AnimeGame Localization
+    Google_LastUpdatedVersion: 1711606916317
+    Google_Password: Tkfkdgo5759!
+    GoogleUpdateFrequency: 3
+    GoogleInEditorCheckFrequency: 2
+    GoogleUpdateSynchronization: 1
+    GoogleUpdateDelay: 0
+    Assets: []
+    Spreadsheet_LocalFileName: _0_Game/LanguageLocalize/Localization.csv
+    Spreadsheet_LocalCSVSeparator: ','
+    Spreadsheet_LocalCSVEncoding: utf-8
+    Spreadsheet_SpecializationAsRows: 1
+    Spreadsheet_SortRows: 1

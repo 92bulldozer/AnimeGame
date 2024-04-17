@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e572d38a17e70a43bc4f873577db885, type: 3}
+  m_Name: ClassRoomData
+  m_EditorClassIdentifier: 
+  bigClassRoomList:
+  - {fileID: 8063432291105679259, guid: a92155f3b946b65429868cd577c6839a, type: 3}
+  - {fileID: 2111012204907066068, guid: 752f3cbff3a375a4b856a24dec2976a7, type: 3}
+  - {fileID: 8697945718069211611, guid: dae3e2b1993d2344082915878a1d257f, type: 3}
+  - {fileID: 200262222111560171, guid: aea156b641d2b42428344e3c729137e0, type: 3}
+  - {fileID: 4217638104440065053, guid: 1d942d7d8de1d6f4bac33e9d600a6489, type: 3}
+  - {fileID: 4509390545343124027, guid: 675219e6b370ddd45b9c6d83da1d5c7e, type: 3}
+  smallClassRoomList:
+  - {fileID: 795517689303131131, guid: be1035f6f8a4b034ead2189939ab8735, type: 3}

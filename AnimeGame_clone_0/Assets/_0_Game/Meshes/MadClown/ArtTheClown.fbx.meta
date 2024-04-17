@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: 519be79ad60842b41b910416c7d20623
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cornea
+    second: {fileID: 2100000, guid: 0ab2d4e14aef162418251a0df4494f28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M1
+    second: {fileID: 2100000, guid: da16d29393ac3634ebcd795f13ba7fd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M2
+    second: {fileID: 2100000, guid: 325b618b293bab94ab3e52ce4c2ff085, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: knife
+    second: {fileID: 2100000, guid: fd688f51a282aeb469527260b867680b, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: ArtTheClown(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube
+      parentName: ArtTheClown(Clone)
+      position: {x: -3.057765e-16, y: 1.377095, z: 0.111541584}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Cube.001
+      parentName: ArtTheClown(Clone)
+      position: {x: -2.3169353e-16, y: 1.1084359, z: 0.11534848}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Eye
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.03360688, y: 1.7732153, z: 0.09579071}
+      rotation: {x: 0.0000006242736, y: -1.4566246e-14, z: -3.552714e-15, w: 1}
+      scale: {x: 100, y: 100.000015, z: 100}
+    - name: Circle
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.5678778, y: 1.1478838, z: 0.04696724}
+      rotation: {x: 0.76525736, y: -0.05332369, z: 0.4142065, w: 0.48986807}
+      scale: {x: 100, y: 100, z: 99.99999}
+    - name: hood_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: corda_chapeu
+      parentName: ArtTheClown(Clone)
+      position: {x: -3.577809e-16, y: 1.6204574, z: 0.07494427}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: mask_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: FaceEyes_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: hood2_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: mouth_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: gengivaTopo_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: gengivaBaixo_Retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Dente1_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Dente2_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Dente3_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.012403915, y: 1.7015481, z: 0.1312242}
+      rotation: {x: -0.6809603, y: -0.15541387, z: -0.18702509, w: 0.6907686}
+      scale: {x: 100.00001, y: 100, z: 99.99999}
+    - name: Dente4_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.019862935, y: 1.7018803, z: 0.12691098}
+      rotation: {x: -0.6469374, y: -0.25325102, z: -0.28312063, w: 0.661195}
+      scale: {x: 100, y: 100, z: 99.99999}
+    - name: Dente5_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.025578465, y: 1.7024724, z: 0.12004819}
+      rotation: {x: -0.6533598, y: -0.2970214, z: -0.27455527, w: 0.6399365}
+      scale: {x: 100, y: 100.00001, z: 100}
+    - name: Dente6_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.02938832, y: 1.7028357, z: 0.11140814}
+      rotation: {x: -0.58505905, y: -0.36548474, z: -0.36225733, w: 0.62681454}
+      scale: {x: 99.99999, y: 100, z: 100}
+    - name: Dente7_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Dente8_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Dente9_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.011781724, y: 1.6918871, z: 0.1272251}
+      rotation: {x: -0.6940897, y: -0.06880232, z: -0.15969124, w: 0.6985732}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Dente10_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.018320488, y: 1.6937824, z: 0.123417325}
+      rotation: {x: -0.63669354, y: -0.18297867, z: -0.30700913, w: 0.68329024}
+      scale: {x: 100, y: 100, z: 99.99999}
+    - name: Dente11_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.023234488, y: 1.6960686, z: 0.117240876}
+      rotation: {x: -0.58376044, y: -0.24773845, z: -0.3934918, w: 0.6655927}
+      scale: {x: 100, y: 99.99999, z: 100}
+    - name: Dente12_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.02662046, y: 1.698482, z: 0.110192455}
+      rotation: {x: -0.5718367, y: -0.3028548, z: -0.44802278, w: 0.6168933}
+      scale: {x: 100, y: 100, z: 99.99999}
+    - name: glove_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: hand_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: body_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: hat_retopo
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.07233923, y: 1.9107426, z: 0.008761284}
+      rotation: {x: -0.6550824, y: -0.21671782, z: 0.21853444, w: 0.6900313}
+      scale: {x: 99.99999, y: 100, z: 100}
+    - name: Cornea
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.03360688, y: 1.7732153, z: 0.09579071}
+      rotation: {x: 0.0000006242736, y: -1.4566246e-14, z: -3.552714e-15, w: 1}
+      scale: {x: 100, y: 100.000015, z: 100}
+    - name: colar_lp
+      parentName: ArtTheClown(Clone)
+      position: {x: -0, y: 0.104383335, z: 0.0034435575}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: boot_lp
+      parentName: ArtTheClown(Clone)
+      position: {x: -0.1881346, y: 0, z: 0.0064523015}
+      rotation: {x: -0.7019404, y: -0.085320994, z: -0.085320994, w: 0.7019405}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Cornea.001
+      parentName: ArtTheClown(Clone)
+      position: {x: 0.033608854, y: 1.7732153, z: 0.09831948}
+      rotation: {x: 0.0000006242736, y: -1.4566246e-14, z: -3.552714e-15, w: 1}
+      scale: {x: 100, y: 100.000015, z: 100}
+    - name: Eye.001
+      parentName: ArtTheClown(Clone)
+      position: {x: 0.033606913, y: 1.7732153, z: 0.09764849}
+      rotation: {x: 0.0000006242736, y: -1.4566246e-14, z: -3.552714e-15, w: 1}
+      scale: {x: 100, y: 100.000015, z: 100}
+    - name: knife
+      parentName: ArtTheClown(Clone)
+      position: {x: 0.9060398, y: 1.2135137, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
