@@ -5,10 +5,11 @@ using AnimeGame;
 using BehaviorDesigner.Runtime;
 using DarkTonic.MasterAudio;
 using EJ;
+using FishNet.Object;
 using Pathfinding;
 using UnityEngine;
 
-public class EnemyPresenter : MonoBehaviour
+public class EnemyPresenter : NetworkBehaviour
 {
     [Header("Field")] [Space(10)] 
     public bool isPatrolling;
@@ -45,6 +46,11 @@ public class EnemyPresenter : MonoBehaviour
     private void Start()
     {
         StartCoroutine(CheckInteractableObject());
+    }
+
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
     }
 
     private void Update()

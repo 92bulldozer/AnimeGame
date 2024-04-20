@@ -8,7 +8,9 @@ using Cysharp.Threading.Tasks;
 using DarkTonic.MasterAudio;
 using DG.Tweening;
 using EJ;
+using FishNet;
 using FishNet.Managing;
+using FishNet.Managing.Scened;
 using FishNet.Object;
 using I2.Loc;
 using INab.BetterFog.URP;
@@ -27,7 +29,7 @@ public enum ELanguage
     ENGLISH
 }
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance;
 
@@ -39,9 +41,12 @@ public class GameManager : MonoBehaviour
     public GameObject firstVirtualCamera;
     public Color inSideAmbientColor;
     public List<Color> outSideAmbientColor;
+    
 
     [Space(20)] [Header("Players")] [Space(10)]
     public List<PlayerPresenter> playerList;
+
+    public List<Transform> playerSpawnTransformList;
 
     [Space(20)] [Header("MMF")] [Space(10)]
     public MMF_Player ca;
@@ -125,6 +130,15 @@ public class GameManager : MonoBehaviour
         {
             "GameManager 1".Log();
             SpawnEnemy();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            "GameManager 5".Log();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            "GameManager 5".Log();
         }
         
         if (Input.GetKeyDown(KeyCode.Z))
@@ -307,19 +321,26 @@ public class GameManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
+        if (!HasAuthority)
+            return;
+       
+        
         try
         {
-            Instantiate(enemyPrefab, new Vector3(-6, -0.5f, 6), Quaternion.identity);
+            GameObject enemyObj = Instantiate(enemyPrefab, new Vector3(-6, -0.5f, 6), Quaternion.identity);
+            ServerManager.Spawn(enemyObj);
         }
         catch (Exception e)
         {
-           
+            
         }
+        
+       
 
     }
-    
 
 
+   
 
    
    

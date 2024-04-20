@@ -5,6 +5,7 @@ using DarkTonic.MasterAudio;
 using DG.Tweening;
 using EJ;
 using FishNet.Object;
+using FishNet.Object.Synchronizing;
 using UnityEngine;
 
 namespace AnimeGame
@@ -21,7 +22,7 @@ namespace AnimeGame
         [Space(20)] [Header("DoorField")] [Space(10)] 
         public Transform door;
         public float moveValue;
-        public bool isOpened;
+        public readonly SyncVar<bool> isOpened = new SyncVar<bool>();
         public string openDoorSfx;
         public string closeDoorSfx;
         public bool notRelative;
@@ -39,7 +40,14 @@ namespace AnimeGame
             base.Start();
         }
 
-       
+
+        [ServerRpc(RequireOwnership = false)]
+        public void SetIsOpened(bool _isOpened) => isOpened.Value = _isOpened;
+        // private void Update()
+        // {
+        //     $"HasAuthority={HasAuthority} canInteract.Value={canInteract.Value}  isInteracting.Value={isInteracting.Value} isOpened={isOpened.Value}".Log();
+        // }
+
 
         public override void Interact()
         {
@@ -48,7 +56,7 @@ namespace AnimeGame
             
             base.Interact();
             
-            if(isOpened)
+            if(isOpened.Value)
                 CloseDoorServer();
             else
                 OpenDoorServer();
@@ -73,15 +81,20 @@ namespace AnimeGame
         }
 
         
-        [ObserversRpc]
+        [ObserversRpc(BufferLast = true)]
         public void OpenDoorObserver()
         {
             if (!canInteract.Value || isInteracting.Value)
                 return;
             
-            isOpened = true;
             MasterAudio.PlaySound3DAtTransform(openDoorSfx, transform);
-            SetIsInteracting(true);
+            if (HasAuthority)
+            {
+                SetIsOpened(true);
+                SetIsInteracting(true);
+            }
+           
+            "OpenDoor".Log();
 
             if (!notRelative)
             {
@@ -90,7 +103,8 @@ namespace AnimeGame
                     case EVectorDirection.X:
                         door.DOLocalMoveX(-moveValue, 1.5f).SetEase(Ease.OutQuad).SetRelative(true).OnComplete(() =>
                         {
-                            SetIsInteracting(false);
+                            if(HasAuthority)
+                                SetIsInteracting(false);
                         });
                         break;
                     case EVectorDirection.Y:
@@ -98,7 +112,8 @@ namespace AnimeGame
                     case EVectorDirection.Z:
                         door.DOLocalMoveZ(-moveValue, 1.5f).SetEase(Ease.OutQuad).SetRelative(true).OnComplete(() =>
                         {
-                            SetIsInteracting(false);
+                            if(HasAuthority)
+                                SetIsInteracting(false);
                         });
                         break;
                 }
@@ -107,7 +122,8 @@ namespace AnimeGame
             {
                 door.DOLocalMove(openLocalPosition,1.5f).SetEase(Ease.OutQuad).OnComplete(() =>
                 {
-                    SetIsInteracting(false);
+                    if (HasAuthority)
+                        SetIsInteracting(false);
                 });
             }
            
@@ -124,13 +140,18 @@ namespace AnimeGame
         }
         
         
-        [ObserversRpc]
+        [ObserversRpc(BufferLast = true)]
         public void CloseDoorObserver()
         {
             door.DOPause();
-            isOpened = false;
-            SetIsInteracting(true);
+            if (HasAuthority)
+            {
+                SetIsOpened(false);
+                SetIsInteracting(true);
+            }
+
             MasterAudio.PlaySound3DAtTransform(closeDoorSfx, transform);
+            "CloseDoor".Log();
 
             if (!notRelative)
             {
@@ -139,7 +160,10 @@ namespace AnimeGame
                     case EVectorDirection.X:
                         door.DOLocalMoveX(moveValue, 1.5f).SetEase(Ease.OutQuad).SetRelative(true).OnComplete(() =>
                         {
-                            SetIsInteracting(false);
+                            if (HasAuthority)
+                            {
+                                SetIsInteracting(false);
+                            }
                         });
                         break;
                     case EVectorDirection.Y:
@@ -147,7 +171,10 @@ namespace AnimeGame
                     case EVectorDirection.Z:
                         door.DOLocalMoveZ(moveValue, 1.5f).SetEase(Ease.OutQuad).SetRelative(true).OnComplete(() =>
                         {
-                            SetIsInteracting(false);
+                            if (HasAuthority)
+                            {
+                                SetIsInteracting(false);
+                            }
 
                         });
                         break;
@@ -157,7 +184,10 @@ namespace AnimeGame
             {
                 door.DOLocalMove(closeLocalPosition,1.5f).SetEase(Ease.OutQuad).OnComplete(() =>
                 {
-                    SetIsInteracting(false);
+                    if (HasAuthority)
+                    {
+                        SetIsInteracting(false);
+                    }
                 });
             }
            

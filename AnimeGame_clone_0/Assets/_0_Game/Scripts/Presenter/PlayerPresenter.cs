@@ -41,7 +41,7 @@ public enum KnockBackDirection
 namespace AnimeGame
 {
     [RequireComponent(typeof(PlayerInteract))]
-    public class PlayerPresenter : NetworkBehaviour
+    public class PlayerPresenter : AnimeNetworkBehaviour
     {
         //public static PlayerPresenter Instance;
 
@@ -146,7 +146,7 @@ namespace AnimeGame
         [ServerRpc]
         private void SpawnPrefabServer()
         {
-            GameObject go = Instantiate(spherePrefab, transform.position + transform.forward, Quaternion.identity);
+            GameObject go = Instantiate(spherePrefab, transform.position + transform.forward+ new Vector3(0,1,0), Quaternion.identity);
             ServerManager.Spawn(go);
             spawnedObject = go;
             SpawnPrefabObserver( go);
@@ -271,7 +271,8 @@ namespace AnimeGame
                 //GetDamaged(null,KnockBackDirection.LEFT);
                 //GetDamaged(null,true);
 
-                SetHealthServer(NHealth.Value-1);
+                //SetHealthServer(NHealth.Value-1);
+                //SpawnPrefabServer();
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -280,15 +281,15 @@ namespace AnimeGame
                 //DetachTo();
                 //GetDamaged(null,KnockBackDirection.RIGHT);
                 //DeActiveRagDoll();
-                NHealth.Value.Log();
-                charactername.Value.Log();
+                // NHealth.Value.Log();
+                // charactername.Value.Log();
             }
             
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 //ActiveRagDoll();
                 //GetDamaged(null,KnockBackDirection.BACK);
-                SetCharacterNameServer("EJ");
+                //SetCharacterNameServer("EJ");
             }
    
             
