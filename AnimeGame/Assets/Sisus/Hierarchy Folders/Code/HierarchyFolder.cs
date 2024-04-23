@@ -1,10 +1,12 @@
 ﻿//#define DEBUG_RUNTIME_STRIPPING
 
 using UnityEngine;
-using Sisus.Attributes;
 using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
+#endif
+#if POWER_INSPECTOR
+using Sisus.Attributes;
 #endif
 
 namespace Sisus.HierarchyFolders
@@ -15,7 +17,10 @@ namespace Sisus.HierarchyFolders
 	[ExecuteInEditMode]
 	#endif
 	#if UNITY_EDITOR
-	[InitializeOnLoad, HideTransformInInspector, HideComponentInInspector, OnlyComponent, AddComponentMenu("Hierarchy/Hierarchy Folder")]
+	[InitializeOnLoad, AddComponentMenu("Hierarchy/Hierarchy Folder")]
+	#endif
+	#if POWER_INSPECTOR && UNITY_EDITOR
+	[HideTransformInInspector, HideComponentInInspector, OnlyComponent]
 	#endif
 	[DefaultExecutionOrder(-32000)]
 	public sealed class HierarchyFolder : MonoBehaviour

@@ -22,7 +22,7 @@ namespace AnimeGame
 
         public virtual void Start()
         {
-            vcam.LookAt = GameManager.Instance.playerPresenter.transform;
+            //vcam.LookAt = GameManager.Instance.playerPresenter.transform;
 
         }
 
@@ -39,6 +39,7 @@ namespace AnimeGame
 
         public virtual void EnterRoom()
         {
+            vcam.LookAt = GameManager.Instance.playerPresenter.transform;
             GameManager.Instance.ChangeAmbientLight(true);
             GameManager.Instance.playerPresenter.ActiveLight();
         }

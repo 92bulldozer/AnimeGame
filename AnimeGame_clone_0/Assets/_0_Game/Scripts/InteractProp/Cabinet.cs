@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using DarkTonic.MasterAudio;
 using DG.Tweening;
 using EJ;
+using FishNet.Object.Synchronizing;
 using Rewired;
 using RootMotion.Dynamics;
 using UnityEngine;
@@ -20,7 +21,8 @@ namespace AnimeGame
         private Player _player;
         public Transform doorTransform;
         private BoxCollider doorCollider;
-        
+        public readonly SyncVar<bool> isFull = new SyncVar<bool>();
+
         public override void Awake()
         {
             base.Awake();
@@ -68,6 +70,7 @@ namespace AnimeGame
             isHided = true;
             MasterAudio.PlaySound3DAtTransform(hideSfx, transform);
             isInteracted = true;
+            isFull.Value = true;
             transform.DOShakeRotation(0.5f, new Vector3(2, 0, 3), 30)
                 .SetEase(Ease.OutQuad)
                 .OnComplete(()=>
@@ -96,7 +99,11 @@ namespace AnimeGame
             GameManager.Instance.playerPresenter.gameObject.SetActive(true);
             doorCollider.enabled = false;
             doorTransform.DOLocalRotate(new Vector3(0, -120, 0), 0.1f).SetEase(Ease.OutQuad)
-                .OnComplete(() => doorCollider.enabled = true);
+                .OnComplete(() =>
+                {
+                    isFull.Value = false;
+                    doorCollider.enabled = true;
+                });
             UpdateReverseText(false);
             "ComeOut".Log();
             //sender.UpdateReverseText();

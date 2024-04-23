@@ -76,6 +76,7 @@ public class GameManager : NetworkBehaviour
     [Space(20)] [Header("AStar")] [Space(10)]
     public AstarPath astarPath;
     public GameObject enemyPrefab;
+    public GameObject pickupObjectTest;
     
     
 
@@ -129,7 +130,7 @@ public class GameManager : NetworkBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             "GameManager 1".Log();
-            SpawnEnemy();
+            //SpawnEnemy();
         }
         
         if (Input.GetKeyDown(KeyCode.Alpha5))
@@ -214,6 +215,7 @@ public class GameManager : NetworkBehaviour
         // GameObject playerObj = Instantiate(playerPrefabList[1], new Vector3(24,-0.5f,11f),
         //     Quaternion.Euler(0, -90, 0));
         // playerPresenter = playerObj.transform.GetChild(2).GetComponent<PlayerPresenter>();
+        
         playerPresenter = _playerPresenter;
     }
 

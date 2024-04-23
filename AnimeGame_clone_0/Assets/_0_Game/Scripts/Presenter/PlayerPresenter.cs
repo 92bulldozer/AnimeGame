@@ -6,6 +6,7 @@ using DG.Tweening;
 using Doozy.Engine;
 using ECM.Controllers;
 using EJ;
+using FishNet.Component.Animating;
 using FishNet.Managing;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
@@ -62,9 +63,11 @@ namespace AnimeGame
         private CapsuleCollider _capsuleCollider;
         private Rigidbody _rb;
         public Animator _animator;
+        private NetworkAnimator _networkAnimator;
         private Camera _mainCamera;
         public GameObject characterSpotLight;
         public GameObject characterPointLight;
+        
 
         
         [Tab("../Sfx")]
@@ -75,6 +78,7 @@ namespace AnimeGame
         public Transform RHandTarget;
         public Transform chestTarget;
         public Transform headTarget;
+        public Transform pickUpTransform;
         
         [Box("Field",true,10)]
         public bool isFlashOn;
@@ -103,17 +107,7 @@ namespace AnimeGame
             Init();
         }
 
-        [ServerRpc]
-        private void SetHealthServer(int _health)
-        {
-            NHealth.Value = _health;
-            "SetHealthServerRPC".Log();
-        }
-        
-        private void NHealthOnOnChange(int prev, int next, bool asserver)
-        {
-            $"{gameObject.name} NHealthOnOnChange   isServer ={asserver}".Log();
-        }
+       
         
         
         
@@ -194,9 +188,7 @@ namespace AnimeGame
                 {
                     _networkManager.ClientManager.Connection.ClientId.Log(EColor.RED);
                     _baseCharacterController.isOwner = true;
-                    NHealth.OnChange += NHealthOnOnChange;
                     charactername.OnChange+= CharacternameOnOnChange;
-                    SetHealthServer(100);
                     if (IsServerInitialized)
                     {
                         SetCharacterNameServer("Server");
@@ -235,7 +227,8 @@ namespace AnimeGame
 
             if (player.GetButtonDown("Interact"))
             {
-                Interact();
+                //Interact();
+                PickUp();
             }
             
             if (player.GetButtonDown("Flash"))
@@ -310,6 +303,7 @@ namespace AnimeGame
             player = ReInput.players.GetPlayer(playerID);
             playerInteract = GetComponent<PlayerInteract>();
             _baseCharacterController = GetComponent<BaseCharacterController>();
+            _networkAnimator = GetComponent<NetworkAnimator>();
             playerInteract.Init();
             virtualCamera = GameManager.Instance.firstVirtualCamera;
             pickupSequence = DOTween.Sequence().SetAutoKill(false).Pause().OnPlay(()=>
@@ -454,8 +448,10 @@ namespace AnimeGame
 
         public void PickUp()
         {
-            _animator.SetTrigger("PickUp");
+            //_animator.SetTrigger("PickUp");
+            _networkAnimator.SetTrigger("PickUp");
             pickupSequence.Restart();
+            PickUpObjectServer();
         }
 
         #region Hit_Blood
@@ -564,7 +560,21 @@ namespace AnimeGame
             characterSpotLight.SetActive(false);
             characterPointLight.SetActive(false);
         }
-        
+
+        [ServerRpc(RequireOwnership = false)]
+        public void PickUpObjectServer()
+        {
+            PickUpObjectObserver();
+            
+        }
+
+        [ObserversRpc(BufferLast = true)]
+        public void PickUpObjectObserver()
+        {
+            Transform PickUpObjectTransform = GameManager.Instance.pickupObjectTest.transform;
+            PickUpObjectTransform.parent = pickUpTransform;
+            PickUpObjectTransform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        }
     
     }
 }
